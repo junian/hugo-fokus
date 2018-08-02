@@ -4,16 +4,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{ with .Site.Params.googleSiteVerification }}
-    <meta content='{{ . }}' name='google-site-verification'/>
-    {{ end }}
+    {{ partial "meta/verification.html" . }}
 
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
     <meta name="author" content="">
 
-    {{ partial "opengraph.html" . }}
+    {{ partial "meta/opengraph.html" . }}
     
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    {{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+    {{ else }}
+    <title>{{ .Title }}</title>
+    {{ end }}
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ "vendor/bootstrap/css/bootstrap.min.css" | relURL }}">
