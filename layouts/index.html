@@ -1,45 +1,34 @@
 {{ define "main" }}
 
-<!-- Page Header -->
-<header class="masthead">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="page-heading">
-                    <h1>{{ .Site.Title }}</h1>
-                    {{ if .Site.Params.Description }}
-                    <span class="subheading">{{ .Site.Params.Description }}</span>
-                    {{ end }}
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+{{ partial "header.html" . }}
 
+<!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <!-- Home Post List -->
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
             {{ $paginator := .Paginate (where .Pages "Params.hidden" "ne" true) }} 
+
             {{ range sort .Paginator.Pages }}
 
-            <article class="post-preview">
+            <div class="post-preview">
                 <a href="{{ .Permalink }}">
-                    <h2 class="post-title">{{ if .Draft }}[Draft] {{ end }}{{ .Title }}</h2>
-                    {{ if .Description }}
-                    <h3 class="post-subtitle">{{ .Description }}</h3>
+                    <h2 class="post-title">
+                        {{ if .Draft }}[Draft] {{ end }}{{ .Title }}
+                    </h2>
+                    {{ with .Description }}
+                    <h3 class="post-subtitle">
+                        {{ . }}
+                    </h3>
                     {{ end }}
                 </a>
                 <p class="post-meta">Posted on {{ .Date.Format "January 2, 2006" }}</p>
-            </article>
-
-            <hr /> {{ end }}
-
-            <!-- Pager -->
-            <div class="clearfix">
-                <a class="btn btn-primary float-right" href="{{ .Site.BaseURL }}/post/">View All Posts &rarr;</a>
             </div>
+            <hr />
+
+            {{ end }}
+
+            {{ partial "pager.html" . }}
 
         </div>
     </div>
