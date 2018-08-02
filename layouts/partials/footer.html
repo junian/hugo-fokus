@@ -20,7 +20,7 @@
                         {{ end }}
                     {{ end }}
                 </ul>
-                <p class="copyright text-muted">{{ .Site.Copyright }}</p>
+                <p class="copyright text-muted">{{ .Site.Copyright | safeHTML }}</p>
             </div>
         </div>
     </div>
