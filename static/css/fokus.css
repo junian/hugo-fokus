@@ -980,3 +980,17 @@ input.gsc-search-button-v2 {
         margin: 0 0px 0 20px;
     }
 }
+
+section.post-description,
+a[name='more'],
+div#blog-header {
+    display: none;
+}
+
+pre.prettyprint {
+    color: #fff;
+    background-color: #222;
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
