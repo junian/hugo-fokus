@@ -52,6 +52,14 @@ a:focus {
     cursor: zoom-in;
 }
 
+.post-body img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    height: auto;
+}
+
 blockquote {
     color: #808080;
     font-style: italic;
