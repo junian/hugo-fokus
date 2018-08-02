@@ -27,7 +27,7 @@
                 {{ end }}
 
                 <!-- Content and Code License -->
-                {{ if .Site.Params.License.enabled }}
+                {{ if $.Param "license.visible" }}
                     {{ partial "license.html" . }}
                 {{ end }}
 
@@ -37,13 +37,15 @@
                 {{ end }}
 
                 <!-- Show related articles -->
-                {{ if $.Param "showRelated" }}
+                {{ if $.Param "relatedVisible" }}
                 <div class="post-body entry-content">
                     {{ partial "related.html" . }}
                 </div>
                 {{ end }}
 
+                {{ if $.Param "commentVisible" }}
                 {{ template "_internal/disqus.html" . }}
+                {{ end }}
             </div>
         </div>
     </div>

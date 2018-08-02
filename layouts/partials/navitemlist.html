@@ -1,9 +1,9 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-right">
-        {{ range .Site.Menus.main }}
+    <ul class="nav navbar-nav navbar-left">
+        {{ range .Site.Params.menu }}
         <li>
-            <a href="{{ .URL }}">{{ .Name }}</a>
+            <a href="{{ .url }}">{{ .name }}</a>
         </li>
         {{ end }}
     </ul>

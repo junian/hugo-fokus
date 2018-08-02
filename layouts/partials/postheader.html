@@ -1,54 +1,56 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>{{ .Title }}</h1>
-                    {{ with .Description }}
-                    <h2 class="subheading">{{ . }}</h2>
-                    {{ end }}
-
-                    <span class='meta'>
-
-                        <!-- Published Date -->
-                        {{ if not .Date.IsZero }}
-                        <span class='post-timestamp'>
-                            <i aria-hidden='true' class='fa fa-calendar'></i>
-                            <meta content='{{.Permalink }}' itemprop='url' />
-                            <a class='timestamp-link' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
-                                <time class='published' title='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}' itemprop='datePublished dateModified'>
-                                    {{ .Date.Format "January 2, 2006" }}
-                                </time>
-                            </a>
-                        </span>
-                        {{ end }} 
-                        
-                        <!-- Post tags -->
-                        {{ with .Params.tags }}
-                        <span class='post-labels'>
-                            <i aria-hidden='true' class='fa fa-tags'></i>
-                            {{ range first 1 . }}
-                                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
-                            {{ end }} 
-                            {{ if gt (len .) 1 }} 
-                            {{ range after 1 . }}
-                                , <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
-                            {{ end }} 
-                            {{ end }}
-                        </span>
-                        {{ end }} 
-
-                        <!-- Reading ETA -->
-                        {{ with .ReadingTime }}
-                        <span class='post-read-eta'>
-                            <i aria-hidden='true' class='fa fa-clock-o'></i>
-                            <span class='eta'> {{ . }}</span> min(s)
-                        </span>
+<header class="intro-header" style="{{ with .Params.image }}background-image: url('{{ . }}'){{ end }}">
+    <div class='overlay'>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>{{ .Title }}</h1>
+                        {{ with .Description }}
+                        <h2 class="subheading">{{ . }}</h2>
                         {{ end }}
 
-                    </span>
+                        <span class='meta'>
+
+                            <!-- Published Date -->
+                            {{ if not .Date.IsZero }}
+                            <span class='post-timestamp'>
+                                <i aria-hidden='true' class='fa fa-calendar'></i>
+                                <meta content='{{.Permalink }}' itemprop='url' />
+                                <a class='timestamp-link' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
+                                    <time class='published' title='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}' itemprop='datePublished dateModified'>
+                                        {{ .Date.Format "January 2, 2006" }}
+                                    </time>
+                                </a>
+                            </span>
+                            {{ end }} 
+                            
+                            <!-- Post tags -->
+                            {{ with .Params.tags }}
+                            <span class='post-labels'>
+                                <i aria-hidden='true' class='fa fa-tags'></i>
+                                {{ range first 1 . }}
+                                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
+                                {{ end }} 
+                                {{ if gt (len .) 1 }} 
+                                {{ range after 1 . }}
+                                    , <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
+                                {{ end }} 
+                                {{ end }}
+                            </span>
+                            {{ end }} 
+
+                            <!-- Reading ETA -->
+                            {{ with .ReadingTime }}
+                            <span class='post-read-eta'>
+                                <i aria-hidden='true' class='fa fa-clock-o'></i>
+                                <span class='eta'> {{ . }}</span> min(s)
+                            </span>
+                            {{ end }}
+
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
