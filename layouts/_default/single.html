@@ -11,7 +11,11 @@
                 {{ partial "adsense/responsive.html" . }}
                 {{ end }}
                 <div class="post-body entry-content">
+                    {{ if $.Site.Params.autoFigure }}
+                    {{ .Content | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\"><figcaption class='caption text-muted'>$2</figcaption></figure>" | safeHTML }}
+                    {{ else }}
                     {{ .Content }}
+                    {{ end }}
                 </div>
                 <hr class='section-divider'/>
                 {{ if $.Param "adsense.showBottom" }}
