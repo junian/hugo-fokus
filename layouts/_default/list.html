@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+{{ partial "header.html" . }}
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            {{ $paginator := .Paginate (where .Pages "Params.hidden" "ne" true) }} 
+
+            {{ range sort .Paginator.Pages }}
+
+            <div class="post-preview">
+                <a href="{{ .Permalink }}">
+                    <h2 class="post-title">
+                        {{ if .Draft }}[Draft] {{ end }}{{ .Title }}
+                    </h2>
+                    {{ with .Description }}
+                    <h3 class="post-subtitle">
+                        {{ . }}
+                    </h3>
+                    {{ end }}
+                </a>
+                <p class="post-meta">Posted on {{ .Date.Format "January 2, 2006" }}</p>
+            </div>
+            <hr />
+
+            {{ end }}
+
+            {{ partial "pager.html" . }}
+
+        </div>
+    </div>
+</div>
+
+{{ end }}
