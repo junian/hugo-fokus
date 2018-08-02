@@ -12,7 +12,7 @@
     {{ partial "meta/opengraph.html" . }}
     
     {{ if .IsHome }}
-    <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}</title>
     {{ else }}
     <title>{{ .Title }}</title>
     {{ end }}
