@@ -21,6 +21,9 @@
                 {{ if $.Param "adsense.showBottom" }}
                 {{ partial "adsense/responsive.html" . }}
                 {{ end }}
+                {{ if .Site.Params.License.enabled }}
+                {{ partial "license.html" . }}
+                {{ end }}
                 {{ if $.Param "showRelated" }}
                     {{ partial "related.html" . }}
                 {{ end }}

@@ -1,9 +1,11 @@
 {{ $related := .Site.RegularPages.Related . | first 5 }}
 {{ with $related }}
+<section>
 <h2>Similar articles</h2>
 <ul>
 	{{ range . }}
 	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 	{{ end }}
 </ul>
+</section>
 {{ end }}
