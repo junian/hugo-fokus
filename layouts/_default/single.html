@@ -1,38 +1,16 @@
 {{ define "main" }}
 
-<!-- Page Header -->
-<header class="masthead">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-heading">
-          <h1>{{ .Title }}</h1>
-          {{ if .Description }}
-          <h2 class="subheading">{{ .Description }}</h2>
-          {{ end }}
-          {{if not .Date.IsZero }}
-          <span class="meta">Posted on {{ .Date.Format "January 2, 2006" }}</span>
-          {{ end }}
+{{ partial "postheader.html" . }}
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {{ .Content }}
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-
-      {{ .Content }}
-
-      <hr />
-
-      <div class="clearfix">
-      </div>
-
-    </div>
-  </div>
-</div>
+</article>
 
 {{ end }}
