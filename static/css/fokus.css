@@ -995,11 +995,13 @@ div#blog-header {
     display: none;
 }
 
-pre.prettyprint {
-    color: #fff;
-    background-color: #222;
+.highlight pre {
     overflow: auto;
     word-wrap: normal;
+    white-space: pre;
+}
+
+.highlight pre code {
     white-space: pre;
 }
 
