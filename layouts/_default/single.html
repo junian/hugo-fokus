@@ -9,7 +9,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <!-- Show Top Adsense -->
                 {{ if $.Param "adsense.showTop" }}
-                    {{ partial "adsense/responsive.html" . }}
+                    {{ partial "widget/adsense-responsive.html" . }}
                 {{ end }}
                 <div class="post-body entry-content">
                     {{ if $.Site.Params.autoFigure }}
@@ -23,7 +23,7 @@
                 
                 <!-- Show Bottom Adsense -->
                 {{ if $.Param "adsense.showBottom" }}
-                    {{ partial "adsense/responsive.html" . }}
+                    {{ partial "widget/adsense-responsive.html" . }}
                 {{ end }}
 
                 <!-- Content and Code License -->
@@ -43,9 +43,7 @@
                 </div>
                 {{ end }}
 
-                {{ if $.Param "commentVisible" }}
-                {{ template "_internal/disqus.html" . }}
-                {{ end }}
+                {{ partial "widget/disqus.html" . }}
             </div>
         </div>
     </div>
