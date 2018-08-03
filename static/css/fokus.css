@@ -1002,3 +1002,11 @@ pre.prettyprint {
     word-wrap: normal;
     white-space: pre;
 }
+
+#navbar-toggle-cbox {
+    display:none;
+}
+
+#navbar-toggle-cbox:checked ~ .collapse {
+    display: block;
+}

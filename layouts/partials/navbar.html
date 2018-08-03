@@ -2,11 +2,14 @@
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top" id="mainNav">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
+        <input type="checkbox" id="navbar-toggle-cbox">
         <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <label for="navbar-toggle-cbox" class="navbar-toggle" data-toggle="collapse" data-target="#navitemlist-left" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
-                Menu <i class="fa fa-bars"></i>
-            </button>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </label>
             <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
         </div>
 
