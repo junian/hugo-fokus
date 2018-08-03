@@ -1,0 +1,12 @@
+{{ with .Site.Params.Widget.buymeacoffee }}
+<p>
+Did this writing helpful, or save your valuable time?
+You can support me by sending me a cup of coffee with the coffee button right here — you'll have my eternal gratitude!
+</p>
+<p>
+    <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/{{ . }}">
+        <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee">
+        <span style="margin-left:5px">Buy me a coffee</span>
+    </a>
+</p>
+{{ end }}

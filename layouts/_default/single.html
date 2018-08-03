@@ -23,19 +23,22 @@
 
                 <hr class='section-divider'/>
                 
-                <!-- Show Bottom Adsense -->
-                {{ if $.Param "adsense.showBottom" }}
-                    {{ partial "widget/adsense-responsive.html" . }}
+                <!-- Buy me a coffee -->
+                {{ partial "widget/buymeacoffee.html" . }}
+
+                <!-- Show AddThis if enabled -->
+                {{ if .Site.Params.Widget.addThis }}
+                    {{ partial "widget/addthis.html" . }}
                 {{ end }}
 
                 <!-- Content and Code License -->
                 {{ if $.Param "license.visible" }}
                     {{ partial "license.html" . }}
                 {{ end }}
-
-                <!-- Show AddThis if enabled -->
-                {{ if .Site.Params.Widget.addThis }}
-                    {{ partial "widget/addthis.html" . }}
+                
+                <!-- Show Bottom Adsense -->
+                {{ if $.Param "adsense.showBottom" }}
+                    {{ partial "widget/adsense-responsive.html" . }}
                 {{ end }}
 
                 <!-- Show related articles -->
