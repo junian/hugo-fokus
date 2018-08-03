@@ -4,6 +4,8 @@
 <script src="{{ "vendor/jquery/jquery.min.js" | relURL }}"></script>
 -->
 
+{{ $clipboardjs := resources.Get "vendor/clipboard.js/dist/clipboard.min.js" }}
+
 <!-- Bootstrap Core JavaScript -->
 <!--
 <script src="{{ "vendor/bootstrap/js/bootstrap.min.js" | relURL }}"></script>
@@ -22,7 +24,7 @@
 <script src="{{ "js/fokus.js" | relURL }}"></script>
 -->
 
-{{ $appjs := slice $jquery $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
+{{ $appjs := slice $jquery $clipboardjs $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $appjs.Permalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 
 {{ template "_internal/google_analytics.html" . }}
