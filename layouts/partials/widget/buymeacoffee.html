@@ -1,12 +1,18 @@
-{{ with .Site.Params.Widget.buymeacoffee }}
-<p>
-Did this writing helpful, or save your valuable time?
-You can support me by sending me a cup of coffee with the coffee button right here — you'll have my eternal gratitude!
-</p>
-<p>
-    <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/{{ . }}">
-        <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee">
-        <span style="margin-left:5px">Buy me a coffee</span>
-    </a>
-</p>
+{{ if .Site.Params.Widget.buymeacoffee }}
+    {{ if .Site.Params.Widget.buymeacoffeeMessage }}
+        <p>{{ .Site.Params.Widget.buymeacoffeeMessage }}</p>
+    {{ else }}
+        <p>
+        Hello there, thanks for reading.
+        Did you find this writing helpful, or save your valuable time?
+        If so, you can support me by sending a cup of coffee with the button right here — you'll have my eternal gratitude!
+        </p>
+    {{ end }}
+
+    <p>
+        <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/{{ .Site.Params.Widget.buymeacoffee }}">
+            <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee">
+            <span style="margin-left:5px">Buy me a coffee</span>
+        </a>
+    </p>
 {{ end }}
