@@ -14,7 +14,7 @@
             <div class="post-preview">
                 <a href="{{ .Permalink }}">
                     <h2 class="post-title">
-                        {{ if .Draft }}[Draft] {{ end }}{{ .Title }}
+                        {{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}
                     </h2>
                     {{ with .Description }}
                     <h3 class="post-subtitle">
