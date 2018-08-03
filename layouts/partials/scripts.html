@@ -5,10 +5,11 @@
 -->
 
 <!-- Bootstrap Core JavaScript -->
-{{ $bootstrapjs := resources.Get "vendor/bootstrap/js/bootstrap.min.js" }}
 <!--
 <script src="{{ "vendor/bootstrap/js/bootstrap.min.js" | relURL }}"></script>
 -->
+{{ $bstransition := resources.Get "vendor/bootstrap/js/transition.js" }}
+{{ $bscollapse := resources.Get "vendor/bootstrap/js/collapse.js" }}
 
 <!-- Theme JavaScript -->
 <!--
@@ -21,7 +22,7 @@
 <script src="{{ "js/fokus.js" | relURL }}"></script>
 -->
 
-{{ $appjs := slice $jquery $bootstrapjs $fokusjs | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
+{{ $appjs := slice $jquery $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $appjs.Permalink }}"></script>
 
 {{ template "_internal/google_analytics.html" . }}
