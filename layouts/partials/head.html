@@ -36,9 +36,11 @@
     <!-- Fokus CSS -->
     <link rel="stylesheet" href="{{ "css/fokus.css" | relURL }}">
 
+    <!--
     {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
-
+    -->
+    
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="{{ "vendor/font-awesome/css/font-awesome.min.css" | relURL }}">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800{{ if .Site.Params.Widget.buymeacoffee}}%7CCookie{{ end }}' rel='stylesheet' type='text/css'>
