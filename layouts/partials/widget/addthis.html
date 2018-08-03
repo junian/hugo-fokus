@@ -1,2 +1,8 @@
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class='addthis_inline_share_toolbox'></div>
+{{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div class='addthis_inline_share_toolbox'></div>
+{{ else }}
+    <div class="alert alert-info" role="alert">
+        <strong>Attention! </strong>AddThis not available by default when the website is previewed locally.
+    </div>
+{{ end }}
