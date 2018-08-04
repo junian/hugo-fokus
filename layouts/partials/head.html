@@ -29,6 +29,9 @@
     <!-- Google News -->
     {{ template "_internal/google_news.html" . }}
 
+    <!-- ld json structured data -->
+    {{ partial "meta/structureddata.html" . }}
+
     {{ if .IsHome }}
     <title>{{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}</title>
     {{ else }}
