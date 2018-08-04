@@ -10,12 +10,20 @@
         "name" : "{{ .Title }}",
         "headline" : "{{ .Title }}",
         "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
-        "inLanguage" : "en-US",
-        "author" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-        "creator" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-        "publisher": "{{ range .Site.Author }}{{ . }}{{ end }}",
-        "accountablePerson" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-        "copyrightHolder" : "{{ range .Site.Author }}{{ . }}{{ end }}",
+        "image" : "{{ with .Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ end }}",
+        "inLanguage" : "{{ with .Site.LanguageCode }}{{.}}{{end}}",
+        "author" : "{{ with $.Site.Author.name }}{{.}}{{end}}",
+        "creator" : "{{ with $.Site.Author.name }}{{.}}{{end}}",
+        "publisher": {
+            "@type" : "Organization",
+            "name" : "{{ with $.Site.Author.name }}{{.}}{{end}}",
+            "logo" : {
+                "@type" : "ImageObject",
+                "url" : "{{ with .Site.Params.logo }}{{.}}{{end}}"
+            }
+        },
+        "accountablePerson" : "{{ with $.Site.Author.name }} ({{.}}){{end}}",
+        "copyrightHolder" : "{{ with $.Site.Author.name }} ({{.}}){{end}}",
         "copyrightYear" : "{{ .Date.Format "2006" }}",
         "datePublished": "{{ .Date }}",
         "dateModified" : "{{ .Date }}",
