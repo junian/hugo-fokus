@@ -245,6 +245,7 @@ hr.small {
     font-weight: 700;
 }
 
+.post-body figure figcaption,
 .caption {
     text-align: center;
     font-size: 14px;

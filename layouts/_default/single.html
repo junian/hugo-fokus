@@ -24,7 +24,9 @@
                 <!-- Article Content -->
                 <div class="post-body entry-content">
                     {{ if $.Site.Params.autoFigure }}
-                        {{ .Content | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\"><figcaption class='caption text-muted'>$2</figcaption></figure>" | safeHTML }}
+                        {{ $contentAltTitle := .Content | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" "<figure><img src=\"$1\" alt=\"$2\" title=\"$3\"><figcaption class='text-muted'>$2</figcaption></figure>" | safeHTML }}
+                        {{ $contentAlt := $contentAltTitle | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\"><figcaption class='text-muted'>$2</figcaption></figure>" | safeHTML }}
+                        {{ $contentAlt }}
                     {{ else }}
                         {{ .Content }}
                     {{ end }}
