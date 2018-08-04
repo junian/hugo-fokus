@@ -22,7 +22,9 @@
 
     <!-- Opengraph -->
     {{ template "_internal/opengraph.html" . }}
-    
+    {{ with .Site.Social.facebook_app_id }}<meta content='{{ . }}' property='fb:app_id'>{{ end }}
+    {{ with .Site.Social.facebook_pages }}<meta content='{{ . }}' property='fb:pages'>{{ end }}
+
     <!-- Twitter Card -->
     {{ template "_internal/twitter_cards.html" . }}
 
