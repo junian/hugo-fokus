@@ -17,8 +17,18 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
 
-    {{ partial "meta/opengraph.html" . }}
+    <!-- Schema -->
+    {{ template "_internal/schema.html" . }}
+
+    <!-- Opengraph -->
+    {{ template "_internal/opengraph.html" . }}
     
+    <!-- Twitter Card -->
+    {{ template "_internal/twitter_cards.html" . }}
+
+    <!-- Google News -->
+    {{ template "_internal/google_news.html" . }}
+
     {{ if .IsHome }}
     <title>{{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}</title>
     {{ else }}
