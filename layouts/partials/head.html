@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    
+
     <!-- Verification -->
     {{ partial "meta/verification.html" . }}
 
@@ -56,6 +56,8 @@
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="{{ "vendor/font-awesome/css/font-awesome.min.css" | relURL }}">
+
+    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800{{ if .Site.Params.Widget.buymeacoffee}}%7CCookie{{ end }}' rel='stylesheet' type='text/css'>
 
     {{ if .RSSLink }}

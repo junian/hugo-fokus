@@ -356,7 +356,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 .pager li>a,
-.pager li>span {
+.pager li>span,
+.social-share a {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-size: 14px;
@@ -365,6 +366,7 @@ form .row:first-child .floating-label-form-group {
     padding: 10px 5px;
     background-color: white;
     border-radius: 0;
+    white-space: nowrap;
 }
 
 .pager li>a:hover,
@@ -525,25 +527,32 @@ time.published {
 
 .post-body hr,
 hr.section-divider {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
     display: block;
     border: 0;
     text-align: center;
+    overflow: visible;
     margin-top: 52px;
     margin-bottom: 42px;
 }
 
 .post-body hr:before,
 hr.section-divider:before {
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+    font-family: medium-content-slab-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+    letter-spacing: .6em;
     content: '...';
     display: inline-block;
     margin-left: .6em;
-    color: rgba(0, 0, 0, .6);
+    color: rgba(0,0,0,.68);
     position: relative;
     top: -30px;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 28px;
-    letter-spacing: .6em;
 }
 
 .adcontainer {
@@ -888,7 +897,8 @@ input.gsc-search-button-v2 {
         font-size: 36px;
     }
     .pager li>a,
-    .pager li>span {
+    .pager li>span,
+    .social-share a {
         font-size: 14px;
         padding: 15px 25px;
     }
@@ -1012,4 +1022,38 @@ div#blog-header {
 
 #navbar-toggle-cbox:checked ~ .collapse {
     display: block;
+}
+.social-share {
+    margin: 30px 0;
+    line-height: 2.5;
+}
+
+.social-share .btn-twitter-share {
+    color: #fcfbf7;
+    background-color: #55acee;
+}
+
+.social-share .btn-facebook-share {
+    color: #fcfbf7;
+    background-color: #3b5998;
+}
+
+.social-share .btn-googleplus-share {
+    color: #fcfbf7;
+    background-color: #d94734;
+}
+
+.social-share .btn-linkedin-share {
+    color: #fcfbf7;
+    background-color: #4875B4;
+}
+
+.social-share .btn-email-share {
+    color: #fcfbf7;
+    background-color: #97908F;
+}
+
+.social-share .btn-feed-share {
+    color: #fcfbf7;
+    background-color: #dd7346;
 }
