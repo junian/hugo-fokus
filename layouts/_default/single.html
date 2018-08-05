@@ -43,7 +43,7 @@
     <div class = "row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
-            {{ partial "widget/socialshare.html" . }}
+            {{ partial "widget/social-share.html" . }}
 
             <!-- Show Bottom Adsense -->
             {{ if $.Param "adsense.showBottom" }}
@@ -69,6 +69,11 @@
                 {{ partial "related.html" . }}
             </div>
             {{ end }}
+
+            <footer class="post-footer">
+                {{ partial "widget/author-profile.html" . }}
+                {{ partial "widget/email-subscribe.html" . }}
+            </footer>
 
             <!-- Disqus comments -->
             {{ partial "widget/disqus.html" . }}
