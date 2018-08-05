@@ -43,6 +43,7 @@
     <div class = "row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
+            <!-- Native social share -->
             {{ partial "widget/social-share.html" . }}
 
             <!-- Show Bottom Adsense -->
@@ -71,7 +72,12 @@
             {{ end }}
 
             <footer class="post-footer">
+                <!-- Author profile -->
+                
                 {{ partial "widget/author-profile.html" . }}
+               
+
+                <!-- Email Subscribe -->
                 {{ partial "widget/email-subscribe.html" . }}
             </footer>
 
