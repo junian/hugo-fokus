@@ -44,18 +44,17 @@
     {{ end }}
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ "vendor/bootstrap/css/bootstrap.min.css" | relURL }}">
+    {{ $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" }}
 
     <!-- Theme CSS -->
-    <!--
-    <link rel="stylesheet" href="{{ "css/clean-blog.min.css" | relURL }}">
-    -->
-
-    <!-- Fokus CSS -->
-    <link rel="stylesheet" href="{{ "css/fokus.css" | relURL }}">
+    {{ $fokuscss := resources.Get "css/fokus.css" }}
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="{{ "vendor/font-awesome/css/font-awesome.min.css" | relURL }}">
+    {{ $fontawesomecss := resources.Get "vendor/font-awesome/css/font-awesome.min.css" }}
+
+    <!-- Bundle css -->
+    {{ $appcss := slice $bootstrapcss $fokuscss $fontawesomecss | resources.Concat "vendor/font-awesome/css/bundle.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $appcss.Permalink }}" integrity="{{ $appcss.Data.Integrity }}">
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800{{ if .Site.Params.Widget.buymeacoffee}}%7CCookie{{ end }}' rel='stylesheet' type='text/css'>
