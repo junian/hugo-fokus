@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-            {{ $paginator := .Paginate (where .Pages "Params.hidden" "ne" true) }} 
+            {{ $paginator := .Paginate (where .Pages "Params.type" "ne" "staticpage") }} 
 
             {{ range sort .Paginator.Pages }}
 

@@ -1,6 +1,12 @@
 {{ define "main" }}
 
-{{ partial "postheader.html" . }}
+{{ if eq .Params.type "staticpage" }}
+    {{ partial "header.html" . }}
+{{ else }}
+    {{ partial "postheader.html" . }}
+{{ end }}
+
+{{ if ne .Params.type "staticpage" }}
 
 <div class="container">
     <div class = "row">
@@ -14,6 +20,8 @@
         </div>
     </div>
 </div>
+
+{{ end }}
 
 <!-- Post Content -->
 <article>
@@ -38,6 +46,8 @@
         </div>
     </div>
 </article>
+
+{{ if ne .Params.type "staticpage" }}
 
 <div class="container">
     <div class = "row">
@@ -92,5 +102,7 @@
         </div>
     </div>
 </div>
+
+{{ end }}
 
 {{ end }}
