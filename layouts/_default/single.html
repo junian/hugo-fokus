@@ -50,6 +50,11 @@
                 {{ partial "widget/adsense-responsive.html" . }}
             {{ end }}
 
+            <!-- Blockadblock message -->
+            {{ if .Site.Params.Widget.blockAdBlock }}
+                {{ partial "widget/blockadblock.html" . }}
+            {{ end }}
+
             <!-- Buy me a coffee -->
             {{ partial "widget/buymeacoffee.html" . }}
 

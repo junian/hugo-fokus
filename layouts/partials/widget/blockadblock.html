@@ -1,0 +1,5 @@
+{{ with .Site.Params.Widget.blockAdBlock }}
+<div id="blockadblock" class="alert alert-success hidden" role="alert">
+    {{ . | safeHTML }}
+</div>
+{{ end }}
