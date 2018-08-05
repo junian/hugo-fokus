@@ -1,22 +1,19 @@
-<div class="author-profile" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<div class="author-profile">
     <figure class="author-image">
-        <img alt="Junian Triajianto" class="img" itemprop="image" src="//lh5.googleusercontent.com/-lqHOkloxmRE/AAAAAAAAAAI/AAAAAAAACu4/9acYEDSmpMw/s512-c/photo.jpg"
-            title="Junian Triajianto">
+        <img alt="{{ with $.Site.Author.name }}{{.}}{{end}}" class="img" src="https://www.gravatar.com/avatar/{{ $.Site.Author.email | md5 }}?s=256"
+            title="{{ with $.Site.Author.name }}{{.}}{{end}}">
     </figure>
-    <a class="g-profile" href="https://plus.google.com/106765612532582215650" itemprop="url" rel="author" title="author profile">
-        <h4 itemprop="name">
-            Junian Triajianto
+    <a class="g-profile" href="{{ with $.Site.Author.url }}{{.}}{{end}}" rel="author" title="author profile">
+        <h4>
+            {{ with $.Site.Author.name }}{{.}}{{end}}
         </h4>
     </a>
-    <p itemprop="description">
-        A Software Engineer who enjoys problem solving with
-        <b>C#</b>&nbsp;and any technology related to it like
-        <b>ASP.NET</b>,&nbsp;
-        <b>Xamarin</b>, and&nbsp;
-        <b>Unity 3D</b>. If he's not doing his
-        <a href="https://pro.junian.net">job</a>, he's probably writing some blog articles or daydreaming for a fiction story.
+    <p>
+        {{ with $.Site.Author.description }}{{ . | safeHTML }}{{end}}
     </p>
 </div>
+
+<!--
 <div class="post-footer-line">
     <span class="post-location">
         <i aria-hidden="true" class="fa fa-map-marker"></i>
@@ -25,3 +22,4 @@
         </a>
     </span>
 </div>
+-->
