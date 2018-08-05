@@ -71,15 +71,15 @@
             </div>
             {{ end }}
 
-            <footer class="post-footer">
-                <!-- Author profile -->
-                
-                {{ partial "widget/author-profile.html" . }}
-               
+            <!-- Author profile -->
+            <!--                            
+            {{ partial "widget/author-profile.html" . }}
+            -->
 
-                <!-- Email Subscribe -->
+            <!-- Email Subscribe -->
+            <div class="post-body entry-content">
                 {{ partial "widget/email-subscribe.html" . }}
-            </footer>
+            </div>
 
             <!-- Disqus comments -->
             {{ partial "widget/disqus.html" . }}
