@@ -31,13 +31,22 @@
 
                 <!-- Article Content -->
                 <div class="post-body entry-content">
+                    {{ .Scratch.Set "finalContent" "" }}
+                    
                     {{ if $.Site.Params.autoFigure }}
                         {{ $contentAltTitle := .Content | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" "<figure><img src=\"$1\" alt=\"$2\" title=\"$3\"><figcaption class='text-muted'>$2</figcaption></figure>" | safeHTML }}
                         {{ $contentAlt := $contentAltTitle | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\"><figcaption class='text-muted'>$2</figcaption></figure>" | safeHTML }}
-                        {{ $contentAlt }}
+                        {{ .Scratch.Set "finalContent" $contentAlt }}
                     {{ else }}
-                        {{ .Content }}
+                        {{ .Scratch.Set "finalContent" .Content }}
                     {{ end }}
+
+                    {{ if $.Param "adsense.showMiddle" }}
+                        {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partial "widget/adsense-responsive.html" .) | safeHTML }}
+                    {{ else }}
+                        {{ .Scratch.Get "finalContent" }}
+                    {{ end }}
+
                 </div>
 
                 <hr class='section-divider'/>
