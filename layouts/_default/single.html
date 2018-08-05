@@ -41,7 +41,7 @@
                         {{ .Scratch.Set "finalContent" .Content }}
                     {{ end }}
 
-                    {{ if $.Param "adsense.showMiddle" }}
+                    {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "staticpage")) }}
                         {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partial "widget/adsense-responsive.html" .) | safeHTML }}
                     {{ else }}
                         {{ .Scratch.Get "finalContent" }}
