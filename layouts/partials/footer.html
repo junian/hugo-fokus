@@ -1,25 +1,51 @@
 <hr />
 
 <!-- Footer -->
-<footer>
+<footer class="blog-footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    {{ if isset .Site.Params "social" }}
-                    {{ range .Site.Params.social }}
-                        <li>
-                            <a href="{{ .url }}">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-{{ .title }} fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    {{ end }}
-                    {{ end }}
-                </ul>
-                <p class="copyright text-muted">{{ .Site.Copyright | safeHTML }}</p>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 blog-footer section" id="blog-footer">
+                <div>
+                    <ul class="list-inline text-center">
+                        {{ if isset .Site.Params "social" }} 
+                            {{ range .Site.Params.social }}
+                                <li>
+                                    <a href="{{ .url }}">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-{{ .title }} fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            {{ end }} 
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<footer class="blog-footer-credits">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="blog-credits col-md-12 section" id="blog-credits">
+                <div>
+                    . {{ range .Site.Params.Menu.footer }}<a href="{{ .url }}">{{ .title }}</a> · {{ end }}
+                </div>
+                <div>
+                    {{ .Site.Copyright | safeHTML }}
+                </div>
+                <div>
+                    Proudly powered with
+                    <a href="https://gohugo.io" rel="nofollow" target="_blank">
+                        Hugo
+                    </a>
+                    and 
+                    <a href="https://github.com/junian/fokus" rel="nofollow" target="_blank">
+                        Fokus
+                    </a>
+                </div>
             </div>
         </div>
     </div>
