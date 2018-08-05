@@ -15,7 +15,7 @@ $(function() {
 
     function adBlockDetected() {
         console.log("adblock detected");
-        $('noscript').before($('noscript').text());
+        $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
         $('#blockadblock').removeClass('hidden');
     }
 
