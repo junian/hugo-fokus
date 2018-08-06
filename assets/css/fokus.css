@@ -1062,3 +1062,12 @@ div#blog-header {
     color: #fcfbf7;
     background-color: #dd7346;
 }
+
+.caption.nextprev {
+    height: 250px;
+    font-style: normal;
+}
+
+.caption.nextprev h3{
+    line-height: 1.3;
+}
