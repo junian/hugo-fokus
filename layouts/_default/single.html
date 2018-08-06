@@ -6,27 +6,26 @@
     {{ partial "postheader.html" . }}
 {{ end }}
 
-{{ if ne .Params.type "staticpage" }}
-
-<div class="container">
-    <div class = "row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-            <!-- Show Top Adsense -->
-            {{ if $.Param "adsense.showTop" }}
-                {{ partial "widget/adsense-responsive.html" . }}
-            {{ end }}
-            
-        </div>
-    </div>
-</div>
-
-{{ end }}
-
 <!-- Post Content -->
 <article>
     <div class="container">
-        <div class="row">
+
+        {{ if ne .Params.type "staticpage" }}
+
+            <div class = "row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+                    <!-- Show Top Adsense -->
+                    {{ if $.Param "adsense.showTop" }}
+                        {{ partial "widget/adsense-responsive.html" . }}
+                    {{ end }}
+                    
+                </div>
+            </div>
+        
+        {{ end }}
+
+        <div class="row main-content">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
                 <!-- Article Content -->
@@ -55,72 +54,70 @@
 
                 </div>
 
-                <hr class='section-divider'/>
-                
             </div>
         </div>
+
+        <hr class='section-divider'/>
+
+        {{ if ne .Params.type "staticpage" }}
+
+            <div class = "row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+                    <!-- Content and Code License -->
+                    {{ if $.Param "license.visible" }}
+                        {{ partial "license.html" . }}
+                    {{ end }}
+
+                    <!-- Native social share -->
+                    {{ partial "widget/social-share.html" . }}
+
+                    <!-- Show Bottom Adsense -->
+                    {{ if $.Param "adsense.showBottom" }}
+                        {{ partial "widget/adsense-responsive.html" . }}
+                    {{ end }}
+
+                    <!-- Blockadblock message -->
+                    {{ if .Site.Params.Widget.blockAdBlock }}
+                        {{ partial "widget/blockadblock.html" . }}
+                    {{ end }}
+
+                    <!-- Buy me a coffee -->
+                    {{ partial "widget/buymeacoffee.html" . }}
+
+                    <!-- Show AddThis if enabled -->
+                    {{ if .Site.Params.Widget.addThis }}
+                        {{ partial "widget/addthis.html" . }}
+                    {{ end }}
+
+                    <!-- Show related articles -->
+                    {{ if $.Param "relatedVisible" }}
+                    <div class="post-body entry-content">
+                        {{ partial "related.html" . }}
+                    </div>
+                    {{ end }}
+
+                    <!-- Author profile -->
+                    <!--                            
+                    {{ partial "widget/author-profile.html" . }}
+                    -->
+
+                    <!-- Email Subscribe -->
+                    <div class="post-body entry-content">
+                        {{ partial "widget/email-subscribe.html" . }}
+                    </div>
+
+                    <!-- Disqus comments -->
+                    {{ partial "widget/disqus.html" . }}
+                    
+                </div>
+            </div>
+
+            {{ partial "nextprev.html" . }}
+
+        {{ end }}
+
     </div>
 </article>
-
-{{ if ne .Params.type "staticpage" }}
-
-<div class="container">
-    <div class = "row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-            <!-- Native social share -->
-            {{ partial "widget/social-share.html" . }}
-
-            <!-- Show Bottom Adsense -->
-            {{ if $.Param "adsense.showBottom" }}
-                {{ partial "widget/adsense-responsive.html" . }}
-            {{ end }}
-
-            <!-- Blockadblock message -->
-            {{ if .Site.Params.Widget.blockAdBlock }}
-                {{ partial "widget/blockadblock.html" . }}
-            {{ end }}
-
-            <!-- Buy me a coffee -->
-            {{ partial "widget/buymeacoffee.html" . }}
-
-            <!-- Show AddThis if enabled -->
-            {{ if .Site.Params.Widget.addThis }}
-                {{ partial "widget/addthis.html" . }}
-            {{ end }}
-
-            <!-- Show related articles -->
-            {{ if $.Param "relatedVisible" }}
-            <div class="post-body entry-content">
-                {{ partial "related.html" . }}
-            </div>
-            {{ end }}
-
-            <!-- Author profile -->
-            <!--                            
-            {{ partial "widget/author-profile.html" . }}
-            -->
-
-            <!-- Email Subscribe -->
-            <div class="post-body entry-content">
-                {{ partial "widget/email-subscribe.html" . }}
-            </div>
-
-            <!-- Disqus comments -->
-            {{ partial "widget/disqus.html" . }}
-            
-            <!-- Content and Code License -->
-            {{ if $.Param "license.visible" }}
-                {{ partial "license.html" . }}
-            {{ end }}
-
-        </div>
-    </div>
-
-    {{ partial "nextprev.html" . }}
-
-</div>
-
-{{ end }}
 
 {{ end }}

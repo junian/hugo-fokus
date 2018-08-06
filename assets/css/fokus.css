@@ -1064,10 +1064,16 @@ div#blog-header {
 }
 
 .caption.nextprev {
-    height: 250px;
+    height: 210px;
     font-style: normal;
 }
 
+.caption.nextprev h2{
+    font-size: 24px;
+}
+
 .caption.nextprev h3{
+    margin-top: 10px;
+    font-size: 18px;
     line-height: 1.3;
 }
