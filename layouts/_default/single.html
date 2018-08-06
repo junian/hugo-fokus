@@ -64,6 +64,11 @@
             <div class = "row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
+                    <!-- Show Bottom Adsense -->
+                    {{ if $.Param "adsense.showBottom" }}
+                        {{ partial "widget/adsense-responsive.html" . }}
+                    {{ end }}
+                    
                     <!-- Content and Code License -->
                     {{ if $.Param "license.visible" }}
                         {{ partial "license.html" . }}
@@ -71,11 +76,6 @@
 
                     <!-- Native social share -->
                     {{ partial "widget/social-share.html" . }}
-
-                    <!-- Show Bottom Adsense -->
-                    {{ if $.Param "adsense.showBottom" }}
-                        {{ partial "widget/adsense-responsive.html" . }}
-                    {{ end }}
 
                     <!-- Blockadblock message -->
                     {{ if .Site.Params.Widget.blockAdBlock }}
