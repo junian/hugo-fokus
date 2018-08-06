@@ -2,25 +2,40 @@
 <div class="row">
     <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1">
         {{ if .NextInSection }}
-        
-        <a href="{{ .NextInSection.Permalink }}" class="thumbnail">
-            <h2 class="text-center">&larr; Prev</h2>
-            <div class="caption nextprev">
-                <h3>{{ .NextInSection.Title }}</h3>
-                <p>{{ .NextInSection.Description }}</p>
-            </div>
-        </a>
+            <a href="{{ .NextInSection.Permalink }}" class="thumbnail">
+                <h2 class="text-center">&larr; Prev</h2>
+                <div class="caption nextprev">
+                    <h3>{{ .NextInSection.Title }}</h3>
+                    <p>{{ .NextInSection.Description }}</p>
+                </div>
+            </a>
+        {{ else }}
+            <a href="#" class="thumbnail">
+                <h2 class="text-center">&larr; Prev</h2>
+                <div class="caption nextprev">
+                    <h3>No Content</h3>
+                    <p>You're at the first page, there is nothing before this content.</p>
+                </div>
+            </a>
         {{ end }}
     </div>
     <div class="col-lg-4 col-md-5">
         {{ if .PrevInSection }}
-        <a href="{{ .PrevInSection.Permalink }}" class="thumbnail">
-            <h2 class="text-center">Next &rarr;</h2>
-            <div class="caption nextprev">
-                <h3>{{ .PrevInSection.Title }}</h3>
-                <p>{{ .PrevInSection.Description }}</p>
-            </div>
-        </a>
+            <a href="{{ .PrevInSection.Permalink }}" class="thumbnail">
+                <h2 class="text-center">Next &rarr;</h2>
+                <div class="caption nextprev">
+                    <h3>{{ .PrevInSection.Title }}</h3>
+                    <p>{{ .PrevInSection.Description }}</p>
+                </div>
+            </a>
+        {{ else }}
+            <a href="#" class="thumbnail">
+                <h2 class="text-center">Next &rarr;</h2>
+                <div class="caption nextprev">
+                    <h3>No Content</h3>
+                    <p>You're at the last page, there is nothing after this content.</p>
+                </div>
+            </a>
         {{ end }}
     </div>
 </div>
