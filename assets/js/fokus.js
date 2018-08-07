@@ -32,6 +32,7 @@ function onAdBlockDetected() {
     $('#blockadblock').removeClass('hidden');
 }
 
+/*
 function detectAdBlockWithBlockAdblock() {
     // Function called if AdBlock is not detected
     function adBlockNotDetected() {
@@ -65,6 +66,46 @@ function detectAdBlockWithBlockAdblock() {
         // If the script does not load (blocked, integrity error, ...)
         // Then a detection is triggered
         console.log("importFAB error");
+        adBlockDetected(); 
+    };
+
+    importFAB.integrity = fabintegrity;
+    importFAB.crossOrigin = 'anonymous';
+    importFAB.src = fabjs;
+    
+    document.head.appendChild(importFAB);
+}
+*/
+
+function detectAdBlockWithABCheck() {
+
+    function adBlockNotDetected() {
+        console.log("adblock not detected");
+    }
+
+    function adBlockDetected() {
+        console.log("adblock detected");
+        onAdBlockDetected();
+    }
+
+    var importFAB = document.createElement('script');
+
+    importFAB.onload = function() {
+        if(typeof abcheck === 'undefined') {
+            console.log("abcheck undefined");
+            adBlockDetected();
+        }
+        else {
+            if(abcheck === true) {
+                adBlockNotDetected();
+            } else {
+                adBlockDetected();
+            }
+        }
+    };
+    
+    importFAB.onerror = function() {
+        console.log("import abcheck error");
         adBlockDetected(); 
     };
 
@@ -109,5 +150,6 @@ function detectAdblockWithGA() {
 $( document ).ready(function() {
     console.log( "ready!" );
     runCookieConsent();
-    detectAdBlockWithBlockAdblock();
+    // detectAdBlockWithBlockAdblock();
+    detectAdBlockWithABCheck();
 });

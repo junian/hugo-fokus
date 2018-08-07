@@ -362,7 +362,7 @@ form .row:first-child .floating-label-form-group {
 
 .pager li>a,
 .pager li>span,
-.social-share a {
+.go-social a {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-size: 14px;
@@ -903,7 +903,7 @@ input.gsc-search-button-v2 {
     }
     .pager li>a,
     .pager li>span,
-    .social-share a {
+    .go-social a {
         font-size: 14px;
         padding: 15px 25px;
     }
@@ -1028,37 +1028,37 @@ div#blog-header {
 #navbar-toggle-cbox:checked ~ .collapse {
     display: block;
 }
-.social-share {
+.go-social {
     margin: 30px 0;
     line-height: 2.5;
 }
 
-.social-share .btn-twitter-share {
+.go-social .btn-twtrsh {
     color: #fcfbf7;
     background-color: #55acee;
 }
 
-.social-share .btn-facebook-share {
+.go-social .btn-fbsh {
     color: #fcfbf7;
     background-color: #3b5998;
 }
 
-.social-share .btn-googleplus-share {
+.go-social .btn-gplussh {
     color: #fcfbf7;
     background-color: #d94734;
 }
 
-.social-share .btn-linkedin-share {
+.go-social .btn-lnkinsh {
     color: #fcfbf7;
     background-color: #4875B4;
 }
 
-.social-share .btn-email-share {
+.go-social .btn-email-share {
     color: #fcfbf7;
     background-color: #97908F;
 }
 
-.social-share .btn-feed-share {
+.go-social .btn-feed-share {
     color: #fcfbf7;
     background-color: #dd7346;
 }
