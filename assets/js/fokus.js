@@ -10,14 +10,32 @@ if (typeof jQuery === 'undefined') {
     }
 }(jQuery);
 
+function runCookieConsent() {
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#edeff5",
+                "text": "#838391"
+            },
+            "button": {
+                "background": "#4b81e8"
+            }
+        },
+        "content": {
+            "href": "https://www.junian.net/privacy-policy#cookies-and-web-beacons"
+        }
+    });
+}
 
-$(function() {
+function onAdBlockDetected() {
+    $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
+    $('#blockadblock').removeClass('hidden');
+}
 
-    /*
+function detectAdBlockWithFAdblock() {
     function adBlockDetected() {
         console.log("adblock detected");
-        $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
-        $('#blockadblock').removeClass('hidden');
+        onAdBlockDetected();
     }
 
     function adBlockNotDetected() {
@@ -30,39 +48,9 @@ $(function() {
         blockAdBlock.setOption({ debug: false });
         blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
     }
-    
-    function checkAgain() {
-        $('#block-adb-enabled').hide();
-        $('#block-adb-not-enabled').hide();
-        // setTimeout 300ms for the recheck is visible when you click on the button
-        setTimeout(function() {
-            if(typeof blockAdBlock === 'undefined') {
-                adBlockDetected();
-            } else {
-                blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
-                blockAdBlock.check();
-            }
-        }, 300);
-    }
-    */
+}
 
-    window.addEventListener("load", function()  {
-        window.cookieconsent.initialise({
-          "palette": {
-            "popup": {
-              "background": "#edeff5",
-              "text": "#838391"
-            },
-            "button": {
-              "background": "#4b81e8"
-            }
-          },
-          "content": {
-            "href": "https://www.junian.net/privacy-policy#cookies-and-web-beacons"
-          }
-        });
-    });
-
+function detectAdblockByDiv() {
     var adBlockEnabled = false;
     var testAd = document.createElement('div');
     testAd.innerHTML = '&nbsp;';
@@ -75,9 +63,21 @@ $(function() {
         testAd.remove();
         console.log('AdBlock Enabled? ', adBlockEnabled);
         if(adBlockEnabled === true) {
-            $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
-            $('#blockadblock').removeClass('hidden');
+            onAdBlockDetected();
         }
     }, 100);
-    
- });
+}
+
+function detectAdblockWithGA() {
+    if (typeof ga === 'undefined') {
+        console.log("ga undefined");
+        var ga = [0];
+    }
+
+    null == document.getElementsByTagName("iframe").item(ga.length - 1) && onAdBlockDetected();
+}
+
+$(window).load(function () {
+    runCookieConsent();
+    detectAdblockWithGA();
+});

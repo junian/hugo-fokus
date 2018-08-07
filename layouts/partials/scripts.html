@@ -20,6 +20,6 @@
 {{ $appjs := slice $jquery $cookieconsentjs $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $appjs.Permalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 
-{{ template "_internal/google_analytics_async.html" . }}
+{{ template "_internal/google_analytics.html" . }}
 
 {{ partial "widgetscripts.html" . }}
