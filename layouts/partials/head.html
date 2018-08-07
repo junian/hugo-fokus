@@ -52,8 +52,11 @@
     <!-- Custom Fonts -->
     {{ $fontawesomecss := resources.Get "vendor/font-awesome/css/font-awesome.min.css" }}
 
+    <!-- Cookie Consent CSS -->
+    {{ $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" }}
+
     <!-- Bundle css -->
-    {{ $appcss := slice $bootstrapcss $fokuscss $fontawesomecss | resources.Concat "vendor/font-awesome/css/bundle.css" | resources.Minify | resources.Fingerprint }}
+    {{ $appcss := slice $bootstrapcss $fokuscss $fontawesomecss $cookieconsentcss | resources.Concat "vendor/font-awesome/css/bundle.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $appcss.Permalink }}" integrity="{{ $appcss.Data.Integrity }}">
 
     <!-- Google Fonts -->

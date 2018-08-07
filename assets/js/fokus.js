@@ -44,4 +44,20 @@ $(function() {
         }, 300);
     }
 
+    window.addEventListener("load", function()  {
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#edeff5",
+              "text": "#838391"
+            },
+            "button": {
+              "background": "#4b81e8"
+            }
+          },
+          "content": {
+            "href": "https://www.junian.net/privacy-policy#cookies-and-web-beacons"
+          }
+        });
+    });
  });

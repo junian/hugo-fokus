@@ -11,10 +11,13 @@
 {{ $bstransition := resources.Get "vendor/bootstrap/js/transition.js" }}
 {{ $bscollapse := resources.Get "vendor/bootstrap/js/collapse.js" }}
 
+<!-- Cookie Consent js -->
+{{ $cookieconsentjs := resources.Get "vendor/cookieconsent/build/cookieconsent.min.js" }}
+
 <!-- Theme JavaScript -->
 {{ $fokusjs := resources.Get "js/fokus.js" }}
 
-{{ $appjs := slice $jquery $clipboardjs $blockadblock $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
+{{ $appjs := slice $jquery $cookieconsentjs $blockadblock $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $appjs.Permalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 
 {{ template "_internal/google_analytics_async.html" . }}
