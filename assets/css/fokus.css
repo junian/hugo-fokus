@@ -13,6 +13,7 @@ body {
     font-family: 'Lora', 'Times New Roman', serif;
     font-size: 20px;
     color: #404040;
+    background-color: #fcfbf7;
 }
 
 .post-body,
@@ -83,11 +84,11 @@ hr.small {
     max-width: 100px;
     margin: 15px auto;
     border-width: 4px;
-    border-color: white;
+    border-color: #fcfbf7;
 }
 
 .navbar-custom {
-    background: white;
+    background: #fcfbf7;
     position: absolute;
     top: 0;
     left: 0;
@@ -142,7 +143,7 @@ hr.small {
 .intro-header .post-heading,
 .intro-header .page-heading {
     padding: 100px 0 50px;
-    color: white;
+    color: #fcfbf7;
 }
 
 .intro-header .site-heading,
@@ -196,7 +197,7 @@ hr.small {
 }
 
 .intro-header .post-heading .meta a {
-    color: white;
+    color: #fcfbf7;
 }
 
 .post-title {
@@ -353,7 +354,7 @@ form .row:first-child .floating-label-form-group {
 .btn-default:focus {
     background-color: #0085a1;
     border: 1px solid #0085a1;
-    color: white;
+    color: #fcfbf7;
 }
 
 .pager {
@@ -369,14 +370,14 @@ form .row:first-child .floating-label-form-group {
     font-weight: 800;
     letter-spacing: 1px;
     padding: 10px 5px;
-    background-color: white;
+    background-color: #fcfbf7;
     border-radius: 0;
     white-space: nowrap;
 }
 
 .pager li>a:hover,
 .pager li>a:focus {
-    color: white;
+    color: #fcfbf7;
     background-color: #0085a1;
     border: 1px solid #0085a1;
 }
@@ -391,24 +392,24 @@ form .row:first-child .floating-label-form-group {
 }
 
 ::-moz-selection {
-    color: white;
+    color: #fcfbf7;
     text-shadow: none;
     background: #0085a1;
 }
 
 ::selection {
-    color: white;
+    color: #fcfbf7;
     text-shadow: none;
     background: #0085a1;
 }
 
 img::selection {
-    color: white;
+    color: #fcfbf7;
     background: transparent;
 }
 
 img::-moz-selection {
-    color: white;
+    color: #fcfbf7;
     background: transparent;
 }
 
@@ -862,7 +863,7 @@ input.gsc-search-button-v2 {
         border-bottom: 1px solid transparent;
     }
     .navbar-custom .navbar-brand {
-        color: white;
+        color: #fcfbf7;
         padding: 20px;
         height: 60px;
     }
@@ -871,7 +872,7 @@ input.gsc-search-button-v2 {
         color: rgba(255, 255, 255, 0.8);
     }
     .navbar-custom .navbar-left li a {
-        color: white;
+        color: #fcfbf7;
         padding: 20px 10px 20px 10px;
     }
     .navbar-custom .navbar-left li a:hover,
@@ -976,7 +977,7 @@ input.gsc-search-button-v2 {
         color: #0085a1;
     }
     .navbar-custom .navbar-left li a {
-        color: white;
+        color: #fcfbf7;
         padding: 20px;
     }
     .navbar-custom.is-visible {
@@ -1063,17 +1064,24 @@ div#blog-header {
     background-color: #dd7346;
 }
 
-.caption.nextprev {
-    height: 210px;
+.nextprev .caption {
     font-style: normal;
 }
 
-.caption.nextprev h2{
+.nextprev .caption h2{
     font-size: 24px;
 }
 
-.caption.nextprev h3{
+.nextprev .caption h3{
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.3;
+}
+
+.nextprev .next{
+    text-align: right;
+}
+
+.nextprev .previous{
+    text-align: left;
 }

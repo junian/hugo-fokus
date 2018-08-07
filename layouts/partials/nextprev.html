@@ -1,40 +1,32 @@
 <!-- Pager -->
-<div class="row">
-    <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1">
+<div class="row nextprev">
+    <div class="col-lg-6 col-md-6 next small">
         {{ if .NextInSection }}
-            <a href="{{ .NextInSection.Permalink }}" class="thumbnail">
-                <h2 class="text-center">&larr; Prev</h2>
-                <div class="caption nextprev">
-                    <h3>{{ .NextInSection.Title }}</h3>
-                    <p>{{ .NextInSection.Description }}</p>
-                </div>
+            <a href="{{ .NextInSection.Permalink }}" class="">
+                <h4>&larr; Next</h4>
+                <h3>{{ .NextInSection.Title }}</h3>
+                <p>{{ .NextInSection.Description }}</p>
             </a>
         {{ else }}
-            <a class="thumbnail disabled">
-                <h2 class="text-center">&larr; Prev</h2>
-                <div class="caption nextprev">
-                    <h3>No Content</h3>
-                    <p>You're at the first page, there is nothing before this content.</p>
-                </div>
+            <a class="disabled">
+                <h4>&larr; Next</h4>
+                <h3>No Content</h3>
+                <p>You're at the first page, there is nothing before this content.</p>
             </a>
         {{ end }}
     </div>
-    <div class="col-lg-4 col-md-5">
+    <div class="col-lg-6 col-md-6 previous small">
         {{ if .PrevInSection }}
-            <a href="{{ .PrevInSection.Permalink }}" class="thumbnail">
-                <h2 class="text-center">Next &rarr;</h2>
-                <div class="caption nextprev">
-                    <h3>{{ .PrevInSection.Title }}</h3>
-                    <p>{{ .PrevInSection.Description }}</p>
-                </div>
+            <a href="{{ .PrevInSection.Permalink }}" class="">
+                <h4>Prev &rarr;</h4>
+                <h3>{{ .PrevInSection.Title }}</h3>
+                <p>{{ .PrevInSection.Description }}</p>
             </a>
         {{ else }}
-            <a class="thumbnail disabled">
-                <h2 class="text-center">Next &rarr;</h2>
-                <div class="caption nextprev">
-                    <h3>No Content</h3>
-                    <p>You're at the last page, there is nothing after this content.</p>
-                </div>
+            <a class="disabled">
+                <h4>Prev &rarr;</h4>
+                <h3>No Content</h3>
+                <p>You're at the last page, there is nothing after this content.</p>
             </a>
         {{ end }}
     </div>
