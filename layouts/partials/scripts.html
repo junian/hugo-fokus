@@ -5,7 +5,17 @@
 {{ $clipboardjs := resources.Get "vendor/clipboard.js/dist/clipboard.min.js" }}
 
 <!-- blockadblock -->
-{{ $blockadblock := resources.Get "vendor/blockadblock/blockadblock.js" }}
+{{ $blockadblock := slice (resources.Get "vendor/blockadblock/blockadblock.js") | resources.Concat "js/blockadblock.js" | resources.Minify | resources.Fingerprint }}
+
+{{ .Scratch.Set "blockadblock" $blockadblock.Permalink }}
+
+{{ $abdetectjs := slice $blockadblock | resources.Concat "abdetect.js" }}
+
+{{ .Scratch.Set "blockadblock" $blockadblock.Permalink }}
+
+{{ $string := (printf "var fabjs = '%s'; var fabintegrity = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity)) }}
+{{ $targetPath := "js/vars.js" }}
+{{ $vars := $string | resources.FromString $targetPath }}
 
 <!-- Bootstrap Core JavaScript -->
 {{ $bstransition := resources.Get "vendor/bootstrap/js/transition.js" }}
@@ -17,7 +27,7 @@
 <!-- Theme JavaScript -->
 {{ $fokusjs := resources.Get "js/fokus.js" }}
 
-{{ $appjs := slice $jquery $cookieconsentjs $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
+{{ $appjs := slice $jquery $cookieconsentjs $vars $fokusjs $bstransition $bscollapse | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $appjs.Permalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 
 {{ template "_internal/google_analytics.html" . }}

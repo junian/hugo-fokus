@@ -32,24 +32,50 @@ function onAdBlockDetected() {
     $('#blockadblock').removeClass('hidden');
 }
 
-function detectAdBlockWithFAdblock() {
+function detectAdBlockWithBlockAdblock() {
+    // Function called if AdBlock is not detected
+    function adBlockNotDetected() {
+        console.log("adblock not detected");
+    }
+
+    // Function called if AdBlock is detected
     function adBlockDetected() {
         console.log("adblock detected");
         onAdBlockDetected();
     }
 
-    function adBlockNotDetected() {
-        console.log("adblock not detected");
-    }
+    // Otherwise, you import the script BlockAdBlock
+    var importFAB = document.createElement('script');
+
+    importFAB.onload = function() {
+        // If all goes well, we configure BlockAdBlock
+        if(typeof blockAdBlock === 'undefined' || typeof BlockAdBlock === 'undefined') {
+            // If this is the case, it means that something tries to usurp are identity
+            // So, considering that it is a detection
+            console.log("FAB undefined");
+            adBlockDetected();
+        }
+        else {
+            blockAdBlock.onDetected(adBlockDetected);
+            blockAdBlock.onNotDetected(adBlockNotDetected);
+        }
+    };
     
-    if(typeof blockAdBlock === 'undefined') {
-        adBlockDetected();
-    } else {
-        blockAdBlock.setOption({ debug: false });
-        blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
-    }
+    importFAB.onerror = function() {
+        // If the script does not load (blocked, integrity error, ...)
+        // Then a detection is triggered
+        console.log("importFAB error");
+        adBlockDetected(); 
+    };
+
+    importFAB.integrity = fabintegrity;
+    importFAB.crossOrigin = 'anonymous';
+    importFAB.src = fabjs;
+    
+    document.head.appendChild(importFAB);
 }
 
+/*
 function detectAdblockByDiv() {
     var adBlockEnabled = false;
     var testAd = document.createElement('div');
@@ -67,7 +93,9 @@ function detectAdblockByDiv() {
         }
     }, 100);
 }
+*/
 
+/*
 function detectAdblockWithGA() {
     if (typeof ga === 'undefined') {
         console.log("ga undefined");
@@ -76,8 +104,10 @@ function detectAdblockWithGA() {
 
     null == document.getElementsByTagName("iframe").item(ga.length - 1) && onAdBlockDetected();
 }
+*/
 
-$(window).load(function () {
+$( document ).ready(function() {
+    console.log( "ready!" );
     runCookieConsent();
-    detectAdblockWithGA();
+    detectAdBlockWithBlockAdblock();
 });
