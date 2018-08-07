@@ -13,6 +13,7 @@ if (typeof jQuery === 'undefined') {
 
 $(function() {
 
+    /*
     function adBlockDetected() {
         console.log("adblock detected");
         $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
@@ -43,6 +44,7 @@ $(function() {
             }
         }, 300);
     }
+    */
 
     window.addEventListener("load", function()  {
         window.cookieconsent.initialise({
@@ -60,4 +62,22 @@ $(function() {
           }
         });
     });
+
+    var adBlockEnabled = false;
+    var testAd = document.createElement('div');
+    testAd.innerHTML = '&nbsp;';
+    testAd.className = 'adsbox';
+    document.body.appendChild(testAd);
+    window.setTimeout(function() {
+        if (testAd.offsetHeight === 0) {
+            adBlockEnabled = true;
+        }
+        testAd.remove();
+        console.log('AdBlock Enabled? ', adBlockEnabled);
+        if(adBlockEnabled === true) {
+            $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
+            $('#blockadblock').removeClass('hidden');
+        }
+    }, 100);
+    
  });
