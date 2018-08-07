@@ -55,8 +55,14 @@
     <!-- Cookie Consent CSS -->
     {{ $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" }}
 
+    {{ $indexScratch := .Scratch }}
+    {{ $indexScratch.Add "cssassets" (slice $bootstrapcss $fokuscss $fontawesomecss $cookieconsentcss) }}
+    {{ range .Site.Params.customCSSAssets }} 
+        {{ $indexScratch.Add "cssassets" (slice (resources.Get .)) }}
+    {{ end }}
+
     <!-- Bundle css -->
-    {{ $appcss := slice $bootstrapcss $fokuscss $fontawesomecss $cookieconsentcss | resources.Concat "vendor/font-awesome/css/bundle.css" | resources.Minify | resources.Fingerprint }}
+    {{ $appcss := $indexScratch.Get "cssassets" | resources.Concat "vendor/font-awesome/css/bundle.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $appcss.Permalink }}" integrity="{{ $appcss.Data.Integrity }}">
 
     <!-- Google Fonts -->
