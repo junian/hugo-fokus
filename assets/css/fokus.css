@@ -62,13 +62,35 @@ a:focus {
 }
 
 blockquote {
-    color: #808080;
-    font-style: italic;
+    padding: 20px;
+    margin: 20px 0;
+    border: 0px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    border-left-color: #808080;
 }
 
 blockquote p {
+    font-style: italic;
     margin-bottom: 0;
     margin-top: 0;
+}
+
+blockquote h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+blockquote code {
+    border-radius: 3px;
+}
+
+blockquote+blockquote {
+    margin-top: -5px;
 }
 
 pre {
