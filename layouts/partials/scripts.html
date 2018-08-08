@@ -4,6 +4,9 @@
 <!-- Clipboardjs -->
 {{ $clipboardjs := resources.Get "vendor/clipboard.js/dist/clipboard.min.js" }}
 
+<!-- imagesloaded -->
+{{ $imagesloaded := resources.Get "vendor/imagesloaded/imagesloaded.pkgd.min.js" }}
+
 <!-- blockadblock -->
 {{ $blockadblock := slice (resources.Get "js/abcheck.js") | resources.Concat "js/abcheck.js" | resources.Minify | resources.Fingerprint }}
 
@@ -26,7 +29,7 @@
 {{ $fokusjs := resources.Get "js/fokus.js" }}
 
 {{ $indexScratch := .Scratch }}
-{{ $indexScratch.Add "jsassets" (slice $jquery $cookieconsentjs $vars $fokusjs $bstransition $bscollapse) }}
+{{ $indexScratch.Add "jsassets" (slice $jquery $imagesloaded $cookieconsentjs $vars $fokusjs $bstransition $bscollapse) }}
 {{ range .Site.Params.customJSAssets }} 
     {{ $indexScratch.Add "jsassets" (slice (resources.Get .)) }}
 {{ end }}

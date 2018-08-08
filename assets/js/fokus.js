@@ -28,8 +28,15 @@ function runCookieConsent() {
 }
 
 function onAdBlockDetected() {
+    console.log("adblock detected");
     $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
     $('#blockadblock').removeClass('hidden');
+    $('#image-tests').remove();
+}
+
+function onAdBlockNotDetected() {
+    console.log("adblock NOT detected");
+    $('#image-tests').remove();
 }
 
 /*
@@ -77,36 +84,76 @@ function detectAdBlockWithBlockAdblock() {
 }
 */
 
+// function to check if image has loaded, taken from http://stackoverflow.com/a/1977898
+function isImageOk(img) {
+    // Image was removed from the page code (issue #1)
+    if (typeof img === 'undefined') {
+        return false;
+    }
+    // During the onload event, IE correctly identifies any images that
+    // weren’t downloaded as not complete. Others should too. Gecko-based
+    // browsers act like NS4 in that they report this incorrectly.
+    // NOTE: This check doesn't seem to be needed - and doesn't work 
+    // reliably in MS Edge in my tests. So disabling for now.
+    //if (!img.complete) {
+    //    return false;
+    //}
+    // However, they do have two very useful properties: naturalWidth and
+    // naturalHeight. These give the true size of the image. If it failed
+    // to load, either of these should be zero.
+    if (typeof img.naturalWidth !== "undefined" && img.naturalWidth <= 1) {
+        return false;
+    }
+    // No other way of checking: assume it’s ok.
+    return true;
+}
+
+function fivefilterCheck() {
+    var isMobile = /Mobile|mini|Fennec|Android|iP(ad|od|hone)/.test(navigator.appVersion);
+    // var isPiHole = (window.location.search.substring(1) == 'pihole');
+    var isPiHole = true;
+
+    $("img#test-ad").attr('src', 'https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png?advertiser=1&' + escape(new Date()));
+    $("img#test-whitelist").attr('src', 'https://gstatic.com/webp/gallery3/1.png?ads=1&' + escape(new Date()));
+
+    $('#image-tests').imagesLoaded(function() {
+        var adLoaded = isImageOk($("img#test-ad")[0]);
+        var whitelistAdLoaded = isImageOk($("img#test-whitelist")[0]);
+        
+        // all-good if both ads failed
+        // Unless we're testing on mobile, or for Pi-hole.net users.
+        if (!adLoaded && (!whitelistAdLoaded || (isMobile || isPiHole))) {
+            onAdBlockDetected();
+        } else if (adLoaded) {
+            onAdBlockNotDetected();
+        } else if (whitelistAdLoaded) {
+            console.log("PARTIAL blocking");
+            onAdBlockDetected();
+        }          
+    });
+}
+
 function detectAdBlockWithABCheck() {
-
-    function adBlockNotDetected() {
-        console.log("adblock not detected");
-    }
-
-    function adBlockDetected() {
-        console.log("adblock detected");
-        onAdBlockDetected();
-    }
-
     var importFAB = document.createElement('script');
 
     importFAB.onload = function() {
         if(typeof abcheck === 'undefined') {
             console.log("abcheck undefined");
-            adBlockDetected();
+            onAdBlockDetected();
         }
         else {
             if(abcheck === true) {
-                adBlockNotDetected();
+                fivefilterCheck();
             } else {
-                adBlockDetected();
+                console.log("abcheck value is not true");
+                onAdBlockDetected();
             }
         }
     };
     
     importFAB.onerror = function() {
         console.log("import abcheck error");
-        adBlockDetected(); 
+        onAdBlockDetected(); 
     };
 
     importFAB.integrity = fabintegrity;
