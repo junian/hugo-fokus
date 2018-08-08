@@ -47,7 +47,7 @@
                     {{ end }}
 
                     {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "staticpage")) }}
-                        {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partial "widget/adsense-responsive.html" .) | safeHTML }}
+                        {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partial "widget/adsense-inarticle.html" .) | safeHTML }}
                     {{ else }}
                         {{ .Scratch.Get "finalContent" }}
                     {{ end }}
