@@ -1,13 +1,16 @@
 <!-- Pager -->
-<ul class="pager">
-    {{ if .Paginator.HasPrev }}
-    <li class="previous">
-        <a href="{{ .Paginator.Prev.URL }}">&larr; Newer Posts</a>
+<ul class="pager clearfix">
+
+    <li class="previous {{ if not .Paginator.HasPrev }}invisible{{ end }}">
+        <a href="{{ if .Paginator.HasPrev }}{{ .Paginator.Prev.URL }}{{ end }}">&larr; Newer Posts</a>
     </li>
-    {{ end }}
-    {{ if .Paginator.HasNext }}
-    <li class="next">
-        <a href="{{ .Paginator.Next.URL }}">Older Posts &rarr;</a>
+    
+    <li class="pagenumber small">
+        <div>Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</div>
     </li>
-    {{ end }}
+    
+    <li class="next {{ if not .Paginator.HasNext }}invisible{{ end }}">
+        <a href="{{ if .Paginator.HasNext }}{{ .Paginator.Next.URL }}{{ end }}">Older Posts &rarr;</a>
+    </li>
+    
 </ul>
