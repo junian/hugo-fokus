@@ -1,6 +1,6 @@
 {{ if $.Param "commentVisible" }}
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-    <div class="post-body entry-content">
+    <div class="post-body entry-comment">
         {{ template "_internal/disqus.html" . }}
     </div>
     {{ else }}

@@ -1,6 +1,7 @@
 <!-- Pager -->
 <div class="row nextprev">
     <div class="col-lg-6 col-md-6 next small">
+        <hr />
         {{ if .NextInSection }}
             <a href="{{ .NextInSection.Permalink }}" class="">
                 <h4>&larr; Next</h4>
@@ -16,6 +17,7 @@
         {{ end }}
     </div>
     <div class="col-lg-6 col-md-6 previous small">
+        <hr />
         {{ if .PrevInSection }}
             <a href="{{ .PrevInSection.Permalink }}" class="">
                 <h4>Prev &rarr;</h4>

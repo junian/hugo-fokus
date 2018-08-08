@@ -1,9 +1,12 @@
-{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ $related := .Site.RegularPages.Related . | shuffle | first 5  }}
 {{ with $related }}
 <h2>Similar articles</h2>
-<ul>
+<div class="list-group">
 	{{ range . }}
-	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		<a class="list-group-item" href="{{ .RelPermalink }}">
+			<h4 class="list-group-item-heading">{{ .Title }}</h4>
+			<p class="list-group-item-text small">{{ .Description }}</p>
+		</a>
 	{{ end }}
-</ul>
+</div>
 {{ end }}

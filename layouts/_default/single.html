@@ -92,7 +92,7 @@
 
                     <!-- Show related articles -->
                     {{ if $.Param "relatedVisible" }}
-                    <div class="post-body entry-content">
+                    <div class="post-body entry-similar">
                         {{ partial "related.html" . }}
                     </div>
                     {{ end }}
@@ -103,7 +103,7 @@
                     -->
 
                     <!-- Email Subscribe -->
-                    <div class="post-body entry-content">
+                    <div class="post-body entry-subscribe">
                         {{ partial "widget/email-subscribe.html" . }}
                     </div>
 

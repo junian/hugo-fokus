@@ -23,7 +23,7 @@ p {
     word-wrap: break-word;
 }
 
-.post-body a,
+.entry-content a,
 p a {
     text-decoration: underline;
 }
@@ -265,6 +265,9 @@ hr.small {
 
 footer.blog-footer {
     padding: 50px 0 50px 0;
+    background-color: #F5F5F5;
+    border-top: 1px #EAEAEA solid;
+    margin-top: 20px;
 }
 
 footer.blog-footer .list-inline {
@@ -432,7 +435,7 @@ body {
     border-radius: 100%;
     overflow: hidden;
     padding: 6px;
-    background: #fff;
+    background: #fcfbf7;
     z-index: 2;
     box-shadow: #E7EEF2 0 0 0 1px;
 }
@@ -459,8 +462,8 @@ time.published {
     border: none;
 }
 
-.post-body a:hover,
-.post-body a:focus,
+.entry-content a:hover,
+.entry-content a:focus,
 .post-labels a:hover,
 .post-labels a:focus {
     text-decoration: underline;
@@ -525,8 +528,9 @@ time.published {
     font-family: "Open Sans", sans-serif;
     font-size: 0.9rem;
     line-height: 1.75em;
-    color: #BBC7CC;
+    color: #8e979b;
     text-align: center;
+    background-color: #F5F5F5;
 }
 
 /* Section divider, inspired by Medium */
@@ -632,7 +636,7 @@ aside .widget ul {
     font-size: 1.6rem;
     font-weight: 100;
     line-height: 1.4em;
-    background: #fff;
+    background: #fcfbf7;
     border: #e7eef2 1px solid;
     border-radius: 4px;
     box-shadow: none;
@@ -647,7 +651,7 @@ aside .widget ul {
     cursor: pointer;
     outline: none;
     text-decoration: none;
-    color: #fff;
+    color: #fcfbf7;
     font-family: 'Open Sans', sans-serif;
     font-size: 11px;
     /* Hacks targeting Firefox. */
@@ -862,13 +866,32 @@ input.gsc-search-button-v2 {
     display: none;
 }
 
-
 .nextprev .next{
     text-align: left;
 }
 
 .nextprev .previous{
     text-align: right;
+}
+
+.entry-similar a,
+.entry-similar a:hover,
+.entry-similar a:focus, {
+    text-decoration: none;
+}
+
+.entry-similar .list-group-item {
+    background-color: #fcfbf7;
+    padding: 15px 20px;
+    margin: 25px 0;
+    border: 0px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    border-left-color: #777;
+}
+
+.entry-similar .list-group-item p {
+    margin: 15px 0 0 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1094,6 +1117,10 @@ div#blog-header {
 .go-social .btn-feed-share {
     color: #fcfbf7;
     background-color: #dd7346;
+}
+
+.nextprev p {
+    margin: 0 0 10px;
 }
 
 .nextprev .caption {
