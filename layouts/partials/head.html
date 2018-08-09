@@ -63,7 +63,7 @@
     <link rel="stylesheet" href="{{ $appcss.Permalink }}" integrity="{{ $appcss.Data.Integrity }}">
 
     <!-- Font Awesome -->
-    {{ $fontawesomecss := resources.Get "vendor/font-awesome/css/font-awesome.min.css" | resources.Concat "vendor/font-awesome/css/font-awesome.css" | resources.Minify | resources.Fingerprint }}
+    {{ $fontawesomecss := slice (resources.Get "vendor/font-awesome/css/font-awesome.min.css") | resources.Concat "vendor/font-awesome/css/font-awesome.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $fontawesomecss.Permalink }}" integrity="{{ $fontawesomecss.Data.Integrity }}">
 
     <!-- Google Fonts -->
