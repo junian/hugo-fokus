@@ -14,7 +14,7 @@
 
 {{ .Scratch.Set "blockadblock" $blockadblock.Permalink }}
 {{ $abdetectjs := slice $blockadblock | resources.Concat "abdetect.js" }}
-{{ $string := (printf "var fabjs = '%s'; var fabintegrity = '%s'; var disqus_shortname = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity) (.Site.DisqusShortname)) }}
+{{ $string := (printf "var fabjs = '%s'; var fabintegrity = '%s'; var disqus_shortname = '%s'; var pageUrl = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity) (.Site.DisqusShortname) (trim .Permalink "/")) }}
 {{ $targetPath := "js/vars.js" }}
 {{ $vars := $string | resources.FromString $targetPath }}
 
