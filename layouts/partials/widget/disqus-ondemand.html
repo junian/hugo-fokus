@@ -1,9 +1,37 @@
-{{ if (and ($.Param "commentVisible") (.Site.DisqusShortname)) }}
+{{- $pc := .Page.Site.Config.Privacy.Disqus -}}
+{{- if not $pc.Disable -}}
+{{ if .Site.DisqusShortname }}
     <div class="post-body entry-comment">
         <!-- An element a visitor can click if they <3 comments! -->
-        <button id="btn_load_disqus_thread" class="center-block btn btn-primary btn-block">Click to see <span class='disqus-comment-count' data-disqus-url='{{ trim .Permalink "/" }}'>comments</span></button>
+        <button id="btn_load_disqus_thread" class="btn btn-primary btn-block">
+            Click to see <span class="disqus-comment-count" data-disqus-url='{{ .Permalink }}'>comments</span>
+        </button>
 
         <!-- The empty element required for Disqus to loads comments into -->  
         <div id="disqus_thread"></div>
     </div>
+    
+    <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    function loadDisqusOnDemand(){
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://{{.Site.DisqusShortname}}.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//{{.Site.DisqusShortname}}.disqus.com/count.js" async></script>                           
 {{ end }}
+{{- end -}}

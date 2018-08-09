@@ -194,11 +194,20 @@ function detectAdblockWithGA() {
 }
 */
 
+function disqusOnDemandButton() {
+    $('#btn_load_disqus_thread').on('click', function() {
+        // ajax request to load the disqus javascript
+        if(loadDisqusOnDemand !== 'undefined')
+            loadDisqusOnDemand();
+        // hide the button once comments load
+        $(this).fadeOut();
+    });
+}
+
 $( document ).ready(function() {
     console.log( "ready!" );
     runCookieConsent();
     // detectAdBlockWithBlockAdblock();
     detectAdBlockWithABCheck();
-    if(loadDisqusOnDemand !== 'undefined')
-        loadDisqusOnDemand();
+    disqusOnDemandButton();
 });
