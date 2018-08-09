@@ -14,7 +14,7 @@
 
 {{ .Scratch.Set "blockadblock" $blockadblock.Permalink }}
 {{ $abdetectjs := slice $blockadblock | resources.Concat "abdetect.js" }}
-{{ $string := (printf "var fabjs = '%s'; var fabintegrity = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity)) }}
+{{ $string := (printf "var fabjs = '%s'; var fabintegrity = '%s'; var disqus_shortname = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity) (.Site.DisqusShortname)) }}
 {{ $targetPath := "js/vars.js" }}
 {{ $vars := $string | resources.FromString $targetPath }}
 
@@ -25,11 +25,14 @@
 <!-- Cookie Consent js -->
 {{ $cookieconsentjs := resources.Get "vendor/cookieconsent/build/cookieconsent.min.js" }}
 
+<!-- Disqus on demand -->
+{{ $disqusondemand := resources.Get "js/disqus-ondemand.js" }}
+
 <!-- Theme JavaScript -->
 {{ $fokusjs := resources.Get "js/fokus.js" }}
 
 {{ $indexScratch := .Scratch }}
-{{ $indexScratch.Add "jsassets" (slice $jquery $imagesloaded $cookieconsentjs $vars $fokusjs $bstransition $bscollapse) }}
+{{ $indexScratch.Add "jsassets" (slice $jquery $imagesloaded $cookieconsentjs $vars $disqusondemand $fokusjs $bstransition $bscollapse) }}
 {{ range .Site.Params.customJSAssets }} 
     {{ $indexScratch.Add "jsassets" (slice (resources.Get .)) }}
 {{ end }}

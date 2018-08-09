@@ -1,0 +1,9 @@
+{{ if (and ($.Param "commentVisible") (.Site.DisqusShortname)) }}
+    <div class="post-body entry-comment">
+        <!-- An element a visitor can click if they <3 comments! -->
+        <button id="btn_load_disqus_thread" class="center-block btn btn-primary btn-block disqus-comment-count" data-disqus-url="{{ .Permalink }}">Click to See Comments</button>
+
+        <!-- The empty element required for Disqus to loads comments into -->  
+        <div id="disqus_thread"></div>
+    </div>
+{{ end }}

@@ -199,4 +199,6 @@ $( document ).ready(function() {
     runCookieConsent();
     // detectAdBlockWithBlockAdblock();
     detectAdBlockWithABCheck();
+    if(loadDisqusOnDemand !== 'undefined')
+        loadDisqusOnDemand();
 });
