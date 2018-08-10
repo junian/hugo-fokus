@@ -2,7 +2,7 @@
 <ul class="pager clearfix">
 
     <li class="previous {{ if not .Paginator.HasPrev }}invisible{{ end }}">
-        <a href="{{ if .Paginator.HasPrev }}{{ .Paginator.Prev.URL }}{{ end }}">&larr; Newer Posts</a>
+        <a href="{{ if .Paginator.HasPrev }}{{ .Paginator.Prev.URL }}{{ end }}">&larr; Prev</a>
     </li>
     
     <li class="pagenumber small">
@@ -10,7 +10,7 @@
     </li>
     
     <li class="next {{ if not .Paginator.HasNext }}invisible{{ end }}">
-        <a href="{{ if .Paginator.HasNext }}{{ .Paginator.Next.URL }}{{ end }}">Older Posts &rarr;</a>
+        <a href="{{ if .Paginator.HasNext }}{{ .Paginator.Next.URL }}{{ end }}">Next &rarr;</a>
     </li>
     
 </ul>
