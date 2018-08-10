@@ -22,7 +22,7 @@
                     </h3>
                     {{ end }}
                 </a>
-                <p class="post-meta">Posted on {{ .Date.Format "January 2, 2006" }}</p>
+                <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .ReadingTime }}<span> · </span>{{ . }} min read{{ end }}</p>
             </div>
             <hr />
 
