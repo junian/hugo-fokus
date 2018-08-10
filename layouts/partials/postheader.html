@@ -16,7 +16,11 @@
                             <!-- Published Date -->
                             {{ if not .Date.IsZero }}
                             <span class='post-timestamp'>
-                                <i aria-hidden='true' class='fa fa-calendar'></i>
+                                <span class="icon">
+                                    <i class="feather">
+                                        {{ partial (printf "svg/calendar.svg") . }}
+                                    </i>
+                                </span>
                                 <meta content='{{.Permalink }}' itemprop='url' />
                                 <a class='timestamp-link' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
                                     <time class='published' title='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}' itemprop='datePublished dateModified'>
@@ -29,7 +33,11 @@
                             <!-- Post tags -->
                             {{ with .Params.tags }}
                             <span class='post-labels'>
-                                <i aria-hidden='true' class='fa fa-tags'></i>
+                                <span class="icon">
+                                    <i class="feather">
+                                        {{ partial (printf "svg/tag.svg") . }}
+                                    </i>
+                                </span>
                                 {{ range first 1 . }}
                                     <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
                                 {{ end }} 
@@ -44,7 +52,11 @@
                             <!-- Reading ETA -->
                             {{ with .ReadingTime }}
                             <span class='post-read-eta'>
-                                <i aria-hidden='true' class='fa fa-clock-o'></i>
+                                <span class="icon">
+                                    <i class="feather">
+                                        {{ partial (printf "svg/clock.svg") . }}
+                                    </i>
+                                </span>
                                 <span class='eta'> {{ . }}</span> min
                             </span>
                             {{ end }}
