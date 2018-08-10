@@ -1,8 +1,8 @@
 <section class="go-social">
-    {{ if .Site.Params.Widget.socialshare.twitter }}<a class="btn-twtrsh" href="https://go.junian.net/twtrsh?text={{ .Title }}&amp;url={{ .Permalink }}" target="_blank"><i class="fa fa-twitter"></i> Tweet</a>{{ end }}
-    {{ if .Site.Params.Widget.socialshare.facebook }}<a class="btn-fbsh" href="https://go.junian.net/fbsh?u={{ .Permalink }}" target="_blank"><i class="fa fa-facebook"></i> Post</a>{{ end }}
-    {{ if .Site.Params.Widget.socialshare.googleplus }}<a class="btn-gplussh" href="https://go.junian.net/gplussh?url={{ .Permalink }}" target="_blank"><i class="fa fa-google-plus"></i> Share</a>{{ end }}
-    {{ if .Site.Params.Widget.socialshare.linkedin }}<a class="btn-lnkinsh" href="https://go.junian.net/lnkinsh?mini=true&amp;url={{ .Permalink }}" target="_blank"><i class="fa fa-linkedin"></i> Update</a>{{ end }}
-    {{ if .Site.Params.Widget.socialshare.email }}<a class="btn-email-share" href="mailto:?subject={{ .Title }}&amp;body={{ .Permalink }}"><i class="fa fa-envelope" target="_blank"></i> Email</a>{{ end }}
-    {{ if .Site.Params.Widget.socialshare.feed }}<a class="btn-feed-share" href="{{ .Site.RSSLink }}" target="_blank"><i class="fa fa-rss"></i> RSS</a>{{ end }}
+    {{ if .Site.Params.Widget.socialshare.twitter }}<a class="btn-twtrsh" href="https://go.junian.net/twtrsh?text={{ .Title }}&amp;url={{ .Permalink }}" target="_blank"><i class="feather icon">{{ partial (printf "svg/%s.svg" "twitter") . }}</i> Tweet</a>{{ end }}
+    {{ if .Site.Params.Widget.socialshare.facebook }}<a class="btn-fbsh" href="https://go.junian.net/fbsh?u={{ .Permalink }}" target="_blank"><i class="feather icon">{{ partial (printf "svg/%s.svg" "facebook") . }}</i> Post</a>{{ end }}
+    {{ if .Site.Params.Widget.socialshare.googleplus }}<a class="btn-gplussh" href="https://go.junian.net/gplussh?url={{ .Permalink }}" target="_blank"><i class="feather icon">{{ partial (printf "svg/%s.svg" "plus") . }}</i> Share</a>{{ end }}
+    {{ if .Site.Params.Widget.socialshare.linkedin }}<a class="btn-lnkinsh" href="https://go.junian.net/lnkinsh?mini=true&amp;url={{ .Permalink }}" target="_blank"><i class="feather icon">{{ partial (printf "svg/%s.svg" "linkedin") . }}</i> Update</a>{{ end }}
+    {{ if .Site.Params.Widget.socialshare.email }}<a class="btn-email-share" href="mailto:?subject={{ .Title }}&amp;body={{ .Permalink }}"><i class="feather icon">{{ partial (printf "svg/%s.svg" "mail") . }}</i> Email</a>{{ end }}
+    {{ if .Site.Params.Widget.socialshare.feed }}<a class="btn-feed-share" href="{{ .Site.RSSLink }}" target="_blank"><i class="feather icon">{{ partial (printf "svg/%s.svg" "rss") . }}</i> RSS</a>{{ end }}
 </section>

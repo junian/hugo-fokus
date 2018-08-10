@@ -24,7 +24,7 @@
                                 <meta content='{{.Permalink }}' itemprop='url' />
                                 <a class='timestamp-link' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
                                     <time class='published' title='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}' itemprop='datePublished dateModified'>
-                                        {{ .Date.Format "January 2, 2006" }}
+                                        {{ .Date.Format "Jan 2, 2006" }}
                                     </time>
                                 </a>
                             </span>
@@ -57,7 +57,7 @@
                                         {{ partial (printf "svg/clock.svg") . }}
                                     </i>
                                 </span>
-                                <span class='eta'> {{ . }}</span> min
+                                <span class='eta'> {{ . }}</span> min read
                             </span>
                             {{ end }}
 
