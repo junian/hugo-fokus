@@ -1,11 +1,13 @@
 {{ $related := .Site.RegularPages.Related . | shuffle | first 5  }}
 {{ with $related }}
-<h2>Similar articles</h2>
-<div class="list-group">
+<h2>Also Read</h2>
+<div class="related-item post-preview">
 	{{ range . }}
-		<a class="list-group-item" href="{{ .RelPermalink }}">
-			<h4 class="list-group-item-heading">{{ .Title }}</h4>
-			<p class="list-group-item-text small">{{ .Description }}</p>
+		<hr />
+		<a href="{{ .RelPermalink }}">
+			<h3>{{ .Title }}</h3>
+			<p class="post-subtitle">{{ .Description }}</p>
+			<p class="post-meta small">{{ with .ReadingTime }}{{ . }} min read{{ end }}</p>
 		</a>
 	{{ end }}
 </div>

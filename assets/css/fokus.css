@@ -559,7 +559,7 @@ time.published {
 
 /* Section divider, inspired by Medium */
 
-.post-body hr,
+.entry-content hr,
 hr.section-divider {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -572,7 +572,7 @@ hr.section-divider {
     margin-bottom: 42px;
 }
 
-.post-body hr:before,
+.entry-content hr:before,
 hr.section-divider:before {
     --x-height-multiplier: 0.342;
     --baseline-multiplier: 0.22;
@@ -1195,4 +1195,8 @@ div#blog-header {
 .icon-large svg {
     height: 2em;
     width: 2em;
+}
+
+.related-item p{
+    margin: 0 0 10px 0;
 }
