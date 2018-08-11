@@ -4,13 +4,13 @@
         <hr />
         {{ if .NextInSection }}
             <a href="{{ .NextInSection.Permalink }}" class="">
-                <h4>&larr; Prev</h4>
+                <h4>&lsaquo; Prev</h4>
                 <h3>{{ .NextInSection.Title }}</h3>
                 <p>{{ .NextInSection.Description }}</p>
             </a>
         {{ else }}
             <a class="disabled">
-                <h4>&larr; Prev</h4>
+                <h4>&lsaquo; Prev</h4>
                 <h3>No Content</h3>
                 <p>You're at the first page, there is nothing before this content.</p>
             </a>
@@ -20,13 +20,13 @@
         <hr />
         {{ if .PrevInSection }}
             <a href="{{ .PrevInSection.Permalink }}" class="">
-                <h4>Next &rarr;</h4>
+                <h4>Next &rsaquo;</h4>
                 <h3>{{ .PrevInSection.Title }}</h3>
                 <p>{{ .PrevInSection.Description }}</p>
             </a>
         {{ else }}
             <a class="disabled">
-                <h4>Next &rarr;</h4>
+                <h4>Next &rsaquo;</h4>
                 <h3>No Content</h3>
                 <p>You're at the last page, there is nothing after this content.</p>
             </a>
