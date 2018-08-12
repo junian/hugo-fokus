@@ -15,7 +15,7 @@
   &:hover,
   &:focus,
   &:active {
-    color: $white;
+    color: $white-warm;
     background-color: darken($primary, 7.5) !important;
     border-color: darken($primary, 7.5) !important;
   }

@@ -93,23 +93,23 @@ figure {
 }
 
 ::-moz-selection {
-  color: $white;
+  color: $white-warm;
   background: $primary;
   text-shadow: none;
 }
 
 ::selection {
-  color: $white;
+  color: $white-warm;
   background: $primary;
   text-shadow: none;
 }
 
 img::selection {
-  color: $white;
+  color: $white-warm;
   background: transparent;
 }
 
 img::-moz-selection {
-  color: $white;
+  color: $white-warm;
   background: transparent;
 }
