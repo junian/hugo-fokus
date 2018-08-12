@@ -1,13 +1,64 @@
 // Styling for the footer
-footer {
-  padding: 50px 0 65px;
+footer.blog-footer {
+  padding: 30px 0 10px 0;
+  background-color: #F5F5F5;
+  border-top: 1px #EAEAEA solid;
+  margin-top: 20px;
   .list-inline {
     margin: 0;
     padding: 0;
   }
   .copyright {
     font-size: 14px;
-    margin-bottom: 0;
     text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+/* Footer for credits, inspired by Ghost default theme */
+
+.blog-footer-credits {
+  position: relative;
+  padding: 1rem 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.75em;
+  color: #8e979b;
+  text-align: center;
+  background-color: #F5F5F5;
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.post-footer {
+  font-size: 1.4rem;
+  line-height: 1.75em;
+  position: relative;
+  margin: 6rem 0 3rem 0;
+  padding: 3rem 0 0 0;
+  border-top: #EBF2F6 1px solid;
+  text-align: center;
+  h4 {
+    font-size: 1.8rem;
+  }
+  p {
+    margin: 1rem 0;
+  }
+  .post-location {
+    margin: 1.6rem 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    font-style: italic;
+    color: #9EABB3;
+  }
+  @media only screen and (min-width: 768px) {
+    text-align: left;
+    .author-image {
+      top: -40px;
+    }
   }
 }
