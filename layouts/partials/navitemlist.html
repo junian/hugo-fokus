@@ -2,7 +2,7 @@
 <div class="collapse navbar-collapse" id="navitemlist-left">
     <ul class="nav navbar-nav navbar-left">
         {{ range .Site.Params.Menu.navleft }}
-        <li>
+        <li class="nav-item">
             <a href="{{ .url }}">{{ .title }}</a>
         </li>
         {{ end }}

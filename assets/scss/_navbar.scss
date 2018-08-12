@@ -2,13 +2,23 @@
 #mainNav {
   position: absolute;
   border-bottom: 1px solid $gray-200;
-  background-color: white;
+  background-color: $white-warm;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
   @include sans-serif-font;
   .navbar-brand {
     font-weight: 800;
     color: $gray-800;
+    > img {
+      width: 24px;
+      height: 24px;
+      float: left;
+      margin-right: 9px;
+    }
   }
-  .navbar-toggler {
+  .navbar-toggle {
     font-size: 12px;
     font-weight: 800;
     padding: 13px;
@@ -25,31 +35,31 @@
       }
     }
   }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 768px) {
     border-bottom: 1px solid transparent;
     background: transparent;
     .navbar-brand {
       padding: 10px 20px;
-      color: $white;
+      color: $white-warm;
       &:focus,
       &:hover {
-        color: fade-out($white, .2);
+        color: fade-out($white-warm, .2);
       }
     }
     .navbar-nav {
       > li.nav-item {
         > a {
           padding: 10px 20px;
-          color: $white;
+          color: $white-warm;
           &:focus,
           &:hover {
-            color: fade-out($white, .2);
+            color: fade-out($white-warm, .2);
           }
         }
       }
     }
   }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 990px) {
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
     transition: background-color 0.2s;
@@ -60,6 +70,7 @@
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     &.is-fixed {
       /* when the user scrolls down, we hide the header right above the viewport */
       position: fixed;
@@ -67,8 +78,8 @@
       -webkit-transition: -webkit-transform 0.2s;
       -moz-transition: -moz-transform 0.2s;
       transition: transform 0.2s;
-      border-bottom: 1px solid darken($white, .05);
-      background-color: fade-out($white, .1);
+      border-bottom: 1px solid darken($white-warm, .05);
+      background-color: fade-out($white-warm, .1);
       .navbar-brand {
         color: $gray-900;
         &:focus,
@@ -96,5 +107,12 @@
       -o-transform: translate3d(0, 100%, 0);
       transform: translate3d(0, 100%, 0);
     }
+  }
+}
+
+#navbar-toggle-cbox {
+  display:none;
+  &:checked ~ .collapse {
+    display: block;
   }
 }

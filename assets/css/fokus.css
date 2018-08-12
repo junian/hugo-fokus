@@ -109,34 +109,6 @@ hr.small {
     border-color: #fcfbf7;
 }
 
-.navbar-custom {
-    background: #fcfbf7;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.navbar-custom .navbar-brand {
-    font-weight: 800;
-}
-
-.navbar-brand>img {
-    width: 24px;
-    height: 24px;
-    float: left;
-    margin-right: 9px;
-}
-
-.navbar-custom .navbar-left li a {
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
 .intro-header {
     background-color: #808080;
     background: #222 no-repeat center center;
@@ -928,27 +900,16 @@ input.gsc-search-button-v2 {
 }
 
 @media only screen and (min-width: 768px) {
-    .navbar-custom {
-        background: transparent;
-        border-bottom: 1px solid transparent;
-    }
+
     .navbar-custom .navbar-brand {
-        color: #fcfbf7;
         padding: 20px;
         height: 60px;
     }
-    .navbar-custom .navbar-brand:hover,
-    .navbar-custom .navbar-brand:focus {
-        color: rgba(255, 255, 255, 0.8);
-    }
+
     .navbar-custom .navbar-left li a {
-        color: #fcfbf7;
         padding: 20px 10px 20px 10px;
     }
-    .navbar-custom .navbar-left li a:hover,
-    .navbar-custom .navbar-left li a:focus {
-        color: rgba(255, 255, 255, 0.8);
-    }
+    
     .intro-header .post-heading {
         padding: 70px 0px 50px 0px;
     }
@@ -1019,55 +980,12 @@ input.gsc-search-button-v2 {
 }
 
 @media only screen and (min-width: 990px) {
-    .navbar-custom {
-        -webkit-transition: background-color 0.3s;
-        -moz-transition: background-color 0.3s;
-        transition: background-color 0.3s;
-        /* Force Hardware Acceleration in WebKit */
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-        -o-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-    .navbar-custom.is-fixed {
-        /* when the user scrolls down, we hide the header right above the viewport */
-        position: fixed;
-        top: -61px;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-bottom: 1px solid #f2f2f2;
-        -webkit-transition: -webkit-transform 0.3s;
-        -moz-transition: -moz-transform 0.3s;
-        transition: transform 0.3s;
-    }
-    .navbar-custom.is-fixed .navbar-brand {
-        color: #404040;
-    }
-    .navbar-custom.is-fixed .navbar-brand:hover,
-    .navbar-custom.is-fixed .navbar-brand:focus {
-        color: #0085a1;
-    }
-    .navbar-custom.is-fixed .nav li a {
-        color: #404040;
-    }
-    .navbar-custom.is-fixed .nav li a:hover,
-    .navbar-custom.is-fixed .nav li a:focus {
-        color: #0085a1;
-    }
+    
     .navbar-custom .navbar-left li a {
         color: #fcfbf7;
         padding: 20px;
     }
-    .navbar-custom.is-visible {
-        /* if the user changes the scrolling direction, we show the header */
-        -webkit-transform: translate3d(0, 100%, 0);
-        -moz-transform: translate3d(0, 100%, 0);
-        -ms-transform: translate3d(0, 100%, 0);
-        -o-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
+    
     .gh-subscribe {
         padding: 3rem;
     }
@@ -1110,13 +1028,6 @@ div#blog-header {
     white-space: pre;
 }
 
-#navbar-toggle-cbox {
-    display:none;
-}
-
-#navbar-toggle-cbox:checked ~ .collapse {
-    display: block;
-}
 .go-social {
     margin: 30px 0;
     line-height: 2.5;
