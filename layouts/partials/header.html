@@ -1,25 +1,24 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="{{ with $.Param "images" }}{{ range first 1 . }}background-image: url('{{ . }}'){{ end }}{{ end }}">
-    <div class="overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        {{ if eq .Kind "404" }}
-                            <h1>{{ .Site.Title }}</h1>
-                        {{ else }}
-                            <h1>{{ .Title }}</h1>
+<header class="masthead" style="{{ with $.Param "images" }}{{ range first 1 . }}background-image: url('{{ . }}'){{ end }}{{ end }}">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    {{ if eq .Kind "404" }}
+                        <h1>{{ .Site.Title }}</h1>
+                    {{ else }}
+                        <h1>{{ .Title }}</h1>
+                    {{ end }}
+                    <hr class="small" />
+                    {{ if eq .Kind "404" }}
+                        <span class="subheading">{{ .Title }}</span>
+                    {{ else }}
+                        {{ with $.Param "description" }}
+                        <span class="subheading">{{ . }}</span>
                         {{ end }}
-                        <hr class="small" />
-                        {{ if eq .Kind "404" }}
-                            <span class="subheading">{{ .Title }}</span>
-                        {{ else }}
-                            {{ with $.Param "description" }}
-                            <span class="subheading">{{ . }}</span>
-                            {{ end }}
-                        {{ end }}
-                    </div>
+                    {{ end }}
                 </div>
             </div>
         </div>
