@@ -1,0 +1,104 @@
+.gh-subscribe {
+    border: #e7eef2 1px solid;
+    padding: 15px;
+    margin-top: 3rem;
+    text-align: center;
+    background: #f5f8fa;
+    border-radius: 5px;
+    line-height: 1.75em;
+    p {
+        margin-top: 0;
+        font-size: 1.4rem;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 5px 0;
+    }
+    .form-group {
+        flex-grow: 1;
+        max-width: 300px;
+        margin-bottom: 0px;
+    }
+    .subscribe-email {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        border-radius: 4px 0 0 4px;
+        transition: all ease 0.5s;
+        &:focus {
+            border: #5ba4e5 1px solid;
+            transition: all ease 0.2s;
+        }
+    }
+    button {
+        margin-left: -1px;
+        border-radius: 0 4px 4px 0;
+
+        min-height: 35px;
+        width: auto;
+        display: inline-block;
+        padding: 0.1rem 1.5rem;
+        cursor: pointer;
+        outline: none;
+        text-decoration: none;
+        color: #fcfbf7;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 11px;
+        /* Hacks targeting Firefox. */
+        line-height: 13px;
+        /* Hacks targeting Firefox. */
+        font-weight: 300;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: none;
+        border-radius: 0.3rem;
+        border: rgba(0, 0, 0, 0.05) 0.1em solid;
+        background: #5ba4e5;
+    }
+    input {
+        width: 260px;
+        padding: 6px 9px;
+        margin: 0 0 5px 0;
+        outline: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 100;
+        line-height: 1.4em;
+        background: #fcfbf7;
+        border: #e7eef2 1px solid;
+        border-radius: 4px;
+        box-shadow: none;
+        -webkit-appearance: none;
+    }
+    @media only screen and (min-width: 768px) {
+        padding: 2rem;
+        form {
+            margin: 20px 0 15px 0;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+    @media only screen and (min-width: 990px) {
+        padding: 3rem;
+    }
+}
+
+.gh-subscribe-title {
+    margin: 1rem 0 0 0;
+    font-size: 2rem;
+    @media only screen and (min-width: 768px) {
+        font-size: 2.4rem;
+    }
+}
+
+.gh-subscribe-rss {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    a {
+        font-weight: 600;
+    }
+}
