@@ -19,18 +19,6 @@
     font-weight: 800;
 }
 
-.go-social a {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    padding: 10px 5px;
-    background-color: #fcfbf7;
-    border-radius: 0;
-    white-space: nowrap;
-}
-
 .author-image {
     margin: 1em 40px;
     -webkit-box-sizing: border-box;
@@ -415,11 +403,6 @@ input.gsc-search-button-v2 {
         padding: 20px 10px 20px 10px;
     }
     
-    .go-social a {
-        font-size: 14px;
-        padding: 15px 25px;
-    }
-    
     .gh-subscribe {
         padding: 2rem;
     }
@@ -470,41 +453,6 @@ section.post-description,
 a[name='more'],
 div#blog-header {
     display: none;
-}
-
-.go-social {
-    margin: 30px 0;
-    line-height: 2.5;
-}
-
-.go-social .btn-twtrsh {
-    color: #fcfbf7;
-    background-color: #55acee;
-}
-
-.go-social .btn-fbsh {
-    color: #fcfbf7;
-    background-color: #3b5998;
-}
-
-.go-social .btn-gplussh {
-    color: #fcfbf7;
-    background-color: #d94734;
-}
-
-.go-social .btn-lnkinsh {
-    color: #fcfbf7;
-    background-color: #4875B4;
-}
-
-.go-social .btn-email-share {
-    color: #fcfbf7;
-    background-color: #97908F;
-}
-
-.go-social .btn-feed-share {
-    color: #fcfbf7;
-    background-color: #dd7346;
 }
 
 .related-item p{

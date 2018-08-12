@@ -1,0 +1,25 @@
+.go-social {
+    margin: 30px 0;
+    line-height: 2.5;
+    $colorMap: (
+        twtrsh: $twitter_color,
+        fbsh: $facebook_color,
+        gplussh: $google_plus_color,
+        lnkinsh: $linkedin_color,
+        email-share: $email_color,
+        feed-share: $feed_color);
+
+    @each $className, $classValue in $colorMap {
+        .btn-#{$className} {
+            background-color: $classValue;
+            border-color: $classValue;
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white-warm;
+                background-color: darken($classValue, 7.5) !important;
+                border-color: darken($classValue, 7.5) !important;
+            }
+        }
+    }
+}
