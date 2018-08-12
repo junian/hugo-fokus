@@ -41,8 +41,26 @@
   }
 }
 
-/* Section divider, inspired by Medium */
+/* entry content */
+.entry-content {
+  a {
+    img {
+      &:hover,
+      &:focus {
+        cursor: zoom-in;
+      }
+    }
+  }
+  img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
 
+/* Section divider, inspired by Medium */
 .entry-content hr,
 hr.section-divider {
   -webkit-box-sizing: content-box;

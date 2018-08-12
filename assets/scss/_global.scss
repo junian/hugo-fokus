@@ -2,12 +2,14 @@
 body {
   font-size: 20px;
   color: $gray-900;
+  background-color: $white-warm;
   @include serif-font;
 }
 
 p {
   line-height: 1.5;
   margin: 30px 0;
+  word-wrap: break-word;
   a {
     text-decoration: underline;
   }
@@ -35,6 +37,40 @@ a {
 blockquote {
   font-style: italic;
   color: $gray-600;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: 0px solid #eee;
+  border-left-width: 5px;
+  /* border-radius: 3px; */
+  border-left-color: #404040;
+  p {
+    font-style: normal;
+    margin-bottom: 0;
+    margin-top: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  code {
+    border-radius: 3px;
+  }
+  +blockquote {
+    margin-top: -5px;
+  }
+}
+
+pre {
+  margin-bottom: 30px;
+}
+
+figure {
+  pre, .table {
+    margin-bottom: 0px;
+  }
 }
 
 .section-heading {
