@@ -102,13 +102,6 @@ figure .table {
     margin-bottom: 0px;
 }
 
-hr.small {
-    max-width: 100px;
-    margin: 15px auto;
-    border-width: 4px;
-    border-color: #fcfbf7;
-}
-
 .intro-header {
     background-color: #808080;
     background: #222 no-repeat center center;
