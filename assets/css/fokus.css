@@ -533,26 +533,6 @@ input.gsc-search-button-v2 {
     padding: 10px 5px;
 }
 
-.entry-similar a,
-.entry-similar a:hover,
-.entry-similar a:focus, {
-    text-decoration: none;
-}
-
-.entry-similar .list-group-item {
-    background-color: #fcfbf7;
-    padding: 15px 20px;
-    margin: 25px 0;
-    border: 0px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
-    border-left-color: #777;
-}
-
-.entry-similar .list-group-item p {
-    margin: 15px 0 0 0;
-}
-
 .license {
     margin: 30px 0;
 }
