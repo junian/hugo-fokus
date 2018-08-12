@@ -44,7 +44,7 @@
     {{ end }}
 
     <!-- Bootstrap Core CSS -->
-    {{ $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" }}
+    {{/* $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" */}}
 
     <!-- Theme CSS -->
     {{ $options := (dict "targetPath" "css/fokus.css" "outputStyle" "compressed" "enableSourceMap" false) }}
@@ -54,7 +54,7 @@
     {{ $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" }}
 
     {{ $indexScratch := .Scratch }}
-    {{ $indexScratch.Add "cssassets" (slice $bootstrapcss $fokuscss $cookieconsentcss) }}
+    {{ $indexScratch.Add "cssassets" (slice $fokuscss $cookieconsentcss) }}
     {{ range .Site.Params.customCSSAssets }} 
         {{ $indexScratch.Add "cssassets" (slice (resources.Get .)) }}
     {{ end }}
