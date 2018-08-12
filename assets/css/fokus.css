@@ -68,18 +68,6 @@
     font-weight: 700;
 }
 
-.post-body figure figcaption,
-.caption {
-    text-align: center;
-    font-size: 14px;
-    padding: 10px;
-    font-style: italic;
-    margin: 0;
-    display: block;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
 footer.blog-footer {
     padding: 30px 0 10px 0;
     background-color: #F5F5F5;
