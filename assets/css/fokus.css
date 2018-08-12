@@ -533,14 +533,6 @@ input.gsc-search-button-v2 {
     padding: 10px 5px;
 }
 
-.nextprev .next{
-    text-align: left;
-}
-
-.nextprev .previous{
-    text-align: right;
-}
-
 .entry-similar a,
 .entry-similar a:hover,
 .entry-similar a:focus, {
@@ -648,14 +640,6 @@ input.gsc-search-button-v2 {
     .blog-sidebar .widget {
         margin: 0 0px 0 20px;
     }
-
-    .nextprev .next{
-        text-align: right;
-    }
-
-    .nextprev .previous{
-        text-align: left;
-    }
 }
 
 section.post-description,
@@ -707,24 +691,6 @@ div#blog-header {
 .go-social .btn-feed-share {
     color: #fcfbf7;
     background-color: #dd7346;
-}
-
-.nextprev p {
-    margin: 0 0 10px;
-}
-
-.nextprev .caption {
-    font-style: normal;
-}
-
-.nextprev .caption h2{
-    font-size: 24px;
-}
-
-.nextprev .caption h3{
-    margin-top: 10px;
-    font-size: 18px;
-    line-height: 1.3;
 }
 
 .related-item p{
