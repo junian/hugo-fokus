@@ -37,14 +37,14 @@ a {
 }
 
 blockquote {
-  font-style: italic;
-  color: $gray-600;
-  padding: 10px 20px;
+  background-color: $gray-100;
+  padding: 20px;
+  color: $gray-700;
   margin: 20px 0;
-  border: 0px solid #eee;
+  border: 1px solid $gray-200;
   border-left-width: 5px;
-  /* border-radius: 3px; */
-  border-left-color: #404040;
+  border-radius: 3px;
+  border-left-color: $gray-700;
   p {
     font-style: normal;
     margin-bottom: 0;
