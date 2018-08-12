@@ -47,7 +47,8 @@
     {{ $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" }}
 
     <!-- Theme CSS -->
-    {{ $fokuscss := resources.Get "css/fokus.css" }}
+    {{ $options := (dict "targetPath" "css/fokus.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+    {{ $fokuscss := resources.Get "scss/fokus.scss" | resources.ToCSS $options }}
 
     <!-- Cookie Consent CSS -->
     {{ $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" }}
