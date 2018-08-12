@@ -4,6 +4,7 @@ body {
   color: $gray-900;
   background-color: $white-warm;
   @include serif-font;
+  -webkit-tap-highlight-color: #0085a1;
 }
 
 p {
