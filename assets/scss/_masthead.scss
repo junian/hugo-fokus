@@ -1,12 +1,15 @@
 // Styling for the masthead
 header.masthead {
   // TIP: Background images are set within the HTML using inline CSS!
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   background: no-repeat center center;
   background-color: $gray-600;
   background-attachment: scroll;
   position: relative;
   @include background-cover;
+  -webkit-text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  -moz-text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
   .overlay {
     position: absolute;
     top: 0;
@@ -19,11 +22,8 @@ header.masthead {
   .page-heading,
   .post-heading,
   .site-heading {
-    padding: 200px 0 150px;
-    color: white;
-    @media only screen and (min-width: 768px) {
-      padding: 200px 0;
-    }
+    padding: 100px 0 50px;
+    color: $white-warm;
   }
   .page-heading,
   .site-heading {
@@ -31,6 +31,7 @@ header.masthead {
     h1 {
       font-size: 50px;
       margin-top: 0;
+      font-weight: 700;
     }
     .subheading {
       font-size: 24px;
@@ -41,6 +42,7 @@ header.masthead {
       @include sans-serif-font;
     }
     @media only screen and (min-width: 768px) {
+      padding: 100px 0px;
       h1 {
         font-size: 80px;
       }
@@ -52,30 +54,42 @@ header.masthead {
     }
     .meta,
     .subheading {
-      line-height: 1.1;
       display: block;
     }
     .subheading {
+      line-height: 1.2;
       font-size: 24px;
-      font-weight: 600;
+      font-weight: 400;
       margin: 10px 0 30px;
       @include sans-serif-font;
     }
     .meta {
+      line-height: 1.45;
       font-size: 20px;
       font-weight: 300;
       font-style: italic;
       @include serif-font;
       a {
-        color: $white;
+        color: $white-warm;
+      }
+      > span {
+        display: block;
+        margin-right: 8px;
+        padding-right: 12px;
       }
     }
     @media only screen and (min-width: 768px) {
+      padding: 70px 0px 50px 0px;
       h1 {
         font-size: 55px;
       }
       .subheading {
         font-size: 30px;
+      }
+      .meta {
+        > span {
+          display: inline-block;
+        }
       }
     }
   }
