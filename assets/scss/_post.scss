@@ -40,3 +40,33 @@
     }
   }
 }
+
+/* Section divider, inspired by Medium */
+
+.entry-content hr,
+hr.section-divider {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  display: block;
+  border: 0;
+  text-align: center;
+  overflow: visible;
+  margin-top: 52px;
+  margin-bottom: 42px;
+  &:before {
+    --x-height-multiplier: 0.342;
+    --baseline-multiplier: 0.22;
+    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 30px;
+    letter-spacing: .6em;
+    content: '...';
+    display: inline-block;
+    margin-left: .6em;
+    color: rgba(0,0,0,.68);
+    position: relative;
+    top: -30px;
+  }
+}
