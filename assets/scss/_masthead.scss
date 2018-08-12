@@ -71,6 +71,10 @@ header.masthead {
       @include serif-font;
       a {
         color: $white-warm;
+          &:focus,
+          &:hover {
+            color: fade-out($white-warm, .2);
+          }
       }
       > span {
         display: block;

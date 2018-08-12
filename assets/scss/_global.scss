@@ -4,7 +4,7 @@ body {
   color: $gray-900;
   background-color: $white-warm;
   @include serif-font;
-  -webkit-tap-highlight-color: #0085a1;
+  -webkit-tap-highlight-color: $primary;
 }
 
 .post-body,
@@ -13,7 +13,7 @@ p {
   margin: 30px 0;
   word-wrap: break-word;
   a {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -28,10 +28,12 @@ h6 {
 }
 
 a {
+  text-decoration: none;
   color: $gray-900;
   @include transition-all;
   &:focus,
   &:hover {
+    text-decoration: none;
     color: $primary;
   }
 }
@@ -76,6 +78,7 @@ figure {
 }
 
 .entry-content h2,
+.entry-similar h2,
 .section-heading {
   font-size: 36px;
   font-weight: 700;
@@ -132,4 +135,8 @@ img::-moz-selection {
   margin-top: 5px;
   margin-bottom: 5px;
   text-align: center;
+}
+
+.license {
+  margin: 30px 0;
 }

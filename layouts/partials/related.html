@@ -1,7 +1,7 @@
 {{ $related := .Site.RegularPages.Related . | shuffle | first 5  }}
 {{ with $related }}
 <h2>Also Read</h2>
-<div class="related-item post-preview">
+<div class="similar-item post-preview">
 	{{ range . }}
 		<hr />
 		<a href="{{ .RelPermalink }}">

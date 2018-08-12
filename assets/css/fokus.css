@@ -276,10 +276,6 @@ input.gsc-search-button-v2 {
     position: relative;
 }
 
-.license {
-    margin: 30px 0;
-}
-
 @media only screen and (min-width: 768px) {
 
     .navbar-custom .navbar-brand {
@@ -326,8 +322,4 @@ section.post-description,
 a[name='more'],
 div#blog-header {
     display: none;
-}
-
-.related-item p{
-    margin: 0 0 10px 0;
 }
