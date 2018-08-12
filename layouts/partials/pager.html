@@ -1,16 +1,8 @@
 <!-- Pager -->
-<ul class="pager clearfix">
-
-    <li class="previous {{ if not .Paginator.HasPrev }}invisible{{ end }}">
-        <a href="{{ if .Paginator.HasPrev }}{{ .Paginator.Prev.URL }}{{ end }}">&lsaquo; Prev</a>
-    </li>
-    
-    <li class="pagenumber small">
-        <div>Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</div>
-    </li>
-    
-    <li class="next {{ if not .Paginator.HasNext }}invisible{{ end }}">
-        <a href="{{ if .Paginator.HasNext }}{{ .Paginator.Next.URL }}{{ end }}">Next &rsaquo;</a>
-    </li>
-    
-</ul>
+<div class="text-center clearfix">
+  <a class="btn btn-primary pull-left {{ if not .Paginator.HasPrev }}invisible{{ end }}" href="{{ if .Paginator.HasPrev }}{{ .Paginator.Prev.URL }}{{ end }}">&lsaquo; Prev</a>
+  <div class="pagenumber small">
+    <div>Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</div>
+  </div>
+  <a class="btn btn-primary pull-right {{ if not .Paginator.HasNext }}invisible{{ end }}" href="{{ if .Paginator.HasNext }}{{ .Paginator.Next.URL }}{{ end }}">Next &rsaquo;</a>
+</div>
