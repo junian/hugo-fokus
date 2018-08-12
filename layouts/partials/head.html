@@ -63,8 +63,10 @@
     {{ $appcss := $indexScratch.Get "cssassets" | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $appcss.Permalink }}" integrity="{{ $appcss.Data.Integrity }}">
 
+    {{ if $.Param "useWebFont" }}
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i%7COpen+Sans:400,400i,700,700i" rel="stylesheet">
+    {{ end }}
 
     {{ if .RSSLink }}
     <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}">
