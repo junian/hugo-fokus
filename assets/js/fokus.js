@@ -1,14 +1,68 @@
-if (typeof jQuery === 'undefined') {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery')
+function addEventListener(el, eventName, handler) {
+    if (el.addEventListener) {
+        el.addEventListener(eventName, handler, false);
+    } else if (el.attachEvent) {
+        el.attachEvent("on" + eventName, handler);
+    } else {
+        el["on" + eventName] = handler;
+    }
 }
 
-+function ($) {
-    'use strict';
-    var version = $.fn.jquery.split(' ')[0].split('.')
-    if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
-        throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
+function text(el) {
+    return el.textContent || el.innerText;
+}
+
+function before(el,htmlString) {
+    el.insertAdjacentHTML('beforebegin', htmlString);
+}
+
+function removeClass(el,className) {
+    if (el.classList)
+        el.classList.remove(className);
+    else
+        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+}
+
+function fadeOut(el) {
+    var opacity = 1;
+
+    el.style.opacity = 1;
+    el.style.filter = '';
+
+    var last = +new Date();
+    var tick = function() {
+        opacity -= (new Date() - last) / 400;
+        el.style.opacity = opacity;
+        el.style.filter = 'alpha(opacity=' + (100 * opacity)|0 + ')';
+
+        last = +new Date();
+
+        if (opacity > 0) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        } else if(opacity <= 0) {
+            remove(el);
+        }
+    };
+
+    tick();
+}
+
+function remove(el) {
+    el.parentNode.removeChild(el);
+}
+
+function ready(fn) {
+    if (document.readyState != 'loading'){
+        fn();
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', fn);
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState != 'loading')
+            fn();
+        });
     }
-}(jQuery);
+}
 
 function runCookieConsent() {
     window.cookieconsent.initialise({
@@ -29,14 +83,15 @@ function runCookieConsent() {
 
 function onAdBlockDetected() {
     console.log("adblock detected");
-    $('noscript#buymeacoffee').before($('noscript#buymeacoffee').text());
-    $('#blockadblock').removeClass('hidden');
-    $('#image-tests').remove();
+    var bmcNoScript = document.querySelector('noscript#buymeacoffee');
+    before(bmcNoScript, text(bmcNoScript));
+    removeClass(document.querySelector('#blockadblock'), 'hidden');
+    remove(document.querySelector('#image-tests'));
 }
 
 function onAdBlockNotDetected() {
     console.log("adblock NOT detected");
-    $('#image-tests').remove();
+    remove(document.querySelector('#image-tests'));
 }
 
 /*
@@ -113,12 +168,16 @@ function fivefilterCheck() {
     // var isPiHole = (window.location.search.substring(1) == 'pihole');
     var isPiHole = true;
 
-    $("img#test-ad").attr('src', 'https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png?advertiser=1&' + escape(new Date()));
-    $("img#test-whitelist").attr('src', 'https://gstatic.com/webp/gallery3/1.png?ads=1&' + escape(new Date()));
+    var elTestAd = document.querySelector("img#test-ad");
+    var elTestWhitelist = document.querySelector("img#test-whitelist");
 
-    $('#image-tests').imagesLoaded(function() {
-        var adLoaded = isImageOk($("img#test-ad")[0]);
-        var whitelistAdLoaded = isImageOk($("img#test-whitelist")[0]);
+    elTestAd.setAttribute('src', 'https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png?advertiser=1&' + escape(new Date()));
+    elTestWhitelist.setAttribute('src', 'https://gstatic.com/webp/gallery3/1.png?ads=1&' + escape(new Date()));
+
+    var elImgTest = document.querySelector('#image-tests');
+    imagesLoaded(elImgTest, function() {
+        var adLoaded = isImageOk(elTestAd);
+        var whitelistAdLoaded = isImageOk(elTestWhitelist);
         
         // all-good if both ads failed
         // Unless we're testing on mobile, or for Pi-hole.net users.
@@ -195,16 +254,17 @@ function detectAdblockWithGA() {
 */
 
 function disqusOnDemandButton() {
-    $('#btn_load_disqus_thread').on('click', function() {
+    var elBtnLoadDisqus = document.querySelector('#btn_load_disqus_thread');
+    addEventListener(elBtnLoadDisqus, 'click', function() {
         // ajax request to load the disqus javascript
         if(loadDisqusOnDemand !== 'undefined')
             loadDisqusOnDemand();
         // hide the button once comments load
-        $(this).fadeOut();
+        fadeOut(elBtnLoadDisqus);
     });
 }
 
-$( document ).ready(function() {
+ready(function() {
     console.log( "ready!" );
     runCookieConsent();
     // detectAdBlockWithBlockAdblock();
