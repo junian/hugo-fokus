@@ -7,11 +7,11 @@ var mqpacker = require("css-mqpacker");
 
 gulp.task('css', function() {
     var processors = [
-        autoprefixer,
-        mqpacker
+        autoprefixer
+        // mqpacker
     ];
     gulp.src('./assets/scss/**/*.scss')
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        // .pipe(postcss(processors))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./assets/css/'));
 });

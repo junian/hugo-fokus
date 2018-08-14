@@ -51,7 +51,9 @@ blockquote {
   margin: 20px 0;
   border: 1px solid #e9ecef;
   border-left-width: 5px;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
   border-left-color: #495057;
 }
 
@@ -71,7 +73,9 @@ blockquote h4 {
 }
 
 blockquote code {
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
 }
 
 blockquote + blockquote {
@@ -102,8 +106,12 @@ figure pre, figure .table {
   margin: 0;
   padding: 10px;
   text-align: center;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+     -moz-border-radius-bottomright: 5px;
+          border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+     -moz-border-radius-bottomleft: 5px;
+          border-bottom-left-radius: 5px;
 }
 
 ::-moz-selection {
@@ -118,12 +126,12 @@ figure pre, figure .table {
   text-shadow: none;
 }
 
-img::selection {
+img::-moz-selection {
   color: #fcfbf7;
   background: transparent;
 }
 
-img::-moz-selection {
+img::selection {
   color: #fcfbf7;
   background: transparent;
 }
@@ -215,24 +223,27 @@ img::-moz-selection {
 @media only screen and (min-width: 990px) {
   #mainNav {
     -webkit-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
     transition: background-color 0.2s;
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
   }
   #mainNav.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     top: -67px;
     -webkit-transition: -webkit-transform 0.2s;
-    -moz-transition: -moz-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+    -moz-transition: transform 0.2s, -moz-transform 0.2s;
     transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s, -moz-transform 0.2s, -o-transform 0.2s;
     border-bottom: 1px solid #fcfbf7;
     background-color: rgba(252, 251, 247, 0.9);
   }
@@ -251,10 +262,8 @@ img::-moz-selection {
   #mainNav.is-visible {
     /* if the user changes the scrolling direction, we show the header */
     -webkit-transform: translate3d(0, 100%, 0);
-    -moz-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    -o-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+       -moz-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
   }
 }
 
@@ -273,11 +282,9 @@ header.masthead {
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  -webkit-text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
-  -moz-text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
@@ -443,6 +450,8 @@ hr.small {
 }
 
 .entry-content a img:hover, .entry-content a img:focus {
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
   cursor: zoom-in;
 }
 
@@ -462,7 +471,8 @@ hr.small {
 .entry-content hr,
 hr.section-divider {
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
   height: 0;
   display: block;
   border: 0;
@@ -569,7 +579,9 @@ footer.blog-footer .copyright {
   padding: 15px 25px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -754,7 +766,9 @@ footer.blog-footer .copyright {
   margin-top: 3rem;
   text-align: center;
   background: #f5f8fa;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
   line-height: 1.75em;
 }
 
@@ -764,33 +778,57 @@ footer.blog-footer .copyright {
 }
 
 .gh-subscribe form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 10px 0 5px 0;
 }
 
 .gh-subscribe .form-group {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+     -moz-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   max-width: 300px;
   margin-bottom: 0px;
 }
 
 .gh-subscribe .subscribe-email {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
   margin: 0;
-  border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
 
 .gh-subscribe .subscribe-email:focus {
   border: #5ba4e5 1px solid;
+  -webkit-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
   transition: all ease 0.2s;
 }
 
 .gh-subscribe button {
   margin-left: -1px;
-  border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
   min-height: 35px;
   width: auto;
   display: inline-block;
@@ -809,7 +847,9 @@ footer.blog-footer .copyright {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow: none;
-  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+     -moz-border-radius: 0.3rem;
+          border-radius: 0.3rem;
   border: rgba(0, 0, 0, 0.05) 0.1em solid;
   background: #5ba4e5;
 }
@@ -825,8 +865,12 @@ footer.blog-footer .copyright {
   line-height: 1.4em;
   background: #fcfbf7;
   border: #e7eef2 1px solid;
-  border-radius: 4px;
-  box-shadow: none;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
   -webkit-appearance: none;
 }
 

@@ -30,6 +30,6 @@
     "url": "https://github.com/junian/fokus.git"
   },
   "browserslist": [
-    "Edge 16"
+    ">= 0%"
   ]
 }
