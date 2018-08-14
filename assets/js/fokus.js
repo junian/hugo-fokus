@@ -87,7 +87,9 @@
     function onAdBlockDetected() {
         console.log("adblock detected");
         var bmcNoScript = document.querySelector('noscript#buymeacoffee');
-        before(bmcNoScript, text(bmcNoScript));
+        if(bmcNoScript)        
+            before(bmcNoScript, text(bmcNoScript));
+        
         removeClass(document.querySelector('#blockadblock'), 'hidden');
         remove(document.querySelector('#image-tests'));
     }
@@ -129,10 +131,16 @@
         var elTestAd = document.querySelector("img#test-ad");
         var elTestWhitelist = document.querySelector("img#test-whitelist");
 
-        elTestAd.setAttribute('src', 'https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png?advertiser=1&' + escape(new Date()));
-        elTestWhitelist.setAttribute('src', 'https://gstatic.com/webp/gallery3/1.png?ads=1&' + escape(new Date()));
+        if(elTestAd)
+            elTestAd.setAttribute('src', 'https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png?advertiser=1&' + escape(new Date()));
+        
+        if(elTestWhitelist)
+            elTestWhitelist.setAttribute('src', 'https://gstatic.com/webp/gallery3/1.png?ads=1&' + escape(new Date()));
 
         var elImgTest = document.querySelector('#image-tests');
+        if(!elImgTest)
+            return;
+        
         imagesLoaded(elImgTest, function() {
             var adLoaded = isImageOk(elTestAd);
             var whitelistAdLoaded = isImageOk(elTestWhitelist);
@@ -182,6 +190,9 @@
 
     function disqusOnDemandButton() {
         var elBtnLoadDisqus = document.querySelector('#btn_load_disqus_thread');
+        if(!elBtnLoadDisqus)
+            return;
+        
         addEventListener(elBtnLoadDisqus, 'click', function() {
             // ajax request to load the disqus javascript
             if(loadDisqusOnDemand !== 'undefined')
