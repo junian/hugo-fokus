@@ -2,23 +2,25 @@
 <!--
 {{/* $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" */}}
 -->
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" false) }}
+{{ $bootstrapcustomcss := resources.Get "scss/_bootstrap-custom.scss" | resources.ToCSS $options }}
 
 <!-- Theme CSS -->
-{{ $options := (dict "targetPath" "css/fokus.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" false) }}
 {{ $fokuscss := resources.Get "scss/fokus.scss" | resources.ToCSS $options }}
 
 <!-- Cookie Consent CSS -->
 {{ $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" }}
 
 {{ $indexScratch := .Scratch }}
-{{ $indexScratch.Add "cssassets" (slice $fokuscss $cookieconsentcss) }}
+{{ $indexScratch.Add "cssassets" (slice $bootstrapcustomcss $fokuscss $cookieconsentcss) }}
 {{ range .Site.Params.customCSSAssets }} 
     {{ $indexScratch.Add "cssassets" (slice (resources.Get .)) }}
 {{ end }}
 
 <!-- Bundle css -->
 {{ $appcss := $indexScratch.Get "cssassets" | resources.Concat "css/fokus-bundle.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $appcss.Permalink }}" integrity="{{ $appcss.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $appcss.RelPermalink }}" integrity="{{ $appcss.Data.Integrity }}">
 
 <!--
 {{/* partial "widget/buymeacoffee-style.html" . */}}

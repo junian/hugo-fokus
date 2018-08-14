@@ -34,8 +34,8 @@
     {{ $indexScratch.Add "jsassets" (slice (resources.Get .)) }}
 {{ end }}
 
-{{ $appjs := $indexScratch.Get "jsassets" | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
-<script src="{{ $appjs.Permalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
+{{ $appjs := $indexScratch.Get "jsassets" | resources.Concat "js/fokus-bundle.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $appjs.RelPermalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 
 {{ template "_internal/google_analytics.html" . }}
 
