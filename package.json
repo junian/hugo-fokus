@@ -12,6 +12,7 @@
     "autoprefixer": "^9.1.1",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
+    "css-mqpacker": "^7.0.0",
     "cssnano": "^4.0.5",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
@@ -27,5 +28,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/junian/fokus.git"
-  }
+  },
+  "browserslist": [
+    "Edge 16"
+  ]
 }
