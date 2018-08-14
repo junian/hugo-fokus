@@ -1,16 +1,12 @@
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
     <!-- Verification -->
-    {{ partial "meta/verification.html" . }}
-
+    {{- partial "meta/verification.html" . -}}
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
     <meta name="author" content="{{ with $.Site.Author.name }}{{.}}{{end}}">
-
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,43 +15,33 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#243b55">
     <meta name="msapplication-TileColor" content="#243b55">
     <meta name="theme-color" content="#243b55">
-
     <!-- Schema -->
-    {{ template "_internal/schema.html" . }}
-
+    {{- template "_internal/schema.html" . -}}
     <!-- Opengraph -->
-    {{ template "_internal/opengraph.html" . }}
+    {{- template "_internal/opengraph.html" . -}}
     {{ with .Site.Social.facebook_app_id }}<meta content='{{ . }}' property='fb:app_id'>{{ end }}
     {{ with .Site.Social.facebook_pages }}<meta content='{{ . }}' property='fb:pages'>{{ end }}
-
     <!-- Twitter Card -->
-    {{ template "_internal/twitter_cards.html" . }}
-
+    {{- template "_internal/twitter_cards.html" . -}}
     <!-- Google News -->
-    {{ template "_internal/google_news.html" . }}
-
+    {{- template "_internal/google_news.html" . -}}
     <!-- ld json structured data -->
-    {{ partial "meta/structureddata.html" . }}
-
-    {{ if .IsHome }}
-    <title>{{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}</title>
-    {{ else }}
-    <title>{{ .Title }}</title>
-    {{ end }}
-
+    {{- partial "meta/structureddata.html" . -}}
+    <!-- document title -->
+    <title>
+        {{- if .IsHome -}}{{- .Site.Title -}}{{ with .Site.Params.description }} - {{ . }}{{ end }}{{- else -}}{{- .Title -}}{{- end -}}
+    </title>
+    <!-- RSS -->
     {{ if .RSSLink }}
     <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}">
     <link rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}" />
     {{ end }}
-
     <!-- CSS from hugo pipes -->
-    {{ partial "css-pipes.html" . }}
-
+    {{- partial "css-pipes.html" . -}}
     {{ if $.Param "useWebFont" }}
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i%7COpen+Sans:400,400i,700,700i" rel="stylesheet">
     {{ end }}
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
