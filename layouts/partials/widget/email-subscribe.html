@@ -1,11 +1,7 @@
 {{ if .Site.Params.feedburner }}
 <section class="gh-subscribe">
-  <h3 class="gh-subscribe-title">
-    Subscribe to {{ .Site.Title }}
-  </h3>
-  <p>
-    Get the latest posts delivered right to your inbox.
-  </p>
+  <h3 class="gh-subscribe-title">Subscribe to {{ .Site.Title }}</h3>
+  <p>Get the latest posts delivered right to your inbox.</p>
   <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ .Site.Params.feedburner }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
     target="popupwindow">
     <input name="uri" type="hidden" value="{{ .Site.Params.feedburner }}">
@@ -13,12 +9,8 @@
     <div class="form-group">
       <input class="subscribe-email" name="email" placeholder="Your email address" type="text">
     </div>
-    <button type="submit">
-      Subscribe
-    </button>
+    <button type="submit">Subscribe</button>
   </form>
-  <span class="gh-subscribe-rss">
-    Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a> or subscribe via RSS with <a href="http://cloud.feedly.com/#subscription/feed/{{ .Site.RSSLink  }}"> Feedly!</a>
-  </span>
+  <span class="gh-subscribe-rss">Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a> or subscribe via RSS with <a href="http://cloud.feedly.com/#subscription/feed/{{ .Site.RSSLink  }}"> Feedly!</a></span>
 </section>
 {{ end }}
