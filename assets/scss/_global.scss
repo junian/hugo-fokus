@@ -127,5 +127,6 @@ img::selection {
 }
 
 .license {
+  @include sans-serif-font;
   margin: 30px 0;
 }

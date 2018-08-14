@@ -1,4 +1,5 @@
 .nextprev {
+  @include sans-serif-font;
   a,
   a:hover,
   a:focus, {
@@ -11,6 +12,7 @@
     text-align: right;
   }
   p {
+    line-height: 1.2;
     margin: 0 0 10px;
   }
   .caption {

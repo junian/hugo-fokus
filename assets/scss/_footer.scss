@@ -20,7 +20,7 @@ footer.blog-footer {
 .blog-footer-credits {
   position: relative;
   padding: 1rem 0px;
-  font-family: "Open Sans", sans-serif;
+  @include sans-serif-font;
   font-size: 0.9rem;
   line-height: 1.75em;
   color: #8e979b;

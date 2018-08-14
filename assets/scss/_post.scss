@@ -92,7 +92,7 @@ hr.section-divider {
   &:before {
     --x-height-multiplier: 0.342;
     --baseline-multiplier: 0.22;
-    font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+    @include serif-font;
     font-weight: 400;
     font-style: italic;
     font-size: 30px;
