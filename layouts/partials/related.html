@@ -1,14 +1,33 @@
-{{ $related := .Site.RegularPages.Related . | shuffle | first 5  }}
+{{ $related := .Site.RegularPages.Related . | shuffle | first 3  }}
 {{ with $related }}
-<h2>Also Read</h2>
-<div class="similar-item post-preview">
-	{{ range . }}
+{{ $postCount := len $related }}
+<div class = "row">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		<div class="entry-similar text-center">
+			<h2>More articles to read</h2>
+		</div>
+	</div>
+</div>
+<div class = "row entry-similar">
+	{{ range $index, $page := . }}
+	<div class=' 
+	{{- if eq $postCount 1 -}}
+		col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2
+	{{- else if (and (eq $postCount 2) (eq $index 0)) -}}
+		col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1
+	{{- else if (and (eq $postCount 2) (gt $index 0)) -}}
+		col-lg-4 col-md-5
+	{{- else -}}
+		col-lg-4 col-md-4
+	{{- end -}}
+	{{- print " similar-item post-preview" -}}'>
 		<hr />
-		<a href="{{ .Permalink }}">
+		<a href="{{ $page.Permalink }}">
 			<h3>{{ .Title }}</h3>
-			<p class="post-subtitle small">{{ .Description }}</p>
-			<p class="post-meta small text-muted">{{ with .ReadingTime }}{{ . }} min read{{ end }}</p>
+			<p class="post-subtitle small">{{ $page.Description }}</p>
+			<p class="post-meta small text-muted">{{ with $page.ReadingTime }}{{ . }} min read{{ end }}</p>
 		</a>
+	</div>
 	{{ end }}
 </div>
 {{ end }}

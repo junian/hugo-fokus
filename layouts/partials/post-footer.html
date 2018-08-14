@@ -21,12 +21,14 @@
             {{ if .Site.Params.Widget.addThis }}
                 {{ partial "widget/addthis.html" . }}
             {{ end }}
-            <!-- Show related articles -->
-            {{ if $.Param "relatedVisible" }}
-            <div class="post-body entry-similar">
-                {{ partial "related.html" . }}
-            </div>
-            {{ end }}
+        </div>
+    </div>
+    <!-- Show related articles -->
+    {{ if $.Param "relatedVisible" }}
+        {{ partial "related.html" . }}
+    {{ end }}
+    <div class = "row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <!-- Author profile -->
             <!--                            
             {{/* partial "widget/author-profile.html" . */}}

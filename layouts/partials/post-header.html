@@ -38,13 +38,13 @@
                                     {{ partial (printf "svg/tag.svg") . }}
                                 </i>
                             </span>
-                            {{ range first 1 . }}
+                            {{- range first 1 . -}}
                                 <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
                             {{ end }} 
                             {{ if gt (len .) 1 }} 
-                            {{ range after 1 . }}
+                            {{- range after 1 . -}}
                                 , <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
-                            {{ end }} 
+                            {{- end -}} 
                             {{ end }}
                         </span>
                         {{ end }} 
