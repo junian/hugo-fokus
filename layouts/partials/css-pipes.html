@@ -1,0 +1,25 @@
+<!-- Bootstrap Core CSS -->
+<!--
+{{/* $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" */}}
+-->
+
+<!-- Theme CSS -->
+{{ $options := (dict "targetPath" "css/fokus.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+{{ $fokuscss := resources.Get "scss/fokus.scss" | resources.ToCSS $options }}
+
+<!-- Cookie Consent CSS -->
+{{ $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" }}
+
+{{ $indexScratch := .Scratch }}
+{{ $indexScratch.Add "cssassets" (slice $fokuscss $cookieconsentcss) }}
+{{ range .Site.Params.customCSSAssets }} 
+    {{ $indexScratch.Add "cssassets" (slice (resources.Get .)) }}
+{{ end }}
+
+<!-- Bundle css -->
+{{ $appcss := $indexScratch.Get "cssassets" | resources.Concat "css/fokus-bundle.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $appcss.Permalink }}" integrity="{{ $appcss.Data.Integrity }}">
+
+<!--
+{{/* partial "widget/buymeacoffee-style.html" . */}}
+-->
