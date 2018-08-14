@@ -1,37 +1,21 @@
 {{ define "main" }}
-
-{{ partial "header.html" . }}
-
+{{- partial "header.html" . -}}
 <!-- Main Content -->
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-            {{ $paginator := .Paginate (where .Pages "Params.type" "ne" "staticpage") }} 
-
-            {{ range sort .Paginator.Pages }}
-
+            {{ range (.Paginate (where .Site.RegularPages "Type" "not in" (slice "page"))).Pages }}
             <div class="post-preview">
                 <a href="{{ .Permalink }}">
-                    <h2 class="post-title">
-                        {{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}
-                    </h2>
-                    {{ with .Description }}
-                    <h3 class="post-subtitle">
-                        {{ . }}
-                    </h3>
-                    {{ end }}
+                    <h2 class="post-title">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}</h2>
+                    {{ with .Description }}<h3 class="post-subtitle">{{ . }}</h3>{{ end }}
                 </a>
                 <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .ReadingTime }}<span> &middot; </span>{{ . }} min read{{ end }}</p>
             </div>
             <hr />
-
             {{ end }}
-
             {{ partial "pager.html" . }}
-
         </div>
     </div>
 </div>
-
 {{ end }}

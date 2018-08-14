@@ -1,6 +1,6 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="masthead" style="{{ with $.Param "images" }}{{ range first 1 . }}background-image: url('{{ . }}'){{ end }}{{ end }}">
+<header class="masthead" style='{{ with $.Param "images" }}{{ range first 1 . }}background-image: url("{{ . }}"){{ end }}{{ end }}'>
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -16,7 +16,7 @@
                         <span class='post-timestamp'>
                             <span class="icon">
                                 <i class="feather">
-                                    {{- partial (printf "svg/calendar.svg") . -}}
+                                    {{- partial (print "svg/calendar.svg") . -}}
                                 </i>
                             </span>
                             <meta content='{{.Permalink }}' itemprop='url' />
@@ -28,29 +28,29 @@
                         </span>
                         {{ end }} 
                         <!-- Post tags -->
-                        {{ with .Params.tags }}
+                        {{- with .Params.tags -}}
                         <span class='post-labels'>
                             <span class="icon">
                                 <i class="feather">
-                                    {{- partial (printf "svg/tag.svg") . -}}
+                                    {{- partial (print "svg/tag.svg") . -}}
                                 </i>
                             </span>
                             {{- range first 1 . -}}
-                                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
-                            {{ end }} 
-                            {{ if gt (len .) 1 }} 
-                            {{- range after 1 . -}}
-                                , <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
+                                <a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{- . -}}</a>
                             {{- end -}} 
-                            {{ end }}
+                            {{- if gt (len .) 1 -}} 
+                            {{- range after 1 . -}}
+                                {{- print ", " -}}<a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{- . -}}</a>
+                            {{- end -}} 
+                            {{- end -}}
                         </span>
-                        {{ end }} 
+                        {{- end -}} 
                         <!-- Reading ETA -->
                         {{ with .ReadingTime }}
                         <span class='post-read-eta'>
                             <span class="icon">
                                 <i class="feather">
-                                    {{- partial (printf "svg/clock.svg") . -}}
+                                    {{- partial (print "svg/clock.svg") . -}}
                                 </i>
                             </span>
                             <span class='eta'> {{ . }}</span> min read

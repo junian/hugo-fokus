@@ -1,6 +1,6 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="masthead" style="{{ with $.Param "images" }}{{ range first 1 . }}background-image: url('{{ . }}'){{ end }}{{ end }}">
+<header class="masthead" style='{{ with $.Param "images" }}{{ range first 1 . }}background-image: url("{{ . }}"){{ end }}{{ end }}'>
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
