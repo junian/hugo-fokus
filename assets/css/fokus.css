@@ -340,7 +340,29 @@ hr.small {
 
 /* entry content */
 .entry-content a {
-  text-decoration: underline;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6dd5ed), to(#6dd5ed));
+  background: -webkit-linear-gradient(#6dd5ed, #6dd5ed);
+  background: -moz- oldlinear-gradient(#6dd5ed, #6dd5ed);
+  background: -o-linear-gradient(#6dd5ed, #6dd5ed);
+  background: linear-gradient(#6dd5ed, #6dd5ed);
+  -webkit-background-size: 100% .15em;
+     -moz-background-size: 100% .15em;
+       -o-background-size: 100% .15em;
+          background-size: 100% .15em;
+  background-repeat: no-repeat;
+  background-position: left 0 bottom 0;
+}
+
+.entry-content a:focus {
+  background-color: #6dd5ed;
+  color: #212529;
 }
 
 .entry-content a img:hover, .entry-content a img:focus {

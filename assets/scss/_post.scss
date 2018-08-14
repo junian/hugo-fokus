@@ -46,7 +46,18 @@
 /* entry content */
 .entry-content {
   a {
-    text-decoration: underline;
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s ease-out;
+    background: linear-gradient($blue-cool, $blue-cool);
+    background-size: 100% .15em;
+    background-repeat: no-repeat;
+    background-position: left 0 bottom 0;
+    &:focus {
+      background-color: $blue-cool;
+      color: $gray-900;
+    }
     img {
       &:hover,
       &:focus {
