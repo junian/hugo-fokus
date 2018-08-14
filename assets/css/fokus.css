@@ -146,12 +146,6 @@ img::selection {
   padding: 10px 5px;
 }
 
-@media only screen and (min-width: 768px) {
-  .pagenumber div {
-    padding: 15px 25px;
-  }
-}
-
 .adcontainer {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -197,74 +191,6 @@ img::selection {
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
-
-@media only screen and (min-width: 768px) {
-  #mainNav {
-    border-bottom: 1px solid transparent;
-    background: transparent;
-  }
-  #mainNav .navbar-brand {
-    padding: 10px 20px;
-    color: #fcfbf7;
-  }
-  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: rgba(252, 251, 247, 0.8);
-  }
-  #mainNav .navbar-nav > li.nav-item > a {
-    padding: 10px 20px;
-    color: #fcfbf7;
-  }
-  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
-    color: rgba(252, 251, 247, 0.8);
-  }
-}
-
-@media only screen and (min-width: 990px) {
-  #mainNav {
-    -webkit-transition: background-color 0.2s;
-    -o-transition: background-color 0.2s;
-    -moz-transition: background-color 0.2s;
-    transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-       -moz-backface-visibility: hidden;
-            backface-visibility: hidden;
-  }
-  #mainNav.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
-    position: fixed;
-    top: -67px;
-    -webkit-transition: -webkit-transform 0.2s;
-    transition: -webkit-transform 0.2s;
-    -o-transition: -o-transform 0.2s;
-    -moz-transition: transform 0.2s, -moz-transform 0.2s;
-    transition: transform 0.2s;
-    transition: transform 0.2s, -webkit-transform 0.2s, -moz-transform 0.2s, -o-transform 0.2s;
-    border-bottom: 1px solid #fcfbf7;
-    background-color: rgba(252, 251, 247, 0.9);
-  }
-  #mainNav.is-fixed .navbar-brand {
-    color: #212529;
-  }
-  #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-    color: #1488CC;
-  }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a {
-    color: #212529;
-  }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-    color: #1488CC;
-  }
-  #mainNav.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
-    -webkit-transform: translate3d(0, 100%, 0);
-       -moz-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
-  }
 }
 
 #navbar-toggle-cbox {
@@ -327,17 +253,6 @@ header.masthead .site-heading .subheading {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-@media only screen and (min-width: 768px) {
-  header.masthead .page-heading,
-  header.masthead .site-heading {
-    padding: 100px 0px;
-  }
-  header.masthead .page-heading h1,
-  header.masthead .site-heading h1 {
-    font-size: 80px;
-  }
-}
-
 header.masthead .post-heading h1 {
   font-size: 35px;
 }
@@ -375,21 +290,6 @@ header.masthead .post-heading .meta > span {
   display: block;
   margin-right: 8px;
   padding-right: 12px;
-}
-
-@media only screen and (min-width: 768px) {
-  header.masthead .post-heading {
-    padding: 70px 0px 50px 0px;
-  }
-  header.masthead .post-heading h1 {
-    font-size: 55px;
-  }
-  header.masthead .post-heading .subheading {
-    font-size: 30px;
-  }
-  header.masthead .post-heading .meta > span {
-    display: inline-block;
-  }
 }
 
 hr.small {
@@ -436,12 +336,6 @@ hr.small {
 .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
   text-decoration: underline;
   color: #1488CC;
-}
-
-@media only screen and (min-width: 768px) {
-  .post-preview > a > .post-title {
-    font-size: 36px;
-  }
 }
 
 /* entry content */
@@ -529,12 +423,6 @@ footer.blog-footer .copyright {
   background-color: #F5F5F5;
 }
 
-@media only screen and (min-width: 768px) {
-  .blog-footer-credits {
-    font-size: 1rem;
-  }
-}
-
 .post-footer {
   font-size: 1.4rem;
   line-height: 1.75em;
@@ -562,15 +450,6 @@ footer.blog-footer .copyright {
   line-height: 1;
   font-style: italic;
   color: #9EABB3;
-}
-
-@media only screen and (min-width: 768px) {
-  .post-footer {
-    text-align: left;
-  }
-  .post-footer .author-image {
-    top: -40px;
-  }
 }
 
 .btn {
@@ -668,15 +547,6 @@ footer.blog-footer .copyright {
   margin-top: 10px;
   font-size: 18px;
   line-height: 1.3;
-}
-
-@media only screen and (min-width: 990px) {
-  .nextprev .next {
-    text-align: right;
-  }
-  .nextprev .previous {
-    text-align: left;
-  }
 }
 
 .entry-similar a,
@@ -874,33 +744,9 @@ footer.blog-footer .copyright {
   -webkit-appearance: none;
 }
 
-@media only screen and (min-width: 768px) {
-  .gh-subscribe {
-    padding: 2rem;
-  }
-  .gh-subscribe form {
-    margin: 20px 0 15px 0;
-  }
-  .gh-subscribe p {
-    font-size: 1.5rem;
-  }
-}
-
-@media only screen and (min-width: 990px) {
-  .gh-subscribe {
-    padding: 3rem;
-  }
-}
-
 .gh-subscribe-title {
   margin: 1rem 0 0 0;
   font-size: 2rem;
-}
-
-@media only screen and (min-width: 768px) {
-  .gh-subscribe-title {
-    font-size: 2.4rem;
-  }
 }
 
 .gh-subscribe-rss {
@@ -911,4 +757,128 @@ footer.blog-footer .copyright {
 
 .gh-subscribe-rss a {
   font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  .pagenumber div {
+    padding: 15px 25px;
+  }
+  #mainNav {
+    border-bottom: 1px solid transparent;
+    background: transparent;
+  }
+  #mainNav .navbar-brand {
+    padding: 10px 20px;
+    color: #fcfbf7;
+  }
+  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+    color: rgba(252, 251, 247, 0.8);
+  }
+  #mainNav .navbar-nav > li.nav-item > a {
+    padding: 10px 20px;
+    color: #fcfbf7;
+  }
+  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
+    color: rgba(252, 251, 247, 0.8);
+  }
+  header.masthead .page-heading,
+  header.masthead .site-heading {
+    padding: 100px 0px;
+  }
+  header.masthead .page-heading h1,
+  header.masthead .site-heading h1 {
+    font-size: 80px;
+  }
+  header.masthead .post-heading {
+    padding: 70px 0px 50px 0px;
+  }
+  header.masthead .post-heading h1 {
+    font-size: 55px;
+  }
+  header.masthead .post-heading .subheading {
+    font-size: 30px;
+  }
+  header.masthead .post-heading .meta > span {
+    display: inline-block;
+  }
+  .post-preview > a > .post-title {
+    font-size: 36px;
+  }
+  .blog-footer-credits {
+    font-size: 1rem;
+  }
+  .post-footer {
+    text-align: left;
+  }
+  .post-footer .author-image {
+    top: -40px;
+  }
+  .gh-subscribe {
+    padding: 2rem;
+  }
+  .gh-subscribe form {
+    margin: 20px 0 15px 0;
+  }
+  .gh-subscribe p {
+    font-size: 1.5rem;
+  }
+  .gh-subscribe-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  #mainNav {
+    -webkit-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  #mainNav.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -67px;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+    -moz-transition: transform 0.2s, -moz-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s, -moz-transform 0.2s, -o-transform 0.2s;
+    border-bottom: 1px solid #fcfbf7;
+    background-color: rgba(252, 251, 247, 0.9);
+  }
+  #mainNav.is-fixed .navbar-brand {
+    color: #212529;
+  }
+  #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
+    color: #1488CC;
+  }
+  #mainNav.is-fixed .navbar-nav > li.nav-item > a {
+    color: #212529;
+  }
+  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
+    color: #1488CC;
+  }
+  #mainNav.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    -webkit-transform: translate3d(0, 100%, 0);
+       -moz-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  .nextprev .next {
+    text-align: right;
+  }
+  .nextprev .previous {
+    text-align: left;
+  }
+  .gh-subscribe {
+    padding: 3rem;
+  }
 }
