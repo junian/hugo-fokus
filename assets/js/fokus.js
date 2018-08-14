@@ -27,6 +27,12 @@
     }
 
     function remove(el) {
+        if(!el)
+            return;
+        
+        if(!el.parentNode)
+            return;
+        
         el.parentNode.removeChild(el);
     }
 
@@ -90,12 +96,16 @@
         if(bmcNoScript)        
             before(bmcNoScript, text(bmcNoScript));
         
-        removeClass(document.querySelector('#blockadblock'), 'hidden');
+        var elBab = document.querySelector('#blockadblock');
+        if(elBab)
+            removeClass(elBab, 'hidden');
+
         remove(document.querySelector('#image-tests'));
     }
 
     function onAdBlockNotDetected() {
         console.log("adblock NOT detected");
+
         remove(document.querySelector('#image-tests'));
     }
 
