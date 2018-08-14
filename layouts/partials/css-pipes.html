@@ -3,7 +3,7 @@
 {{/* $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" */}}
 -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
-{{- $bootstrapcustomcss := resources.Get "scss/_bootstrap-custom.scss" | resources.ToCSS $options -}}
+{{- $bootstrapcustomcss := resources.Get "scss/bootstrap-custom.scss" | resources.ToCSS $options -}}
 <!-- Theme CSS -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
 {{- $fokuscss := resources.Get "scss/fokus.scss" | resources.ToCSS $options -}}
