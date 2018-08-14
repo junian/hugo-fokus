@@ -1,0 +1,43 @@
+{{ if ne .Params.type "staticpage" }}
+    <div class = "row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- Show Bottom Adsense -->
+            {{ if $.Param "adsense.showBottom" }}
+                {{ partial "widget/adsense-responsive.html" . }}
+            {{ end }}
+            <!-- Content and Code License -->
+            {{ if $.Param "license.visible" }}
+                {{ partial "license.html" . }}
+            {{ end }}
+            <!-- Native social share -->
+            {{ partial "widget/social-share.html" . }}
+            <!-- Blockadblock message -->
+            {{ if .Site.Params.Widget.blockAdBlock }}
+                {{ partial "widget/blockadblock.html" . }}
+            {{ end }}
+            <!-- Buy me a coffee -->
+            {{ partial "widget/buymeacoffee.html" . }}
+            <!-- Show AddThis if enabled -->
+            {{ if .Site.Params.Widget.addThis }}
+                {{ partial "widget/addthis.html" . }}
+            {{ end }}
+            <!-- Show related articles -->
+            {{ if $.Param "relatedVisible" }}
+            <div class="post-body entry-similar">
+                {{ partial "related.html" . }}
+            </div>
+            {{ end }}
+            <!-- Author profile -->
+            <!--                            
+            {{/* partial "widget/author-profile.html" . */}}
+            -->
+            <!-- Email Subscribe -->
+            <div class="post-body entry-subscribe">
+                {{ partial "widget/email-subscribe.html" . }}
+            </div>
+            <!-- Disqus comments -->
+            {{ partial "widget/disqus-ondemand.html" . }}
+        </div>
+    </div>
+    {{ partial "nextprev.html" . }}
+{{ end }}
