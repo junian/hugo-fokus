@@ -8,7 +8,7 @@ body {
   font-size: 20px;
   color: #212529;
   background-color: #fcfbf7;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
   -webkit-tap-highlight-color: #1488CC;
 }
 
@@ -31,7 +31,7 @@ h4,
 h5,
 h6 {
   font-weight: 800;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -84,6 +84,10 @@ blockquote + blockquote {
 
 pre {
   margin-bottom: 30px;
+}
+
+figure {
+  margin: 30px 0;
 }
 
 figure pre, figure .table {
@@ -153,7 +157,7 @@ img::selection {
 }
 
 .license {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 30px 0;
 }
 
@@ -165,7 +169,7 @@ img::selection {
   left: 0;
   width: 100%;
   z-index: 3;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #mainNav .navbar-brand {
@@ -251,7 +255,7 @@ header.masthead .site-heading .subheading {
   line-height: 1.1;
   display: block;
   margin: 10px 0 0;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 header.masthead .post-heading h1 {
@@ -268,7 +272,7 @@ header.masthead .post-heading .subheading {
   font-size: 24px;
   font-weight: 400;
   margin: 10px 0 30px;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 header.masthead .post-heading .meta {
@@ -276,7 +280,7 @@ header.masthead .post-heading .meta {
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 header.masthead .post-heading .meta a {
@@ -403,7 +407,7 @@ hr.section-divider {
 hr.section-divider:before {
   --x-height-multiplier: 0.342;
   --baseline-multiplier: 0.22;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
   font-weight: 400;
   font-style: italic;
   font-size: 30px;
@@ -438,7 +442,7 @@ footer.blog-footer .copyright {
 .blog-footer-credits {
   position: relative;
   padding: 1rem 0px;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.9rem;
   line-height: 1.75em;
   color: #8e979b;
@@ -484,7 +488,7 @@ footer.blog-footer .copyright {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .btn-primary {
@@ -541,12 +545,23 @@ footer.blog-footer .copyright {
 }
 
 .nextprev {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.nextprev a,
-.nextprev a:hover,
-.nextprev a:focus {
+.nextprev a {
+  text-decoration: none;
+}
+
+.nextprev a.disabled {
+  cursor: not-allowed;
+}
+
+.nextprev a.disabled:hover, .nextprev a.disabled:focus {
+  text-decoration: none;
+  color: #212529;
+}
+
+.nextprev a:hover, .nextprev a:focus {
   text-decoration: none;
 }
 
@@ -578,7 +593,7 @@ footer.blog-footer .copyright {
 }
 
 .entry-similar {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .entry-similar a,
@@ -592,7 +607,7 @@ footer.blog-footer .copyright {
 }
 
 .similar-item .post-meta {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
   font-style: italic;
 }
 
@@ -668,7 +683,7 @@ footer.blog-footer .copyright {
 }
 
 .gh-subscribe {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: #e7eef2 1px solid;
   padding: 15px;
   margin-top: 3rem;
