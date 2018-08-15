@@ -33,6 +33,10 @@
                     {{ else }}
                         {{ .Scratch.Set "finalContent" .Content }}
                     {{ end }}
+                    {{ $codeblockIn := "(?s:<div class=\"highlight\">(.*?)</div>)" }}
+                    {{ $codeblockOut := "<figure class=\"highlight\">$1</figure>" }}
+                    {{ $codeblockContent := (.Scratch.Get "finalContent") | replaceRE $codeblockIn $codeblockOut | safeHTML }}
+                    {{ .Scratch.Set "finalContent" $codeblockContent }}
                     {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "page")) }}
                         {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partial "widget/adsense-inarticle.html" .) | safeHTML }}
                     {{ else }}
