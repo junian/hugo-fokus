@@ -1,9 +1,19 @@
 .nextprev {
   @include sans-serif-font;
-  a,
-  a:hover,
-  a:focus, {
+  a {
     text-decoration: none;
+    &.disabled {
+      cursor: not-allowed;
+      &:hover,
+      &:focus, {
+        text-decoration: none;
+        color: $gray-900;
+      }  
+    }
+    &:hover,
+    &:focus, {
+      text-decoration: none;
+    }
   }
   .next{
     text-align: left;
