@@ -36,6 +36,17 @@ a {
     text-decoration: none;
     color: $primary;
   }
+  &.imglink{
+    img{
+      transition: opacity 0.3s;
+    }
+    &:focus,
+    &:hover {
+      img {
+        opacity:0.85;
+      }
+    }
+  }
 }
 
 blockquote {

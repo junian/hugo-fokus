@@ -215,7 +215,7 @@
     ready(function() {
         console.log( "ready!" );
         runCookieConsent();
-        detectAdBlockWithABCheck();
+        // detectAdBlockWithABCheck();
         disqusOnDemandButton();
     });
     

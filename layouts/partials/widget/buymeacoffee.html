@@ -1,25 +1,14 @@
 {{ if .Site.Params.Widget.buymeacoffee }}
-<noscript id="buymeacoffee">
-    {{ if .Site.Params.Widget.buymeacoffeeMessage }}
-        <p>{{ .Site.Params.Widget.buymeacoffeeMessage }}</p>
-    {{ else }}
-        <p>
-        Hello there, thanks for reading.
-        Did you find this writing helpful, or save your valuable time?
-        If so, you can support me by sending a cup of coffee with the button right here — you'll have my eternal gratitude!
-        </p>
-    {{ end }}
-
-    <!--
+{{ if .Site.Params.Widget.buymeacoffeeMessage }}
+    <p>{{ .Site.Params.Widget.buymeacoffeeMessage }}</p>
+{{ else }}
     <p>
-        <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/{{ .Site.Params.Widget.buymeacoffee }}">
-            <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee">
-            <span style="margin-left:5px">Buy me a coffee</span>
-        </a>
+    Hello there, thanks for reading.
+    Did you find this writing helpful, or save your valuable time?
+    If so, you can support me by sending a cup of coffee with the button right here — you'll have my eternal gratitude!
     </p>
-    -->
-    <p>
-        <a href="https://www.buymeacoffee.com/{{ .Site.Params.Widget.buymeacoffee }}" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;"></a>
-    </p>
-</noscript>
+{{ end }}
+<p>
+    <a href="https://www.buymeacoffee.com/{{ .Site.Params.Widget.buymeacoffee }}" class="imglink" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;"></a>
+</p>
 {{ end }}

@@ -44,6 +44,17 @@ a:focus, a:hover {
   color: #1488CC;
 }
 
+a.imglink img {
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+a.imglink:focus img, a.imglink:hover img {
+  opacity: 0.85;
+}
+
 blockquote {
   background-color: #f8f9fa;
   padding: 20px;
