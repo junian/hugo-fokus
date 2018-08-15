@@ -1,42 +1,36 @@
 <!-- jQuery -->
+<!--
 {{/* $jquery := resources.Get "vendor/jquery/jquery.min.js" */}}
-
+-->
 <!-- Clipboardjs -->
 {{ $clipboardjs := resources.Get "vendor/clipboard.js/dist/clipboard.min.js" }}
-
 <!-- imagesloaded -->
 {{ $imagesloaded := resources.Get "vendor/imagesloaded/imagesloaded.pkgd.min.js" }}
-
 <!-- blockadblock -->
 {{ $blockadblock := slice (resources.Get "js/abcheck.js") | resources.Concat "js/abcheck.js" | resources.Minify | resources.Fingerprint }}
-
+<!--
 {{/* $blockadblock := slice (resources.Get "vendor/blockadblock/blockadblock.js") | resources.Concat "js/blockadblock.js" | resources.Minify | resources.Fingerprint */}}
-
+-->
 {{ .Scratch.Set "blockadblock" $blockadblock.Permalink }}
 {{ $abdetectjs := slice $blockadblock | resources.Concat "abdetect.js" }}
 {{ $string := (printf "var fabjs = '%s'; var fabintegrity = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity)) }}
 {{ $targetPath := "js/vars.js" }}
 {{ $vars := $string | resources.FromString $targetPath }}
-
 <!-- Bootstrap Core JavaScript -->
+<!--
 {{/* $bstransition := resources.Get "vendor/bootstrap/js/transition.js" */}}
 {{/* $bscollapse := resources.Get "vendor/bootstrap/js/collapse.js" */}}
-
+-->
 <!-- Cookie Consent js -->
 {{ $cookieconsentjs := resources.Get "vendor/cookieconsent/build/cookieconsent.min.js" }}
-
 <!-- Theme JavaScript -->
 {{ $fokusjs := resources.Get "js/fokus.js" }}
-
 {{ $indexScratch := .Scratch }}
 {{ $indexScratch.Add "jsassets" (slice $imagesloaded $cookieconsentjs $vars $fokusjs) }}
 {{ range .Site.Params.customJSAssets }} 
     {{ $indexScratch.Add "jsassets" (slice (resources.Get .)) }}
 {{ end }}
-
 {{ $appjs := $indexScratch.Get "jsassets" | resources.Concat "js/fokus-bundle.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $appjs.RelPermalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
-
-{{ template "_internal/google_analytics.html" . }}
-
-{{ partial "widgetscripts.html" . }}
+{{- template "_internal/google_analytics_async.html" . -}}
+{{- partial "widget-scripts.html" . -}}

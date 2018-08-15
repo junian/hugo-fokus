@@ -2,34 +2,38 @@
 <div class="row nextprev">
     <div class="col-lg-6 col-md-6 next small">
         <hr />
-        {{ if .NextInSection }}
-            <a href="{{ .NextInSection.Permalink }}" class="">
+        {{- if .NextInSection -}}
+            {{- with .NextInSection -}}
+            <a href="{{- .Permalink -}}" class="">
                 <h4>&lsaquo; Prev</h4>
-                <h3>{{ .NextInSection.Title }}</h3>
-                <p>{{ .NextInSection.Description }}</p>
+                <h3>{{- .Title -}}</h3>
+                <p>{{- .Description -}}</p>
             </a>
-        {{ else }}
+            {{- end -}}
+        {{- else -}}
             <a class="disabled">
                 <h4>&lsaquo; Prev</h4>
                 <h3>No Content</h3>
                 <p>You're at the first page, there is nothing before this content.</p>
             </a>
-        {{ end }}
+        {{- end -}}
     </div>
     <div class="col-lg-6 col-md-6 previous small">
         <hr />
-        {{ if .PrevInSection }}
-            <a href="{{ .PrevInSection.Permalink }}" class="">
+        {{- if .PrevInSection -}}
+            {{- with .PrevInSection -}}
+            <a href="{{- .Permalink -}}" class="">
                 <h4>Next &rsaquo;</h4>
-                <h3>{{ .PrevInSection.Title }}</h3>
-                <p>{{ .PrevInSection.Description }}</p>
+                <h3>{{- .Title -}}</h3>
+                <p>{{- .Description -}}</p>
             </a>
-        {{ else }}
+            {{- end -}}
+        {{- else -}}
             <a class="disabled">
                 <h4>Next &rsaquo;</h4>
                 <h3>No Content</h3>
                 <p>You're at the last page, there is nothing after this content.</p>
             </a>
-        {{ end }}
+        {{- end -}}
     </div>
 </div>

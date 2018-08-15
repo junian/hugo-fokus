@@ -1,11 +1,10 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse" id="navitemlist-left">
     <ul class="nav navbar-nav navbar-left">
-        {{ range .Site.Params.Menu.navleft }}
+        {{- range .Site.Params.Menu.navleft -}}
         <li class="nav-item">
-            <a href="{{ .url }}">{{ .title }}</a>
+            <a href="{{- .url -}}">{{- .title -}}</a>
         </li>
-        {{ end }}
+        {{- end -}}
     </ul>
 </div>
-<!-- /.navbar-collapse -->

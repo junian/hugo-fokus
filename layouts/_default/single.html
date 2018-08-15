@@ -1,67 +1,50 @@
 {{ define "main" }}
-
-{{ if eq .Params.type "staticpage" }}
-    {{ partial "header.html" . }}
-{{ else }}
-    {{ partial "post-header.html" . }}
-{{ end }}
-
+{{- if eq .Params.type "page" -}}
+    {{- partial "header.html" . -}}
+{{- else -}}
+    {{- partial "post-header.html" . -}}
+{{- end -}}
 <!-- Post Content -->
 <article>
     <div class="container">
-
-        {{ if ne .Params.type "staticpage" }}
-
+        {{- if ne .Params.type "page" -}}
             <div class = "row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
                     <!-- Show Top Adsense -->
-                    {{ if $.Param "adsense.showTop" }}
-                        {{ partial "widget/adsense-responsive.html" . }}
-                    {{ end }}
-                    
+                    {{- if $.Param "adsense.showTop" -}}
+                        {{- partial "widget/adsense-responsive.html" . -}}
+                    {{- end -}}
                 </div>
             </div>
-        
-        {{ end }}
-
+        {{- end -}}
         <div class="row main-content">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
                 <!-- Article Content -->
                 <div class="post-body entry-content">
                     {{ .Scratch.Set "finalContent" "" }}
-                    
                     {{ if $.Site.Params.autoFigure }}
                         {{ $reAltTitleIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" }}
                         {{ $reAltTitleOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$3\"><figcaption class='text-muted'>$2</figcaption></figure>" }}
                         {{ $contentAltTitle := .Content | replaceRE $reAltTitleIn $reAltTitleOut | safeHTML }}
-
                         {{ $reAltIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" }}
                         {{ $reAltOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\"><figcaption class='text-muted'>$2</figcaption></figure>" }}
                         {{ $contentAlt := $contentAltTitle | replaceRE $reAltIn $reAltOut | safeHTML }}
-                        
                         {{ .Scratch.Set "finalContent" $contentAlt }}
                     {{ else }}
                         {{ .Scratch.Set "finalContent" .Content }}
                     {{ end }}
-
-                    {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "staticpage")) }}
+                    {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "page")) }}
                         {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partial "widget/adsense-inarticle.html" .) | safeHTML }}
                     {{ else }}
                         {{ .Scratch.Get "finalContent" }}
                     {{ end }}
-
                 </div>
-
             </div>
         </div>
-
-        <hr class='section-divider'/>
-
-        {{- partial "post-footer.html" . -}}
-
+        <hr class='section-divider' />
+        {{- if ne .Params.type "page" -}}
+            {{- partial "post-footer.html" . -}}
+        {{- end -}}
     </div>
 </article>
-
 {{ end }}
