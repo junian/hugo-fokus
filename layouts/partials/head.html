@@ -37,15 +37,20 @@
     <link rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}" />
     {{ end }}
     <!-- CSS from hugo pipes -->
-    {{- partial "css-assets.html" . -}}
-    {{ if $.Param "useWebFont" }}
+    {{ if .Site.Params.useSassPipes }}
+        {{- partial "css-pipes.html" . -}}
+    {{ else }}
+        {{- partial "css-assets.html" . -}}
+    {{ end }}
     <!-- Google Fonts -->
+    {{ if $.Param "useWebFont" }} 
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700%7COpen+Sans:400,700" rel="stylesheet">
     {{ end }}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    {{ "<!--[if lt IE 9]>" | safeHTML }}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    {{ "<![endif]-->" | safeHTML }}
 </head>
