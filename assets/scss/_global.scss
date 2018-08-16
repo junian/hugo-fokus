@@ -169,7 +169,7 @@ figure {
   cursor: pointer;
   z-index: 1;
   backface-visibility: hidden;
-
+  
   &.chroma {
     background-color: transparent;
   }
@@ -184,4 +184,42 @@ figure {
       color: inherit;
     }
   }
+}
+
+.msg-clipboard {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 3.4rem;
+  padding: 0.6rem 1rem;
+  transform: translateX(0.8rem);
+  transition: transform 0.25s cubic-bezier(0.9, 0.1, 0.9, 0), opacity 0.175s;
+  border-radius: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.54);
+  color: white;
+  font-size: 1.28rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none; 
+  &::before {
+    content: attr(aria-label); 
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -0.4rem;
+    width: 0;
+    margin-top: -0.4rem;
+    border-width: 0.4rem 0 0.4rem 0.4rem;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.54);
+    content: ""; 
+  }
+}
+.msg-clipboard--active {
+  transform: translateX(0);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.175s 0.075s;
+  opacity: 1;
+  pointer-events: initial; 
 }
