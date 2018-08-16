@@ -34,7 +34,7 @@
                         {{ .Scratch.Set "finalContent" .Content }}
                     {{ end }}
                     {{ $codeblockIn := "(?s:<div class=\"highlight\">(.*?)</div>)" }}
-                    {{ $codeblockOut := "<figure class=\"highlight\">$1</figure>" }}
+                    {{ $codeblockOut := (printf "<figure class=\"highlight\"><button class=\"btn-clipboard chroma\"><i class=\"icon icon-clipboard\">%s</i></button>$1</figure>" (partial (print "svg/copy.svg") .)) }}
                     {{ $codeblockContent := (.Scratch.Get "finalContent") | replaceRE $codeblockIn $codeblockOut | safeHTML }}
                     {{ .Scratch.Set "finalContent" $codeblockContent }}
                     {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "page")) }}

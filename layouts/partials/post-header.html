@@ -14,11 +14,9 @@
                         <!-- Published Date -->
                         {{ if not .Date.IsZero }}
                         <span class='post-timestamp'>
-                            <span class="icon">
-                                <i class="feather">
-                                    {{- partial (print "svg/calendar.svg") . -}}
-                                </i>
-                            </span>
+                            <i class="icon">
+                                {{- partial (print "svg/calendar.svg") . -}}
+                            </i>
                             <meta content='{{.Permalink }}' itemprop='url' />
                             <a class='timestamp-link' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
                                 <time class='published' title='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}' itemprop='datePublished dateModified'>
@@ -30,29 +28,25 @@
                         <!-- Post tags -->
                         {{- with .Params.tags -}}
                         <span class='post-labels'>
-                            <span class="icon">
-                                <i class="feather">
-                                    {{- partial (print "svg/tag.svg") . -}}
-                                </i>
-                            </span>
-                            {{- range first 1 . -}}
+                            <i class="icon">
+                                {{- partial (print "svg/tag.svg") . -}}
+                            </i>
+                            {{ range first 1 . }}
                                 <a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{- . -}}</a>
-                            {{- end -}} 
-                            {{- if gt (len .) 1 -}} 
-                            {{- range after 1 . -}}
-                                {{- print ", " -}}<a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{- . -}}</a>
-                            {{- end -}} 
-                            {{- end -}}
+                            {{ end }} 
+                            {{ if gt (len .) 1 }} 
+                            {{ range after 1 . }}
+                                {{ print ", " }}<a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{ . }}</a>
+                            {{ end }} 
+                            {{ end }}
                         </span>
                         {{- end -}} 
                         <!-- Reading ETA -->
                         {{ with .ReadingTime }}
                         <span class='post-read-eta'>
-                            <span class="icon">
-                                <i class="feather">
-                                    {{- partial (print "svg/clock.svg") . -}}
-                                </i>
-                            </span>
+                            <i class="icon">
+                                {{- partial (print "svg/clock.svg") . -}}
+                            </i>
                             <span class='eta'> {{ . }}</span> min read
                         </span>
                         {{ end }}

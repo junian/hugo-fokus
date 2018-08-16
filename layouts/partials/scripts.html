@@ -26,7 +26,7 @@
 <!-- Theme JavaScript -->
 {{ $fokusjs := resources.Get "js/fokus.js" }}
 {{ $indexScratch := .Scratch }}
-{{ $indexScratch.Add "jsassets" (slice $imagesloaded $cookieconsentjs $vars $fokusjs) }}
+{{ $indexScratch.Add "jsassets" (slice $imagesloaded $cookieconsentjs $clipboardjs $vars $fokusjs) }}
 {{ range .Site.Params.customJSAssets }} 
     {{ $indexScratch.Add "jsassets" (slice (resources.Get .)) }}
 {{ end }}

@@ -142,3 +142,46 @@ img::selection {
   @include sans-serif-font;
   margin: 30px 0;
 }
+
+figure {
+  &.highlight {
+    position: relative;
+  }
+  &:hover .icon-clipboard {
+    color: inherit;
+    opacity: 0.5;
+  }
+}
+
+.btn-clipboard {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline-style: none;
+  font-size: inherit;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 1;
+  backface-visibility: hidden;
+
+  &.chroma {
+    background-color: transparent;
+  }
+  .icon-clipboard {
+    opacity: 0.25;
+    transition: color   0.25s, opacity 0.25s;
+  }
+  &:focus, 
+  &:hover {
+    .icon-clipboard {
+      opacity: 1;
+      color: inherit;
+    }
+  }
+}

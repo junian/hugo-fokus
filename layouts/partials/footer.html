@@ -11,11 +11,9 @@
                             {{ range .Site.Params.social }}
                                 <li>
                                     <a href="{{ .url }}">
-                                        <span class="icon icon-large">
-                                            <i class="feather">
-                                                {{ partial (printf "svg/%s.svg" .title) . }}
-                                            </i>
-                                        </span>
+                                        <i class="icon icon-large">
+                                            {{ partial (printf "svg/%s.svg" .title) . }}
+                                        </i>
                                     </a>
                                 </li>
                             {{ end }} 
