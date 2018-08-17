@@ -14,7 +14,7 @@
                         <!-- Published Date -->
                         {{ if not .Date.IsZero }}
                         <span class='post-timestamp'>
-                            <i class="icon">
+                            <i class="icon fa fa-calendar">
                                 {{- partial (print "svg/calendar.svg") . -}}
                             </i>
                             <meta content='{{.Permalink }}' itemprop='url' />
@@ -28,7 +28,7 @@
                         <!-- Post tags -->
                         {{- with .Params.tags -}}
                         <span class='post-labels'>
-                            <i class="icon">
+                            <i class="icon fa fa-tag">
                                 {{- partial (print "svg/tag.svg") . -}}
                             </i>
                             {{ range first 1 . }}
@@ -44,7 +44,7 @@
                         <!-- Reading ETA -->
                         {{ with .ReadingTime }}
                         <span class='post-read-eta'>
-                            <i class="icon">
+                            <i class="icon fa fa-clock-o">
                                 {{- partial (print "svg/clock.svg") . -}}
                             </i>
                             <span class='eta'> {{ . }}</span> min read
