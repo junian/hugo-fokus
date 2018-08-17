@@ -187,6 +187,7 @@ figure {
 }
 
 .msg-clipboard {
+  @include sans-serif-font;
   display: block;
   position: absolute;
   top: 0;
