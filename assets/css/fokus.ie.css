@@ -1,0 +1,10 @@
+#btn_load_disqus_thread {
+    display: none;
+}
+header.masthead {
+    background-position: center center;
+    background-repeat: repeat;
+}
+.overlay {
+    filter: alpha(opacity=70);
+}

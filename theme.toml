@@ -5,17 +5,17 @@ name = "Fokus"
 license = "MIT"
 licenselink = "https://github.com/junian/fokus/blob/master/LICENSE"
 description = ""
-homepage = "http://example.com/"
-tags = []
+homepage = "https://github.com/junian/"
+tags = ["minimalist"]
 features = []
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Junian Triajianto"
+  homepage = "https://www.junian.net/"
 
 # If porting an existing theme
 [original]
-  name = ""
+  name = "Start"
   homepage = ""
   repo = ""
