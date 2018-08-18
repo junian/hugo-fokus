@@ -1,0 +1,126 @@
+hr {
+    &.section-divider {
+        box-sizing: content-box;
+        height: 0;
+        display: block;
+        border: 0;
+        text-align: center;
+        overflow: visible;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        &:before {
+            --x-height-multiplier: 0.342;
+            --baseline-multiplier: 0.22;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 30px;
+            letter-spacing: .6em;
+            content: '...';
+            display: inline-block;
+            margin-left: .6em;
+            color: rgba(0, 0, 0, .68);
+            position: relative;
+            top: -30px;
+        }
+    }
+}
+
+.e-content {
+    p,
+    figure,
+    blockquote,
+    ul,
+    ol {
+        @include serif-font;
+        @extend .section;
+    }
+    p {
+        line-height: 1.5;
+        word-wrap: break-word;
+        a {
+            text-decoration: none;
+        }
+    }
+    img {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 100%;
+        height: auto;
+    }
+    figure {
+        figcaption {
+            font-size: 14px;
+            font-style: italic;
+            display: block;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        pre,
+        table,
+        img {
+             margin-top: 0px;
+             margin-bottom: 0px;
+        }
+        &.highlight {
+            position: relative;
+        }
+        &:hover {
+            .icon-clipboard {
+                color: inherit;
+                opacity: 0.5;
+            }
+        }
+    }
+    h2 {
+        font-size: 36px;
+        margin: 60px 0 30px 0;
+    }
+    h3 {
+        margin: 50px 0 30px 0;
+    }
+    a {
+        color: inherit;
+        outline: none;
+        text-decoration: none;
+        transition: all .2s ease-out;
+        background: $blue-cool;
+        background: linear-gradient($blue-cool, $blue-cool);
+        background-size: 100% .15em;
+        background-repeat: no-repeat;
+        background-position: left 0 bottom 0;
+        &:focus {
+            background-color: $blue-cool;
+            color: $gray-900;
+        }
+        img {
+            &:hover,
+            &:focus {
+                cursor: zoom-in;
+            }
+        }
+    }
+    li {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    blockquote {
+        background-color: $gray-100;
+        padding: 10px;
+        color: $gray-700;
+        border: 1px solid $gray-200;
+        border-left-width: 5px;
+        border-radius: 3px;
+        border-left-color: $gray-700;
+        p,
+        h4 {
+            margin: 10px;
+        }
+    }
+    hr {
+        @extend hr.section-divider;
+    }
+}

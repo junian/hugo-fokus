@@ -1,11 +1,11 @@
 {{ define "main" }}
-{{- if eq .Params.type "page" -}}
-    {{- partial "header.html" . -}}
-{{- else -}}
-    {{- partial "post-header.html" . -}}
-{{- end -}}
 <!-- Post Content -->
-<article>
+<article class="h-entry">
+    {{- if eq .Params.type "page" -}}
+        {{- partial "header.html" . -}}
+    {{- else -}}
+        {{- partial "post-header.html" . -}}
+    {{- end -}}
     <div class="container">
         {{- if ne .Params.type "page" -}}
             <div class = "row">
@@ -17,10 +17,10 @@
                 </div>
             </div>
         {{- end -}}
-        <div class="row main-content">
+        <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <!-- Article Content -->
-                <div class="post-body entry-content">
+                <div class="e-content">
                     {{ .Scratch.Set "finalContent" "" }}
                     {{ if $.Site.Params.autoFigure }}
                         {{ $reAltTitleIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" }}
@@ -34,7 +34,7 @@
                         {{ .Scratch.Set "finalContent" .Content }}
                     {{ end }}
                     {{ $codeblockIn := "(?s:<div class=\"highlight\">(.*?)</div>)" }}
-                    {{ $codeblockOut := (printf "<figure class=\"highlight\"><button class=\"btn-clipboard chroma\" title=\"Copy to clipboard\"><i class=\"icon icon-clipboard\">%s</i><span class=\"msg-clipboard\"></span></button>$1</figure>" (partial (print "svg/copy.svg") .)) }}
+                    {{ $codeblockOut := (printf "<figure class=\"highlight\"><button class=\"btn-clipboard chroma\" title=\"Copy to clipboard\"><i class=\"fa icon-clipboard\">%s</i><span class=\"msg-clipboard\"></span></button>$1</figure>" (partial (print "svg/copy.svg") .)) }}
                     {{ $codeblockContent := (.Scratch.Get "finalContent") | replaceRE $codeblockIn $codeblockOut | safeHTML }}
                     {{ .Scratch.Set "finalContent" $codeblockContent }}
                     {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "page")) }}

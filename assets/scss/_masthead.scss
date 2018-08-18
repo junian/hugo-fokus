@@ -38,7 +38,6 @@ header.masthead {
       line-height: 1.1;
       display: block;
       margin: 10px 0 0;
-      @include sans-serif-font;
     }
     @media only screen and (min-width: 768px) {
       padding: 100px 0px;
@@ -51,7 +50,7 @@ header.masthead {
     h1 {
       font-size: 35px;
     }
-    .meta,
+    .post-meta,
     .subheading {
       display: block;
     }
@@ -60,9 +59,8 @@ header.masthead {
       font-size: 24px;
       font-weight: 400;
       margin: 10px 0 30px;
-      @include sans-serif-font;
     }
-    .meta {
+    .post-meta {
       line-height: 1.45;
       font-size: 20px;
       font-weight: 300;
@@ -70,12 +68,12 @@ header.masthead {
       @include serif-font;
       a {
         color: $white-warm;
-          &:focus,
-          &:hover {
-            color: fade-out($white-warm, .2);
-          }
+        &:focus,
+        &:hover {
+          color: fade-out($white-warm, .2);
+        }
       }
-      > span {
+      >span {
         display: block;
         margin-right: 8px;
         padding-right: 12px;
@@ -89,8 +87,8 @@ header.masthead {
       .subheading {
         font-size: 30px;
       }
-      .meta {
-        > span {
+      .post-meta {
+        >span {
           display: inline-block;
         }
       }

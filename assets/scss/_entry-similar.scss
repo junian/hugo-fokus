@@ -1,18 +1,14 @@
-.entry-similar {
-  @include sans-serif-font;
+.similar-item {
   a,
   a:hover,
   a:focus, {
     text-decoration: none;
   }
-}
-
-.similar-item {
   p {
     margin: 0 0 10px 0;
   }
   .post-meta {
-    @include serif-font;
     font-style: italic;
+    @include serif-font;
   }
 }

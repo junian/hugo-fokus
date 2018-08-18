@@ -8,19 +8,18 @@
     fill: none;
 }
 
-.feather-large {
-    width: 48px;
-    height: 48px;
+.fa {
+    svg {
+        height: 1em;
+        width: 1em;
+        top: .125em;
+        position: relative;
+    }
 }
 
-.icon svg {
-    height: 1em;
-    width: 1em;
-    top: .125em;
-    position: relative;
-}
-
-.icon-large svg {
-    height: 2em;
-    width: 2em;
+.fa-2x {
+    svg {
+        height: 2em;
+        width: 2em;
+    }
 }

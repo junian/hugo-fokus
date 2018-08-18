@@ -16,10 +16,8 @@
     border-radius: 0;
     background: none;
     box-shadow: none !important;
-    @include serif-font;
     &::-webkit-input-placeholder {
       color: $gray-600;
-      @include serif-font;
     }
   }
   label {

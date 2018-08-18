@@ -1,14 +1,16 @@
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="{{.Site.Params.Adsense.client}}"
-     data-ad-slot="{{.Site.Params.Adsense.inArticleSlot}}"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<div class="adcontainer">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="{{.Site.Params.Adsense.client}}"
+        data-ad-slot="{{.Site.Params.Adsense.inArticleSlot}}"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
 {{ else }}
 <div class="alert alert-warning" role="alert">
     <strong>Attention! </strong>Google In-Article Ads not available by default when the website is previewed locally.

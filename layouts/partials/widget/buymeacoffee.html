@@ -1,4 +1,5 @@
 {{ if .Site.Params.Widget.buymeacoffee }}
+<div class="section bmc">
 {{ if .Site.Params.Widget.buymeacoffeeMessage }}
     <p>{{ .Site.Params.Widget.buymeacoffeeMessage }}</p>
 {{ else }}
@@ -11,4 +12,5 @@
 <p>
     <a href="https://www.buymeacoffee.com/{{ .Site.Params.Widget.buymeacoffee }}" class="imglink" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;"></a>
 </p>
+</div>
 {{ end }}

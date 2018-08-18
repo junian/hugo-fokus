@@ -6,19 +6,21 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    {{ if eq .Kind "404" }}
-                        <h1>{{ .Site.Title }}</h1>
-                    {{ else }}
-                        <h1>{{ .Title }}</h1>
-                    {{ end }}
+                    <h1 class="p-name">
+                        {{- if eq .Kind "404" -}}
+                            {{- .Site.Title -}}
+                        {{- else -}}
+                            {{- .Title -}}
+                        {{- end -}}
+                    </h1>
                     <hr class="small" />
-                    {{ if eq .Kind "404" }}
-                        <span class="subheading">{{ .Title }}</span>
-                    {{ else }}
-                        {{ with $.Param "description" }}
-                        <span class="subheading">{{ . }}</span>
-                        {{ end }}
-                    {{ end }}
+                        <span class="subheading">
+                            {{- if eq .Kind "404" -}}
+                                {{- .Title -}}
+                            {{- else -}}
+                                {{- with $.Param "description" -}}{{- . -}}{{- end -}}
+                            {{- end -}}
+                        </span>
                 </div>
             </div>
         </div>

@@ -20,6 +20,7 @@
     }
   }
   > .post-meta {
+    @include serif-font;
     font-size: 18px;
     font-style: italic;
     margin-top: 0;
@@ -40,68 +41,5 @@
         font-size: 36px;
       }
     }
-  }
-}
-
-/* entry content */
-.entry-content {
-  a {
-    color: inherit;
-    outline: none;
-    text-decoration: none;
-    transition: all .2s ease-out;
-    background: linear-gradient($blue-cool, $blue-cool);
-    background-size: 100% .15em;
-    background-repeat: no-repeat;
-    background-position: left 0 bottom 0;
-    &:focus {
-      background-color: $blue-cool;
-      color: $gray-900;
-    }
-    img {
-      &:hover,
-      &:focus {
-        cursor: zoom-in;
-      }
-    }
-  }
-  img {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 100%;
-    height: auto;
-  }
-  li {
-    margin-bottom: 14px;
-  }
-}
-
-/* Section divider, inspired by Medium */
-.entry-content hr,
-hr.section-divider {
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-  display: block;
-  border: 0;
-  text-align: center;
-  overflow: visible;
-  margin-top: 52px;
-  margin-bottom: 42px;
-  &:before {
-    --x-height-multiplier: 0.342;
-    --baseline-multiplier: 0.22;
-    @include serif-font;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 30px;
-    letter-spacing: .6em;
-    content: '...';
-    display: inline-block;
-    margin-left: .6em;
-    color: rgba(0,0,0,.68);
-    position: relative;
-    top: -30px;
   }
 }

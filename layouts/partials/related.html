@@ -1,38 +1,40 @@
 {{ $related := .Site.RegularPages.Related . | shuffle | first 3  }}
 {{ with $related }}
 {{ $postCount := len $related }}
-<div class = "row">
-	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-		<div class="entry-similar text-center">
-			<h2>More articles to read</h2>
+<div class="section-related">
+	<div class = "row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div class="text-center">
+				<h2>Further Reading on {{ $.Site.Title }}</h2>
+			</div>
 		</div>
 	</div>
-</div>
-<div class = "row entry-similar">
-	{{ range $index, $page := . }}
-	<div class=' 
-	{{- if eq $postCount 1 -}}
-		col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3
-	{{- else if (and (eq $postCount 2) (eq $index 0)) -}}
-		col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1
-	{{- else if (and (eq $postCount 2) (gt $index 0)) -}}
-		col-lg-4 col-md-5
-	{{- else -}}
-		col-lg-4 col-md-4
-	{{- end -}}
-	{{- print " similar-item post-preview" -}}'>
-		<hr />
-		<a href="{{ $page.Permalink }}">
-			{{- with $page.Param "images" -}}
-			{{- range last 1 . -}}
-			<img src="{{ . }}" class="img-responsive" />
-			{{- end -}}
-			{{- end -}}
-			<h3>{{- $page.Title -}}</h3>
-			<p class="post-subtitle small">{{- $page.Description -}}</p>
-			<p class="post-meta small text-muted">{{ with $page.ReadingTime }}{{ . }} min read{{ end }}</p>
-		</a>
+	<div class = "row">
+		{{ range $index, $page := . }}
+		<div class=' 
+		{{- if eq $postCount 1 -}}
+			col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3
+		{{- else if (and (eq $postCount 2) (eq $index 0)) -}}
+			col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1
+		{{- else if (and (eq $postCount 2) (gt $index 0)) -}}
+			col-lg-4 col-md-5
+		{{- else -}}
+			col-lg-4 col-md-4
+		{{- end -}}
+		{{- print " similar-item post-preview" -}}'>
+			<hr />
+			<a href="{{ $page.Permalink }}">
+				{{- with $page.Param "images" -}}
+				{{- range last 1 . -}}
+				<img src="{{ . }}" class="img-responsive" />
+				{{- end -}}
+				{{- end -}}
+				<h3>{{- $page.Title -}}</h3>
+				<p class="post-subtitle small">{{- $page.Description -}}</p>
+				<p class="post-meta small text-muted">{{ with $page.ReadingTime }}{{ . }} min read{{ end }}</p>
+			</a>
+		</div>
+		{{ end }}
 	</div>
-	{{ end }}
 </div>
 {{ end }}

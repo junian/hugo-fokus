@@ -6,51 +6,47 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>{{ if .Draft }}<span style="color: darkorange">[Draft]</span><br />{{ end }}{{ .Title }}</h1>
+                    <h1 class="p-name">{{ if .Draft }}<span style="color: darkorange">[Draft]</span><br />{{ end }}{{ .Title }}</h1>
                     {{ with .Description }}
-                    <h2 class="subheading">{{ . }}</h2>
+                    <h2 class="p-summary subheading">{{ . }}</h2>
                     {{ end }}
-                    <span class='meta'>
+                    <div class='post-meta'>
                         <!-- Published Date -->
                         {{ if not .Date.IsZero }}
                         <span class='post-timestamp'>
-                            <i class="icon fa fa-calendar">
-                                {{- partial (print "svg/calendar.svg") . -}}
-                            </i>
-                            <meta content='{{.Permalink }}' itemprop='url' />
+                            <i class="fa fa-calendar">{{- partial (print "svg/calendar.svg") . -}}</i>&nbsp;
                             <a class='timestamp-link' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
-                                <time class='published' title='{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}' itemprop='datePublished dateModified'>
-                                    {{ .Date.Format "Jan 2, 2006" }}
+                                <time class='dt-published' title='{{- .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" -}}' itemprop='datePublished'>
+                                    {{- .Date.Format "Jan 2, 2006" -}}
+                                </time>
+                                <time class='dt-updated  hidden' title='{{- .Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" -}}' itemprop='dateModified'>
+                                    {{- .Lastmod.Format "Jan 2, 2006" -}}
                                 </time>
                             </a>
                         </span>
                         {{ end }} 
                         <!-- Post tags -->
                         {{- with .Params.tags -}}
-                        <span class='post-labels'>
-                            <i class="icon fa fa-tag">
-                                {{- partial (print "svg/tag.svg") . -}}
-                            </i>
-                            {{ range first 1 . }}
+                        <span class='p-category'>
+                            <i class="fa fa-tag">{{- partial (print "svg/tag.svg") . -}}</i>&nbsp;
+                            {{- range first 1 . -}}
                                 <a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{- . -}}</a>
-                            {{ end }} 
-                            {{ if gt (len .) 1 }} 
-                            {{ range after 1 . }}
-                                {{ print ", " }}<a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{ . }}</a>
-                            {{ end }} 
-                            {{ end }}
+                            {{- end -}} 
+                            {{- if gt (len .) 1 -}} 
+                            {{- range after 1 . -}}
+                                {{- print ", " -}}<a href='{{ "/tags/" | relURL }}{{ . | urlize }}' rel="tag">{{- . -}}</a>
+                            {{- end -}} 
+                            {{- end -}}
                         </span>
                         {{- end -}} 
                         <!-- Reading ETA -->
-                        {{ with .ReadingTime }}
+                        {{- with .ReadingTime -}}
                         <span class='post-read-eta'>
-                            <i class="icon fa fa-clock-o">
-                                {{- partial (print "svg/clock.svg") . -}}
-                            </i>
-                            <span class='eta'> {{ . }}</span> min read
+                            <i class="fa fa-clock-o">{{- partial (print "svg/clock.svg") . -}}</i>&nbsp;
+                            <span class='eta'>{{- . -}}</span> min read
                         </span>
-                        {{ end }}
-                    </span>
+                        {{- end -}}
+                    </div>
                 </div>
             </div>
         </div>

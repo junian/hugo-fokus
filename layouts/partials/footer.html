@@ -1,45 +1,24 @@
 <!-- Author profile -->
-{{ partial "widget/author-profile.html" . }}
-
+{{- partial "widget/author-profile.html" . -}}
 <hr />
-
 <!-- Footer -->
-<footer class="blog-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 blog-footer section" id="blog-footer">
-                <div>
-                    <ul class="list-inline text-center">
-                        {{ if isset .Site.Params "social" }} 
-                            {{ range .Site.Params.social }}
-                                <li>
-                                    <a href="{{ .url }}" rel="me">
-                                        <i class="icon icon-large fa fa-2x fa-{{- .title -}}">
-                                            {{ partial (printf "svg/%s.svg" .title) . }}
-                                        </i>
-                                    </a>
-                                </li>
-                            {{ end }} 
-                        {{ end }}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<footer class="blog-footer-credits">
+<footer class="site-footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="blog-credits col-md-12 section" id="blog-credits">
-                <div>
-                    · {{ range .Site.Params.Menu.footer }}<a href="{{ .url }}">{{ .title }}</a> · {{ end }}
+            <div class="col-lg-12 col-md-12">
+                <div class="section text-center">
+                    <ul class="list-inline">
+                        {{- if isset .Site.Params "social" -}} 
+                        {{- range .Site.Params.social -}}
+                            <li><a href="{{- .url -}}" rel="me"><i class="fa fa-2x fa-{{- .title -}}">{{- partial (printf "svg/%s.svg" .title) . -}}</i></a></li>
+                        {{- end -}} 
+                        {{- end -}}
+                    </ul>
                 </div>
-                <div>
-                    {{ .Site.Copyright | safeHTML }}
-                </div>
-                <div>
-                    Proudly powered with <a href="https://gohugo.io" rel="nofollow" target="_blank">Hugo</a> and <a href="https://github.com/junian/fokus" rel="nofollow" target="_blank">Fokus</a>
+                <div class="section small text-center">
+                        <p>&nbsp;&middot;&nbsp;{{- range .Site.Params.Menu.footer -}}<a href="{{- .url -}}">{{- .title -}}</a>&nbsp;&middot;&nbsp;{{- end -}}</p>
+                        <p>{{- .Site.Copyright | safeHTML -}}</p>
+                        <p>Proudly powered with <a href="https://gohugo.io" rel="nofollow" target="_blank">Hugo</a> and <a href="https://github.com/junian/fokus" rel="nofollow" target="_blank">Fokus</a></p>
                 </div>
             </div>
         </div>
