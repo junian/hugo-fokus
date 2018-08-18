@@ -10,7 +10,7 @@
                         {{ if isset .Site.Params "social" }} 
                             {{ range .Site.Params.social }}
                                 <li>
-                                    <a href="{{ .url }}">
+                                    <a href="{{ .url }}" rel="me">
                                         <i class="icon icon-large fa fa-2x fa-{{- .title -}}">
                                             {{ partial (printf "svg/%s.svg" .title) . }}
                                         </i>
