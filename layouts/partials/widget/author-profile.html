@@ -1,27 +1,16 @@
-<footer class="post-footer">
-<div class="author-profile">
-    <figure class="author-image">
-        <img alt="{{ with $.Site.Author.name }}{{.}}{{end}}" class="img" src="https://www.gravatar.com/avatar/{{ $.Site.Author.email | md5 }}?s=256"
-            title="{{ with $.Site.Author.name }}{{.}}{{end}}">
-    </figure>
-    <a class="g-profile" href="{{ with $.Site.Author.url }}{{.}}{{end}}" rel="author" title="author profile">
-        <h4>
-            {{ with $.Site.Author.name }}{{.}}{{end}}
-        </h4>
-    </a>
-    <p>
-        {{ with $.Site.Author.description }}{{ . | safeHTML }}{{end}}
-    </p>
-</div>
-
-<!--
-<div class="post-footer-line">
-    <span class="post-location">
-        <i aria-hidden="true" class="fa fa-map-marker"></i>
-        <a href="https://maps.google.com/maps?q=Gresik+Regency,+Indonesia@-7.155029099999999,112.57218809999995&amp;z=10" target="_blank">
-            Gresik Regency, Indonesia
+<footer class="h-card hidden">
+    <div class="author-profile">
+        <figure class="author-image">
+            <img alt="{{ with $.Site.Author.name }}{{.}}{{end}}" class="u-photo" src="https://www.gravatar.com/avatar/{{ $.Site.Author.email | md5 }}?s=256"
+                title="{{ with $.Site.Author.name }}{{.}}{{end}}">
+        </figure>
+        <a class="p-name u-url" href="{{ with $.Site.Author.url }}{{.}}{{end}}" rel="author" title="author profile">
+            <h4>{{ with $.Site.Author.name }}{{.}}{{end}}</h4>
         </a>
-    </span>
-</div>
--->
+        <p><a class="u-email hidden" href="mailto:{{ with $.Site.Author.email }}{{ . }}{{ end }}">{{ with $.Site.Author.email }}{{ . }}{{ end }}</a></p>
+        <p>{{ with $.Site.Author.description }}{{ . | safeHTML }}{{end}}</p>
+    </div>
+    <div class="post-footer-line">
+        <p class="p-adr h-adr">{{ with $.Site.Author.city }}<span class="p-locality">{{ . }}</span>, {{ end }}{{ with $.Site.Author.country }}<span class="p-country-name">{{ . }}</span>{{ end }}</p>
+    </div>
 </footer>
