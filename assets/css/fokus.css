@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.7.0 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.7.1 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -98,6 +98,22 @@ img::selection {
 .adcontainer {
   margin: 10px 0;
   text-align: center;
+}
+
+.post-meta {
+  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 300;
+  color: #868e96;
+}
+
+.post-meta > a {
+  color: #212529;
+}
+
+.post-meta > a:focus, .post-meta > a:hover {
+  color: #1488CC;
 }
 
 #mainNav {
@@ -214,10 +230,7 @@ header.masthead .post-heading .subheading {
 
 header.masthead .post-heading .post-meta {
   line-height: 1.45;
-  font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
-  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+  color: #fcfbf7;
 }
 
 header.masthead .post-heading .post-meta a {
@@ -246,7 +259,6 @@ hr.small {
 }
 
 .post-preview > a:focus, .post-preview > a:hover {
-  text-decoration: none;
   color: #1488CC;
 }
 
@@ -264,21 +276,7 @@ hr.small {
 }
 
 .post-preview > .post-meta {
-  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 18px;
-  font-style: italic;
   margin-top: 0;
-  color: #868e96;
-}
-
-.post-preview > .post-meta > a {
-  text-decoration: none;
-  color: #212529;
-}
-
-.post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
-  text-decoration: underline;
-  color: #1488CC;
 }
 
 footer.site-footer p {
@@ -389,10 +387,6 @@ hr.section-divider:before, .e-content hr:before {
   word-wrap: break-word;
 }
 
-.e-content p a {
-  text-decoration: none;
-}
-
 .e-content img {
   display: block;
   margin-right: auto;
@@ -444,7 +438,6 @@ hr.section-divider:before, .e-content hr:before {
 .e-content a {
   color: inherit;
   outline: none;
-  text-decoration: none;
   -webkit-transition: all .2s ease-out;
   -o-transition: all .2s ease-out;
   -moz-transition: all .2s ease-out;
@@ -629,21 +622,12 @@ hr.section-divider:before, .e-content hr:before {
   width: 2em;
 }
 
-.nextprev a {
-  text-decoration: none;
-}
-
 .nextprev a.disabled {
   cursor: not-allowed;
 }
 
 .nextprev a.disabled:hover, .nextprev a.disabled:focus {
-  text-decoration: none;
   color: #212529;
-}
-
-.nextprev a:hover, .nextprev a:focus {
-  text-decoration: none;
 }
 
 .nextprev .next {
@@ -673,19 +657,8 @@ hr.section-divider:before, .e-content hr:before {
   line-height: 1.3;
 }
 
-.similar-item a,
-.similar-item a:hover,
-.similar-item a:focus {
-  text-decoration: none;
-}
-
 .similar-item p {
   margin: 0 0 10px 0;
-}
-
-.similar-item .post-meta {
-  font-style: italic;
-  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .go-social {
@@ -693,67 +666,67 @@ hr.section-divider:before, .e-content hr:before {
   line-height: 2.0;
 }
 
-.go-social .btn-twtrsh {
+.btn-twtrsh {
   background-color: #00a8f0;
   border-color: #00a8f0;
 }
 
-.go-social .btn-twtrsh:hover, .go-social .btn-twtrsh:focus, .go-social .btn-twtrsh:active {
+.btn-twtrsh:hover, .btn-twtrsh:focus, .btn-twtrsh:active {
   color: #fcfbf7;
   background-color: #008dc9 !important;
   border-color: #008dc9 !important;
 }
 
-.go-social .btn-fbsh {
+.btn-fbsh {
   background-color: #365396;
   border-color: #365396;
 }
 
-.go-social .btn-fbsh:hover, .go-social .btn-fbsh:focus, .go-social .btn-fbsh:active {
+.btn-fbsh:hover, .btn-fbsh:focus, .btn-fbsh:active {
   color: #fcfbf7;
   background-color: #2c437a !important;
   border-color: #2c437a !important;
 }
 
-.go-social .btn-gplussh {
+.btn-gplussh {
   background-color: #e0462e;
   border-color: #e0462e;
 }
 
-.go-social .btn-gplussh:hover, .go-social .btn-gplussh:focus, .go-social .btn-gplussh:active {
+.btn-gplussh:hover, .btn-gplussh:focus, .btn-gplussh:active {
   color: #fcfbf7;
   background-color: #ca351e !important;
   border-color: #ca351e !important;
 }
 
-.go-social .btn-lnkinsh {
+.btn-lnkinsh {
   background-color: #006eb3;
   border-color: #006eb3;
 }
 
-.go-social .btn-lnkinsh:hover, .go-social .btn-lnkinsh:focus, .go-social .btn-lnkinsh:active {
+.btn-lnkinsh:hover, .btn-lnkinsh:focus, .btn-lnkinsh:active {
   color: #fcfbf7;
   background-color: #00568c !important;
   border-color: #00568c !important;
 }
 
-.go-social .btn-email-share {
+.btn-email-share {
   background-color: #97908F;
   border-color: #97908F;
 }
 
-.go-social .btn-email-share:hover, .go-social .btn-email-share:focus, .go-social .btn-email-share:active {
+.btn-email-share:hover, .btn-email-share:focus, .btn-email-share:active {
   color: #fcfbf7;
   background-color: #857c7b !important;
   border-color: #857c7b !important;
 }
 
-.go-social .btn-feed-share {
+.btn-feed-share {
   background-color: #dd7346;
   border-color: #dd7346;
 }
 
-.go-social .btn-feed-share:hover, .go-social .btn-feed-share:focus, .go-social .btn-feed-share:active {
+.btn-feed-share:hover, .btn-feed-share:focus, .btn-feed-share:active {
   color: #fcfbf7;
   background-color: #d65b27 !important;
   border-color: #d65b27 !important;
@@ -840,7 +813,7 @@ hr.section-divider:before, .e-content hr:before {
   }
 }
 
-@media only screen and (min-width: 990px) {
+@media only screen and (min-width: 992px) {
   #mainNav {
     -webkit-transition: background-color 0.2s;
     -o-transition: background-color 0.2s;
