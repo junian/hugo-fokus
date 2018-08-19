@@ -82,3 +82,18 @@ img::selection {
   margin: 10px 0;
   text-align: center;
 }
+
+.post-meta {
+  @include serif-font;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 300;
+  color: $gray-600;
+  > a {
+    color: $gray-900;
+    &:focus,
+    &:hover {
+      color: $primary;
+    }
+  }
+}

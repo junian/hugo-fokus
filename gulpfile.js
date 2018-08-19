@@ -6,8 +6,12 @@ var cssnano = require('cssnano');
 var mqpacker = require("css-mqpacker");
 
 gulp.task('bootstrap-custom-css', function() {
+    var processors = [
+        mqpacker
+    ];
     gulp.src('./assets/scss/bootstrap-custom.scss')
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./assets/css/'));
 });
 

@@ -1,17 +1,11 @@
 .nextprev {
   a {
-    text-decoration: none;
     &.disabled {
       cursor: not-allowed;
       &:hover,
       &:focus, {
-        text-decoration: none;
         color: $gray-900;
       }  
-    }
-    &:hover,
-    &:focus, {
-      text-decoration: none;
     }
   }
   .next{
@@ -35,7 +29,7 @@
       line-height: 1.3;
     }
   }
-  @media only screen and (min-width: 990px) {
+  @media only screen and (min-width: 992px) {
     .next{
       text-align: right;
     }

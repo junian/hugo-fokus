@@ -37,9 +37,6 @@ hr {
     p {
         line-height: 1.5;
         word-wrap: break-word;
-        a {
-            text-decoration: none;
-        }
     }
     img {
         display: block;
@@ -85,7 +82,6 @@ hr {
     a {
         color: inherit;
         outline: none;
-        text-decoration: none;
         transition: all .2s ease-out;
         background: $blue-cool;
         background: linear-gradient($blue-cool, $blue-cool);

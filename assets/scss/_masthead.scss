@@ -62,10 +62,7 @@ header.masthead {
     }
     .post-meta {
       line-height: 1.45;
-      font-size: 20px;
-      font-weight: 300;
-      font-style: italic;
-      @include serif-font;
+      color: $white-warm;
       a {
         color: $white-warm;
         &:focus,
