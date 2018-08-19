@@ -83,7 +83,7 @@ hr {
         color: inherit;
         outline: none;
         transition: all .2s ease-out;
-        background: $blue-cool;
+        background: lighten($blue-cool, 25%);
         background: linear-gradient($blue-cool, $blue-cool);
         background-size: 100% .15em;
         background-repeat: no-repeat;
