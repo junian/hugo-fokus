@@ -1,13 +1,5 @@
 <div class = "row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Show Bottom Adsense -->
-        {{ if $.Param "adsense.showBottom" }}
-            {{ partial "widget/adsense-responsive.html" . }}
-        {{ end }}
-        <!-- Content and Code License -->
-        {{ if $.Param "license.visible" }}
-            {{ partial "widget/license.html" . }}
-        {{ end }}
         <!-- Native social share -->
         {{ partial "widget/social-share.html" . }}
         <!-- Blockadblock message -->
@@ -16,6 +8,11 @@
         {{ end }}
         <!-- Buy me a coffee -->
         {{ partial "widget/buymeacoffee.html" . }}
+        <!-- Content and Code License -->
+        <hr />
+        {{ if $.Param "license.visible" }}
+            {{ partial "widget/license.html" . }}
+        {{ end }}
         <!-- Show AddThis if enabled -->
         {{ if .Site.Params.Widget.addThis }}
             {{ partial "widget/addthis.html" . }}
@@ -28,6 +25,10 @@
 {{ end }}
 <div class = "row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <!-- Show Bottom Adsense -->
+        {{ if $.Param "adsense.showBottom" }}
+            {{ partial "widget/adsense-responsive.html" . }}
+        {{ end }}
         <!-- Email Subscribe -->
         {{ partial "widget/email-subscribe.html" . }}
         <!-- Disqus comments -->

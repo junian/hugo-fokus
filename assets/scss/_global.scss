@@ -64,11 +64,6 @@ img::selection {
 
 .section {
   margin: 30px 0;
-  &.bmc {
-    p {
-      @include serif-font;
-    }
-  }
 }
 
 .section-related {

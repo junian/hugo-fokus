@@ -1,9 +1,11 @@
 {{ if .Site.Params.Widget.buymeacoffee }}
+<hr />
 <div class="section bmc">
+    <h3>Like what you read?</h3>
 {{ if .Site.Params.Widget.buymeacoffeeMessage }}
-    <p>{{ .Site.Params.Widget.buymeacoffeeMessage }}</p>
+    <p class="small">{{ .Site.Params.Widget.buymeacoffeeMessage }}</p>
 {{ else }}
-    <p>
+    <p class="small">
     Hello there, thanks for reading.
     Did you find this writing helpful, or save your valuable time?
     If so, you can support me by sending a cup of coffee with the button right here — you'll have my eternal gratitude!

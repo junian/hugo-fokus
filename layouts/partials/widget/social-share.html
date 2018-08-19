@@ -1,4 +1,5 @@
-<div class="section go-social">
+<hr />
+<div class="section go-social text-center">
     {{ if .Site.Params.Widget.socialshare.twitter }}<a class="btn btn-primary btn-twtrsh" href="https://go.junian.net/twtrsh?text={{ .Title }}&amp;url={{ .Permalink }}" target="_blank"><i class="fa fa-twitter">{{ partial (printf "svg/%s.svg" "twitter") . }}</i>&nbsp;Tweet</a>{{ end }}
     {{ if .Site.Params.Widget.socialshare.facebook }}<a class="btn btn-primary btn-fbsh" href="https://go.junian.net/fbsh?u={{ .Permalink }}" target="_blank"><i class="fa fa-facebook">{{ partial (printf "svg/%s.svg" "facebook") . }}</i>&nbsp;Post</a>{{ end }}
     {{ if .Site.Params.Widget.socialshare.googleplus }}<a class="btn btn-primary btn-gplussh" href="https://go.junian.net/gplussh?url={{ .Permalink }}" target="_blank"><i class="fa fa-google-plus">{{ partial (printf "svg/%s.svg" "plus") . }}</i>&nbsp;Share</a>{{ end }}
