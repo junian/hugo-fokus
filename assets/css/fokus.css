@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.7.1 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.7.2 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -81,10 +81,6 @@ img::selection {
 .e-content ul,
 .e-content ol {
   margin: 30px 0;
-}
-
-.section.bmc p, .e-content p.bmc p, .e-content figure.bmc p, .e-content blockquote.bmc p, .e-content ul.bmc p, .e-content ol.bmc p {
-  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .section-related {
@@ -442,12 +438,12 @@ hr.section-divider:before, .e-content hr:before {
   -o-transition: all .2s ease-out;
   -moz-transition: all .2s ease-out;
   transition: all .2s ease-out;
-  background: #6dd5ed;
-  background: -webkit-gradient(linear, left top, left bottom, from(#6dd5ed), to(#6dd5ed));
-  background: -webkit-linear-gradient(#6dd5ed, #6dd5ed);
-  background: -moz- oldlinear-gradient(#6dd5ed, #6dd5ed);
-  background: -o-linear-gradient(#6dd5ed, #6dd5ed);
-  background: linear-gradient(#6dd5ed, #6dd5ed);
+  background: #e3f3fc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6fc1f1), to(#6fc1f1));
+  background: -webkit-linear-gradient(#6fc1f1, #6fc1f1);
+  background: -moz- oldlinear-gradient(#6fc1f1, #6fc1f1);
+  background: -o-linear-gradient(#6fc1f1, #6fc1f1);
+  background: linear-gradient(#6fc1f1, #6fc1f1);
   -webkit-background-size: 100% .15em;
      -moz-background-size: 100% .15em;
        -o-background-size: 100% .15em;
@@ -457,7 +453,7 @@ hr.section-divider:before, .e-content hr:before {
 }
 
 .e-content a:focus {
-  background-color: #6dd5ed;
+  background-color: #6fc1f1;
   color: #212529;
 }
 
