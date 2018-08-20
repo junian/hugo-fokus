@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{- partial "header.html" . -}}
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="e-content archive">
+            {{ range (.Site.RegularPages).GroupByDate "2006" }}
+                <h2>{{ .Key }}</h2>
+                {{ range where .Pages "Type" "not in" (slice "page") }}
+                <div class="row">
+                    <div class= "col-md-9 text-left">    
+                        <p><a href="{{ .Permalink }}">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}</a></p>
+                    </div>
+                    <div class= "col-md-3 text-right">
+                        <p> {{ .Date.Format "Jan 2, 2006" }}</p>
+                    </div>  
+                </div>
+                {{ end }}
+            {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

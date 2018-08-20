@@ -119,4 +119,9 @@ hr {
     hr {
         @extend hr.section-divider;
     }
+    &.archive {
+        p {
+            margin: 20px 0;
+        }
+    }
 }
