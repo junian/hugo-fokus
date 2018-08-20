@@ -9,11 +9,11 @@
                 <h2>{{ .Key }}</h2>
                 {{ range where .Pages "Type" "not in" (slice "page") }}
                 <div class="row">
-                    <div class= "col-md-9 text-left">    
-                        <p><a href="{{ .Permalink }}">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}</a></p>
-                    </div>
-                    <div class= "col-md-3 text-right">
+                    <div class= "col-xs-3 text-right small">
                         <p> {{ .Date.Format "Jan 2, 2006" }}</p>
+                    </div>
+                    <div class= "col-xs-9 text-left small">    
+                        <p><a href="{{ .Permalink }}">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}</a></p>
                     </div>  
                 </div>
                 {{ end }}
