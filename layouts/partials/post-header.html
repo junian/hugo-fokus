@@ -43,7 +43,7 @@
                         {{- with .ReadingTime -}}
                         <span class='post-read-eta'>
                             <i class="fa fa-clock-o">{{- partialCached (print "svg/clock.svg") . -}}</i>&nbsp;
-                            <span class='eta'>{{- . -}}</span> min read
+                            <a href='{{- "/durations/" | relURL -}}{{- cond (le . 3) "short" (cond (le . 5) "medium" "long") -}}'><span class='eta'>{{- . -}}</span> min read</a>
                         </span>
                         {{- end -}}
                     </div>
