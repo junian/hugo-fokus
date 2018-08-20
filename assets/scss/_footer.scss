@@ -1,5 +1,26 @@
 // Styling for the footer
 footer {
+  &.post-footer {
+    .bmc,
+    .go-social {
+      text-align: center;
+      @media only screen and (min-width: 768px) {
+        margin: 0px 0 10px 0;
+      }
+    }
+
+    .bmc {
+      @media only screen and (min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    .go-social {
+      @media only screen and (min-width: 768px) {
+        text-align: right;
+      }
+    }
+  }
   &.site-footer {
     p {
       font-size: 10px;
