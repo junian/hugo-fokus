@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.7.3 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.7.4 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -81,6 +81,11 @@ img::selection {
 .e-content ul,
 .e-content ol {
   margin: 30px 0;
+}
+
+section.bmc,
+section.go-social {
+  text-align: center;
 }
 
 .section-related {
@@ -285,6 +290,11 @@ footer.site-footer p {
 footer.site-footer .list-inline {
   margin: 0;
   padding: 0;
+  line-height: 0;
+}
+
+footer.site-footer .list-inline > li {
+  padding: 0;
 }
 
 /*
@@ -485,6 +495,10 @@ hr.section-divider:before, .e-content hr:before {
   margin: 10px;
 }
 
+.e-content.archive p {
+  margin: 20px 0;
+}
+
 .highlight pre {
   overflow: auto;
   word-wrap: normal;
@@ -606,6 +620,10 @@ hr.section-divider:before, .e-content hr:before {
   fill: none;
 }
 
+.fa-thin svg {
+  stroke-width: 1;
+}
+
 .fa svg {
   height: 1em;
   width: 1em;
@@ -614,8 +632,43 @@ hr.section-divider:before, .e-content hr:before {
 }
 
 .fa-2x svg {
-  height: 2em;
-  width: 2em;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.fa-stack-1x svg {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.fa-stack-2x svg {
+  height: 3em;
+  width: 3em;
+}
+
+.fa-stack {
+  position: relative;
+  display: inline-block;
+}
+
+.fa-stack svg {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+       transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.fa-lg {
+  height: 72px;
+  width: 72px;
 }
 
 .nextprev a.disabled {
@@ -754,6 +807,16 @@ hr.section-divider:before, .e-content hr:before {
 @media only screen and (min-width: 768px) {
   .pagenumber div {
     padding: 15px 25px;
+  }
+  section.bmc,
+  section.go-social {
+    margin: 0px 0 10px 0;
+  }
+  section.bmc {
+    text-align: left;
+  }
+  section.go-social {
+    text-align: right;
   }
   #mainNav {
     border-bottom: 1px solid transparent;
