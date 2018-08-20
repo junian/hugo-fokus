@@ -8,6 +8,12 @@
     fill: none;
 }
 
+.fa-thin {
+    svg {
+        stroke-width: 1;
+    }
+}
+
 .fa {
     svg {
         height: 1em;
@@ -22,4 +28,40 @@
         height: 2em;
         width: 2em;
     }
+}
+
+.fa-stack-1x {
+    svg {
+        height: 1.5em;
+        width: 1.5em;
+    }
+}
+
+.fa-stack-2x {
+    svg {
+        height: 3em;
+        width: 3em;
+    }
+}
+
+.fa-stack {
+    position: relative; 
+    display: inline-block;
+    svg {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+.fa-lg {
+    height: 72px;
+    width: 72px;
 }
