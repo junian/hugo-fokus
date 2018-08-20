@@ -1,6 +1,7 @@
 .go-social {
     margin: 30px 0;
     line-height: 2.0;
+    color: $white-warm;
 }
 
 $colorMap: (
@@ -18,7 +19,6 @@ $colorMap: (
         &:hover,
         &:focus,
         &:active {
-            color: $white-warm;
             background-color: darken($classValue, 7.5) !important;
             border-color: darken($classValue, 7.5) !important;
         }

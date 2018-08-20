@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.7.2 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.7.3 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -660,48 +660,45 @@ hr.section-divider:before, .e-content hr:before {
 .go-social {
   margin: 30px 0;
   line-height: 2.0;
+  color: #fcfbf7;
 }
 
-.btn-twtrsh {
+.btn-tw-share {
   background-color: #00a8f0;
   border-color: #00a8f0;
 }
 
-.btn-twtrsh:hover, .btn-twtrsh:focus, .btn-twtrsh:active {
-  color: #fcfbf7;
+.btn-tw-share:hover, .btn-tw-share:focus, .btn-tw-share:active {
   background-color: #008dc9 !important;
   border-color: #008dc9 !important;
 }
 
-.btn-fbsh {
+.btn-fb-share {
   background-color: #365396;
   border-color: #365396;
 }
 
-.btn-fbsh:hover, .btn-fbsh:focus, .btn-fbsh:active {
-  color: #fcfbf7;
+.btn-fb-share:hover, .btn-fb-share:focus, .btn-fb-share:active {
   background-color: #2c437a !important;
   border-color: #2c437a !important;
 }
 
-.btn-gplussh {
+.btn-gp-share {
   background-color: #e0462e;
   border-color: #e0462e;
 }
 
-.btn-gplussh:hover, .btn-gplussh:focus, .btn-gplussh:active {
-  color: #fcfbf7;
+.btn-gp-share:hover, .btn-gp-share:focus, .btn-gp-share:active {
   background-color: #ca351e !important;
   border-color: #ca351e !important;
 }
 
-.btn-lnkinsh {
+.btn-in-share {
   background-color: #006eb3;
   border-color: #006eb3;
 }
 
-.btn-lnkinsh:hover, .btn-lnkinsh:focus, .btn-lnkinsh:active {
-  color: #fcfbf7;
+.btn-in-share:hover, .btn-in-share:focus, .btn-in-share:active {
   background-color: #00568c !important;
   border-color: #00568c !important;
 }
@@ -712,7 +709,6 @@ hr.section-divider:before, .e-content hr:before {
 }
 
 .btn-email-share:hover, .btn-email-share:focus, .btn-email-share:active {
-  color: #fcfbf7;
   background-color: #857c7b !important;
   border-color: #857c7b !important;
 }
@@ -723,7 +719,6 @@ hr.section-divider:before, .e-content hr:before {
 }
 
 .btn-feed-share:hover, .btn-feed-share:focus, .btn-feed-share:active {
-  color: #fcfbf7;
   background-color: #d65b27 !important;
   border-color: #d65b27 !important;
 }

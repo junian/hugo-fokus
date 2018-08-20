@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.7.2 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.7.3 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
