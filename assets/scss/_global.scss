@@ -19,8 +19,7 @@ h6 {
 
 a {
   text-decoration: none;
-  color: $gray-900; 
-  // @include transition-all;
+  color: $gray-900; // @include transition-all;
   &:focus,
   &:hover {
     text-decoration: none;
@@ -66,21 +65,25 @@ img::selection {
   margin: 30px 0;
 }
 
-section.bmc,
-section.go-social {
-    text-align: center;
-    @media only screen and (min-width: 768px) {
-      margin: 0px 0 10px 0;
-    }  
-  }
+div.section.bmc,
+div.section.go-social {
+  text-align: center;
   @media only screen and (min-width: 768px) {
-    section.bmc{
-      text-align: left;
-    }
-    section.go-social {
-      text-align: right;
-    }
+    margin: 0px 0 10px 0;
   }
+}
+
+div.section.bmc {
+  @media only screen and (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+div.section.go-social {
+  @media only screen and (min-width: 768px) {
+    text-align: right;
+  }
+}
 
 .section-related {
   margin: 60px 0 60px 0;
@@ -100,7 +103,7 @@ section.go-social {
   font-size: 18px;
   font-weight: 300;
   color: $gray-600;
-  > a {
+  >a {
     color: $gray-900;
     &:focus,
     &:hover {

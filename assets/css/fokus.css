@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.7.4 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.7.5 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -83,8 +83,8 @@ img::selection {
   margin: 30px 0;
 }
 
-section.bmc,
-section.go-social {
+div.section.bmc,
+div.section.go-social {
   text-align: center;
 }
 
@@ -808,14 +808,15 @@ hr.section-divider:before, .e-content hr:before {
   .pagenumber div {
     padding: 15px 25px;
   }
-  section.bmc,
-  section.go-social {
+  div.section.bmc,
+  div.section.go-social {
     margin: 0px 0 10px 0;
   }
-  section.bmc {
+  div.section.bmc {
     text-align: left;
   }
-  section.go-social {
+  
+  div.section.go-social {
     text-align: right;
   }
   #mainNav {
