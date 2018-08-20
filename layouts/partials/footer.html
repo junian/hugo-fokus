@@ -11,7 +11,7 @@
                         {{- if isset .Site.Params "social" -}} 
                         {{- range .Site.Params.social -}}
                             <li>
-                                <a href="{{- .url -}}" title="Visit {{ .title | humanize }} page" rel="me">
+                                <a href="{{- .url -}}" title="Visit {{ .title | humanize }} page" target="_blank" rel="me">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-stack-2x fa-thin fa-circle-thin">{{- partialCached (printf "svg/circle.svg") . -}}</i>
                                         <i class="fa fa-stack-1x fa-{{- .title -}}">{{- partialCached (printf "svg/%s.svg" .title) . -}}</i>

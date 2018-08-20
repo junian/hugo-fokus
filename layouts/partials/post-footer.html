@@ -1,13 +1,30 @@
 <div class = "row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Native social share -->
-        {{ partial "widget/social-share.html" . }}
+        <hr />
         <!-- Blockadblock message -->
         {{ if .Site.Params.Widget.blockAdBlock }}
             {{ partialCached "widget/blockadblock.html" . }}
         {{ end }}
-        <!-- Buy me a coffee -->
-        {{ partialCached "widget/buymeacoffee.html" . }}
+        <div class="section post-footer-msg">
+            {{- if .Site.Params.postFooter.title -}}
+            <h3>{{- .Site.Params.postFooter.title -}}</h3>
+            {{- end -}}
+            {{- if .Site.Params.postFooter.content -}}
+            <p class="small">
+                {{- .Site.Params.postFooter.content -}}
+            </p>
+            {{- end -}}
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <!-- Buy me a coffee -->
+                {{- partialCached "widget/buymeacoffee-button.html" . -}}
+            </div>
+            <div class="col-sm-6">
+                <!-- Native social share -->
+                {{ partial "widget/social-share-simple.html" . }}
+            </div>
+        </div>
         <!-- Content and Code License -->
         <hr />
         {{ if $.Param "license.visible" }}

@@ -64,6 +64,21 @@ img::selection {
 
 .section {
   margin: 30px 0;
+  &.bmc,
+  &.go-social {
+    text-align: center;
+    @media only screen and (min-width: 768px) {
+      margin: 0px 0 10px 0;
+    }  
+  }
+  @media only screen and (min-width: 768px) {
+    &.bmc{
+      text-align: left;
+    }
+    &.go-social {
+      text-align: right;
+    }
+  }
 }
 
 .section-related {
