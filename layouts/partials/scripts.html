@@ -33,4 +33,4 @@
 {{ $appjs := $indexScratch.Get "jsassets" | resources.Concat "js/fokus-bundle.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $appjs.RelPermalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 {{- template "_internal/google_analytics_async.html" . -}}
-{{- partial "widget-scripts.html" . -}}
+{{- partialCached "widget-scripts.html" . -}}

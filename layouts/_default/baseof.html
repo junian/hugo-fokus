@@ -2,9 +2,9 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ end }}">
     {{- partial "head.html" . -}}
     <body>
-        {{- partial "navbar.html" . -}} 
+        {{- partialCached "navbar.html" . -}} 
         {{- block "main" . -}}{{- end -}}
-        {{- partial "footer.html" . -}}
-        {{- partial "scripts.html" . -}}
+        {{- partialCached "footer.html" . -}}
+        {{- partialCached "scripts.html" . -}}
     </body>
 </html>

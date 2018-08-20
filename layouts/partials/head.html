@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Verification -->
-    {{- partial "meta/verification.html" . -}}
+    {{- if .IsHome -}}{{- partialCached "meta/verification.html" . -}}{{- end -}}
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
     <meta name="author" content="{{ with $.Site.Author.name }}{{.}}{{end}}">
     <!-- Favicon -->
@@ -38,9 +38,9 @@
     {{ end }}
     <!-- CSS from hugo pipes -->
     {{ if .Site.Params.useSassPipes }}
-        {{- partial "css-pipes.html" . -}}
+        {{- partialCached "css-pipes.html" . -}}
     {{ else }}
-        {{- partial "css-assets.html" . -}}
+        {{- partialCached "css-assets.html" . -}}
     {{ end }}
     <!-- Google Fonts -->
     {{ if $.Param "useWebFont" }} 

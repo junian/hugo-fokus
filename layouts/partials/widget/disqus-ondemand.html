@@ -4,7 +4,7 @@
 <div class="section p-comment">
     <!-- An element a visitor can click if they <3 comments! -->
     <button id="btn_load_disqus_thread" class="btn btn-primary btn-lg btn-block">
-        <i class="fa fa-message-o">{{- partial (printf "svg/message-circle.svg") . -}}</i>&nbsp;
+        <i class="fa fa-message-o">{{- partialCached (printf "svg/message-circle.svg") . -}}</i>&nbsp;
         Click to see <span class="disqus-comment-count" data-disqus-url='{{ .Permalink }}'>comments</span>
     </button>
 

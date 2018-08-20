@@ -1,5 +1,5 @@
 <!-- Author profile -->
-{{- partial "widget/author-profile.html" . -}}
+{{- partialCached "widget/author-profile.html" . -}}
 <hr />
 <!-- Footer -->
 <footer class="site-footer">
@@ -10,7 +10,7 @@
                     <ul class="list-inline">
                         {{- if isset .Site.Params "social" -}} 
                         {{- range .Site.Params.social -}}
-                            <li><a href="{{- .url -}}" rel="me"><i class="fa fa-2x fa-{{- .title -}}">{{- partial (printf "svg/%s.svg" .title) . -}}</i></a></li>
+                            <li><a href="{{- .url -}}" rel="me"><i class="fa fa-2x fa-{{- .title -}}">{{- partialCached (printf "svg/%s.svg" .title) . -}}</i></a></li>
                         {{- end -}} 
                         {{- end -}}
                     </ul>

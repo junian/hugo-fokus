@@ -4,14 +4,14 @@
         {{ partial "widget/social-share.html" . }}
         <!-- Blockadblock message -->
         {{ if .Site.Params.Widget.blockAdBlock }}
-            {{ partial "widget/blockadblock.html" . }}
+            {{ partialCached "widget/blockadblock.html" . }}
         {{ end }}
         <!-- Buy me a coffee -->
-        {{ partial "widget/buymeacoffee.html" . }}
+        {{ partialCached "widget/buymeacoffee.html" . }}
         <!-- Content and Code License -->
         <hr />
         {{ if $.Param "license.visible" }}
-            {{ partial "widget/license.html" . }}
+            {{ partialCached "widget/license.html" . }}
         {{ end }}
         <!-- Show AddThis if enabled -->
         {{ if .Site.Params.Widget.addThis }}
@@ -27,12 +27,12 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <!-- Show Bottom Adsense -->
         {{ if $.Param "adsense.showBottom" }}
-            {{ partial "widget/adsense-responsive.html" . }}
+            {{ partialCached "widget/adsense-responsive.html" . }}
         {{ end }}
         <!-- Email Subscribe -->
-        {{ partial "widget/email-subscribe.html" . }}
+        {{ partialCached "widget/email-subscribe.html" . }}
         <!-- Disqus comments -->
-        {{ partial "widget/disqus-ondemand.html" . }}
+        {{ partialCached "widget/disqus-ondemand.html" . }}
     </div>
 </div>
 {{ partial "nextprev.html" . }}
