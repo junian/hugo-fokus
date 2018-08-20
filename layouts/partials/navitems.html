@@ -7,4 +7,11 @@
         </li>
         {{- end -}}
     </ul>
+    <ul class="nav navbar-nav navbar-right">
+        {{- range .Site.Params.Menu.navright -}}
+        <li class="nav-item">
+            <a href="{{- .url -}}">{{- .title -}}</a>
+        </li>
+        {{- end -}}
+    </ul>
 </div>
