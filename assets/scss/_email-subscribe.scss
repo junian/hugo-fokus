@@ -1,7 +1,7 @@
 .section-email-subscribe {
     @include sans-serif-font;
-    // border: #e7eef2 1px solid;
-    padding: 15px;
+    border: #e7eef2 1px solid;
+    padding: 30px 15px;
     background: lighten($blue-cool, 27.5%);
     // border-radius: 5px;
     h3 {

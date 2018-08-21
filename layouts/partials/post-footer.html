@@ -53,17 +53,6 @@
 </div>
 {{ end }}
 
-<div class="container">
-    <div class = "row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- Show Bottom Adsense -->
-            {{ if $.Param "adsense.showBottom" }}
-                {{ partialCached "widget/adsense-responsive.html" . }}
-            {{ end }}
-        </div>
-    </div>
-</div>
-
 <!-- Email Subscribe -->
 {{ partialCached "widget/email-subscribe.html" . }}
 
