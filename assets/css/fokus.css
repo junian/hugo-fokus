@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.8.0 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.8.1 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -94,7 +94,7 @@ img::selection {
 }
 
 .adcontainer {
-  margin: 10px 0;
+  margin: 15px 0;
   text-align: center;
 }
 
@@ -780,7 +780,8 @@ hr.section-divider:before, .e-content hr:before {
 
 .section-email-subscribe {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding: 15px;
+  border: #e7eef2 1px solid;
+  padding: 30px 15px;
   background: #eef8fd;
 }
 
