@@ -59,8 +59,8 @@ hr {
         pre,
         table,
         img {
-             margin-top: 0px;
-             margin-bottom: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
         &.highlight {
             position: relative;
@@ -97,6 +97,19 @@ hr {
             &:focus {
                 cursor: zoom-in;
             }
+        }
+    }
+    blockquote {
+        background-color: $gray-100;
+        padding: 10px;
+        color: $gray-700;
+        border: 1px solid $gray-200;
+        border-left-width: 5px;
+        border-radius: 3px;
+        border-left-color: $gray-700;
+        p,
+        h4 {
+            margin: 10px;
         }
     }
     li {
