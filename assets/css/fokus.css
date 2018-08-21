@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.7.5 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.7.7 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -65,6 +65,23 @@ img::-moz-selection {
 img::selection {
   color: #fcfbf7;
   background: transparent;
+}
+
+blockquote {
+  background-color: #f8f9fa;
+  padding: 10px;
+  color: #495057;
+  border: 1px solid #e9ecef;
+  border-left-width: 5px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  border-left-color: #495057;
+}
+
+blockquote p,
+blockquote h4 {
+  margin: 10px;
 }
 
 .pagenumber {
@@ -478,23 +495,6 @@ hr.section-divider:before, .e-content hr:before {
 .e-content li {
   margin-top: 15px;
   margin-bottom: 15px;
-}
-
-.e-content blockquote {
-  background-color: #f8f9fa;
-  padding: 10px;
-  color: #495057;
-  border: 1px solid #e9ecef;
-  border-left-width: 5px;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-  border-left-color: #495057;
-}
-
-.e-content blockquote p,
-.e-content blockquote h4 {
-  margin: 10px;
 }
 
 .e-content.archive p {
