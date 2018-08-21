@@ -31,6 +31,11 @@
             {{ if $.Param "license.visible" }}
                 {{ partialCached "widget/license.html" . }}
             {{ end }}
+            {{ with .Lastmod }}
+            <div class="section text-muted small">
+                <p>Last updated {{ .Format "January 2, 2006" }}.</p>
+            </div>
+            {{ end }}
             <!-- Show AddThis if enabled -->
             {{ if .Site.Params.Widget.addThis }}
                 {{ partial "widget/addthis.html" . }}
