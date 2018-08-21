@@ -10,7 +10,11 @@
                     <h2 class="post-title">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}</h2>
                     {{ with .Description }}<h3 class="post-subtitle">{{ . }}</h3>{{ end }}
                 </a>
-                <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .ReadingTime }}<span> &middot; </span>{{ . }} min read{{ end }}</p>
+                {{- if ne .Kind "taxonomy" -}}
+                {{- if not .Date.IsZero -}}
+                    <p class="post-meta">{{- .Date.Format "Jan 2, 2006" -}}{{- with .ReadingTime -}}<span> &middot; </span>{{ . }} min read{{- end -}}</p>
+                {{- end -}}
+                {{- end -}}
             </div>
             <hr />
             {{ end }}
