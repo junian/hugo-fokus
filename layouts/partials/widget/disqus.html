@@ -4,8 +4,8 @@
         {{ template "_internal/disqus.html" . }}
     </div>
     {{ else }}
-    <div class="alert alert-info" role="alert">
+    <blockquote role="alert">
         <strong>Attention! </strong>Disqus comments not available by default when the website is previewed locally.
-    </div>
+    </blockquote>
     {{ end }}
 {{ end }}
