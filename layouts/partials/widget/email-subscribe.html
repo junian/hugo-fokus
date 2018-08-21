@@ -1,21 +1,27 @@
 {{ if .Site.Params.feedburner }}
 <div class="section section-email-subscribe text-center">
-  <h3>Subscribe to {{ .Site.Title }}</h3>
-  <p>Get the latest posts delivered right to your inbox.</p>
-  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ .Site.Params.feedburner }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
-    target="popupwindow">
-    <input name="uri" type="hidden" value="{{ .Site.Params.feedburner }}">
-    <input name="loc" type="hidden" value="en_US">
-    <div class="form-group">
-      <div class="input-group">
-        <input name="email" class="form-control" placeholder="Your email address" type="text">
-        <span class="input-group-btn">
-          <button class="btn btn-default btn-primary" type="submit">Subscribe</button>
-        </span>
-      </div>
-      <!-- /input-group -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3>Subscribe to {{ .Site.Title }}</h3>
+                <p>Get the latest posts delivered right to your inbox.</p>
+                <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ .Site.Params.feedburner }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
+                    target="popupwindow">
+                    <input name="uri" type="hidden" value="{{ .Site.Params.feedburner }}">
+                    <input name="loc" type="hidden" value="en_US">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input name="email" class="form-control" placeholder="Your email address" type="text">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btn-primary" type="submit">Subscribe</button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                </form>
+                <p class="text-muted">Delivered by <a href="https://feedburner.google.com/{{ .Site.Params.feedburner }}" target="_blank">FeedBurner</a> or subscribe via RSS with <a href="http://cloud.feedly.com/#subscription/feed/{{ .Site.RSSLink }}"> Feedly!</a></p>
+            </div>
+        </div>
     </div>
-  </form>
-  <p class="text-muted">Delivered by <a href="https://feedburner.google.com/{{ .Site.Params.feedburner }}" target="_blank">FeedBurner</a> or subscribe via RSS with <a href="http://cloud.feedly.com/#subscription/feed/{{ .Site.RSSLink  }}"> Feedly!</a></p>
 </div>
 {{ end }}

@@ -45,10 +45,10 @@
                 </div>
             </div>
         </div>
-        <!-- <hr class='section-divider' /> -->
-        {{- if ne .Params.type "page" -}}
-            {{- partial "post-footer.html" . -}}
-        {{- end -}}
     </div>
+    <!-- <hr class='section-divider' /> -->
+    {{- if ne .Params.type "page" -}}
+        {{- partial "post-footer.html" . -}}
+    {{- end -}}
 </article>
 {{ end }}
