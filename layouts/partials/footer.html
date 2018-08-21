@@ -25,7 +25,9 @@
                 <div class="section small text-center">
                         <p>&nbsp;&middot;&nbsp;{{- range .Site.Params.Menu.footer -}}<a href="{{- .url -}}">{{- .title -}}</a>&nbsp;&middot;&nbsp;{{- end -}}</p>
                         <p>{{- .Site.Copyright | safeHTML -}}</p>
+                        {{ if .Site.Params.showAttribution }}
                         <p>Proudly powered with <a href="https://gohugo.io" rel="nofollow" target="_blank">Hugo</a> and <a href="https://github.com/junian/fokus" rel="nofollow" target="_blank">Fokus</a></p>
+                        {{ end }}
                 </div>
             </div>
         </div>
