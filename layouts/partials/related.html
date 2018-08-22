@@ -26,7 +26,7 @@
 			<a href="{{ $page.Permalink }}">
 				{{- with $page.Param "images" -}}
 				{{- range last 1 . -}}
-				<img src="{{ . }}" class="img-responsive" />
+				<img src="{{ . }}" class="img-responsive" title="{{ $page.Title }}" alt="{{ $page.Description }}" />
 				{{- end -}}
 				{{- end -}}
 				<h3>{{- $page.Title -}}</h3>
