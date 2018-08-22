@@ -11,7 +11,7 @@
                         {{- if isset .Site.Params "social" -}} 
                         {{- range .Site.Params.social -}}
                             <li>
-                                <a href="{{- .url -}}" title="Visit {{ .title | humanize }} page" target="_blank" rel="me">
+                                <a href="{{- .url -}}" title="Visit {{ .title | humanize }} page" target="_blank" rel="me nofollow noreferrer">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-stack-2x fa-thin fa-circle-thin">{{- partialCached (printf "svg/circle.svg") . -}}</i>
                                         <i class="fa fa-stack-1x fa-{{- .title -}}">{{- partialCached (printf "svg/%s.svg" .title) . -}}</i>
@@ -26,7 +26,7 @@
                         <p>&nbsp;&middot;&nbsp;{{- range .Site.Params.Menu.footer -}}<a href="{{- .url -}}">{{- .title -}}</a>&nbsp;&middot;&nbsp;{{- end -}}</p>
                         <p>{{- .Site.Copyright | safeHTML -}}</p>
                         {{ if .Site.Params.showAttribution }}
-                        <p>Proudly powered with <a href="https://gohugo.io" rel="nofollow" target="_blank">Hugo</a> and <a href="https://github.com/junian/fokus" rel="nofollow" target="_blank">Fokus</a></p>
+                        <p>Proudly powered with <a href="https://gohugo.io" rel="nofollow noreferrer" target="_blank">Hugo</a> and <a href="https://github.com/junian/fokus" rel="nofollow noreferrer" target="_blank">Fokus</a></p>
                         {{ end }}
                 </div>
             </div>
