@@ -31,6 +31,13 @@
     {{ $indexScratch.Add "jsassets" (slice (resources.Get .)) }}
 {{ end }}
 {{ $appjs := $indexScratch.Get "jsassets" | resources.Concat "js/fokus-bundle.js" | resources.Minify | resources.Fingerprint }}
+{{ .Scratch.Set "appjs" $appjs.RelPermalink }}
+{{ $swjs := resources.Get "js/sw-template.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify }}
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+        {{ printf "navigator.serviceWorker.register('%s');" $swjs.RelPermalink | safeJS }}
+    }
+</script>
 <script src="{{ $appjs.RelPermalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 {{- template "_internal/google_analytics_async.html" . -}}
 {{- partialCached "widget-scripts.html" . -}}

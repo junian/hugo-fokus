@@ -16,6 +16,7 @@
 <!-- Bundle css -->
 {{- $appcss := $indexScratch.Get "cssassets" | resources.Concat "css/fokus-bundle.css" | resources.Minify | resources.Fingerprint -}}
 <link rel="stylesheet" href="{{ $appcss.RelPermalink }}" integrity="{{ $appcss.Data.Integrity }}">
+{{ .Scratch.Set "appcss" $appcss.RelPermalink }}
 <!--
 {{/* partialCached "widget/buymeacoffee-style.html" . */}}
 -->
