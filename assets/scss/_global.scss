@@ -91,3 +91,14 @@ img::selection {
     }
   }
 }
+
+.caption {
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

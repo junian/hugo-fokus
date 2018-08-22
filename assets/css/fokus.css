@@ -114,6 +114,21 @@ img::selection {
   color: #1488CC;
 }
 
+.caption, .e-content figure figcaption {
+  font-size: 14px;
+  font-style: italic;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  -webkit-border-bottom-right-radius: 5px;
+     -moz-border-radius-bottomright: 5px;
+          border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+     -moz-border-radius-bottomleft: 5px;
+          border-bottom-left-radius: 5px;
+}
+
 #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
@@ -403,21 +418,6 @@ hr.section-divider:before, .e-content hr:before {
   height: auto;
 }
 
-.e-content figure figcaption {
-  font-size: 14px;
-  font-style: italic;
-  display: block;
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  -webkit-border-bottom-right-radius: 5px;
-     -moz-border-radius-bottomright: 5px;
-          border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-     -moz-border-radius-bottomleft: 5px;
-          border-bottom-left-radius: 5px;
-}
-
 .e-content figure pre,
 .e-content figure table,
 .e-content figure img {
@@ -694,15 +694,15 @@ hr.section-divider:before, .e-content hr:before {
   margin: 0 0 10px;
 }
 
-.nextprev .caption {
+.nextprev .caption, .nextprev .e-content figure figcaption, .e-content figure .nextprev figcaption {
   font-style: normal;
 }
 
-.nextprev .caption h2 {
+.nextprev .caption h2, .nextprev .e-content figure figcaption h2, .e-content figure .nextprev figcaption h2 {
   font-size: 24px;
 }
 
-.nextprev .caption h3 {
+.nextprev .caption h3, .nextprev .e-content figure figcaption h3, .e-content figure .nextprev figcaption h3 {
   margin-top: 10px;
   font-size: 18px;
   line-height: 1.3;
