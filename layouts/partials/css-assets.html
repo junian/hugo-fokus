@@ -1,9 +1,8 @@
 <!-- Bootstrap Core CSS -->
-<!--
-{{/* $bootstrapcss := resources.Get "vendor/bootstrap/dist/css/bootstrap.min.css" */}}
--->
+
 {{- $bootstrapcustomcss := resources.Get "css/bootstrap-custom.css" -}}
 <!-- Theme CSS -->
+
 {{- $fokuscss := resources.Get "css/fokus.css" -}}
 <!-- Cookie Consent CSS -->
 {{- $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" -}}
@@ -17,6 +16,4 @@
 {{- $appcss := $indexScratch.Get "cssassets" | resources.Concat "css/fokus-bundle.css" | resources.Minify | resources.Fingerprint -}}
 <link rel="stylesheet" href="{{ $appcss.RelPermalink }}" integrity="{{ $appcss.Data.Integrity }}">
 {{ .Scratch.Set "appcss" $appcss.RelPermalink }}
-<!--
-{{/* partialCached "widget/buymeacoffee-style.html" . */}}
--->
+{{ .Scratch.Set "appcssintegrity" $appcss.Data.Integrity }}

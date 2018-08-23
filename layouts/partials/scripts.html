@@ -32,6 +32,9 @@
 {{ end }}
 {{ $appjs := $indexScratch.Get "jsassets" | resources.Concat "js/fokus-bundle.js" | resources.Minify | resources.Fingerprint }}
 {{ .Scratch.Set "appjs" $appjs.RelPermalink }}
+{{ .Scratch.Set "appjsintegrity" $appjs.Data.Integrity }}
+{{ $assetid := delimit (slice (.Scratch.Get "appcssintegrity") (.Scratch.Get "appjsintegrity")) "" }}
+{{ .Scratch.Set "swversion" (sha256 $assetid) }}
 {{ $swjs := resources.Get "js/sw-template.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify }}
 <script type="text/javascript">
     if ('serviceWorker' in navigator) {
