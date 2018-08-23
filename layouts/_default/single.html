@@ -4,7 +4,7 @@
     {{- if eq .Params.type "page" -}}
         {{- partial "header.html" . -}}
     {{- else -}}
-        {{- partial "post-header.html" . -}}
+        {{- partial "post-header-hero.html" . -}}
     {{- end -}}
     <div class="container">
         {{- if ne .Params.type "page" -}}
