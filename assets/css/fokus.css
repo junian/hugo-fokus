@@ -1,5 +1,5 @@
 /*!
- * Fokus Hugo Theme v1.8.1 (https://github.com/junian/fokus)
+ * Fokus Hugo Theme v1.9.0 (https://github.com/junian/fokus)
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
@@ -11,7 +11,7 @@ body {
   color: #212529;
   background-color: #fcfbf7;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-tap-highlight-color: #1488CC;
+  -webkit-tap-highlight-color: #004e92;
 }
 
 h1,
@@ -31,7 +31,7 @@ a {
 
 a:focus, a:hover {
   text-decoration: none;
-  color: #1488CC;
+  color: #004e92;
 }
 
 a.imglink img {
@@ -45,15 +45,41 @@ a.imglink:focus img, a.imglink:hover img {
   opacity: 0.85;
 }
 
+a.lined-link, footer.post-footer p a, footer.site-footer p a, .e-content a {
+  color: inherit;
+  outline: none;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  background: #c5e4ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5fb4ff), to(#5fb4ff));
+  background: -webkit-linear-gradient(#5fb4ff, #5fb4ff);
+  background: -moz- oldlinear-gradient(#5fb4ff, #5fb4ff);
+  background: -o-linear-gradient(#5fb4ff, #5fb4ff);
+  background: linear-gradient(#5fb4ff, #5fb4ff);
+  -webkit-background-size: 100% .15em;
+     -moz-background-size: 100% .15em;
+       -o-background-size: 100% .15em;
+          background-size: 100% .15em;
+  background-repeat: no-repeat;
+  background-position: left 0 bottom 0;
+}
+
+a.lined-link:focus, footer.post-footer p a:focus, footer.site-footer p a:focus, .e-content a:focus {
+  background-color: #5fb4ff;
+  color: #212529;
+}
+
 ::-moz-selection {
   color: #fcfbf7;
-  background: #1488CC;
+  background: #004e92;
   text-shadow: none;
 }
 
 ::selection {
   color: #fcfbf7;
-  background: #1488CC;
+  background: #004e92;
   text-shadow: none;
 }
 
@@ -99,11 +125,9 @@ img::selection {
 }
 
 .post-meta {
-  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
-  font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
-  color: #868e96;
+  color: #717171;
 }
 
 .post-meta > a {
@@ -111,11 +135,11 @@ img::selection {
 }
 
 .post-meta > a:focus, .post-meta > a:hover {
-  color: #1488CC;
+  color: #004e92;
 }
 
 .caption, .e-content figure figcaption {
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
   display: block;
   margin: 0;
@@ -127,6 +151,12 @@ img::selection {
   -webkit-border-bottom-left-radius: 5px;
      -moz-border-radius-bottomleft: 5px;
           border-bottom-left-radius: 5px;
+  color: #717171;
+}
+
+.section-license,
+.section-lastmod {
+  color: #717171;
 }
 
 #mainNav {
@@ -272,7 +302,7 @@ hr.small {
 }
 
 .post-preview > a:focus, .post-preview > a:hover {
-  color: #1488CC;
+  color: #004e92;
 }
 
 .post-preview > a > .post-title {
@@ -301,7 +331,7 @@ footer.site-footer p {
   font-size: 10px;
   margin: 0 0 0 0;
   line-height: 1.75;
-  color: #adb5bd;
+  color: #495057;
 }
 
 footer.site-footer .list-inline {
@@ -348,14 +378,14 @@ footer.site-footer .list-inline > li {
 }
 */
 .btn-primary {
-  background-color: #1488CC;
-  border-color: #1488CC;
+  background-color: #004e92;
+  border-color: #004e92;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fcfbf7;
-  background-color: #1171a9 !important;
-  border-color: #1171a9 !important;
+  background-color: #003a6c !important;
+  border-color: #003a6c !important;
 }
 
 .btn-lg {
@@ -441,32 +471,6 @@ hr.section-divider:before, .e-content hr:before {
 
 .e-content h3 {
   margin: 50px 0 30px 0;
-}
-
-.e-content a {
-  color: inherit;
-  outline: none;
-  -webkit-transition: all .2s ease-out;
-  -o-transition: all .2s ease-out;
-  -moz-transition: all .2s ease-out;
-  transition: all .2s ease-out;
-  background: #e3f3fc;
-  background: -webkit-gradient(linear, left top, left bottom, from(#6fc1f1), to(#6fc1f1));
-  background: -webkit-linear-gradient(#6fc1f1, #6fc1f1);
-  background: -moz- oldlinear-gradient(#6fc1f1, #6fc1f1);
-  background: -o-linear-gradient(#6fc1f1, #6fc1f1);
-  background: linear-gradient(#6fc1f1, #6fc1f1);
-  -webkit-background-size: 100% .15em;
-     -moz-background-size: 100% .15em;
-       -o-background-size: 100% .15em;
-          background-size: 100% .15em;
-  background-repeat: no-repeat;
-  background-position: left 0 bottom 0;
-}
-
-.e-content a:focus {
-  background-color: #6fc1f1;
-  color: #212529;
 }
 
 .e-content a img:hover, .e-content a img:focus {
@@ -782,7 +786,7 @@ hr.section-divider:before, .e-content hr:before {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: #e7eef2 1px solid;
   padding: 30px 15px;
-  background: #eef8fd;
+  background: #f8fcff;
 }
 
 .section-email-subscribe h3 {
@@ -986,13 +990,13 @@ hr.section-divider:before, .e-content hr:before {
     color: #212529;
   }
   #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-    color: #1488CC;
+    color: #004e92;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a {
     color: #212529;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-    color: #1488CC;
+    color: #004e92;
   }
   #mainNav.is-visible {
     /* if the user changes the scrolling direction, we show the header */

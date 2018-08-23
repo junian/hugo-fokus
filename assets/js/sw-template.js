@@ -1,3 +1,8 @@
+/*!
+ * Fokus Hugo Theme v1.9.0 (https://github.com/junian/fokus)
+ * Copyright 2018 Junian Triajianto
+ * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
+ */
 /*
  Copyright 2016 Google Inc. All Rights Reserved.
  Licensed under the Apache License, Version 2.0 (the "License");

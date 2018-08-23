@@ -16,6 +16,6 @@ min_version = "0.41"
 
 # If porting an existing theme
 [original]
-  name = "Start"
+  name = ""
   homepage = ""
   repo = ""

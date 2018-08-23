@@ -1,5 +1,3 @@
 # FOKUS - Hugo Theme
 
-## Favicon
-
-An ex
+Work in progress.
