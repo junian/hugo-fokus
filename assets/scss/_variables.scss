@@ -8,6 +8,7 @@ $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #868e96 !default;
+$gray-650: #717171 !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
@@ -25,10 +26,13 @@ $teal:    #0085A1 !default;
 $cyan:    #17a2b8 !default;
 
 $blue-skyline: #1488CC !default;
-// $blue-cool: #6dd5ed !default;
-$blue-cool: lighten($blue-skyline, 25%) !default;
+$blue-frost: #004e92 !default;
 
-$primary:       $blue-skyline !default;
+$primary:           $blue-frost !default;
+$primary-light:     lighten($primary, 40%) !default;
+$primary-lighter:   lighten($primary, 60%) !default;
+$primary-lightest:  lighten($primary, 70%) !default;
+
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;

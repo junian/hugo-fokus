@@ -1,45 +1,51 @@
 // Styling for the footer
 footer {
-  &.post-footer {
-    .bmc,
-    .go-social {
-      text-align: center;
-      @media only screen and (min-width: 768px) {
-        margin: 0px 0 10px 0;
-      }
+    &.post-footer {
+        p {
+            a {
+                @extend a.lined-link
+            }
+        }
+        .bmc,
+        .go-social {
+            text-align: center;
+            @media only screen and (min-width: 768px) {
+                margin: 0px 0 10px 0;
+            }
+        }
+        .bmc {
+            @media only screen and (min-width: 768px) {
+                text-align: left;
+            }
+        }
+        .go-social {
+            @media only screen and (min-width: 768px) {
+                text-align: right;
+            }
+        }
     }
-
-    .bmc {
-      @media only screen and (min-width: 768px) {
-        text-align: left;
-      }
+    &.site-footer {
+        p {
+            font-size: 10px;
+            margin: 0 0 0 0;
+            line-height: 1.75;
+            color: $gray-700;
+            @media only screen and (min-width: 768px) {
+                font-size: 12px;
+            }
+            a {
+                @extend a.lined-link
+            }
+        }
+        .list-inline {
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            >li {
+                padding: 0;
+            }
+        }
     }
-
-    .go-social {
-      @media only screen and (min-width: 768px) {
-        text-align: right;
-      }
-    }
-  }
-  &.site-footer {
-    p {
-      font-size: 10px;
-      margin: 0 0 0 0;
-      line-height: 1.75;
-      color: $gray-500;
-      @media only screen and (min-width: 768px) {
-        font-size: 12px;
-      }
-    }
-    .list-inline {
-      margin: 0;
-      padding: 0;
-      line-height: 0;
-      > li {
-        padding: 0;
-      }
-    }
-  }
 }
 
 /*

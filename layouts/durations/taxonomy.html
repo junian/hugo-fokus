@@ -10,7 +10,7 @@
             {{ range where (where .Site.RegularPages "Type" "not in" (slice "page")) ".ReadingTime" "gt" $durationFrom }}
                 {{ if (or (eq $term "long") (and (ne $term "long") (le .ReadingTime $durationTo)))      }}
                 <div class="post-preview">
-                    <a href="{{ .Permalink }}">
+                    <a href="{{ .RelPermalink }}">
                         <h2 class="post-title">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}</h2>
                         {{ with .Description }}<h3 class="post-subtitle">{{ . }}</h3>{{ end }}
                     </a>

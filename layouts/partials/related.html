@@ -23,7 +23,7 @@
 		{{- end -}}
 		{{- print " similar-item post-preview" -}}'>
 			<hr />
-			<a href="{{ $page.Permalink }}">
+			<a href="{{ $page.RelPermalink }}">
 				{{- with $page.Param "images" -}}
 				{{- range last 1 . -}}
 				<img src="{{ . }}" class="img-responsive" title="{{ $page.Title }}" alt="{{ $page.Description }}" />
@@ -31,7 +31,7 @@
 				{{- end -}}
 				<h3>{{- $page.Title -}}</h3>
 				<p class="post-subtitle small">{{- $page.Description -}}</p>
-				<p class="post-meta small text-muted">{{ with $page.ReadingTime }}{{ . }} min read{{ end }}</p>
+				<p class="post-meta small">{{ with $page.ReadingTime }}{{ . }} min read{{ end }}</p>
 			</a>
 		</div>
 		{{ end }}

@@ -24,10 +24,10 @@
                     {{ .Scratch.Set "finalContent" "" }}
                     {{ if $.Site.Params.autoFigure }}
                         {{ $reAltTitleIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" }}
-                        {{ $reAltTitleOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$3\"><figcaption class='caption text-muted'>$2</figcaption></figure>" }}
+                        {{ $reAltTitleOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$3\"><figcaption class='caption'>$2</figcaption></figure>" }}
                         {{ $contentAltTitle := .Content | replaceRE $reAltTitleIn $reAltTitleOut | safeHTML }}
                         {{ $reAltIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" /></p>" }}
-                        {{ $reAltOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\"><figcaption class='caption text-muted'>$2</figcaption></figure>" }}
+                        {{ $reAltOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\"><figcaption class='caption'>$2</figcaption></figure>" }}
                         {{ $contentAlt := $contentAltTitle | replaceRE $reAltIn $reAltOut | safeHTML }}
                         {{ .Scratch.Set "finalContent" $contentAlt }}
                     {{ else }}

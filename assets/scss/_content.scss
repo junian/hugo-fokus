@@ -73,18 +73,7 @@ hr {
         margin: 50px 0 30px 0;
     }
     a {
-        color: inherit;
-        outline: none;
-        transition: all .2s ease-out;
-        background: lighten($blue-cool, 25%);
-        background: linear-gradient($blue-cool, $blue-cool);
-        background-size: 100% .15em;
-        background-repeat: no-repeat;
-        background-position: left 0 bottom 0;
-        &:focus {
-            background-color: $blue-cool;
-            color: $gray-900;
-        }
+        @extend a.lined-link;
         img {
             &:hover,
             &:focus {

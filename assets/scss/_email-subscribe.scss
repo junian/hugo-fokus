@@ -2,7 +2,7 @@
     @include sans-serif-font;
     border: #e7eef2 1px solid;
     padding: 30px 15px;
-    background: lighten($blue-cool, 27.5%);
+    background: $primary-lightest;
     // border-radius: 5px;
     h3 {
         margin: 15px 0 15px 0;

@@ -90,10 +90,10 @@
             "palette": {
                 "popup": {
                     "background": "#edeff5",
-                    "text": "#838391"
+                    "text": "#4F4F4F"
                 },
                 "button": {
-                    "background": "#4b81e8"
+                    "background": "#004e92"
                 }
             },
             "content": {

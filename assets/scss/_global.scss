@@ -1,10 +1,10 @@
 // Global styling for this template
 body {
-  font-size: 20px;
-  color: $gray-900;
-  background-color: $white-warm;
-  @include sans-serif-font;
-  -webkit-tap-highlight-color: $primary;
+    font-size: 20px;
+    color: $gray-900;
+    background-color: $white-warm;
+    @include sans-serif-font;
+    -webkit-tap-highlight-color: $primary;
 }
 
 h1,
@@ -13,92 +13,113 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  @include sans-serif-font;
+    font-weight: 700;
+    @include sans-serif-font;
 }
 
 a {
-  text-decoration: none;
-  color: $gray-900; // @include transition-all;
-  &:focus,
-  &:hover {
     text-decoration: none;
-    color: $primary;
-  }
-  &.imglink {
-    img {
-      transition: opacity 0.3s;
-    }
+    color: $gray-900; // @include transition-all;
     &:focus,
     &:hover {
-      img {
-        opacity: 0.85;
-      }
+        text-decoration: none;
+        color: $primary;
     }
-  }
+    &.imglink {
+        img {
+            transition: opacity 0.3s;
+        }
+        &:focus,
+        &:hover {
+            img {
+                opacity: 0.85;
+            }
+        }
+    }
+}
+
+a.lined-link {
+    color: inherit;
+    outline: none;
+    transition: all .2s ease-out;
+    background: $primary-lighter;
+    background: linear-gradient($primary-light, $primary-light);
+    background-size: 100% .15em;
+    background-repeat: no-repeat;
+    background-position: left 0 bottom 0;
+    &:focus {
+        background-color: $primary-light;
+        color: $gray-900;
+    }
 }
 
 ::selection {
-  color: $white-warm;
-  background: $primary;
-  text-shadow: none;
+    color: $white-warm;
+    background: $primary;
+    text-shadow: none;
 }
 
 img::selection {
-  color: $white-warm;
-  background: transparent;
+    color: $white-warm;
+    background: transparent;
 }
 
 .pagenumber {
-  float: none;
-  display: inline;
-  div {
-    display: inline-block;
-    padding: 10px 5px;
-    @media only screen and (min-width: 768px) {
-      padding: 15px 25px;
+    float: none;
+    display: inline;
+    div {
+        display: inline-block;
+        padding: 10px 5px;
+        @media only screen and (min-width: 768px) {
+            padding: 15px 25px;
+        }
     }
-  }
 }
 
 .section {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 
 .section-related {
-  margin: 60px 0 60px 0;
-  h2 {
-    font-size: 36px;
-  }
+    margin: 60px 0 60px 0;
+    h2 {
+        font-size: 36px;
+    }
 }
 
 .adcontainer {
-  margin: 15px 0;
-  text-align: center;
+    margin: 15px 0;
+    text-align: center;
 }
 
 .post-meta {
-  @include serif-font;
-  font-style: italic;
-  font-size: 18px;
-  font-weight: 300;
-  color: $gray-600;
-  >a {
-    color: $gray-900;
-    &:focus,
-    &:hover {
-      color: $primary;
+    // @include serif-font;
+    // font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+    color: $gray-650;
+    >a {
+        color: $gray-900;
+        &:focus,
+        &:hover {
+            color: $primary;
+        }
     }
-  }
 }
 
 .caption {
-  font-size: 14px;
-  font-style: italic;
-  display: block;
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+    font-size: 16px;
+    font-style: italic;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: $gray-650;
+}
+
+.section-license,
+.section-lastmod {
+    color: $gray-650;
 }
