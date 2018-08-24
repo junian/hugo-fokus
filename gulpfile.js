@@ -7,6 +7,7 @@ var mqpacker = require("css-mqpacker");
 
 gulp.task('bootstrap-custom-css', function() {
     var processors = [
+        autoprefixer,
         mqpacker
     ];
     gulp.src('./assets/scss/bootstrap-custom.scss')
