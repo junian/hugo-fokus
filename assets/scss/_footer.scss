@@ -9,17 +9,17 @@
     .bmc,
     .go-social {
         text-align: center;
-        @media only screen and (min-width: 768px) {
+        @media (min-width: 768px) {
             margin: 0px 0 10px 0;
         }
     }
     .bmc {
-        @media only screen and (min-width: 768px) {
+        @media (min-width: 768px) {
             text-align: left;
         }
     }
     .go-social {
-        @media only screen and (min-width: 768px) {
+        @media (min-width: 768px) {
             text-align: right;
         }
     }
@@ -30,7 +30,7 @@
         margin: 0 0 0 0;
         line-height: 1.75;
         color: $gray-700;
-        @media only screen and (min-width: 768px) {
+        @media (min-width: 768px) {
             font-size: 12px;
         }
         a {
@@ -72,7 +72,7 @@
     font-style: italic;
     color: #9EABB3;
   }
-  @media only screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     text-align: left;
     .author-image {
       top: -40px;

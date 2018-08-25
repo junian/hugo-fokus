@@ -34,7 +34,7 @@
       }
     }
   }
-  @media only screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     border-bottom: 1px solid transparent;
     background: transparent;
     .navbar-brand {
@@ -58,7 +58,7 @@
       }
     }
   }
-  @media only screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     transition: background-color 0.2s;
     /* Force Hardware Acceleration in WebKit */
     transform: translate3d(0, 0, 0);
