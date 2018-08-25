@@ -15,11 +15,11 @@
                         {{ if not .Date.IsZero }}
                         <span class='post-timestamp'>
                             <i class="fa fa-calendar">{{- partialCached (print "svg/calendar.svg") . -}}</i>&nbsp;
-                            <a class='timestamp-link' href='{{ .RelPermalink }}' rel='bookmark' title='permanent link'>
-                                <time class='dt-published' title='{{- .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" -}}' itemprop='datePublished'>
+                            <a class='u-url' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
+                                <time class='dt-published' title='{{- .Date.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='datePublished'>
                                     {{- .Date.Format "Jan 2, 2006" -}}
                                 </time>
-                                <time class='dt-updated  hidden' title='{{- .Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" -}}' itemprop='dateModified'>
+                                <time class='dt-updated  hidden' title='{{- .Lastmod.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='dateModified'>
                                     {{- .Lastmod.Format "Jan 2, 2006" -}}
                                 </time>
                             </a>
