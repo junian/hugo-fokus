@@ -4,24 +4,7 @@ body {
     -webkit-tap-highlight-color: $primary;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 700;
-    font-family:  $font-family-sans-serif;
-}
-
 a {
-    text-decoration: none;
-    color: $gray-900; // @include transition-all;
-    &:focus,
-    &:hover {
-        text-decoration: none;
-        color: $primary;
-    }
     &.imglink {
         img {
             transition: opacity 0.3s;

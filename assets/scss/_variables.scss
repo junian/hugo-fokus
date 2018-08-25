@@ -33,14 +33,14 @@ $brand-danger:          #d9534f !default;
 //** Background color for `<body>`.
 $body-bg:               $white-warm;
 //** Global text color on `<body>`.
-$text-color:            $gray-dark !default;
+$text-color:            $gray-dark;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            $gray-dark;
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      darken($brand-primary, 15%);
 //** Link hover decoration.
-$link-hover-decoration: underline !default;
+$link-hover-decoration: none;
 
 
 //== Typography
@@ -71,7 +71,7 @@ $line-height-computed:    floor(($font-size-base * $line-height-base)) !default;
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    inherit !default;
-$headings-font-weight:    500 !default;
+$headings-font-weight:    700;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
 
