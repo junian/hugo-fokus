@@ -99,7 +99,7 @@
 
     // Bootstrap specific changes end
 
-    header.masthead {
+    .masthead {
         margin-bottom: 0 !important;
         .post-heading {
             padding: 0 !important;
@@ -110,13 +110,12 @@
         }
     }
 
-    footer.site-footer,
+    .site-footer,
     .section-related,
     .p-comment,
     .section-email-subscribe,
     .nextprev,
-    div.alert,
-    div.adcontainer,
+    .section-ad,
     .btn-clipboard {
         display: none !important;
     }

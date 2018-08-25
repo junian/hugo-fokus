@@ -70,23 +70,22 @@
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
-  header.masthead {
+  .masthead {
     margin-bottom: 0 !important;
   }
-  header.masthead .post-heading {
+  .masthead .post-heading {
     padding: 0 !important;
     margin: 30px 0 !important;
   }
-  header.masthead .post-heading .post-meta > span {
+  .masthead .post-heading .post-meta > span {
     display: inline-block !important;
   }
-  footer.site-footer,
+  .site-footer,
   .section-related,
   .p-comment,
   .section-email-subscribe,
   .nextprev,
-  div.alert,
-  div.adcontainer,
+  .section-ad,
   .btn-clipboard {
     display: none !important;
   }
