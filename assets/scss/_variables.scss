@@ -1,4 +1,27 @@
 $white-warm: #fcfbf7 !default;
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-650: #717171 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #0085A1 !default;
+$cyan:    #17a2b8 !default;
 
 // Copied from Bootstrap _variables.scss
 
@@ -838,8 +861,8 @@ $close-text-shadow:           0 1px 0 #fff !default;
 //
 //##
 
-$code-color:                  #c7254e !default;
-$code-bg:                     #f9f2f4 !default;
+$code-color:                  $pink;
+$code-bg:                     transparent;
 
 $kbd-color:                   #fff !default;
 $kbd-bg:                      #333 !default;
@@ -880,30 +903,6 @@ $hr-border:                   $gray-lighter !default;
 // End of Bootstrap variables
 
 // Variables
-
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-650: #717171 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
-
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #0085A1 !default;
-$cyan:    #17a2b8 !default;
 
 $blue-skyline: #1488CC !default;
 $blue-frost: #004e92 !default;
