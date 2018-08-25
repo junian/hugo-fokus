@@ -5,19 +5,14 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <h3>Subscribe to {{ .Site.Title }}</h3>
                 <p>Get the latest posts delivered right to your inbox.</p>
-                <form action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ .Site.Params.feedburner }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
+                <form class="form-inline" action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ .Site.Params.feedburner }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
                     target="popupwindow">
                     <input name="uri" type="hidden" value="{{ .Site.Params.feedburner }}">
                     <input name="loc" type="hidden" value="en_US">
                     <div class="form-group">
-                        <div class="input-group">
-                            <input name="email" aria-label="email" class="form-control" placeholder="Your email address" type="text">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default btn-primary" type="submit">Subscribe</button>
-                            </span>
-                        </div>
-                        <!-- /input-group -->
+                        <input name="email" aria-label="email" class="form-control" placeholder="Your email address" type="text">
                     </div>
+                    <button class="btn btn-default btn-primary" type="submit">Subscribe</button>
                 </form>
                 <p>Delivered by <a href="https://feedburner.google.com/{{ .Site.Params.feedburner }}" target="_blank" rel="nofollow noreferrer">FeedBurner</a> or subscribe via RSS with <a href="https://cloud.feedly.com/#subscription/feed/{{ .Site.RSSLink }}" target="_blank" rel="nofollow noreferrer"> Feedly!</a></p>
             </div>
