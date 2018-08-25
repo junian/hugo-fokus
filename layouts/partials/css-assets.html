@@ -1,14 +1,14 @@
 <!-- Bootstrap Core CSS -->
 
-{{- $bootstrapcustomcss := resources.Get "css/bootstrap-custom.css" -}}
+
 <!-- Theme CSS -->
 
-{{- $fokuscss := resources.Get "css/fokus.css" -}}
+{{- $fokuscss := resources.Get "css/fokus-full.css" -}}
 <!-- Cookie Consent CSS -->
 {{- $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" -}}
 <!-- Custom asset css -->
 {{- $indexScratch := .Scratch -}}
-{{- $indexScratch.Add "cssassets" (slice $bootstrapcustomcss $fokuscss $cookieconsentcss) -}}
+{{- $indexScratch.Add "cssassets" (slice $fokuscss $cookieconsentcss) -}}
 {{- range .Site.Params.customCSSAssets -}} 
     {{- $indexScratch.Add "cssassets" (slice (resources.Get .)) -}}
 {{- end -}}

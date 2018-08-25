@@ -1,4 +1,4 @@
-/*!Fokus v1.9.0 | MIT License | github.com/junian/fokus*/
+/*!Fokus v1.9.5 | MIT License | github.com/junian/fokus*/
 /*!Start Bootstrap - Clean Blog v3.3.7+1 | MIT License | github.com/BlackrockDigital/startbootstrap-clean-blog/tree/v3.3.7+1*/
 body {
   font-size: 20px;
@@ -121,7 +121,7 @@ img::selection {
   color: #717171;
 }
 
-#mainNav {
+.navbar-main {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
   background-color: #fcfbf7;
@@ -131,38 +131,31 @@ img::selection {
   z-index: 3;
 }
 
-#mainNav .navbar-brand {
+.navbar-main .navbar-brand {
   font-weight: 300;
   color: #343a40;
 }
 
-#mainNav .navbar-brand > img {
+.navbar-main .navbar-brand > img {
   width: 24px;
   height: 24px;
   float: left;
   margin-right: 9px;
 }
 
-#mainNav .navbar-toggle {
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #343a40;
+.navbar-main .navbar-checkbox {
+  display: none;
 }
 
-#mainNav .navbar-nav > li.nav-item > a {
+.navbar-main .navbar-checkbox:checked ~ .collapse {
+  display: block;
+}
+
+.navbar-main .navbar-nav > .nav-item > a {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
-
-#navbar-toggle-cbox {
-  display: none;
-}
-
-#navbar-toggle-cbox:checked ~ .collapse {
-  display: block;
 }
 
 .masthead {
@@ -184,7 +177,7 @@ img::selection {
   height: 100%;
   width: 100%;
   background-color: #212529;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .masthead .page-heading,
@@ -329,7 +322,7 @@ hr.small {
     font-style: italic;
     color: #9EABB3;
   }
-  @media only screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     text-align: left;
     .author-image {
       top: -40px;
@@ -726,51 +719,49 @@ hr.section-divider:before, .e-content hr:before {
   border-color: #d65b27 !important;
 }
 
-.section-email-subscribe {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+.section-subscribe {
   border: #e7eef2 1px solid;
   padding: 30px 15px;
   background: #f8fcff;
 }
 
-.section-email-subscribe h3 {
+.section-subscribe h3 {
   margin: 15px 0 15px 0;
 }
 
-.section-email-subscribe p {
+.section-subscribe p {
   margin: 15px 0;
   font-size: 12px;
 }
 
-.section-email-subscribe p a {
+.section-subscribe p a {
   font-weight: 700;
 }
 
-.section-email-subscribe .form-group {
+.section-subscribe .form-inline {
   margin: 30px auto;
-  max-width: 400px;
 }
 
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .pagenumber div {
     padding: 15px 25px;
   }
-  #mainNav {
+  .navbar-main {
     border-bottom: 1px solid transparent;
     background: transparent;
   }
-  #mainNav .navbar-brand {
+  .navbar-main .navbar-brand {
     padding: 10px 20px;
     color: #fcfbf7;
   }
-  #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+  .navbar-main .navbar-brand:focus, .navbar-main .navbar-brand:hover {
     color: rgba(252, 251, 247, 0.8);
   }
-  #mainNav .navbar-nav > li.nav-item > a {
+  .navbar-main .navbar-nav > .nav-item > a {
     padding: 10px 20px;
     color: #fcfbf7;
   }
-  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
+  .navbar-main .navbar-nav > .nav-item > a:focus, .navbar-main .navbar-nav > .nav-item > a:hover {
     color: rgba(252, 251, 247, 0.8);
   }
   .masthead .page-heading,
@@ -814,45 +805,48 @@ hr.section-divider:before, .e-content hr:before {
   }
 }
 
-@media only screen and (min-width: 992px) {
-  #mainNav {
-    -webkit-transition: background-color 0.2s;
-    -o-transition: background-color 0.2s;
+@media (min-width: 992px) {
+  .navbar-main {
+    /*
     transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-  }
-  #mainNav.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
-    position: fixed;
-    top: -67px;
-    -webkit-transition: -webkit-transform 0.2s;
-    transition: -webkit-transform 0.2s;
-    -o-transition: -o-transform 0.2s;
-    transition: transform 0.2s;
-    transition: transform 0.2s, -webkit-transform 0.2s, -o-transform 0.2s;
-    border-bottom: 1px solid #fcfbf7;
-    background-color: rgba(252, 251, 247, 0.9);
-  }
-  #mainNav.is-fixed .navbar-brand {
-    color: #212529;
-  }
-  #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-    color: #004e92;
-  }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a {
-    color: #212529;
-  }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-    color: #004e92;
-  }
-  #mainNav.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
-    -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    Force Hardware Acceleration in WebKit
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    */
+    /*
+    &.is-fixed {
+      // when the user scrolls down, we hide the header right above the viewport 
+      position: fixed;
+      top: -67px;
+      transition: transform 0.2s;
+      border-bottom: 1px solid darken($white-warm, .05);
+      background-color: fade-out($white-warm, .1);
+      .navbar-brand {
+        color: $gray-900;
+        &:focus,
+        &:hover {
+          color: $primary;
+        }
+      }
+      .navbar-nav {
+        > .nav-item {
+          > a {
+            color: $gray-900;
+            &:focus,
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+    */
+    /*
+    &.is-visible {
+      // if the user changes the scrolling direction, we show the header
+      transform: translate3d(0, 100%, 0);
+    }
+    */
   }
   .nextprev .next {
     text-align: right;
