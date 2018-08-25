@@ -36,11 +36,16 @@
 {{ $assetid := delimit (slice (.Scratch.Get "appcssintegrity") (.Scratch.Get "appjsintegrity")) "" }}
 {{ .Scratch.Set "swversion" (sha256 $assetid) }}
 {{ $swjs := resources.Get "js/sw-template.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify }}
-<script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-        {{ printf "navigator.serviceWorker.register('%s');" $swjs.RelPermalink | safeJS }}
-    }
-</script>
 <script src="{{ $appjs.RelPermalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 {{- template "_internal/google_analytics_async.html" . -}}
 {{- partialCached "widget-scripts.html" . -}}
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+        {{ printf "navigator.serviceWorker.register('%s', {scope: '/'});" $swjs.RelPermalink | safeJS }}
+        window.addEventListener('load', function() {
+            if (navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+            }
+        });
+    }
+</script>

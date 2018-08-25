@@ -38,7 +38,7 @@
       }
     }
     .msg-clipboard {
-      @include sans-serif-font;
+      font-family:  $font-family-sans-serif;
       display: block;
       position: absolute;
       top: 0;

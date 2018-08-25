@@ -1,9 +1,6 @@
 // Global styling for this template
 body {
     font-size: 20px;
-    color: $gray-900;
-    background-color: $white-warm;
-    @include sans-serif-font;
     -webkit-tap-highlight-color: $primary;
 }
 
@@ -14,7 +11,7 @@ h4,
 h5,
 h6 {
     font-weight: 700;
-    @include sans-serif-font;
+    font-family:  $font-family-sans-serif;
 }
 
 a {
@@ -93,8 +90,6 @@ img::selection {
 }
 
 .post-meta {
-    // @include serif-font;
-    // font-style: italic;
     font-size: 16px;
     font-weight: 300;
     color: $gray-650;

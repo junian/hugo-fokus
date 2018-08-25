@@ -31,7 +31,7 @@ hr {
     blockquote,
     ul,
     ol {
-        @include serif-font;
+        font-family: $font-family-serif;
         @extend .section;
     }
     p {

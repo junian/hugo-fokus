@@ -3,77 +3,127 @@
  * Copyright 2018 Junian Triajianto
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
-/*
- Copyright 2016 Google Inc. All Rights Reserved.
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-     http://www.apache.org/licenses/LICENSE-2.0
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+ /*
+This is a modified version of Ethan Marcotte's service worker (https://ethanmarcotte.com/theworkerofservices.js),
+which is in turn a modified version of Jeremy Keith's service worker (https://adactio.com/serviceworker.js),
+with a few additional edits borrowed from Filament Group's. (https://www.filamentgroup.com/sw.js)
 */
 
-// Names of the two caches used in this version of the service worker.
-// Change to v2, etc. when you update any of the local resources, which will
-// in turn trigger the install event again.
-const PRECACHE = 'precache-v{{ .Scratch.Get "swversion" }}';
-const RUNTIME = 'runtime';
+(function() {
+  const version = 'v{{ .Scratch.Get "swversion" }}';
+  const cacheName = version + '::fokus:';
 
-// A list of local resources we always want to be cached.
-const PRECACHE_URLS = [
-  'index.html',
-  './', // Alias for index.html
-  '{{ .Scratch.Get "appcss" }}',
-  '{{ .Scratch.Get "appjs" }}'
-];
+  const staticCacheName = cacheName + 'static';
+  const pagesCacheName = cacheName + 'pages';
 
-// The install handler takes care of precaching the resources we always need.
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(PRECACHE)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(self.skipWaiting())
-  );
-});
+  const staticAssets = [
+    '/',
+    '{{ .Scratch.Get "appcss" }}',
+    '{{ .Scratch.Get "appjs" }}'
+  ];
 
-// The activate handler takes care of cleaning up old caches.
-self.addEventListener('activate', event => {
-  const currentCaches = [PRECACHE, RUNTIME];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
-    }).then(cachesToDelete => {
-      return Promise.all(cachesToDelete.map(cacheToDelete => {
-        return caches.delete(cacheToDelete);
-      }));
-    }).then(() => self.clients.claim())
-  );
-});
+  function updateStaticCache() {
+    // These items must be cached for the Service Worker to complete installation
+    return caches.open(staticCacheName)
+    .then(cache => {
+      return cache.addAll(staticAssets.map(url => new Request(url, {credentials: 'include'})));
+    });
+  }
 
-// The fetch handler serves responses for same-origin resources from a cache.
-// If no response is found, it populates the runtime cache with the response
-// from the network before returning it to the page.
-self.addEventListener('fetch', event => {
-  // Skip cross-origin requests, like those for Google Analytics.
-  if (event.request.url.startsWith(self.location.origin)) {
-    event.respondWith(
-      caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
+  function stashInCache(cacheName, request, response) {
+    caches.open(cacheName)
+    .then(cache => cache.put(request, response));
+  }
+
+  // Limit the number of items in a specified cache.
+  function trimCache(cacheName, maxItems) {
+    caches.open(cacheName)
+    .then(cache => {
+      cache.keys()
+      .then(keys => {
+        if (keys.length > maxItems) {
+          cache.delete(keys[ 0 ])
+          .then(trimCache(cacheName, maxItems));
         }
+      });
+    });
+  }
 
-        return caches.open(RUNTIME).then(cache => {
-          return fetch(event.request).then(response => {
-            // Put a copy of the response in the runtime cache.
-            return cache.put(event.request, response.clone()).then(() => {
-              return response;
-            });
-          });
-        });
+  // Remove caches whose name is no longer valid
+  function clearOldCaches() {
+    return caches.keys()
+    .then(keys => {
+      return Promise.all(keys
+        .filter(key => key.indexOf(version) !== 0)
+        .map(key => caches.delete(key))
+       );
+    });
+  }
+
+  // Events!
+  self.addEventListener('message', event => {
+    if (event.data.command === 'trimCaches') {
+      trimCache(pagesCacheName, 35);
+    }
+  });
+
+  self.addEventListener('install', event => {
+    event.waitUntil(updateStaticCache()
+      .then(() => self.skipWaiting())
+     );
+  });
+
+  self.addEventListener('activate', event => {
+    event.waitUntil(clearOldCaches()
+      .then(() => self.clients.claim())
+     );
+  });
+
+  self.addEventListener('message', event => {
+    if (event.data.command === 'trimCaches') {
+      trimCache(pagesCacheName, 35);
+    }
+  });
+
+  self.addEventListener('fetch', event => {
+    const request = event.request;
+    const url = new URL(request.url);
+
+    if (url.href.indexOf('https://www.hartwell-insurance.com') !== 0) {
+      return;
+    }
+
+    // Ignore non-GET requests
+    if (request.method !== 'GET') {
+      return;
+    }
+
+    // Ignore query-stringÃ¢â‚¬â„¢d requests
+    if (url.href.indexOf('?') !== -1) {
+      return;
+    }
+
+    // Try the network first, fall back to the cache, finally the offline page (for HTML requests)
+    event.respondWith(
+      fetch(request)
+      .then(response => {
+        // NETWORK
+        // Stash a copy of this page in the pages cache
+        const copy = response.clone();
+        stashInCache(staticCacheName, request, copy);
+        return response;
+      })
+      .catch(() => {
+        // CACHE or FALLBACK
+        if (request.headers.get('Accept').indexOf('text/html') !== -1) {
+          return caches.match(request)
+            .then(response => response || caches.match('/offline/'));
+        } else {
+          return caches.match(request).then(response => response);
+        }
       })
     );
-  }
-});
+    return;
+
+  });
+})();
