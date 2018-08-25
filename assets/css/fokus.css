@@ -4,34 +4,9 @@
  * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
  */
 /*! Start Bootstrap - Clean Blog v3.3.7+1 | MIT License | http://startbootstrap.com/template-overviews/clean-blog */
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-
 body {
   font-size: 20px;
-  color: #212529;
-  background-color: #fcfbf7;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-tap-highlight-color: #004e92;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: #212529;
-}
-
-a:focus, a:hover {
-  text-decoration: none;
-  color: #004e92;
 }
 
 a.imglink img {
@@ -44,7 +19,7 @@ a.imglink:focus img, a.imglink:hover img {
   opacity: 0.85;
 }
 
-a.lined-link, footer.post-footer p a, footer.site-footer p a, .e-content a {
+a.lined-link, .post-footer p a, .site-footer p a, .e-content a {
   color: inherit;
   outline: none;
   -webkit-transition: all .2s ease-out;
@@ -61,7 +36,7 @@ a.lined-link, footer.post-footer p a, footer.site-footer p a, .e-content a {
   background-position: left 0 bottom 0;
 }
 
-a.lined-link:focus, footer.post-footer p a:focus, footer.site-footer p a:focus, .e-content a:focus {
+a.lined-link:focus, .post-footer p a:focus, .site-footer p a:focus, .e-content a:focus {
   background-color: #5fb4ff;
   color: #212529;
 }
@@ -194,7 +169,7 @@ img::selection {
   display: block;
 }
 
-header.masthead {
+.masthead {
   margin-bottom: 20px;
   background-color: #868e96;
   background-position: center center;
@@ -206,7 +181,7 @@ header.masthead {
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
-header.masthead .overlay {
+.masthead .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -216,27 +191,27 @@ header.masthead .overlay {
   opacity: 0.5;
 }
 
-header.masthead .page-heading,
-header.masthead .post-heading,
-header.masthead .site-heading {
+.masthead .page-heading,
+.masthead .post-heading,
+.masthead .site-heading {
   padding: 100px 0 50px;
   color: #fcfbf7;
 }
 
-header.masthead .page-heading,
-header.masthead .site-heading {
+.masthead .page-heading,
+.masthead .site-heading {
   text-align: center;
 }
 
-header.masthead .page-heading h1,
-header.masthead .site-heading h1 {
+.masthead .page-heading h1,
+.masthead .site-heading h1 {
   font-size: 50px;
   margin-top: 0;
   font-weight: 700;
 }
 
-header.masthead .page-heading .subheading,
-header.masthead .site-heading .subheading {
+.masthead .page-heading .subheading,
+.masthead .site-heading .subheading {
   font-size: 24px;
   font-weight: 300;
   line-height: 1.1;
@@ -244,36 +219,36 @@ header.masthead .site-heading .subheading {
   margin: 10px 0 0;
 }
 
-header.masthead .post-heading h1 {
+.masthead .post-heading h1 {
   font-size: 35px;
 }
 
-header.masthead .post-heading .post-meta,
-header.masthead .post-heading .subheading {
+.masthead .post-heading .post-meta,
+.masthead .post-heading .subheading {
   display: block;
 }
 
-header.masthead .post-heading .subheading {
+.masthead .post-heading .subheading {
   line-height: 1.2;
   font-size: 24px;
   font-weight: 400;
   margin: 10px 0 30px;
 }
 
-header.masthead .post-heading .post-meta {
+.masthead .post-heading .post-meta {
   line-height: 1.45;
   color: #fcfbf7;
 }
 
-header.masthead .post-heading .post-meta a {
+.masthead .post-heading .post-meta a {
   color: #fcfbf7;
 }
 
-header.masthead .post-heading .post-meta a:focus, header.masthead .post-heading .post-meta a:hover {
+.masthead .post-heading .post-meta a:focus, .masthead .post-heading .post-meta a:hover {
   color: rgba(252, 251, 247, 0.8);
 }
 
-header.masthead .post-heading .post-meta > span {
+.masthead .post-heading .post-meta > span {
   display: block;
   margin-right: 8px;
   padding-right: 12px;
@@ -311,25 +286,25 @@ hr.small {
   margin-top: 0;
 }
 
-footer.post-footer .bmc,
-footer.post-footer .go-social {
+.post-footer .bmc,
+.post-footer .go-social {
   text-align: center;
 }
 
-footer.site-footer p {
+.site-footer p {
   font-size: 10px;
   margin: 0 0 0 0;
   line-height: 1.75;
   color: #495057;
 }
 
-footer.site-footer .list-inline {
+.site-footer .list-inline {
   margin: 0;
   padding: 0;
   line-height: 0;
 }
 
-footer.site-footer .list-inline > li {
+.site-footer .list-inline > li {
   padding: 0;
 }
 
@@ -535,7 +510,7 @@ hr.section-divider:before, .e-content hr:before {
 }
 
 .highlight .btn-clipboard .msg-clipboard {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: block;
   position: absolute;
   top: 0;
@@ -756,7 +731,7 @@ hr.section-divider:before, .e-content hr:before {
 }
 
 .section-email-subscribe {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
   border: #e7eef2 1px solid;
   padding: 30px 15px;
   background: #f8fcff;
@@ -778,94 +753,6 @@ hr.section-divider:before, .e-content hr:before {
 .section-email-subscribe .form-group {
   margin: 30px auto;
   max-width: 400px;
-}
-
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  .e-content a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-  .navbar {
-    display: none;
-  }
-  .btn > .caret,
-  .dropup > .btn > .caret {
-    border-top-color: #000 !important;
-  }
-  .label {
-    border: 1px solid #000;
-  }
-  .table {
-    border-collapse: collapse !important;
-  }
-  .table td,
-  .table th {
-    background-color: #fff !important;
-  }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #ddd !important;
-  }
-  header.masthead {
-    margin-bottom: 0 !important;
-  }
-  header.masthead .post-heading {
-    padding: 0 !important;
-    margin: 30px 0 !important;
-  }
-  header.masthead .post-heading .post-meta > span {
-    display: inline-block !important;
-  }
-  footer.site-footer,
-  .section-related,
-  .p-comment,
-  .section-email-subscribe,
-  .nextprev,
-  div.alert,
-  div.adcontainer,
-  .btn-clipboard {
-    display: none !important;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -890,40 +777,40 @@ hr.section-divider:before, .e-content hr:before {
   #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
     color: rgba(252, 251, 247, 0.8);
   }
-  header.masthead .page-heading,
-  header.masthead .site-heading {
+  .masthead .page-heading,
+  .masthead .site-heading {
     padding: 100px 0px;
   }
-  header.masthead .page-heading h1,
-  header.masthead .site-heading h1 {
+  .masthead .page-heading h1,
+  .masthead .site-heading h1 {
     font-size: 80px;
   }
-  header.masthead .post-heading {
+  .masthead .post-heading {
     padding: 70px 0px 50px 0px;
   }
-  header.masthead .post-heading h1 {
+  .masthead .post-heading h1 {
     font-size: 55px;
   }
-  header.masthead .post-heading .subheading {
+  .masthead .post-heading .subheading {
     font-size: 30px;
   }
-  header.masthead .post-heading .post-meta > span {
+  .masthead .post-heading .post-meta > span {
     display: inline-block;
   }
   .post-preview > a > .post-title {
     font-size: 36px;
   }
-  footer.post-footer .bmc,
-  footer.post-footer .go-social {
+  .post-footer .bmc,
+  .post-footer .go-social {
     margin: 0px 0 10px 0;
   }
-  footer.post-footer .bmc {
+  .post-footer .bmc {
     text-align: left;
   }
-  footer.post-footer .go-social {
+  .post-footer .go-social {
     text-align: right;
   }
-  footer.site-footer p {
+  .site-footer p {
     font-size: 12px;
   }
   .btn-lg {
