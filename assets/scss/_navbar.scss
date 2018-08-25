@@ -24,7 +24,7 @@
     }
   }
   .navbar-nav {
-    > li.nav-item {
+    > .nav-item {
       > a {
         font-size: 12px;
         font-weight: 800;
@@ -45,7 +45,7 @@
       }
     }
     .navbar-nav {
-      > li.nav-item {
+      > .nav-item {
         > a {
           padding: 10px 20px;
           color: $white-warm;
@@ -58,12 +58,15 @@
     }
   }
   @media (min-width: 992px) {
+    /*
     transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
+    Force Hardware Acceleration in WebKit
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
+    */
+    /*
     &.is-fixed {
-      /* when the user scrolls down, we hide the header right above the viewport */
+      // when the user scrolls down, we hide the header right above the viewport 
       position: fixed;
       top: -67px;
       transition: transform 0.2s;
@@ -77,7 +80,7 @@
         }
       }
       .navbar-nav {
-        > li.nav-item {
+        > .nav-item {
           > a {
             color: $gray-900;
             &:focus,
@@ -88,9 +91,12 @@
         }
       }
     }
+    */
+    /*
     &.is-visible {
-      /* if the user changes the scrolling direction, we show the header */
+      // if the user changes the scrolling direction, we show the header
       transform: translate3d(0, 100%, 0);
     }
+    */
   }
 }
