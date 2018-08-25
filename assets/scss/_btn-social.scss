@@ -5,12 +5,12 @@
 }
 
 $colorMap: (
-    tw-share: $twitter_color,
-    fb-share: $facebook_color,
-    gp-share: $google_plus_color,
-    in-share: $linkedin_color,
-    email-share: $email_color,
-    feed-share: $feed_color);
+    tw-share: $twitter-color,
+    fb-share: $facebook-color,
+    gp-share: $google_plus-color,
+    in-share: $linkedin-color,
+    email-share: $email-color,
+    feed-share: $feed-color);
 
 @each $className, $classValue in $colorMap {
     .btn-#{$className} {
