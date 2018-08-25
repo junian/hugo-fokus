@@ -17,3 +17,6 @@
 <link rel="stylesheet" href="{{ $appcss.RelPermalink }}" integrity="{{ $appcss.Data.Integrity }}">
 {{ .Scratch.Set "appcss" $appcss.RelPermalink }}
 {{ .Scratch.Set "appcssintegrity" $appcss.Data.Integrity }}
+{{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
+{{- $fokusprintcss := slice (resources.Get "scss/fokus-print.scss" | resources.ToCSS $options) | resources.Concat "css/fokus-print.css" | resources.Minify | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $fokusprintcss.RelPermalink }}" integrity="{{ $fokusprintcss.Data.Integrity }}" media="print">

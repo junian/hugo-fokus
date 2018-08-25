@@ -22,7 +22,7 @@ gulp.task('fokus-css', function() {
         mqpacker
     ];
 
-    gulp.src('./assets/scss/fokus.scss')
+    gulp.src(['./assets/scss/fokus.scss', './assets/scss/fokus-print.scss'])
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(gulp.dest('./assets/css/'));

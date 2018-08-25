@@ -17,3 +17,6 @@
 <link rel="stylesheet" href="{{ $appcss.RelPermalink }}" integrity="{{ $appcss.Data.Integrity }}">
 {{ .Scratch.Set "appcss" $appcss.RelPermalink }}
 {{ .Scratch.Set "appcssintegrity" $appcss.Data.Integrity }}
+
+{{- $fokusprintcss := resources.Get "css/fokus-print.css" | resources.Minify | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $fokusprintcss.RelPermalink }}" integrity="{{ $fokusprintcss.Data.Integrity }}" media="print">
