@@ -1,7 +1,199 @@
-baseurl = "https://gohugo.io/"
-title = "Hugo Themes"
-author = "Steve Francia"
-copyright = "Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved."
-canonifyurls = true
-paginate = 3
+####################################
+#! Put Hugo built-in config here  !#
+####################################
 
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "fokus theme"
+
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+pygmentsStyle = "dracula"
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClassic = false
+themesDir = "../.." # remove this on production
+theme = "fokus"
+
+googleAnalytics = "UA-12345"
+disqusShortname = "example"
+copyright = "Copyright &copy; 2018 Fokus Author"
+
+enableRobotsTXT = true
+canonifyURLs = false
+
+paginate = 5
+
+minify = false
+# disableKinds = []
+
+enableGitInfo = true
+enableEmoji = true
+
+[taxonomies]
+# category = "categories"
+tag = "tags"
+duration = "durations"
+
+[pygmentsOptions]
+noclasses = false
+
+[permalinks]
+posts = "/:filename/"
+pages = "/:filename/"
+
+[blackfriday]
+hrefTargetBlank = true
+plainIDAnchors = true
+angledQuotes = false
+latexDashes = true
+nofollowLinks = true
+noreferrerLinks = true
+
+[social]
+facebook_admin = ""
+facebook_app_id = "12345"
+facebook_pages = "12345"
+
+[author]
+name = "Fokus Author"
+description = "I am <strong>not</strong> Groot."
+email = "author@example.com"
+url = "https://example.com"
+city = "Surabaya"
+country = "Indonesia"
+
+[related]
+threshold = 80
+includeNewer = true
+toLower = false
+
+[[related.indices]]
+name = "tags"
+weight = 100
+
+[[related.indices]]
+name  = "date"
+weight = 10
+pattern = "2006"
+
+[privacy]
+[privacy.disqus]
+disable = false
+[privacy.googleAnalytics]
+respectDoNotTrack = true
+anonymizeIP = true
+useSessionStorage = true
+[privacy.instagram]
+simple = true
+[privacy.speakerDeck]
+disable = true
+[privacy.twitter]
+enableDNT = true
+simple = true
+[privacy.vimeo]
+simple = true
+[privacy.youtube]
+privacyEnhanced = true
+
+####################################
+#! Put theme-specific config here !#
+####################################
+
+[params]
+useSassPipes = false    #set True for development
+showHero = false
+featuredTag = ""
+showAttribution = true
+useWebfont = true
+brand = "<strong>fokus</strong> theme"
+description = "Trial and Error"
+relatedVisible = true
+commentVisible = true
+autoFigure = true
+feedburner = ""
+images = ["https://4.bp.blogspot.com/-34zH8MYrujE/W3PktU694SI/AAAAAAAAC88/a5_8_DmEZC0rfxZZPYaW_k2viSIn4qpmwCLcBGAs/s1600/cover-rawpixel-558599-unsplash.jpg",
+"https://4.bp.blogspot.com/-34zH8MYrujE/W3PktU694SI/AAAAAAAAC88/a5_8_DmEZC0rfxZZPYaW_k2viSIn4qpmwCLcBGAs/s400/cover-rawpixel-558599-unsplash.jpg"]
+customCSSAssets = []
+customJSAssets = []
+
+[params.postFooter]
+title = "Like what you read?"
+content = "Did you find this writing helpful, or save your valuable time? If so, you can support me by sending a cup of coffee with the button right here — you'll have my eternal gratitude!"
+
+[params.verification]
+google = ""
+bing = ""
+norton = ""
+
+[params.license]
+visible = true
+content = "Creative Commons Attribution 4.0 International License"
+contentUrl = "http://creativecommons.org/licenses/by/4.0/"
+code = "MIT License"
+codeUrl = "https://opensource.org/licenses/MIT"
+
+[params.adsense]
+client = "ca-pub-12345"
+slot = "12345"
+inArticleSlot = "12345"
+showTop = true
+showMiddle = true
+showBottom = true
+
+[params.widget]
+# addThis = "ra-12345"
+buymeacoffee = ""
+buymeacoffeeMessage = ""
+blockAdBlock = "<strong>Using AdBlock?</strong> No worry, have a seat and read this message instead."
+
+[params.widget.socialshare]
+facebook = true
+twitter = true
+googleplus = true
+linkedin = true
+email = true
+feed = true
+
+# Menu for Top Left
+
+[[params.menu.navleft]]
+title = "go"
+url = "/tags/go/"
+
+[[params.menu.navleft]]
+title = "development"
+url = "/tags/development/"
+
+# Menu for Top Right
+
+[[params.menu.navright]]
+title = "Archives"
+url = "/archives/"
+
+# Menu for footer
+
+[[params.menu.footer]]
+title = "About"
+url = "/about/"
+
+[[params.menu.footer]]
+title = "External Link"
+url = "https://www.junian.net"
+
+# Social footer
+
+[[params.social]]
+title = "rss"
+url = "https://example.com/index.xml"
+
+[[params.social]]
+title = "twitter"
+url = "https://twitter.com/"
+
+[[params.social]]
+title = "facebook"
+url = "https://facebook.com/"
+
+[[params.social]]
+title = "github"
+url = "https://github.com/"
