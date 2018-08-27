@@ -6,11 +6,8 @@ import mqpacker from "css-mqpacker";
 import concat from "gulp-concat";
 import log from "fancy-log";
 import pluginError from "plugin-error";
-import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
-
-const browserSync = BrowserSync.create();
 
 gulp.task("bootstrap-custom-css", () => {
   var processors = [
@@ -53,14 +50,12 @@ gulp.task("css", ["bootstrap-custom-css", "fokus-css"], () => {
 // Compile Javascript
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
-
   webpack(myConfig, (err, stats) => {
     if (err) throw new pluginError("webpack", err);
     log(`[webpack] ${stats.toString({
       colors: true,
       progress: true
     })}`);
-    browserSync.reload();
     cb();
   });
 });
