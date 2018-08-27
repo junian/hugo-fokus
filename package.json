@@ -55,5 +55,8 @@
     "iOS >= 6",
     "Opera >= 12",
     "Safari >= 6"
-  ]
+  ],
+  "dependencies": {
+    "clipboard": "^2.0.1"
+  }
 }
