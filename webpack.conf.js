@@ -24,12 +24,12 @@ export default {
     })
   ],
 
-  context: path.join(__dirname, "src"),
+  context: path.join(__dirname, "assets", "src"),
   entry: {
     app: ["./js/app"]
   },
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "assets", "js"),
     publicPath: "/",
     filename: "[name].js"
   },
