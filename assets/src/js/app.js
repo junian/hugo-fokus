@@ -3,6 +3,6 @@ import {ready} from "./vanilla/ready";
 import {embedClipboardJS} from "./embed-clipboard";
 
 ready(() => {
-  console.log("ready");
+  // console.log("ready");
   embedClipboardJS();
 });
