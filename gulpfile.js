@@ -5,6 +5,7 @@ var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var mqpacker = require("css-mqpacker");
 var concat = require('gulp-concat');
+const babel = require('gulp-babel');
 
 gulp.task('bootstrap-custom-css', function() {
     var processors = [
@@ -38,4 +39,11 @@ gulp.task('css', ['bootstrap-custom-css', 'fokus-css'], function(){
     .pipe(concat('fokus-full.css'))
     .pipe(postcss(processors))
     .pipe(gulp.dest('./assets/css/'));
+});
+
+gulp.task('js', function() {
+	return gulp.src('./assets/src/**/*.js')
+        .pipe(babel())
+        .pipe(concat('fokus-full.js'))
+		.pipe(gulp.dest('./assets/js'))
 });
