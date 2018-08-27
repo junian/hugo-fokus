@@ -82,7 +82,7 @@ function fivefilterCheck() {
   });
 }
 
-export function detectAdBlockWithABCheck() {
+function detectAdBlockWithABCheck() {
   var importFAB = document.createElement("script");
 
   importFAB.onload = () => {
@@ -110,3 +110,5 @@ export function detectAdBlockWithABCheck() {
 
   document.head.appendChild(importFAB);
 }
+
+export {detectAdBlockWithABCheck};

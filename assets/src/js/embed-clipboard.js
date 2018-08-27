@@ -3,7 +3,7 @@ import {remove} from "./vanilla/remove";
 import {addClass} from "./vanilla/add-class";
 import {removeClass} from "./vanilla/remove-class";
 
-export function embedClipboardJS() {
+function embedClipboardJS() {
   if (!ClipboardJS.isSupported()) {
     // console.log("Clipboard js not supported");
     var blocks = document.querySelectorAll("figure.highlight > .btn-clipboard");
@@ -48,3 +48,5 @@ export function embedClipboardJS() {
   //   console.error("Trigger:", e.trigger);
   // });
 }
+
+export {embedClipboardJS};
