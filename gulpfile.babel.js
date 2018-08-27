@@ -1,49 +1,52 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-var mqpacker = require("css-mqpacker");
-var concat = require('gulp-concat');
-const babel = require('gulp-babel');
+import gulp from "gulp";
+import sass from "gulp-sass";
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
+import mqpacker from "css-mqpacker";
+import concat from "gulp-concat";
+import babel from "gulp-babel";
 
-gulp.task('bootstrap-custom-css', function() {
-    var processors = [
-        autoprefixer,
-        mqpacker
-    ];
-    gulp.src('./assets/scss/bootstrap-custom.scss')
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(postcss(processors))
-        .pipe(gulp.dest('./assets/css/'));
-});
-
-gulp.task('fokus-css', function() {
-    var processors = [
-        autoprefixer,
-        mqpacker
-    ];
-
-    gulp.src(['./assets/scss/fokus.scss', './assets/scss/fokus-print.scss'])
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(postcss(processors))
-        .pipe(gulp.dest('./assets/css/'));
-});
-
-gulp.task('css', ['bootstrap-custom-css', 'fokus-css'], function(){
-    var processors = [
-        autoprefixer,
-        mqpacker
-    ];
-    return gulp.src(['./assets/css/bootstrap-custom.css', './assets/css/fokus.css'])
-    .pipe(concat('fokus-full.css'))
+gulp.task("bootstrap-custom-css", () => {
+  var processors = [
+    autoprefixer,
+    mqpacker
+  ];
+  gulp.src("./assets/scss/bootstrap-custom.scss")
+    .pipe(sass({
+      outputStyle: "expanded"
+    }).on("error", sass.logError))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./assets/css/'));
+    .pipe(gulp.dest("./assets/css/"));
 });
 
-gulp.task('js', function() {
-	return gulp.src('./assets/src/**/*.js')
-        .pipe(babel())
-        .pipe(concat('fokus-full.js'))
-		.pipe(gulp.dest('./assets/js'))
+gulp.task("fokus-css", () => {
+  var processors = [
+    autoprefixer,
+    mqpacker
+  ];
+
+  gulp.src(["./assets/scss/fokus.scss", "./assets/scss/fokus-print.scss"])
+    .pipe(sass({
+      outputStyle: "expanded"
+    }).on("error", sass.logError))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest("./assets/css/"));
+});
+
+gulp.task("css", ["bootstrap-custom-css", "fokus-css"], () => {
+  var processors = [
+    autoprefixer,
+    mqpacker
+  ];
+  return gulp.src(["./assets/css/bootstrap-custom.css", "./assets/css/fokus.css"])
+    .pipe(concat("fokus-full.css"))
+    .pipe(postcss(processors))
+    .pipe(gulp.dest("./assets/css/"));
+});
+
+gulp.task("js", () => {
+  return gulp.src("./assets/src/**/*.js")
+    .pipe(babel())
+    .pipe(concat("fokus-full.js"))
+    .pipe(gulp.dest("./assets/js"))
 });
