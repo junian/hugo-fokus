@@ -6,14 +6,14 @@ import {removeClass} from "./vanilla/remove-class";
 function embedClipboardJS() {
   if (!ClipboardJS.isSupported()) {
     // console.log("Clipboard js not supported");
-    var blocks = document.querySelectorAll("figure.highlight > .btn-clipboard");
+    const blocks = document.querySelectorAll("figure.highlight > .btn-clipboard");
     Array.prototype.forEach.call(blocks, (block, index) => {
       remove(block);
     });
     return;
   }
 
-  var clipboard = new ClipboardJS(".btn-clipboard", {
+  const clipboard = new ClipboardJS(".btn-clipboard", {
     target: (trigger) => {
       return trigger.nextElementSibling;
     }
@@ -26,7 +26,7 @@ function embedClipboardJS() {
 
     e.clearSelection();
 
-    var message = e.trigger.querySelector(".msg-clipboard");
+    const message = e.trigger.querySelector(".msg-clipboard");
 
     if (!message) return;
 

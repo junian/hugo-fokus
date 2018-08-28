@@ -6,11 +6,11 @@ import {imagesLoaded} from "imagesloaded";
 
 function onAdBlockDetected() {
   console.log("adblock detected");
-  var bmcNoScript = document.querySelector("noscript#buymeacoffee");
+  const bmcNoScript = document.querySelector("noscript#buymeacoffee");
   if (bmcNoScript)
     before(bmcNoScript, text(bmcNoScript));
 
-  var elBab = document.querySelector("#blockadblock");
+  const elBab = document.querySelector("#blockadblock");
   if (elBab)
     removeClass(elBab, "hidden");
 
@@ -48,12 +48,11 @@ function isImageOk(img) {
 }
 
 function fivefilterCheck() {
-  var isMobile = /Mobile|mini|Fennec|Android|iP(ad|od|hone)/.test(navigator.appVersion);
-  // var isPiHole = (window.location.search.substring(1) == 'pihole');
-  var isPiHole = true;
+  const isMobile = /Mobile|mini|Fennec|Android|iP(ad|od|hone)/.test(navigator.appVersion);
+  const isPiHole = true;
 
-  var elTestAd = document.querySelector("img#test-ad");
-  var elTestWhitelist = document.querySelector("img#test-whitelist");
+  const elTestAd = document.querySelector("img#test-ad");
+  const elTestWhitelist = document.querySelector("img#test-whitelist");
 
   if (elTestAd)
     elTestAd.setAttribute("src", "https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.png?advertiser=1&" + escape(new Date()));
@@ -61,13 +60,13 @@ function fivefilterCheck() {
   if (elTestWhitelist)
     elTestWhitelist.setAttribute("src", "https://gstatic.com/webp/gallery3/1.png?ads=1&" + escape(new Date()));
 
-  var elImgTest = document.querySelector("#image-tests");
+  const elImgTest = document.querySelector("#image-tests");
   if (!elImgTest)
     return;
 
   imagesLoaded(elImgTest, () => {
-    var adLoaded = isImageOk(elTestAd);
-    var whitelistAdLoaded = isImageOk(elTestWhitelist);
+    const adLoaded = isImageOk(elTestAd);
+    const whitelistAdLoaded = isImageOk(elTestWhitelist);
 
     // all-good if both ads failed
     // Unless we're testing on mobile, or for Pi-hole.net users.
@@ -83,7 +82,7 @@ function fivefilterCheck() {
 }
 
 function detectAdBlockWithABCheck() {
-  var importFAB = document.createElement("script");
+  const importFAB = document.createElement("script");
 
   importFAB.onload = () => {
     if (typeof abcheck === "undefined") {
