@@ -66,3 +66,5 @@ gulp.task("js", ["packjs"], () => {
     .pipe(prettify())
     .pipe(gulp.dest("./assets/js"));
 });
+
+gulp.task("default", ["css", "js"]);
