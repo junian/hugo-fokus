@@ -1,10 +1,11 @@
 import {config} from "./config";
 
-const d = document;
-const n = config.disqus_shortname;
+const d = document,
+  n = config.disqus_shortname,
+  t = d.getElementById("disqus_thread");
 
 function loadDisqusComments() {
-  if (!n)
+  if (!n || !t)
     return;
   (() => { // DON'T EDIT BELOW THIS LINE
     const s = d.createElement("script");
@@ -15,7 +16,7 @@ function loadDisqusComments() {
 }
 
 function loadDisqusCommentCount() {
-  if (!n)
+  if (!n || !t)
     return;
   (() => {
     const s = d.createElement("script");
@@ -27,4 +28,7 @@ function loadDisqusCommentCount() {
   })();
 }
 
-export {loadDisqusComments, loadDisqusCommentCount};
+export {
+  loadDisqusComments,
+  loadDisqusCommentCount
+};
