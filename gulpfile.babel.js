@@ -8,6 +8,7 @@ import log from "fancy-log";
 import pluginError from "plugin-error";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
+import prettify from "gulp-jsbeautifier";
 
 gulp.task("bootstrap-custom-css", () => {
   var processors = [
@@ -48,7 +49,7 @@ gulp.task("css", ["bootstrap-custom-css", "fokus-css"], () => {
 });
 
 // Compile Javascript
-gulp.task("js", (cb) => {
+gulp.task("packjs", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
   webpack(myConfig, (err, stats) => {
     if (err) throw new pluginError("webpack", err);
@@ -58,4 +59,10 @@ gulp.task("js", (cb) => {
     })}`);
     cb();
   });
+});
+
+gulp.task("js", ["packjs"], () => {
+  gulp.src("./assets/js/fokus_template.js")
+    .pipe(prettify())
+    .pipe(gulp.dest("./assets/js"));
 });

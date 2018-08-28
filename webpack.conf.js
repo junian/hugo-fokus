@@ -33,8 +33,5 @@ export default {
     publicPath: "/",
     filename: "[name].js"
   },
-  optimization: {
-    minimize: false
-  },
   externals:  [/^vendor\/.+\.js$/]
 };
