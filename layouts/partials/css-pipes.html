@@ -1,9 +1,9 @@
 <!-- Bootstrap Core CSS -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
-{{- $bootstrapcustomcss := resources.Get "scss/bootstrap-custom.scss" | resources.ToCSS $options -}}
+{{- $bootstrapcustomcss := resources.Get "src/scss/bootstrap-custom.scss" | resources.ToCSS $options -}}
 <!-- Theme CSS -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
-{{- $fokuscss := resources.Get "scss/fokus.scss" | resources.ToCSS $options -}}
+{{- $fokuscss := resources.Get "src/scss/fokus.scss" | resources.ToCSS $options -}}
 <!-- Cookie Consent CSS -->
 {{- $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" -}}
 <!-- Custom asset css -->
@@ -18,5 +18,5 @@
 {{ .Scratch.Set "appcss" $appcss.RelPermalink }}
 {{ .Scratch.Set "appcssintegrity" $appcss.Data.Integrity }}
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
-{{- $fokusprintcss := slice (resources.Get "scss/fokus-print.scss" | resources.ToCSS $options) | resources.Concat "css/fokus-print.css" | resources.Minify | resources.Fingerprint -}}
+{{- $fokusprintcss := slice (resources.Get "src/scss/fokus-print.scss" | resources.ToCSS $options) | resources.Concat "css/fokus-print.css" | resources.Minify | resources.Fingerprint -}}
 <link rel="stylesheet" href="{{ $fokusprintcss.RelPermalink }}" integrity="{{ $fokusprintcss.Data.Integrity }}" media="print">

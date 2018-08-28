@@ -14,7 +14,7 @@ gulp.task("bootstrap-custom-css", () => {
     autoprefixer,
     mqpacker
   ];
-  gulp.src("./assets/scss/bootstrap-custom.scss")
+  gulp.src("./assets/src/scss/bootstrap-custom.scss")
     .pipe(sass({
       outputStyle: "expanded"
     }).on("error", sass.logError))
@@ -28,7 +28,7 @@ gulp.task("fokus-css", () => {
     mqpacker
   ];
 
-  gulp.src(["./assets/scss/fokus.scss", "./assets/scss/fokus-print.scss"])
+  gulp.src(["./assets/src/scss/fokus.scss", "./assets/src/scss/fokus-print.scss"])
     .pipe(sass({
       outputStyle: "expanded"
     }).on("error", sass.logError))
