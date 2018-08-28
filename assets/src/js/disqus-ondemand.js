@@ -1,4 +1,6 @@
 import {config} from "./config";
+import {fadeOut} from "./vanilla/fade-out";
+import {addEventListener} from "./vanilla/add-event-listener";
 
 const d = document,
   n = config.disqus_shortname,
@@ -15,6 +17,19 @@ function loadDisqusComments() {
   })();
 }
 
+function onButtonLoadDisqusClicked() {
+  const bd = d.getElementById("btn_load_disqus_thread");
+  if (!bd)
+    return;
+
+  addEventListener(bd, "click", () => {
+    // ajax request to load the disqus javascript
+    loadDisqusComments();
+    // hide the button once comments load
+    fadeOut(bd);
+  });
+}
+
 function loadDisqusCommentCount() {
   if (!n || !t)
     return;
@@ -29,6 +44,6 @@ function loadDisqusCommentCount() {
 }
 
 export {
-  loadDisqusComments,
+  onButtonLoadDisqusClicked,
   loadDisqusCommentCount
 };
