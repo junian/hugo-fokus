@@ -1,5 +1,5 @@
 import {config} from "./config";
-import { addEventListener } from "./vanilla/add-event-listener";
+import {addEventListener} from "./vanilla/add-event-listener";
 
 const d = document;
 

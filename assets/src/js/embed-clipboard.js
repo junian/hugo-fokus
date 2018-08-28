@@ -6,7 +6,7 @@ import {removeClass} from "./vanilla/remove-class";
 function embedClipboardJS() {
   if (!ClipboardJS.isSupported()) {
     // console.log("Clipboard js not supported");
-    const blocks = document.querySelectorAll("figure.highlight > .btn-clipboard");
+    const blocks = document.querySelectorAll(".highlight > .btn-clipboard");
     Array.prototype.forEach.call(blocks, (block, index) => {
       remove(block);
     });
