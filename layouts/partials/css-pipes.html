@@ -4,11 +4,9 @@
 <!-- Theme CSS -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
 {{- $fokuscss := resources.Get "src/scss/fokus.scss" | resources.ToCSS $options -}}
-<!-- Cookie Consent CSS -->
-{{- $cookieconsentcss := resources.Get "vendor/cookieconsent/build/cookieconsent.min.css" -}}
 <!-- Custom asset css -->
 {{- $indexScratch := .Scratch -}}
-{{- $indexScratch.Add "cssassets" (slice $bootstrapcustomcss $fokuscss $cookieconsentcss) -}}
+{{- $indexScratch.Add "cssassets" (slice $bootstrapcustomcss $fokuscss) -}}
 {{- range .Site.Params.customCSSAssets -}} 
     {{- $indexScratch.Add "cssassets" (slice (resources.Get .)) -}}
 {{- end -}}
