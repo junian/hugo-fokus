@@ -26,7 +26,7 @@ export default {
 
   context: path.join(__dirname, "assets", "src"),
   entry: {
-    app: ["./js/app"]
+    fokus: ["./js/fokus"]
   },
   output: {
     path: path.join(__dirname, "assets", "js"),
