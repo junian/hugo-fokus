@@ -1,32 +1,13 @@
-<!-- jQuery -->
-<!--
-{{/* $jquery := resources.Get "vendor/jquery/jquery.min.js" */}}
--->
-<!-- Clipboardjs -->
-{{ $clipboardjs := resources.Get "vendor/clipboard.js/dist/clipboard.min.js" }}
-<!-- imagesloaded -->
-{{ $imagesloaded := resources.Get "vendor/imagesloaded/imagesloaded.pkgd.min.js" }}
-<!-- blockadblock -->
+<!-- AdBlock detection -->
 {{ $blockadblock := slice (resources.Get "js/abcheck.js") | resources.Concat "js/abcheck.js" | resources.Minify | resources.Fingerprint }}
-<!--
-{{/* $blockadblock := slice (resources.Get "vendor/blockadblock/blockadblock.js") | resources.Concat "js/blockadblock.js" | resources.Minify | resources.Fingerprint */}}
--->
-{{ .Scratch.Set "blockadblock" $blockadblock.Permalink }}
 {{ $abdetectjs := slice $blockadblock | resources.Concat "abdetect.js" }}
 {{ $string := (printf "var fabjs = '%s'; var fabintegrity = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity)) }}
 {{ $targetPath := "js/vars.js" }}
 {{ $vars := $string | resources.FromString $targetPath }}
-<!-- Bootstrap Core JavaScript -->
-<!--
-{{/* $bstransition := resources.Get "vendor/bootstrap/js/transition.js" */}}
-{{/* $bscollapse := resources.Get "vendor/bootstrap/js/collapse.js" */}}
--->
-<!-- Cookie Consent js -->
-{{ $cookieconsentjs := resources.Get "vendor/cookieconsent/build/cookieconsent.min.js" }}
-<!-- Theme JavaScript -->
-{{ $fokusjs := resources.Get "js/fokus.js" }}
+<!-- Fokus js -->
+{{ $fokusjs := resources.Get "js/fokus_template.js" | resources.ExecuteAsTemplate "js/fokus.js" . }}
 {{ $indexScratch := .Scratch }}
-{{ $indexScratch.Add "jsassets" (slice $imagesloaded $cookieconsentjs $clipboardjs $vars $fokusjs) }}
+{{ $indexScratch.Add "jsassets" (slice $fokusjs) }}
 {{ range .Site.Params.customJSAssets }} 
     {{ $indexScratch.Add "jsassets" (slice (resources.Get .)) }}
 {{ end }}
@@ -35,7 +16,7 @@
 {{ .Scratch.Set "appjsintegrity" $appjs.Data.Integrity }}
 {{ $assetid := delimit (slice (.Scratch.Get "appcssintegrity") (.Scratch.Get "appjsintegrity")) "" }}
 {{ .Scratch.Set "swversion" (sha256 $assetid) }}
-{{ $swjs := resources.Get "js/sw-template.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify }}
+{{ $swjs := resources.Get "js/sw_template.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify }}
 <script src="{{ $appjs.RelPermalink }}" integrity="{{ $appjs.Data.Integrity }}"></script>
 {{- template "_internal/google_analytics_async.html" . -}}
 {{- partialCached "widget-scripts.html" . -}}

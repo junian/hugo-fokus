@@ -1,4 +1,4 @@
-import {ClipboardJS} from "clipboard";
+import ClipboardJS from "clipboard";
 import {remove} from "./vanilla/remove";
 import {addClass} from "./vanilla/add-class";
 import {removeClass} from "./vanilla/remove-class";
