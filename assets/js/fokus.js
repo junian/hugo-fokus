@@ -22,19 +22,6 @@
 
     
 
-    function disqusOnDemandButton() {
-        var elBtnLoadDisqus = document.querySelector('#btn_load_disqus_thread');
-        if(!elBtnLoadDisqus)
-            return;
-        
-        addEventListener(elBtnLoadDisqus, 'click', function() {
-            // ajax request to load the disqus javascript
-            if(loadDisqusOnDemand !== 'undefined')
-                loadDisqusOnDemand();
-            // hide the button once comments load
-            fadeOut(elBtnLoadDisqus);
-        });
-    }
 
     ready(function() {
         console.log( "ready!" );
