@@ -1,8 +1,4 @@
-/*!
- * Fokus Hugo Theme v1.9.0 (https://github.com/junian/fokus)
- * Copyright 2018 Junian Triajianto
- * Licensed under MIT (https://github.com/junian/fokus/blob/master/LICENSE)
- */
+/*!Fokus v1.9.7 | MIT License | github.com/junian/fokus*/
 /*
 This is a modified version of Ethan Marcotte's service worker (https://ethanmarcotte.com/theworkerofservices.js),
 which is in turn a modified version of Jeremy Keith's service worker (https://adactio.com/serviceworker.js),
@@ -10,8 +6,8 @@ with a few additional edits borrowed from Filament Group's. (https://www.filamen
 */
 
 (function() {
-  const version = 'v{{ .Scratch.Get "swversion" }}';
-  const cacheName = version + "::fokus:";
+  const version = 'v{{ now.Format "20060102.1504" | urlize }}';
+  const cacheName = version + "::{{.Site.Title | urlize}}:";
 
   const staticCacheName = cacheName + "static";
   const pagesCacheName = cacheName + "pages";
