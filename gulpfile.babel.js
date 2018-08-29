@@ -9,6 +9,7 @@ import pluginError from "plugin-error";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
 import prettify from "gulp-jsbeautifier";
+import uncss from "gulp-uncss";
 
 gulp.task("bootstrap-custom-css", () => {
   var processors = [
@@ -20,6 +21,17 @@ gulp.task("bootstrap-custom-css", () => {
       outputStyle: "expanded"
     }).on("error", sass.logError))
     .pipe(postcss(processors))
+    /*
+    .pipe(uncss({
+      html: [
+        "http://localhost:1313/page/2/",
+        "http://localhost:1313/privacy-policy/",
+        "http://localhost:1313/about/",
+        "http://localhost:1313/archives/",
+        "http://localhost:1313/xamarin-forms-video-background/"
+      ]
+    }))
+    */
     .pipe(gulp.dest("./assets/css/"));
 });
 
