@@ -1,0 +1,23 @@
+# Netlify redirects. See https://www.netlify.com/docs/redirects/
+
+# Domain Redirects
+
+{{- range .Site.Params.Aliases }}
+{{ . | printf "%s*" }} {{ $.Site.BaseURL | printf "%s:splat 301!" -}}
+{{ end }}
+
+# Page redirects
+
+{{- range $p := .Site.Pages -}}
+{{ range .Aliases }}
+{{ . | printf "%-72s" }} {{ $p.RelPermalink -}}
+{{ end -}}
+{{- end }}
+
+# Custom Redirects (Blogger.com compatibility)
+
+# Old /search/label/:tag
+/search/label/*  /tags/:splat
+
+# RSS Redirect
+/feeds/posts/default alt=rss /index.xml 301!
