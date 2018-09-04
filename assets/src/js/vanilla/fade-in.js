@@ -1,23 +1,22 @@
-import {remove} from "./remove";
 import {setOpacity} from "./set-opacity";
 
-export function fadeOut(el) {
-  let opacity = 1;
+export function fadeIn(el) {
+  let opacity = 0;
 
   setOpacity(el, opacity);
 
   let last = +new Date();
   const tick = () => {
-    opacity -= (new Date() - last) / 400;
+    opacity += (new Date() - last) / 400;
 
     setOpacity(el, opacity);
 
     last = +new Date();
 
-    if (opacity > 0) {
+    if (opacity < 1) {
       (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
-    } else if (opacity <= 0) {
-      remove(el);
+    } else if (opacity >= 1) {
+      setOpacity(el, 1);
     }
   };
 

@@ -75,7 +75,12 @@ gulp.task("packjs", (cb) => {
 
 gulp.task("js", ["packjs"], () => {
   gulp.src("./assets/js/fokus_template.js")
-    .pipe(prettify())
+    .pipe(prettify({
+      indent_size: 4,
+      js: {
+        indent_size: 2
+      }
+    }))
     .pipe(gulp.dest("./assets/js"));
 });
 
