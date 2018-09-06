@@ -1,0 +1,16 @@
+<!-- AdBlock detection -->
+{{- $blockadblock := slice (resources.Get "js/abcheck.js") | resources.Concat "js/abcheck.js" | resources.Minify | resources.Fingerprint -}}
+{{- $abdetectjs := slice $blockadblock | resources.Concat "abdetect.js" -}}
+{{- $string := (printf "var fabjs = '%s'; var fabintegrity = '%s';" ($abdetectjs.Permalink) ($blockadblock.Data.Integrity)) -}}
+{{- $targetPath := "js/vars.js" -}}
+{{- $vars := $string | resources.FromString $targetPath -}}
+<!-- Fokus js -->
+{{- $fokusjs := resources.Get "js/fokus_template.js" | resources.ExecuteAsTemplate "js/fokus.js" . -}}
+{{- $indexScratch := .Scratch -}}
+{{- $indexScratch.Add "jsassets" (slice $fokusjs) -}}
+{{- range .Site.Params.customJSAssets -}} 
+    {{- $indexScratch.Add "jsassets" (slice (resources.Get .)) -}}
+{{- end -}}
+{{- $appjs := $indexScratch.Get "jsassets" | resources.Concat "js/fokus-bundle.js" | resources.Minify | resources.Fingerprint -}}
+{{- .Scratch.Set "appjs" $appjs.RelPermalink -}}
+{{- .Scratch.Set "appjsintegrity" $appjs.Data.Integrity -}}

@@ -1,0 +1,19 @@
+# All paths
+/*
+    # Block site from being framed with X-Frame-Options and CSP
+    Content-Security-Policy: frame-ancestors 'none'
+    X-Frame-Options: DENY
+    # Prevent browsers from incorrectly detecting non-scripts as scripts
+    X-Content-Type-Options: nosniff
+    # Allow service worker to access all site
+    Service-Worker-Allowed: /
+    # Protection from XSS
+    X-XSS-Protection: 1; mode=block
+    # Referrer Protection
+    Referrer-Policy: no-referrer-when-downgrade
+    # Feature Policy
+    # Feature-Policy: vibrate 'none'
+    {{- partial "css-assets.html" . }}
+    Link: <{{ .Scratch.Get "appcss" | relURL }}>; rel=preload; as=style
+    {{- partial "js-assets.html" . }}
+    Link: <{{ .Scratch.Get "appjs" | relURL }}>; rel=preload; as=script

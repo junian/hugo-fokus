@@ -10,7 +10,7 @@
 
 {{- range $p := .Site.Pages -}}
 {{ range .Aliases }}
-{{ . | printf "%-72s" }} {{ $p.RelPermalink -}}
+{{ . | printf "%-72s" | relURL }} {{ $p.RelPermalink -}}
 {{ end -}}
 {{- end }}
 

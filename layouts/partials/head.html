@@ -38,10 +38,13 @@
     {{ end }}
     <!-- CSS from hugo pipes -->
     {{ if .Site.Params.useSassPipes }}
-        {{- partialCached "css-pipes.html" . -}}
+        {{- partial "css-pipes.html" . -}}
     {{ else }}
-        {{- partialCached "css-assets.html" . -}}
+        {{- partial "css-assets.html" . -}}
     {{ end }}
+    <link rel="stylesheet" href='{{ .Scratch.Get "appcss" }}' integrity='{{ .Scratch.Get "appcssintegrity" }}'>
+    <link rel="stylesheet" href='{{ .Scratch.Get "printcss" }}' integrity='{{ .Scratch.Get "printcssintegrity" }}' media="print">
+
     <!-- Google Fonts -->
     {{ if $.Param "useWebFont" }} 
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700%7COpen+Sans:400,700" rel="stylesheet">
