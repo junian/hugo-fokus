@@ -735,7 +735,7 @@ hr.section-divider:before, .e-content hr:before {
 .section-subscribe {
   border: #e7eef2 1px solid;
   padding: 30px 15px;
-  background: #f8fcff;
+  background: white;
 }
 
 .section-subscribe h3 {
