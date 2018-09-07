@@ -4,9 +4,10 @@
 <!-- Theme CSS -->
 
 {{- $fokuscss := resources.Get "css/fokus-full.css" -}}
+{{- $fokusprintcss := resources.Get "css/fokus-print.css" -}}
 <!-- Custom asset css -->
 {{- $indexScratch := .Scratch -}}
-{{- $indexScratch.Add "cssassets" (slice $fokuscss) -}}
+{{- $indexScratch.Add "cssassets" (slice $fokuscss $fokusprintcss) -}}
 {{- range .Site.Params.customCSSAssets -}} 
     {{- $indexScratch.Add "cssassets" (slice (resources.Get .)) -}}
 {{- end -}}
@@ -16,6 +17,6 @@
 {{- .Scratch.Set "appcss" $appcss.RelPermalink -}}
 {{- .Scratch.Set "appcssintegrity" $appcss.Data.Integrity -}}
 
-{{- $fokusprintcss := resources.Get "css/fokus-print.css" | resources.Minify | resources.Fingerprint -}}
-{{- .Scratch.Set "printcss" $fokusprintcss.RelPermalink -}}
-{{- .Scratch.Set "printcssintegrity" $fokusprintcss.Data.Integrity -}}
+{{/*- $fokusprintcss := resources.Get "css/fokus-print.css" | resources.Minify | resources.Fingerprint -*/}}
+{{/*- .Scratch.Set "printcss" $fokusprintcss.RelPermalink -*/}}
+{{/*- .Scratch.Set "printcssintegrity" $fokusprintcss.Data.Integrity -*/}}

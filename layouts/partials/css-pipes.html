@@ -4,9 +4,10 @@
 <!-- Theme CSS -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
 {{- $fokuscss := resources.Get "src/scss/fokus.scss" | resources.ToCSS $options -}}
+{{- $fokusprintcss := resources.Get "src/scss/fokus-print.scss" | resources.ToCSS $options -}}
 <!-- Custom asset css -->
 {{- $indexScratch := .Scratch -}}
-{{- $indexScratch.Add "cssassets" (slice $bootstrapcustomcss $fokuscss) -}}
+{{- $indexScratch.Add "cssassets" (slice $bootstrapcustomcss $fokuscss $fokusprintcss) -}}
 {{- range .Site.Params.customCSSAssets -}} 
     {{- $indexScratch.Add "cssassets" (slice (resources.Get .)) -}}
 {{- end -}}
@@ -15,7 +16,7 @@
 
 {{- .Scratch.Set "appcss" $appcss.RelPermalink -}}
 {{- .Scratch.Set "appcssintegrity" $appcss.Data.Integrity -}}
-{{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
-{{- $fokusprintcss := slice (resources.Get "src/scss/fokus-print.scss" | resources.ToCSS $options) | resources.Concat "css/fokus-print.css" | resources.Minify | resources.Fingerprint -}}
-{{- .Scratch.Set "printcss" $fokusprintcss.RelPermalink -}}
-{{- .Scratch.Set "printcssintegrity" $fokusprintcss.Data.Integrity -}}
+{{/*- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -*/}}
+{{/*- $fokusprintcss := slice (resources.Get "src/scss/fokus-print.scss" | resources.ToCSS $options) | resources.Concat "css/fokus-print.css" | resources.Minify | resources.Fingerprint -*/}}
+{{/*- .Scratch.Set "printcss" $fokusprintcss.RelPermalink -*/}}
+{{/*- .Scratch.Set "printcssintegrity" $fokusprintcss.Data.Integrity -*/}}

@@ -13,13 +13,13 @@
 		{{ range $index, $page := . }}
 		<div class=' 
 		{{- if eq $postCount 1 -}}
-			col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3
+			col-sm-6 col-sm-offset-3
 		{{- else if (and (eq $postCount 2) (eq $index 0)) -}}
-			col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1
+			col-sm-5 col-sm-offset-1
 		{{- else if (and (eq $postCount 2) (gt $index 0)) -}}
-			col-lg-4 col-md-5
+			col-sm-5
 		{{- else -}}
-			col-lg-4 col-md-4
+			col-sm-4
 		{{- end -}}
 		{{- print " similar-item post-preview" -}}'>
 			<hr />
