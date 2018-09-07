@@ -662,6 +662,10 @@ hr.section-divider:before, .e-content hr:before {
   margin: 0 0 10px 0;
 }
 
+.similar-item img {
+  width: 100%;
+}
+
 .go-social {
   margin: 30px 0;
   line-height: 2.0;

@@ -36,6 +36,11 @@
     <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}">
     <link rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}" />
     {{ end }}
+    <!--preconnect-->
+    {{ range .Site.Params.preconnects }}
+    <link rel="preconnect" href="{{ . }}">
+    <link rel="dns-prefetch" href="{{ . }}">
+    {{ end }}
     <!-- CSS from hugo pipes -->
     {{ if .Site.Params.useSassPipes }}
         {{- partial "css-pipes.html" . -}}
