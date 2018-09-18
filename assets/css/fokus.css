@@ -268,19 +268,21 @@ hr.small {
 }
 
 .post-preview > a > .post-title {
-  font-size: 30px;
+  font-size: 24px;
   margin-top: 30px;
   margin-bottom: 10px;
   line-height: 1.15;
 }
 
 .post-preview > a > .post-subtitle {
+  font-size: 18px;
   font-weight: 300;
   margin: 0 0 10px 0;
   line-height: 1.25;
 }
 
 .post-preview > .post-meta {
+  font-size: 14px;
   margin-top: 0;
 }
 
@@ -801,9 +803,6 @@ hr.section-divider:before, .e-content hr:before {
   }
   .masthead .post-heading .post-meta > span {
     display: inline-block;
-  }
-  .post-preview > a > .post-title {
-    font-size: 36px;
   }
   .post-footer .bmc,
   .post-footer .go-social {

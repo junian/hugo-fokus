@@ -1,0 +1,21 @@
+<div class="post-preview">
+{{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="{{.Site.Params.Adsense.inFeedLayoutKey}}"
+     data-ad-client="{{.Site.Params.Adsense.client}}"
+     data-ad-slot="{{.Site.Params.Adsense.inFeedSlot}}"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{{ else }}
+<a>
+    <h2 class="post-title"><span style="color: darkorange">[ad]</span> Attention!</h2>
+    <h3 class="post-subtitle">Google In-Feed Ads not available by default when the website is previewed locally.</h3>
+</a>
+<p class="post-meta">This space is for ad preview</p>
+{{ end }}
+</div>
+<hr />
