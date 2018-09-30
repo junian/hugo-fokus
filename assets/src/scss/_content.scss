@@ -83,7 +83,7 @@ hr {
     }
     blockquote {
         background-color: $gray-100;
-        padding: 10px 0;
+        padding: 0;
         color: $gray-700;
         border: 1px solid $gray-200;
         border-left-width: 5px;
@@ -93,7 +93,7 @@ hr {
         margin-right: -15px;
         p,
         h4 {
-            margin: 10px 15px;
+            margin: 15px;
         }
         h4 {
             font-family: $font-family-sans-serif;
