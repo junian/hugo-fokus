@@ -27,12 +27,15 @@ hr {
 
 .e-content {
     p,
-    figure,
-    blockquote,
     ul,
     ol {
         font-family: $font-family-serif;
         @extend .section;
+    }
+    figure,
+    blockquote {
+        font-family: $font-family-serif;
+        margin: 30px -15px;
     }
     p {
         line-height: 1.5;
@@ -89,8 +92,6 @@ hr {
         border-left-width: 5px;
         border-radius: 3px;
         border-left-color: $gray-700;
-        margin-left: -15px;
-        margin-right: -15px;
         p,
         h4 {
             margin: 15px;
