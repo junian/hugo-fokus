@@ -1,4 +1,4 @@
-/*!Fokus v1.9.8 | MIT License | github.com/junian/fokus*/
+/*!Fokus v1.9.9 | MIT License | github.com/junian/fokus*/
 /*!Start Bootstrap - Clean Blog v3.3.7+1 | MIT License | github.com/BlackrockDigital/startbootstrap-clean-blog/tree/v3.3.7+1*/
 body {
   font-size: 20px;
@@ -70,8 +70,6 @@ img::selection {
 }
 
 .section, .e-content p,
-.e-content figure,
-.e-content blockquote,
 .e-content ul,
 .e-content ol {
   margin: 30px 0;
@@ -86,7 +84,7 @@ img::selection {
 }
 
 .section-ad {
-  margin: 15px 0;
+  margin: 15px -15px;
   text-align: center;
 }
 
@@ -390,11 +388,15 @@ hr.section-divider:before, .e-content hr:before {
 }
 
 .e-content p,
-.e-content figure,
-.e-content blockquote,
 .e-content ul,
 .e-content ol {
   font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.e-content figure,
+.e-content blockquote {
+  font-family: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+  margin: 30px -15px;
 }
 
 .e-content p {
@@ -442,7 +444,7 @@ hr.section-divider:before, .e-content hr:before {
 
 .e-content blockquote {
   background-color: #f8f9fa;
-  padding: 10px;
+  padding: 0;
   color: #495057;
   border: 1px solid #e9ecef;
   border-left-width: 5px;
@@ -452,7 +454,7 @@ hr.section-divider:before, .e-content hr:before {
 
 .e-content blockquote p,
 .e-content blockquote h4 {
-  margin: 10px;
+  margin: 15px;
 }
 
 .e-content blockquote h4 {

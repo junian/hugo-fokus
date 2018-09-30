@@ -1,4 +1,4 @@
-/*!Fokus v1.9.8 | MIT License | github.com/junian/fokus*/
+/*!Fokus v1.9.9 | MIT License | github.com/junian/fokus*/
 import {ready} from "./vanilla/ready";
 import {embedClipboardJS} from "./embed-clipboard";
 import {loadDisqusCommentCount, onButtonLoadDisqusClicked} from "./disqus-ondemand";

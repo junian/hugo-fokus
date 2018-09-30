@@ -1,4 +1,4 @@
-/*!Fokus v1.9.8 | MIT License | github.com/junian/fokus*/
+/*!Fokus v1.9.9 | MIT License | github.com/junian/fokus*/
 /*
 This is a modified version of Ethan Marcotte's service worker (https://ethanmarcotte.com/theworkerofservices.js),
 which is in turn a modified version of Jeremy Keith's service worker (https://adactio.com/serviceworker.js),
