@@ -32,11 +32,6 @@ hr {
         font-family: $font-family-serif;
         @extend .section;
     }
-    figure,
-    blockquote {
-        font-family: $font-family-serif;
-        margin: 30px -15px;
-    }
     p {
         line-height: 1.5;
         word-wrap: break-word;
@@ -49,6 +44,11 @@ hr {
         height: auto;
     }
     figure {
+        font-family: $font-family-serif;
+        margin: 30px -15px;
+        @media (min-width: 768px) {
+            margin: 30px 0px;
+        }
         figcaption {
             @extend .caption;
         }
@@ -85,16 +85,17 @@ hr {
         }
     }
     blockquote {
-        background-color: $gray-100;
-        padding: 0;
+        margin: 30px -15px;
+        // background-color: $gray-100;
+        padding: 0px 15px;
         color: $gray-700;
-        border: 1px solid $gray-200;
-        border-left-width: 5px;
-        border-radius: 3px;
+        // border: 1px solid $gray-200;
+        // border-left-width: 5px;
+        // border-radius: 3px;
         border-left-color: $gray-700;
         p,
         h4 {
-            margin: 15px;
+            margin: 30px 0px;
         }
         h4 {
             font-family: $font-family-sans-serif;
