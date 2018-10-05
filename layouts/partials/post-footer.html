@@ -32,6 +32,11 @@
                 {{ if $.Param "license.visible" }}
                     {{ partialCached "widget/license.html" . }}
                 {{ end }}
+                {{ if $.Param "disclaimer" }}
+                <div class="section section-disclaimer small">
+                    <p>{{ $.Param "disclaimer" | markdownify }}</p>
+                </div>
+                {{ end }}
                 {{ with .Lastmod }}
                 <div class="section section-lastmod small">
                     <p>Last updated {{ .Format "January 2, 2006" }}.</p>
