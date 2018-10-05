@@ -39,8 +39,7 @@ gulp.task("bootstrap-custom-css", () => {
 gulp.task("fokus-css", () => {
   var processors = [
     autoprefixer,
-    mqpacker,
-    removeimportant
+    mqpacker
   ];
 
   gulp.src(["./assets/src/scss/fokus.scss", "./assets/src/scss/fokus-print.scss"])

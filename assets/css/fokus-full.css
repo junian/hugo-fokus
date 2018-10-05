@@ -3107,8 +3107,8 @@ hr.small {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fcfbf7;
-  background-color: #003a6c !important;
-  border-color: #003a6c !important;
+  background-color: #003a6c;
+  border-color: #003a6c;
 }
 
 .btn-lg {
@@ -3439,66 +3439,6 @@ hr.section-divider:before, .e-content hr:before {
   margin: 30px 0;
   line-height: 2.0;
   color: #fcfbf7;
-}
-
-.btn-tw-share {
-  background-color: #00a8f0;
-  border-color: #00a8f0;
-}
-
-.btn-tw-share:hover, .btn-tw-share:focus, .btn-tw-share:active {
-  background-color: #008dc9 !important;
-  border-color: #008dc9 !important;
-}
-
-.btn-fb-share {
-  background-color: #365396;
-  border-color: #365396;
-}
-
-.btn-fb-share:hover, .btn-fb-share:focus, .btn-fb-share:active {
-  background-color: #2c437a !important;
-  border-color: #2c437a !important;
-}
-
-.btn-gp-share {
-  background-color: #e0462e;
-  border-color: #e0462e;
-}
-
-.btn-gp-share:hover, .btn-gp-share:focus, .btn-gp-share:active {
-  background-color: #ca351e !important;
-  border-color: #ca351e !important;
-}
-
-.btn-in-share {
-  background-color: #006eb3;
-  border-color: #006eb3;
-}
-
-.btn-in-share:hover, .btn-in-share:focus, .btn-in-share:active {
-  background-color: #00568c !important;
-  border-color: #00568c !important;
-}
-
-.btn-email-share {
-  background-color: #97908F;
-  border-color: #97908F;
-}
-
-.btn-email-share:hover, .btn-email-share:focus, .btn-email-share:active {
-  background-color: #857c7b !important;
-  border-color: #857c7b !important;
-}
-
-.btn-feed-share {
-  background-color: #dd7346;
-  border-color: #dd7346;
-}
-
-.btn-feed-share:hover, .btn-feed-share:focus, .btn-feed-share:active {
-  background-color: #d65b27 !important;
-  border-color: #d65b27 !important;
 }
 
 .section-subscribe {
