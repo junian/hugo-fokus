@@ -9,6 +9,7 @@
     "url": "https://github.com/junian/fokus/blob/master/LICENSE"
   },
   "devDependencies": {
+    "@buddye/postcss-remove-important": "^1.0.3",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",

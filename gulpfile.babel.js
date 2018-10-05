@@ -3,6 +3,7 @@ import sass from "gulp-sass";
 import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 import mqpacker from "css-mqpacker";
+import removeimportant from "@buddye/postcss-remove-important";
 import concat from "gulp-concat";
 import log from "fancy-log";
 import pluginError from "plugin-error";
@@ -38,7 +39,8 @@ gulp.task("bootstrap-custom-css", () => {
 gulp.task("fokus-css", () => {
   var processors = [
     autoprefixer,
-    mqpacker
+    mqpacker,
+    removeimportant
   ];
 
   gulp.src(["./assets/src/scss/fokus.scss", "./assets/src/scss/fokus-print.scss"])
