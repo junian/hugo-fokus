@@ -9,20 +9,24 @@
     <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
     <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
-    {{ with .OutputFormats.Get "RSS" }}
-        {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
-    {{ end }}
-    {{ range .Pages }}
+    {{ with .OutputFormats.Get "RSS" }}{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}{{ end }}
+    {{ range .Pages }}{{ if (ne (.Param "feed") "none") -}}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ if .Description }}{{ .Description | safeHTML }}{{ else }}{{ .Summary | safeHTML }}{{ end }}</description>
-      <content:encoded>{{ .Content | safeHTML }}</content:encoded>
-      {{ with .Params.tags }}{{ range . }}<category>{{ . }}</category>{{ end }}{{ end }}
+      <description>
+      {{- if (eq (.Param "feed") "content") -}}
+        {{- .Content | html -}}
+      {{- else if (eq (.Param "feed") "description") -}}
+        {{- .Description | html -}}
+      {{- else -}}
+        {{- .Summary | html -}}
+      {{- end -}}
+      </description>
     </item>
-    {{ end }}
+    {{ end }}{{- end }}
   </channel>
 </rss>
