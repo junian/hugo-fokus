@@ -30,15 +30,17 @@
                 <!-- Content and Code License -->
                 <hr />
                 {{ if $.Param "license.visible" }}
-                    {{ partialCached "widget/license.html" . }}
+                <div class="section-license smaller">
+                    <p>{{ partialCached "widget/license.html" . }}</p>
+                </div>
                 {{ end }}
                 {{ if $.Param "disclaimer" }}
-                <div class="section section-disclaimer small">
+                <div class="section-disclaimer smaller">
                     <p>{{ $.Param "disclaimer" | markdownify }}</p>
                 </div>
                 {{ end }}
                 {{ with .Lastmod }}
-                <div class="section section-lastmod small">
+                <div class="section-lastmod smaller">
                     <p>Last updated {{ .Format "January 2, 2006" }}.</p>
                 </div>
                 {{ end }}
