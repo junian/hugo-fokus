@@ -2969,7 +2969,6 @@ img::selection {
   position: relative;
   -webkit-background-size: cover;
           background-size: cover;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
 .masthead .overlay {
@@ -2996,7 +2995,7 @@ img::selection {
 
 .masthead .page-heading h1,
 .masthead .site-heading h1 {
-  font-size: 50px;
+  font-size: 35px;
   margin-top: 0;
   font-weight: 700;
 }
@@ -3099,6 +3098,10 @@ hr.small {
 
 .site-footer .list-inline > li {
   padding: 0;
+}
+
+.smaller {
+  font-size: 12px;
 }
 
 .btn-primary {
@@ -3878,7 +3881,11 @@ hr.section-divider:before, .e-content hr:before {
   }
   .masthead .page-heading h1,
   .masthead .site-heading h1 {
-    font-size: 80px;
+    font-size: 55px;
+  }
+  .masthead .page-heading .subheading,
+  .masthead .site-heading .subheading {
+    font-size: 30px;
   }
   .masthead .post-heading {
     padding: 70px 0px 50px 0px;
