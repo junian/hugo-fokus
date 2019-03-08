@@ -2,7 +2,6 @@
 /*!Start Bootstrap - Clean Blog v3.3.7+1 | MIT License | github.com/BlackrockDigital/startbootstrap-clean-blog/tree/v3.3.7+1*/
 body {
   font-size: 20px;
-  -webkit-tap-highlight-color: #004e92;
 }
 
 a.imglink img {
@@ -38,24 +37,18 @@ a.lined-link:focus, .post-footer p a:focus, .site-footer p a:focus, .e-content a
 }
 
 ::-moz-selection {
-  color: #fcfbf7;
-  background: #004e92;
-  text-shadow: none;
+  background: #c5e4ff;
 }
 
 ::selection {
-  color: #fcfbf7;
-  background: #004e92;
-  text-shadow: none;
+  background: #c5e4ff;
 }
 
 img::-moz-selection {
-  color: #fcfbf7;
   background: transparent;
 }
 
 img::selection {
-  color: #fcfbf7;
   background: transparent;
 }
 
@@ -168,7 +161,10 @@ img::selection {
 
 .masthead {
   margin-bottom: 20px;
-  background-color: #868e96;
+  background-color: #004e92;
+  background-image: -webkit-linear-gradient(330deg, #004e92, #337ab7);
+  background-image: -o-linear-gradient(330deg, #004e92, #337ab7);
+  background-image: linear-gradient(120deg, #004e92, #337ab7);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -183,8 +179,7 @@ img::selection {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #212529;
-  opacity: 0.8;
+  background-color: transparent;
 }
 
 .masthead .page-heading,
