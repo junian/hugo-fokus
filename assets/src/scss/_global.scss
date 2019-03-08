@@ -1,7 +1,7 @@
 // Global styling for this template
 body {
     font-size: 20px;
-    -webkit-tap-highlight-color: $primary;
+    //-webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -34,13 +34,13 @@ a.lined-link {
 }
 
 ::selection {
-    color: $white-warm;
-    background: $primary;
-    text-shadow: none;
+    //color: $white-warm;
+    background: $primary-lighter;
+    //text-shadow: none;
 }
 
 img::selection {
-    color: $white-warm;
+    //color: $white-warm;
     background: transparent;
 }
 
