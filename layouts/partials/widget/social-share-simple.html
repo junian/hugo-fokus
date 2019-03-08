@@ -2,7 +2,7 @@
     {{- $pc := .Page.Site.Config.Privacy.Disqus -}}
     {{- if not $pc.Disable -}}
     {{- if .Site.DisqusShortname -}}
-    <a href="#disqus_thread" title="See Comments"><i class="fa fa-2x fa-thin fa-message-o">{{ partialCached (printf "svg/%s.svg" "message-circle") . }}</i></a>                   
+    <a href="#site_comment_thread" title="See Comments"><i class="fa fa-2x fa-thin fa-message-o">{{ partialCached (printf "svg/%s.svg" "message-circle") . }}</i></a>                   
     {{- end -}}
     {{- end -}}        
     {{ if .Site.Params.Widget.socialshare.facebook }}<a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" title="Share to Facebook" rel="nofollow noreferrer"><i class="fa fa-2x fa-thin fa-facebook">{{ partialCached (printf "svg/%s.svg" "facebook") . }}</i></a>{{ end }}

@@ -1,7 +1,7 @@
 {{- $pc := .Page.Site.Config.Privacy.Disqus -}}
 {{- if not $pc.Disable -}}
 {{- if .Site.DisqusShortname -}}
-<div class="section p-comment">
+<div id="site_comment_thread" class="section p-comment">
     <!-- An element a visitor can click if they <3 comments! -->
     <button id="btn_load_disqus_thread" class="btn btn-primary btn-lg btn-block">
         <i class="fa fa-message-o">{{- partialCached (printf "svg/message-circle.svg") . -}}</i>&nbsp;
