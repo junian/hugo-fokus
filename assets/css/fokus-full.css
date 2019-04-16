@@ -2973,7 +2973,11 @@ img::selection {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: transparent;
+  background-color: #243B55;
+  background-image: -webkit-linear-gradient(330deg, #141E30, #243B55);
+  background-image: -o-linear-gradient(330deg, #141E30, #243B55);
+  background-image: linear-gradient(120deg, #141E30, #243B55);
+  opacity: .85;
 }
 
 .masthead .page-heading,
