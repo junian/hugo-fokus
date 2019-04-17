@@ -64,4 +64,6 @@
         {{- $iecss := resources.Get "css/fokus.ie.css" | resources.Minify -}}
         <link rel="stylesheet" href="{{ $iecss.RelPermalink }}">
     {{ "<![endif]-->" | safeHTML }}
+
+    {{- partial "head-custom.html" . -}}
 </head>
