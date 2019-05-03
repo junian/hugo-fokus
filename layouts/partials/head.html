@@ -32,9 +32,9 @@
         {{- if .IsHome -}}{{- .Site.Title -}}{{ with .Site.Params.description }} - {{ . }}{{ end }}{{- else -}}{{- .Title -}}{{- end -}}
     </title>
     <!-- RSS -->
-    {{ if .RSSLink }}
-    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}">
-    <link rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}" />
+    {{ with .OutputFormats.Get "RSS" }}
+    <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
+    <link rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}" />
     {{ end }}
     <!--preconnect-->
     {{ range .Site.Params.preconnects }}
