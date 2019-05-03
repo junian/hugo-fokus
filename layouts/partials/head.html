@@ -65,5 +65,13 @@
         <link rel="stylesheet" href="{{ $iecss.RelPermalink }}">
     {{ "<![endif]-->" | safeHTML }}
 
+    {{ with $.Param "redirect" }} 
+    <!-- Redirect to external domain -->
+    <meta http-equiv="refresh" content="0; url={{ . }}" />
+    <script type="text/javascript">
+        window.location.href = "{{ . }}";
+    </script>
+    {{ end }}
+
     {{- partial "head-custom.html" . -}}
 </head>

@@ -19,3 +19,11 @@
 {{ . | printf "%-72s" | relURL }} {{ $p.RelPermalink -}}
 {{ end -}}
 {{- end }}
+
+# External pages redirects
+
+{{- range $p := .Site.Pages -}}
+{{ with .Param "redirect" }}
+{{ $p.RelPermalink | printf "%-72s" }} {{ . | relURL -}}
+{{ end -}}
+{{- end }}
