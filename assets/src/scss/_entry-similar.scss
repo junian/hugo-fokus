@@ -4,5 +4,7 @@
   }
   img {
     width: 100%;
+    border-radius: 10px;
+    transition: transform .2s ease,box-shadow .2s ease,border-radius .2s ease;
   }
 }
