@@ -1,0 +1,19 @@
+{{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+<div class='section-ad'>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Adsense Responsive -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="{{.Site.Params.Adsense.client}}"
+        data-ad-slot="{{.Site.Params.Adsense.slot}}"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+{{ else }}
+<blockquote role="alert">
+    <p><strong><span style="color: darkorange">[ad]</span> Attention! </strong>Google Adsense not available by default when the website is previewed locally.</p>
+</blockquote>
+{{ end }}
