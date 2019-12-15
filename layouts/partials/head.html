@@ -66,6 +66,8 @@
     {{ "<![endif]-->" | safeHTML }}
 
     {{ with $.Param "redirect" }} 
+    <!-- Set canonical link -->
+    <link rel="canonical" href="{{ . }}" />
     <!-- Redirect to external domain -->
     <meta http-equiv="refresh" content="0; url={{ . }}" />
     <script type="text/javascript">
