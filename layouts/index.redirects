@@ -16,7 +16,7 @@
 
 {{- range $p := .Site.Pages -}}
 {{ range .Aliases }}
-{{ . | printf "%-72s" | relURL }} {{ $p.RelPermalink -}} 301!
+{{ . | printf "%-73s" | relURL }} {{ $p.RelPermalink | printf "%-73s" }} {{ printf "301!" -}}
 {{ end -}}
 {{- end }}
 
@@ -24,6 +24,6 @@
 
 {{- range $p := .Site.Pages -}}
 {{ with .Param "redirect" }}
-{{ $p.RelPermalink | printf "%-72s" }} {{ . | relURL -}} 301!
+{{ $p.RelPermalink | printf "%-73s" }} {{ . | printf "%-73s" | relURL }} {{ printf "301!" -}}
 {{ end -}}
 {{- end }}
