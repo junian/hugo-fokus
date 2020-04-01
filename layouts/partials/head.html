@@ -47,7 +47,7 @@
     {{ else }}
         {{- partial "css-assets.html" . -}}
     {{ end }}
-    <link rel="stylesheet" href='{{ .Scratch.Get "appcss" }}' integrity='{{ .Scratch.Get "appcssintegrity" }}'>
+    <link rel="stylesheet" href='{{ .Scratch.Get "appcss" }}' integrity='{{ cond (eq $.Site.Params.useSRI true) (.Scratch.Get "appcssintegrity") ("") }}'>
 
     <!-- Google Fonts -->
     {{ if $.Param "useWebFont" }} 
