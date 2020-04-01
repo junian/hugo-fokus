@@ -10,7 +10,7 @@
                         {{- if eq .Kind "404" -}}
                             {{- .Site.Title -}}
                         {{- else -}}
-                            {{- .Title -}}
+                            {{- .Title | default .Site.Title -}}
                         {{- end -}}
                     </h1>
                     <hr class="small" />
