@@ -8,10 +8,10 @@
              "@id": {{ .Site.BaseURL }}
         },
         "articleSection" : "{{ .Section }}",
-        "name" : "{{ .Title }}",
-        "headline" : "{{ .Title }}",
+        "name" : {{ .Title | default "" }},
+        "headline" : {{ .Title | default ""}},
         "description" : "{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}",
-        "image" : {{ with .Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ "" }}{{ end }},
+        "image" : {{ with .Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ with .Site.Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ "" }}{{ end }}{{ end }},
         "inLanguage" : "{{ with .Site.LanguageCode }}{{ . }}{{ end }}",
         "author" : "{{ with $.Site.Author.name }}{{ . }}{{ end }}",
         "creator" : "{{ with $.Site.Author.name }}{{ . }}{{ end }}",
