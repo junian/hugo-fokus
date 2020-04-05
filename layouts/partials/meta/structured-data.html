@@ -1,35 +1,44 @@
 {{ $ISO8601 := "2006-01-02T15:04:05-07:00" }}
 <script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "BlogPosting",
-        "mainEntityOfPage": {
-             "@type": "WebPage",
-             "@id": {{ .Site.BaseURL }}
-        },
-        "articleSection" : "{{ .Section }}",
-        "name" : {{ .Title | default "" }},
-        "headline" : {{ .Title | default ""}},
-        "description" : "{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}",
-        "image" : {{ with .Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ with .Site.Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ "" }}{{ end }}{{ end }},
-        "inLanguage" : "{{ with .Site.LanguageCode }}{{ . }}{{ end }}",
-        "author" : "{{ with $.Site.Author.name }}{{ . }}{{ end }}",
-        "creator" : "{{ with $.Site.Author.name }}{{ . }}{{ end }}",
-        "publisher": {
-            "@type" : "Organization",
-            "name" : "{{ with $.Site.Author.name }}{{ . }}{{ end }}",
-            "logo" : {
-                "@type" : "ImageObject",
-                "url" : {{ .Site.Params.logo | default "" }}
-            }
-        },
-        "accountablePerson" : "{{ with $.Site.Author.name }}{{ . }}{{ end }}",
-        "copyrightHolder" : "{{ with $.Site.Author.name }}{{ . }}{{ end }}",
-        "copyrightYear" : "{{ .Date.Format "2006" }}",
-        "datePublished": {{ (.Date.Format $ISO8601) }},
-        "dateModified" : {{ (.Lastmod.Format $ISO8601) | default (.Date.Format $ISO8601) }},
-        "url" : {{ .Permalink }},
-        "wordCount" : "{{ .WordCount }}",
-        "keywords" : [ {{ if isset .Params "tags" }}{{ range .Params.tags }}"{{ . }}",{{ end }}{{ end }}"blog" ]
-    }
+{{ if eq .Kind "page" }}
+{
+    "@context" : "http://schema.org",
+    "@type" : {{ $.Site.Param (printf "SchemaOrg.Types.%s" .Section) | default "Article" }},
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ .Site.BaseURL }}
+    },
+    "articleSection" : {{ .Section }},
+    "name" : {{ .Title }},
+    "headline" : {{ .Title }},
+    "description" : {{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }},
+    "image" : {{ with .Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ with .Site.Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ "" }}{{ end }}{{ end }},
+    "inLanguage" : {{ .Site.LanguageCode | default "en-us" }},
+    "author" : {{ $.Site.Author.name }},
+    "creator" : {{ $.Site.Author.name }},
+    "publisher": {
+        "@type" : "Organization",
+        "name" : {{ .Site.Title }},
+        "logo" : {
+            "@type" : "ImageObject",
+            "url" : {{ .Site.Params.logo }}
+        }
+    },
+    "accountablePerson" : {{ $.Site.Author.name }},
+    "copyrightHolder" : {{ $.Site.Author.name }},
+    "copyrightYear" : {{ if not .Date.IsZero }}{{ .Date.Format "2006" }}{{ else }}{{ .Lastmod.Format "2006" }}{{ end }},
+    "datePublished": {{ if not .Date.IsZero }}{{ .Date.Format $ISO8601 }}{{ else }}{{ .Lastmod.Format $ISO8601 }}{{ end }},
+    "dateModified" : {{ (.Lastmod.Format $ISO8601) | default (.Date.Format $ISO8601) }},
+    "url" : {{ .Permalink }},
+    "wordCount" : {{ .WordCount }},
+    "keywords" : [{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}]
+}
+{{ else }}
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": {{ .Site.Title }},
+    "url": {{ .Site.BaseURL }}
+}
+{{ end }}
 </script>
