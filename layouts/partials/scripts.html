@@ -3,7 +3,7 @@
 {{ .Scratch.Set "swversion" (sha256 $assetid) }}
 {{ $swjs := resources.Get "js/sw_template.js" | resources.ExecuteAsTemplate "sw.js" . | resources.Minify }}
 <script src='{{ .Scratch.Get "appjs" }}' integrity='{{ cond (eq $.Site.Params.useSRI true) (.Scratch.Get "appjsintegrity") ("") }}'></script>
-{{- template "_internal/google_analytics_async.html" . -}}
+{{- template "_internal/google_analytics.html" . -}}
 {{- partialCached "widget-scripts.html" . -}}
 {{ if eq .Site.Params.useServiceWorker true }}
 <script type="text/javascript">
