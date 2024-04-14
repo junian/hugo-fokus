@@ -30,6 +30,16 @@
     "imagesloaded": "^5.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "css-mqpacker": "^7.0.0",
+    "fancy-log": "^2.0.0",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-jsbeautifier": "^3.0.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "plugin-error": "^2.0.1",
+    "sass": "=1.32.13",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   }

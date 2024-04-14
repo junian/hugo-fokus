@@ -1,15 +1,14 @@
-import { src, dest, pipe, series, parallel } from "gulp";
-import postcss from "gulp-postcss";
-import autoprefixer from "autoprefixer";
-import mqpacker from "css-mqpacker";
-import concat from "gulp-concat";
-import log from "fancy-log";
-import pluginError from "plugin-error";
-import webpack from "webpack";
-import webpackConfig from "./webpack.config";
-import prettify from "gulp-jsbeautifier";
-
-const sass = require('gulp-sass')(require('sass'));
+const { src, dest, pipe, series, parallel } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const mqpacker = require("css-mqpacker");
+const concat = require("gulp-concat");
+const log = require("fancy-log");
+const pluginError = require("plugin-error");
+const webpack = require("webpack");
+const webpackConfig = require("./webpack.config");
+const prettify = require("gulp-jsbeautifier");
 
 function bootstrapCustomCss() {
   var processors = [
@@ -76,4 +75,4 @@ function prettifyjs(cb) {
 
 exports.jsbuild = series(packjs, prettifyjs);
 exports.cssbuild = series(bootstrapCustomCss, fokusCss, combineCss);
-exports.default = series(exports.cssbuild, exports.jsbuild);
+exports.default = parallel(exports.cssbuild, exports.jsbuild);
