@@ -4,47 +4,15 @@
   "version": "1.0.0",
   "homepage": "https://github.com/junian/fokus",
   "author": "Junian Triajianto",
-  "license": "https://github.com/junian/fokus/blob/master/LICENSE",
-  "devDependencies": {
-    "@buddye/postcss-remove-important": "^1.0.3",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
-    "babel-plugin-transform-class-properties": "^6.10.2",
-    "babel-plugin-transform-object-assign": "^6.8.0",
-    "babel-plugin-transform-object-rest-spread": "^6.8.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.11.6",
-    "browser-sync": "^2.23.7",
-    "css-loader": "^1.0.0",
-    "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.0",
-    "eslint": "^4.19.1",
-    "eslint-plugin-import": "^2.11.0",
-    "exports-loader": "^0.7.0",
-    "fancy-log": "^1.3.2",
-    "file-loader": "^2.0.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-flatten": "^0.4.0",
-    "gulp-jsbeautifier": "^2.1.2",
-    "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^4.0.1",
-    "gulp-uncss": "^1.0.6",
-    "gulp-watch": "^5.0.0",
-    "imports-loader": "^0.8.0",
-    "plugin-error": "^1.0.1",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^12.0.0",
-    "url-loader": "^1.0.1",
-    "webpack": "4.17.1",
-    "whatwg-fetch": "^2.0.4"
-  },
+  "license": "MIT",
+  "private": true,
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/junian/fokus.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserslist": [
     "Android 2.3",
@@ -55,9 +23,5 @@
     "iOS >= 6",
     "Opera >= 12",
     "Safari >= 6"
-  ],
-  "dependencies": {
-    "clipboard": "^2.0.1",
-    "imagesloaded": "^3.2.0"
-  }
+  ]
 }
