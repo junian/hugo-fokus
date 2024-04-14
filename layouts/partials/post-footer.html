@@ -1,7 +1,8 @@
 <footer class="post-footer">
     <div class="container">
         <div class = "row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-2 col-md-1"></div>
+            <div class="col-lg-8 col-md-10">
                 <hr />
                 <!-- Blockadblock message -->
                 {{ if .Site.Params.Widget.blockAdBlock }}
@@ -49,6 +50,7 @@
                     {{ partial "widget/addthis.html" . }}
                 {{ end }}
             </div>
+            <div class="col-lg-2 col-md-1"></div>
         </div>
     </div>
 </footer>
@@ -65,10 +67,12 @@
 
 <div class="container">
     <div class = "row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-8 col-md-10">
             <!-- Disqus comments -->
             {{ partial "widget/disqus-ondemand.html" . }}
         </div>
+        <div class="col-lg-2 col-md-1"></div>
     </div>
     {{ partial "nextprev.html" . }}
 </div>

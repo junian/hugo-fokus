@@ -3,7 +3,8 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-8 col-md-10">
             {{ $term := .Data.Term }}
             {{ $durationFrom := cond (eq $term "short") 0 (cond (eq $term "medium") 3 5) }}
             {{ $durationTo := cond (eq $term "short") 3 (cond (eq $term "medium") 5 10) }}
@@ -20,6 +21,7 @@
                 {{ end }}
             {{ end }}
         </div>
+        <div class="col-lg-2 col-md-1"></div>
     </div>
 </div>
 {{ end }}
