@@ -1,3 +1,10 @@
 # FOKUS - Hugo Theme
 
-Work in progress.
+
+```shell
+npm install
+```
+
+```shell
+npm build
+```
