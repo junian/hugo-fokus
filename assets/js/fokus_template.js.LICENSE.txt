@@ -5,4 +5,4 @@
  * Licensed MIT © Zeno Rocha
  */
 
-/*!Fokus v1.9.9 | MIT License | github.com/junian/fokus*/
+/*!Fokus v2.0.0 | MIT License | github.com/junian/fokus*/
