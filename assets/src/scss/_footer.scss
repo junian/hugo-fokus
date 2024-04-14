@@ -3,7 +3,7 @@
 .post-footer {
     p {
         a {
-            @extend a.lined-link
+            @extend a, .lined-link
         }
     }
     .bmc,
@@ -34,7 +34,7 @@
             font-size: 12px;
         }
         a {
-            @extend a.lined-link
+            @extend a, .lined-link
         }
     }
     .list-inline {

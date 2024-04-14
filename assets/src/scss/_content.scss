@@ -76,7 +76,7 @@ hr {
         margin: 50px 0 30px 0;
     }
     a {
-        @extend a.lined-link;
+        @extend a, .lined-link;
         img {
             &:hover,
             &:focus {
@@ -107,7 +107,7 @@ hr {
         margin-bottom: 15px;
     }
     hr {
-        @extend hr.section-divider;
+        @extend hr, .section-divider;
     }
     &.archive {
         p {
