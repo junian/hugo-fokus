@@ -15,7 +15,7 @@ function bootstrapCustomCss() {
     autoprefixer,
     mqpacker
   ];
-  return src("./assets/src/scss/bootstrap-custom.scss")
+  return src("./src/scss/bootstrap-custom.scss")
     .pipe(sass({
       outputStyle: "expanded"
     }).on("error", sass.logError))
@@ -29,7 +29,7 @@ function fokusCss(cb) {
     mqpacker
   ];
 
-  return src(["./assets/src/scss/fokus.scss", "./assets/src/scss/fokus-print.scss"])
+  return src(["./src/scss/fokus.scss", "./src/scss/fokus-print.scss"])
     .pipe(sass({
       outputStyle: "expanded"
     }).on("error", sass.logError))
