@@ -11,8 +11,8 @@ pygmentsUseClasses = false
 pygmentsStyle = "dracula"
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClassic = false
+theme = "fokus"
 themesDir = "../.." # remove this on production
-# theme = "fokus"
 
 googleAnalytics = "UA-12345"
 disqusShortname = "example"
