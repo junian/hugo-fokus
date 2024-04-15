@@ -12,7 +12,7 @@ pygmentsStyle = "dracula"
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClassic = false
 themesDir = "../.." # remove this on production
-theme = "fokus"
+# theme = "fokus"
 
 googleAnalytics = "UA-12345"
 disqusShortname = "example"
