@@ -1,5 +1,7 @@
 # FOKUS - Hugo Theme
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2dab1100-d85b-4920-b006-883decdcddc6/deploy-status)](https://app.netlify.com/sites/hugo-fokus/deploys)
+
 ## Development
 
 Install dependencies.
