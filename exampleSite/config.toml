@@ -2,9 +2,13 @@
 #! Put Hugo built-in config here  !#
 ####################################
 
-baseURL = "https://example.com/"
+baseURL = "https://fokus.junian.dev/"
 languageCode = "en-us"
 title = "fokus theme"
+
+[module]
+  [[module.imports]]
+    path = "../.."
 
 pygmentsCodeFences = true
 pygmentsUseClasses = false
