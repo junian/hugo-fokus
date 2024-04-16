@@ -1,6 +1,23 @@
-# FOKUS - Hugo Theme
+<h1 align="center">Hugo + Bootstrap 3 Starter Theme</h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2dab1100-d85b-4920-b006-883decdcddc6/deploy-status)](https://app.netlify.com/sites/hugo-fokus/deploys)
+<p align="center">Fokus is a free starter template built with Hugo and Bootstrap, providing everything you need to start your Hugo project.</p>
+
+<p align="center">
+  See it in action: 👀 <a target="_blank" href="https://fokus.junian.dev/" rel="nofollow">Demo</a> | 👨🏻‍💻 <a target="_blank" href="https://www.godo.dev/">GoDo.Dev</a> | 🚀 <a target="_blank" href="https://www.junian.net/">Junian.Net</a>
+</p>
+
+<p align="center">
+
+  <a href="https://github.com/junian/fokus/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/junian/fokus" alt="license">
+  </a>
+
+  <a href="https://github.com/junian/fokus">
+    <img src="https://img.shields.io/github/languages/code-size/junian/fokus" alt="code size">
+  </a>
+</p>
+
+##
 
 ## Development
 
