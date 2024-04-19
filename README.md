@@ -44,3 +44,10 @@ Edit the files in `./src/`.
 ## Warning
 
 - Use [`"sass": "=1.32.13"`](https://stackoverflow.com/a/67637646/2640559) because the newer version will cause [Breaking Change: Slash as Division](https://sass-lang.com/documentation/breaking-changes/slash-div/).
+
+## License
+
+This project is licensed under [MIT](https://github.com/junian/fokus/blob/master/LICENSE).
+
+Made with ☕ by [Junian.dev](https://www.junian.dev).
+
