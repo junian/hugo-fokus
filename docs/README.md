@@ -17,6 +17,10 @@
   </a>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/junian/hugo-fokus/gh-pages/assets/img/hugo-fokus-screenshot.jpeg" />
+</p>
+
 ---
 
 ## Development
