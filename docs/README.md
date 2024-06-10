@@ -9,11 +9,11 @@
 <p align="center">
 
   <a href="https://github.com/junian/fokus/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/junian/fokus" alt="license">
+    <img src="https://img.shields.io/github/license/junian/fokus?style=for-the-badge" alt="license">
   </a>
 
   <a href="https://github.com/junian/fokus">
-    <img src="https://img.shields.io/github/languages/code-size/junian/fokus" alt="code size">
+    <img src="https://img.shields.io/github/languages/code-size/junian/fokus?style=for-the-badge" alt="code size">
   </a>
 </p>
 
