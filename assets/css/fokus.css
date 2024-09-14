@@ -366,8 +366,7 @@ hr.section-divider:before, .e-content hr:before {
   margin: 50px 0 30px 0;
 }
 .e-content a img:hover, .e-content a img:focus {
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 .e-content blockquote {
   margin: 30px -15px;
