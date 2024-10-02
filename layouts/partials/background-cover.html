@@ -1,5 +1,7 @@
+{{- if $.Param "isShowBackgroundCover" -}}
 {{- with $.Param "images" -}}
 {{- range first 1 . -}}
 background-image: url("{{- . -}}");
+{{- end -}}
 {{- end -}}
 {{- end -}}
