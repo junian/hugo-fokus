@@ -446,7 +446,7 @@
         t.addEventListener ? t.addEventListener(e, n, !1) : t.attachEvent ? t.attachEvent("on" + e, n) : t["on" + e] = n
       }
       const s = document,
-        l = "{{.Site.DisqusShortname}}",
+        l = "{{.Site.Config.Services.Disqus.Shortname}}",
         f = s.getElementById("disqus_thread");
       const d = `<div class="navbar-fixed-bottom navbar-cookie">\n  <div class="container-fluid">\n    <div class="row">\n      <div class="col-sm-10 col-md-11">\n        <p class="navbar-text">This website uses cookies to ensure you get the best experience on our website.\n          <a href="${i}" aria-label="learn more about cookies" role="button" tabindex="0" rel="noopener noreferrer nofollow" target="_blank" class="lined-link">Learn more</a>\n        </p>\n      </div>\n      <div class="col-sm-2 col-md-1">\n        <button id="btnAcceptCookie" type="button" class="btn btn-default btn-primary navbar-btn btn-block" aria-label="dismiss cookie message" role="button">\n          Got It!\n        </button>\n      </div>\n    </div>\n  </div>\n</div>`,
         p = document;

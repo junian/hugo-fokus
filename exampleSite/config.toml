@@ -18,9 +18,7 @@ pygmentsUseClassic = false
 theme = "fokus"
 themesDir = "../.." # remove this on production
 
-googleAnalytics = "UA-12345"
-disqusShortname = "example"
-copyright = "Copyright &copy; 2018 Fokus Author"
+copyright = "Copyright &copy; 2018 - 2024 Fokus Author"
 
 enableRobotsTXT = true
 canonifyURLs = false
@@ -79,6 +77,12 @@ weight = 100
 name  = "date"
 weight = 10
 pattern = "2006"
+
+[services]
+[services.disqus]
+shortname = "example"
+[services.googleAnalytics]
+id = "G-XXXXXXXXX"
 
 [privacy]
 [privacy.disqus]

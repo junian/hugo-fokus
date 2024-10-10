@@ -15,7 +15,9 @@
                     </div>
                     <button class="btn btn-default btn-primary form-control" type="submit">Subscribe</button>
                 </form>
-                <p>Delivered by <a href="https://feeds.feedburner.com/{{ .Site.Params.feedburner }}" target="_blank" rel="nofollow noreferrer">FeedBurner</a> or subscribe via RSS with <a href="https://cloud.feedly.com/#subscription/feed/{{ .Site.RSSLink }}" target="_blank" rel="nofollow noreferrer"> Feedly!</a></p>
+                {{ with .Site.Home.OutputFormats.Get "RSS" }}
+                <p>Delivered by <a href="https://feeds.feedburner.com/{{ $.Site.Params.feedburner }}" target="_blank" rel="nofollow noreferrer">FeedBurner</a> or subscribe via RSS with <a href="https://cloud.feedly.com/#subscription/feed/{{ .Permalink }}" target="_blank" rel="nofollow noreferrer"> Feedly!</a></p>
+                {{ end }}
             </div>
             <div class="col-lg-2 col-md-1"></div>
         </div>

@@ -1,7 +1,7 @@
 <div class="section go-social">
     {{- $pc := .Page.Site.Config.Privacy.Disqus -}}
     {{- if not $pc.Disable -}}
-    {{- if .Site.DisqusShortname -}}
+    {{- if .Site.Config.Services.Disqus.Shortname -}}
     <a href="#site_comment_thread" title="See Comments"><i class="fa fa-2x fa-thin fa-message-o">{{ partialCached (printf "svg/%s.svg" "message-circle") . }}</i></a>                   
     {{- end -}}
     {{- end -}}        
@@ -10,5 +10,9 @@
     <!-- {{ if .Site.Params.Widget.socialshare.googleplus }}<a class="btn btn-primary" href="https://plus.google.com/share?url={{ .Permalink }}" target="_blank" title="Share to Google+" rel="nofollow noreferrer"><i class="fa fa-2x fa-thin fa-google-plus">{{ partialCached (printf "svg/%s.svg" "plus") . }}</i></a>{{ end }} -->
     {{ if .Site.Params.Widget.socialshare.linkedin }}<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}" target="_blank" title="Share to LinkedIn" rel="nofollow noreferrer"><i class="fa fa-2x fa-thin fa-linkedin">{{ partialCached (printf "svg/%s.svg" "linkedin") . }}</i></a>{{ end }}
     {{ if .Site.Params.Widget.socialshare.email }}<a href="mailto:?subject={{ .Title }}&amp;body={{ .Permalink }}" title="Share via email"><i class="fa fa-2x fa-thin fa-envelope">{{ partialCached (printf "svg/%s.svg" "mail") . }}</i></a>{{ end }}
-    {{ if .Site.Params.Widget.socialshare.feed }}<a href="{{ .Site.RSSLink }}" target="_blank" title="Subscribe RSS feed"><i class="fa fa-2x fa-thin fa-feed">{{ partialCached (printf "svg/%s.svg" "rss") . }}</i></a>{{ end }}
+    {{- if .Site.Params.Widget.socialshare.feed -}}
+    {{- with .Site.Home.OutputFormats.Get "rss" -}}
+    <a href="{{ .Permalink }}" target="_blank" title="Subscribe RSS feed"><i class="fa fa-2x fa-thin fa-feed">{{ partialCached (printf "svg/%s.svg" "rss") . }}</i></a>
+    {{- end -}}
+    {{- end -}}
 </div>
