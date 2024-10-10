@@ -6,16 +6,12 @@ baseURL = "https://fokus.junian.dev/"
 languageCode = "en-us"
 title = "fokus theme"
 
-[module]
-  [[module.imports]]
-    path = "../.."
-
 pygmentsCodeFences = true
 pygmentsUseClasses = false
 pygmentsStyle = "dracula"
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClassic = false
-theme = "fokus"
+theme = "hugo-fokus"
 themesDir = "../.." # remove this on production
 
 copyright = "Copyright &copy; 2018 - 2024 Fokus Author"
@@ -30,6 +26,8 @@ minify = false
 
 enableGitInfo = true
 enableEmoji = true
+
+
 
 [taxonomies]
 # category = "categories"
