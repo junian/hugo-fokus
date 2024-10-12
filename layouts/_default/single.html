@@ -25,17 +25,7 @@
                 <!-- Article Content -->
                 <div class="e-content">
                     {{ .Scratch.Set "finalContent" "" }}
-                    {{ if $.Site.Params.autoFigure }}
-                        {{ $reAltTitleIn := "<p><img alt=\"([^\"]+)\" src=\"([^\"]+)\" title=\"([^\"]+)\"*></p>" }}
-                        {{ $reAltTitleOut := "<figure><img alt=\"$1\" src=\"$2\" title=\"$3\" loading=\"lazy\"><figcaption class='caption'>$1</figcaption></figure>" }}
-                        {{ $contentAltTitle := .Content | replaceRE $reAltTitleIn $reAltTitleOut | safeHTML }}
-                        {{ $reAltIn := "<p><img alt=\"([^\"]+)\" src=\"([^\"]+)\"*></p>" }}
-                        {{ $reAltOut := "<figure><img alt=\"$1\" src=\"$2\" title=\"$1\" loading=\"lazy\"><figcaption class='caption'>$1</figcaption></figure>" }}
-                        {{ $contentAlt := $contentAltTitle | replaceRE $reAltIn $reAltOut | safeHTML }}
-                        {{ .Scratch.Set "finalContent" $contentAlt }}
-                    {{ else }}
-                        {{ .Scratch.Set "finalContent" .Content }}
-                    {{ end }}
+                    {{ .Scratch.Set "finalContent" .Content }}
                     {{ $codeblockIn := "(?s:<div class=\"highlight\">(.*?)</div>)" }}
                     {{ $codeblockOut := (printf "<figure class=\"highlight\"><button class=\"btn-clipboard chroma\" title=\"Copy to clipboard\"><i class=\"fa icon-clipboard\">%s</i><span class=\"msg-clipboard\"></span></button>$1</figure>" (partialCached (print "svg/copy.svg") .)) }}
                     {{ $codeblockContent := (.Scratch.Get "finalContent") | replaceRE $codeblockIn $codeblockOut | safeHTML }}
