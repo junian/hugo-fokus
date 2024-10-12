@@ -34,7 +34,7 @@ function embedClipboardJS() {
 
     /* Set message indicating success and show it */
     addClass(message, "msg-clipboard--active");
-    message.innerHTML = "Copied to clipboard";
+    message.innerHTML = "Copied";
 
     /* Hide message after two seconds */
     message.setAttribute("data-cbtimer", setTimeout(() => {

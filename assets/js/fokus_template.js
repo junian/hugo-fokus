@@ -15,9 +15,9 @@
                   var o = n(279),
                     r = n.n(o),
                     i = n(370),
-                    a = n.n(i),
-                    c = n(817),
-                    u = n.n(c);
+                    c = n.n(i),
+                    a = n(817),
+                    u = n.n(a);
 
                   function s(t) {
                     try {
@@ -100,7 +100,7 @@
                           }
                         }), e && v(t, e)
                       }(u, t);
-                      var e, n, o, r, i, c = (r = u, i = function() {
+                      var e, n, o, r, i, a = (r = u, i = function() {
                         if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
                         if (Reflect.construct.sham) return !1;
                         if ("function" == typeof Proxy) return !0;
@@ -125,7 +125,7 @@
                         var n;
                         return function(t, e) {
                           if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
-                        }(this, u), (n = c.call(this)).resolveOptions(e), n.listenClick(t), n
+                        }(this, u), (n = a.call(this)).resolveOptions(e), n.listenClick(t), n
                       }
                       return e = u, n = [{
                         key: "resolveOptions",
@@ -137,7 +137,7 @@
                         key: "listenClick",
                         value: function(t) {
                           var e = this;
-                          this.listener = a()(t, "click", (function(t) {
+                          this.listener = c()(t, "click", (function(t) {
                             return e.onClick(t)
                           }))
                         }
@@ -243,10 +243,10 @@
                   var o = n(828);
 
                   function r(t, e, n, o, r) {
-                    var a = i.apply(this, arguments);
-                    return t.addEventListener(n, a, r), {
+                    var c = i.apply(this, arguments);
+                    return t.addEventListener(n, c, r), {
                       destroy: function() {
-                        t.removeEventListener(n, a, r)
+                        t.removeEventListener(n, c, r)
                       }
                     }
                   }
@@ -348,7 +348,7 @@
                         o = n[t],
                         r = [];
                       if (o && e)
-                        for (var i = 0, a = o.length; i < a; i++) o[i].fn !== e && o[i].fn._ !== e && r.push(o[i]);
+                        for (var i = 0, c = o.length; i < c; i++) o[i].fn !== e && o[i].fn._ !== e && r.push(o[i]);
                       return r.length ? n[t] = r : delete n[t], this
                     }
                   }, t.exports = e, t.exports.TinyEmitter = e
@@ -428,16 +428,16 @@
         },
         i = "/privacy-policy#cookies-and-web-beacons";
 
-      function a(t, e) {
+      function c(t, e) {
         t.style.opacity = e, t.style.filter = `alpha(opacity=${100*e|0}})`
       }
 
-      function c(t) {
+      function a(t) {
         let e = 1;
-        a(t, e);
+        c(t, e);
         let n = +new Date;
         const r = () => {
-          e -= (new Date - n) / 400, a(t, e), n = +new Date, e > 0 ? window.requestAnimationFrame && requestAnimationFrame(r) || setTimeout(r, 16) : e <= 0 && o(t)
+          e -= (new Date - n) / 400, c(t, e), n = +new Date, e > 0 ? window.requestAnimationFrame && requestAnimationFrame(r) || setTimeout(r, 16) : e <= 0 && o(t)
         };
         r()
       }
@@ -459,7 +459,7 @@
             t.clearSelection();
             const e = t.trigger.querySelector(".msg-clipboard");
             var n, o;
-            e && (e.getAttribute("data-cbtimer") && clearTimeout(parseInt(e.getAttribute("data-cbtimer"), 10)), o = "msg-clipboard--active", (n = e).classList ? n.classList.add(o) : n.className += " " + o, e.innerHTML = "Copied to clipboard", e.setAttribute("data-cbtimer", setTimeout((() => {
+            e && (e.getAttribute("data-cbtimer") && clearTimeout(parseInt(e.getAttribute("data-cbtimer"), 10)), o = "msg-clipboard--active", (n = e).classList ? n.classList.add(o) : n.className += " " + o, e.innerHTML = "Copied", e.setAttribute("data-cbtimer", setTimeout((() => {
               ! function(t, e) {
                 t.classList ? t.classList.remove(e) : t.className = t.className.replace(new RegExp("(^|\\b)" + e.split(" ").join("|") + "(\\b|$)", "gi"), " ")
               }(e, "msg-clipboard--active"), e.setAttribute("data-cbtimer", "")
@@ -478,7 +478,7 @@
             l && f && (() => {
               const t = s.createElement("script");
               t.src = "https://" + l + ".disqus.com/embed.js", t.setAttribute("data-timestamp", +new Date), (s.head || s.body).appendChild(t)
-            })(), c(t)
+            })(), a(t)
           }))
         }(), l && f && (() => {
           const t = s.createElement("script");
@@ -486,22 +486,22 @@
         })(), p.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/) || function() {
           const t = (e = d, (n = document.createElement("div")).innerHTML = e.trim(), n.firstChild);
           var e, n;
-          a(t, 0), p.body.appendChild(t),
+          c(t, 0), p.body.appendChild(t),
             function(t) {
               let e = 0;
-              a(t, e);
+              c(t, e);
               let n = +new Date;
               const o = () => {
-                e += (new Date - n) / 400, a(t, e), n = +new Date, e < 1 ? window.requestAnimationFrame && requestAnimationFrame(o) || setTimeout(o, 16) : e >= 1 && a(t, 1)
+                e += (new Date - n) / 400, c(t, e), n = +new Date, e < 1 ? window.requestAnimationFrame && requestAnimationFrame(o) || setTimeout(o, 16) : e >= 1 && c(t, 1)
               };
               o()
             }(t), u(document.getElementById("btnAcceptCookie"), "click", (() => {
               ! function(t, e, n, o, r, i) {
-                var a = new Date;
-                a.setDate(a.getDate() + (n || 365));
-                var c = [t + "=dismiss", "expires=" + a.toUTCString(), "path=" + (r || "/")];
-                o && c.push("domain=" + o), i && c.push("secure"), document.cookie = c.join(";")
-              }(r.name, 0, r.expiryDays, r.domain, r.path, r.secure), c(t)
+                var c = new Date;
+                c.setDate(c.getDate() + (n || 365));
+                var a = [t + "=dismiss", "expires=" + c.toUTCString(), "path=" + (r || "/")];
+                o && a.push("domain=" + o), i && a.push("secure"), document.cookie = a.join(";")
+              }(r.name, 0, r.expiryDays, r.domain, r.path, r.secure), a(t)
             }))
         }()
       }, "loading" !== document.readyState ? y() : document.addEventListener ? document.addEventListener("DOMContentLoaded", y) : document.attachEvent("onreadystatechange", (() => {
