@@ -26,11 +26,11 @@
                 <div class="e-content">
                     {{ .Scratch.Set "finalContent" "" }}
                     {{ if $.Site.Params.autoFigure }}
-                        {{ $reAltTitleIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\"*></p>" }}
-                        {{ $reAltTitleOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$3\" loading=\"lazy\"><figcaption class='caption'>$2</figcaption></figure>" }}
+                        {{ $reAltTitleIn := "<p><img alt=\"([^\"]+)\" src=\"([^\"]+)\" title=\"([^\"]+)\"*></p>" }}
+                        {{ $reAltTitleOut := "<figure><img alt=\"$1\" src=\"$2\" title=\"$3\" loading=\"lazy\"><figcaption class='caption'>$1</figcaption></figure>" }}
                         {{ $contentAltTitle := .Content | replaceRE $reAltTitleIn $reAltTitleOut | safeHTML }}
-                        {{ $reAltIn := "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\"*></p>" }}
-                        {{ $reAltOut := "<figure><img src=\"$1\" alt=\"$2\" title=\"$2\" loading=\"lazy\"><figcaption class='caption'>$2</figcaption></figure>" }}
+                        {{ $reAltIn := "<p><img alt=\"([^\"]+)\" src=\"([^\"]+)\"*></p>" }}
+                        {{ $reAltOut := "<figure><img alt=\"$1\" src=\"$2\" title=\"$1\" loading=\"lazy\"><figcaption class='caption'>$1</figcaption></figure>" }}
                         {{ $contentAlt := $contentAltTitle | replaceRE $reAltIn $reAltOut | safeHTML }}
                         {{ .Scratch.Set "finalContent" $contentAlt }}
                     {{ else }}
