@@ -1,0 +1,5 @@
+{{ $result := transform.HighlightCodeBlock . }}
+<figure class="highlight">
+    <button class="btn-clipboard chroma" title="Copy to clipboard"><i class="fa icon-clipboard">{{ partialCached (printf "svg/%s.svg" "copy") . }}</i><span class="msg-clipboard"></span></button>
+    <pre tabindex="0" class="chroma"><code class="language-{{- .Type -}}" data-lang="{{- .Type -}}">{{- $result.Inner | safeHTML -}}</code></pre>
+</figure>
