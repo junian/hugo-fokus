@@ -6,7 +6,7 @@
     <!-- Verification -->
     {{- if .IsHome -}}{{- partialCached "meta/verification.html" . -}}{{- end -}}
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
-    <meta name="author" content="{{ with $.Site.Author.name }}{{.}}{{end}}">
+    <meta name="author" content="{{ with $.Site.Params.Author.name }}{{.}}{{end}}">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,8 +19,8 @@
     {{- template "_internal/schema.html" . -}}
     <!-- Opengraph -->
     {{- template "_internal/opengraph.html" . -}}
-    {{ with .Site.Social.facebook_app_id }}<meta content='{{ . }}' property='fb:app_id'>{{ end }}
-    {{ with .Site.Social.facebook_pages }}<meta content='{{ . }}' property='fb:pages'>{{ end }}
+    {{ with .Site.Params.Verification.facebook_app_id }}<meta content='{{ . }}' property='fb:app_id'>{{ end }}
+    {{ with .Site.Params.Verification.facebook_pages }}<meta content='{{ . }}' property='fb:pages'>{{ end }}
     <!-- Twitter Card -->
     {{- template "_internal/twitter_cards.html" . -}}
     <!-- Google News -->

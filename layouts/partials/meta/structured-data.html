@@ -14,8 +14,8 @@
     "description" : {{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }},
     "image" : {{ with .Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ with .Site.Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ "" }}{{ end }}{{ end }},
     "inLanguage" : {{ .Site.LanguageCode | default "en-us" }},
-    "author" : {{ $.Site.Author.name }},
-    "creator" : {{ $.Site.Author.name }},
+    "author" : {{ $.Site.Params.Author.name }},
+    "creator" : {{ $.Site.Params.Author.name }},
     "publisher": {
         "@type" : "Organization",
         "name" : {{ .Site.Title }},
@@ -24,8 +24,8 @@
             "url" : {{ .Site.Params.logo }}
         }
     },
-    "accountablePerson" : {{ $.Site.Author.name }},
-    "copyrightHolder" : {{ $.Site.Author.name }},
+    "accountablePerson" : {{ $.Site.Params.Author.name }},
+    "copyrightHolder" : {{ $.Site.Params.Author.name }},
     "copyrightYear" : {{ if not .Date.IsZero }}{{ .Date.Format "2006" }}{{ else }}{{ .Lastmod.Format "2006" }}{{ end }},
     "datePublished": {{ if not .Date.IsZero }}{{ .Date.Format $ISO8601 }}{{ else }}{{ .Lastmod.Format $ISO8601 }}{{ end }},
     "dateModified" : {{ (.Lastmod.Format $ISO8601) | default (.Date.Format $ISO8601) }},
