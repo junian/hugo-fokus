@@ -75,5 +75,9 @@
     </script>
     {{ end }}
 
+    {{ if .Param "math" }}
+        {{ partialCached "math.html" . }}
+    {{ end }}
+    
     {{- partial "head-custom.html" . -}}
 </head>
