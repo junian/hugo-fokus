@@ -17,9 +17,11 @@ User-agent: ImagesiftBot
 User-agent: Meta-ExternalAgent
 User-agent: Meta-ExternalFetcher
 User-agent: Omgilibot
-User-agent: PerplexityBot
 User-agent: Timpibot
-User-agent: Google-Extended
 Disallow: /
+
+User-agent: PerplexityBot
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: {{ .Site.BaseURL }}{{ .Site.Home.Sitemap.Filename }}
