@@ -1,6 +1,6 @@
 {{ define "main" }}
 <!-- Post Content -->
-<article class="h-entry">
+<article class="h-entry" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
     {{- if eq .Params.type "page" -}}
         {{- partial "header.html" . -}}
     {{- else -}}
