@@ -55,6 +55,19 @@
     </div>
 </footer>
 
+<!-- Disqus comments click to comment -->
+{{- if .Site.Config.Services.Disqus.Shortname -}}
+<div class="container">
+    <div class = "row">
+        <div class="col-lg-2 col-md-1"></div>
+        <div class="col-lg-8 col-md-10">
+            {{ partial "widget/disqus-ondemand.html" . }}
+        </div>
+        <div class="col-lg-2 col-md-1"></div>
+    </div>
+</div>
+{{- end -}}
+
 <!-- Show related articles -->
 {{ if $.Param "relatedVisible" }}
 <div class="container">
@@ -66,13 +79,5 @@
 {{ partialCached "widget/email-subscribe.html" . }}
 
 <div class="container">
-    <div class = "row">
-        <div class="col-lg-2 col-md-1"></div>
-        <div class="col-lg-8 col-md-10">
-            <!-- Disqus comments -->
-            {{ partial "widget/disqus-ondemand.html" . }}
-        </div>
-        <div class="col-lg-2 col-md-1"></div>
-    </div>
     {{ partial "nextprev.html" . }}
 </div>
