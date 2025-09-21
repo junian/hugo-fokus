@@ -117,8 +117,9 @@ relatedVisible = true
 commentVisible = true
 autoFigure = true
 feedburner = ""
-images = ["https://4.bp.blogspot.com/-34zH8MYrujE/W3PktU694SI/AAAAAAAAC88/a5_8_DmEZC0rfxZZPYaW_k2viSIn4qpmwCLcBGAs/s1600/cover-rawpixel-558599-unsplash.jpg",
-"https://4.bp.blogspot.com/-34zH8MYrujE/W3PktU694SI/AAAAAAAAC88/a5_8_DmEZC0rfxZZPYaW_k2viSIn4qpmwCLcBGAs/s400/cover-rawpixel-558599-unsplash.jpg"]
+images = [
+    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigeDK5NCfDCffwHjknWo0zztz911od3mT87ifPReZ7dWplBiRwhIys-6Y-F9JIdv9_VoqpmAup_w9_HjtXx8qAKF3s4Cdj-yWCcJUFehWZkfqmxPQ6lcvCpEnrpkEdm7SlGtzBp1VRhLYS1leNM-B9yvhrYJXWqhH2sroZY9cPxKdJ4A5L3NoG5Z2o6Bd-/s1280/junian-dev-banner.jpg"
+]
 customCSSAssets = []
 customJSAssets = []
 
