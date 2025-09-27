@@ -58,6 +58,13 @@ hr {
             margin-top: 0px;
             margin-bottom: 0px;
         }
+        pre {
+            @media (min-width: 768px) {
+                box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+                border-radius: 7px;
+                border: 2px solid black;
+            }
+        }
         &.highlight {
             position: relative;
         }

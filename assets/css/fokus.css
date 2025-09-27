@@ -674,6 +674,12 @@ hr.section-divider:before, .e-content hr:before {
   .e-content figure {
     margin: 30px 0px;
   }
+  .e-content figure pre {
+    -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+            box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+    border-radius: 7px;
+    border: 2px solid black;
+  }
   .highlight pre {
     padding: 10px;
   }
