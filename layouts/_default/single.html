@@ -24,6 +24,14 @@
             <div class="col-lg-8 col-md-10">
                 <!-- Article Content -->
                 <div class="e-content" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
+                    
+                    <!--Image for thumbnail-->
+                    {{- with $.Param "images" -}}
+                    {{- range first 1 . -}}
+                    <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}" /></p>
+                    {{- end -}}
+                    {{- end -}}
+
                     {{ .Scratch.Set "finalContent" .Content }}
                     
                     {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "page")) }}
