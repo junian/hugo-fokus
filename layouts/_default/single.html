@@ -27,7 +27,7 @@
                     
                     <!--Image for thumbnail-->
                     {{- with $.Param "images" -}}
-                    {{- range first 1 . -}}
+                    {{- range last 1 . -}}
                     <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}" /></p>
                     {{- end -}}
                     {{- end -}}
