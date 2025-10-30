@@ -27,7 +27,13 @@
     {{- partial "meta/structured-data.html" . -}}
     <!-- document title -->
     <title>
-        {{- if .IsHome -}}{{- .Site.Title -}}{{ with .Site.Params.description }} - {{ . }}{{ end }}{{- else -}}{{- .Title -}}{{- end -}}
+        {{- if eq .Kind "404" -}}
+            {{ .Title }} - {{ .RelPermalink }}
+        {{- else if .IsHome -}}
+            {{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}
+        {{- else -}}
+            {{ .Title }}
+        {{- end -}}
     </title>
     <!-- RSS -->
     {{ with .OutputFormats.Get "RSS" }}
