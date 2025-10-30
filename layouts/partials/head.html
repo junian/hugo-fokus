@@ -28,7 +28,7 @@
     <!-- document title -->
     <title>
         {{- if eq .Kind "404" -}}
-            {{ .Title }} - {{ .RelPermalink }}
+            {{ .Title }}
         {{- else if .IsHome -}}
             {{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}
         {{- else -}}
