@@ -64,6 +64,8 @@ hr {
                 border-radius: 7px;
                 border: 2px solid black;
             }
+            scrollbar-color: lightgray transparent;
+            scrollbar-width: thin;
         }
         &.highlight {
             position: relative;

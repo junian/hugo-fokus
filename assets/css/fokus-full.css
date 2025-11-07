@@ -2846,6 +2846,10 @@ hr.section-divider:before, .e-content hr:before {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.e-content figure pre {
+  scrollbar-color: lightgray transparent;
+  scrollbar-width: thin;
+}
 .e-content figure.highlight {
   position: relative;
 }
