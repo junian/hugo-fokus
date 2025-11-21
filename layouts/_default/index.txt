@@ -3,12 +3,12 @@
 > {{ .Site.Params.description }}
 
 {{ range (.Site.RegularPages).GroupByDate "2006" }}
-    
+
+## Tech and Dev Tutorials
+
 {{ range where .Pages "Type" "not in" (slice "page") }}
 
-## [{{ .Title }}]({{ .RelPermalink| absURL }})
-
-{{ .Description }}
+- [{{ .Title }}]({{ .RelPermalink| absURL }}): {{ .Description }}
 
 {{ end }}
 {{ end }}
