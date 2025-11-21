@@ -2,12 +2,16 @@
 
 > {{ .Site.Params.description }}
 
-{{ .Site.Params.description }}
+{{ .Site.Params.summary }}
 
-## Tech and Dev Tutorials
+{{ $allowed := slice "tech" "dev" }}
+{{ range $name := $allowed }}
+{{ with site.GetPage "section" $name }}
 
-{{ range (.Site.RegularPages).GroupByDate "2006" -}}
-{{ range where .Pages "Type" "not in" (slice "page") -}}
+## {{ .Title }}
+
+{{ range .RegularPages -}}
 - [{{ .Title }}]({{ .RelPermalink| absURL }}): {{ .Description }}
 {{ end }}
-{{- end }}
+{{ end }}
+{{ end }}
