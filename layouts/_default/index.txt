@@ -2,6 +2,8 @@
 
 > {{ .Site.Params.description }}
 
+{{ .Site.Params.description }}
+
 ## Tech and Dev Tutorials
 
 {{ range (.Site.RegularPages).GroupByDate "2006" -}}
