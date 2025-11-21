@@ -3,15 +3,12 @@
 > {{ .Site.Params.description }}
 
 {{ .Site.Params.summary }}
-
-{{ $allowed := .Site.Params.mainSections }}
-{{ range $name := $allowed }}
+{{ $allowed := .Site.Params.mainSections -}}
+{{ range $name := $allowed -}}
 {{ with site.GetPage "section" $name }}
-
 ## {{ .Title }}
-
 {{ range .RegularPages -}}
 - [{{ .Title }}]({{ .RelPermalink| absURL }}): {{ .Description }}
-{{ end }}
-{{ end }}
-{{ end }}
+{{ end -}}
+{{- end -}}
+{{- end -}}
