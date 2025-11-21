@@ -68,10 +68,22 @@
         {{- $iecss := resources.Get "css/fokus.ie.css" | resources.Minify -}}
         <link rel="stylesheet" href="{{ $iecss.RelPermalink }}">
     {{ "<![endif]-->" | safeHTML }}
+    
+    {{- /* default canonical to the page permalink */ -}}
+    {{- $canonical := .Permalink -}}
+
+    {{- with .Param "canonical_url" }}
+    {{- $canonical = . }}
+    {{- end }}
+
+    {{- with .Param "redirect" }}
+    {{- $canonical = . }}
+    {{- end }}
+    
+    <!-- Set canonical link -->
+    <link rel="canonical" href="{{ $canonical | safeURL }}" />
 
     {{ with $.Param "redirect" }} 
-    <!-- Set canonical link -->
-    <link rel="canonical" href="{{ . }}" />
     <!-- Redirect to external domain -->
     <meta http-equiv="refresh" content="0; url={{ . }}" />
     <script type="text/javascript">
