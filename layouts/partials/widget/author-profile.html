@@ -7,7 +7,9 @@
         <a class="p-name u-url" href="{{ with $.Site.Params.Author.url }}{{.}}{{end}}" rel="author" title="author profile">
             <h4>{{ with $.Site.Params.Author.name }}{{.}}{{end}}</h4>
         </a>
+        {{/*
         <p><a class="u-email hidden" href="mailto:{{ with $.Site.Params.Author.email }}{{ . }}{{ end }}">{{ with $.Site.Params.Author.email }}{{ . }}{{ end }}</a></p>
+        */}}
         <p class="p-note">{{ with $.Site.Params.Author.description }}{{ . | safeHTML }}{{end}}</p>
     </div>
     <div class="post-footer-line">
