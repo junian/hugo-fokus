@@ -1,11 +1,14 @@
-{{ if $.Param "commentVisible" }}
-    {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-    <div class="post-body entry-comment">
-        {{ template "_internal/disqus.html" . }}
-    </div>
-    {{ else }}
-    <blockquote role="alert">
-        <p><strong>Attention! </strong>Disqus comments not available by default when the website is previewed locally.</p>
-    </blockquote>
-    {{ end }}
+{{- $pc := .Page.Site.Config.Privacy.Disqus -}}
+{{- if not $pc.Disable -}}
+{{- if .Site.Config.Services.Disqus.Shortname -}}
+{{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+<div id="site_comment_thread" class="section p-comment">
+    {{ template "_internal/disqus.html" . }}
+</div>
+{{ else }}
+<blockquote role="alert">
+    <p><strong>Attention! </strong>Disqus comments not available by default when the website is previewed locally.</p>
+</blockquote>
+{{ end }}
+{{ end }}
 {{ end }}
