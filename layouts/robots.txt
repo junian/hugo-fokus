@@ -24,7 +24,7 @@
 # AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
 
 User-Agent: *
-Content-signal: search=yes,ai-train=no
+Content-Signal: ai-train=no, search=yes, ai-input=no
 Allow: /
 
 Sitemap: {{ .Site.BaseURL }}{{ .Site.Home.Sitemap.Filename }}
