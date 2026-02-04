@@ -26,6 +26,8 @@ hr {
 }
 
 .e-content {
+    overflow-wrap: break-word;
+    word-break: break-word;
     p,
     ul,
     ol {

@@ -325,6 +325,10 @@ hr.section-divider:before, .e-content hr:before {
   top: -30px;
 }
 
+.e-content {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 .e-content p,
 .e-content ul,
 .e-content ol {
