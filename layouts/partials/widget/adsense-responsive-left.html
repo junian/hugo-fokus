@@ -1,19 +1,20 @@
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-<div class="section-ad">
+<div class='section-ad'>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.Site.Params.Adsense.client}}"
         crossorigin="anonymous"></script>
+    <!-- left display ad responsive -->
     <ins class="adsbygoogle"
-        style="display:block; text-align:center;"
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
+        style="display:block"
         data-ad-client="{{.Site.Params.Adsense.client}}"
-        data-ad-slot="{{.Site.Params.Adsense.inArticleSlot}}"></ins>
+        data-ad-slot="{{.Site.Params.Adsense.slot}}"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </div>
 {{ else }}
 <blockquote role="alert">
-    <p><strong><span style="color: darkorange">[ad]</span> Attention! </strong>Google In-Article Ads not available by default when the website is previewed locally.</p>
+    <p><strong><span style="color: darkorange">[ad]</span> Attention! </strong>Google Adsense not available by default when the website is previewed locally.</p>
 </blockquote>
 {{ end }}
