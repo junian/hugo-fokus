@@ -1,3 +1,4 @@
+{{ if .Site.Params.Adsense.isEnabled }}
 <div class="post-preview">
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -19,3 +20,4 @@
 {{ end }}
 </div>
 <hr />
+{{ end }}

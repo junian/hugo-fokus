@@ -1,3 +1,4 @@
+{{ if .Site.Params.Adsense.isEnabled }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
 <div class="section-ad">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.Site.Params.Adsense.client}}"
@@ -16,4 +17,5 @@
 <blockquote role="alert">
     <p><strong><span style="color: darkorange">[ad]</span> Attention! </strong>Google In-Article Ads not available by default when the website is previewed locally.</p>
 </blockquote>
+{{ end }}
 {{ end }}
