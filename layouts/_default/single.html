@@ -21,9 +21,11 @@
         {{- end -}}
         <div class="row">
             <div class="col-lg-2 col-md-1">
-                <!-- Show Left Adsense -->
-                {{- if $.Param "adsense.showLeft" -}}
-                    {{- partialCached "widget/adsense-responsive-left.html" . -}}
+                {{- if ne .Params.type "page" -}}
+                    <!-- Show Left Adsense -->
+                    {{- if $.Param "adsense.showLeft" -}}
+                        {{- partialCached "widget/adsense-responsive-left.html" . -}}
+                    {{- end -}}
                 {{- end -}}
             </div>
             <div class="col-lg-8 col-md-10">
@@ -47,9 +49,11 @@
                 </div>
             </div>
             <div class="col-lg-2 col-md-1">
-                <!-- Show Right Adsense -->
-                {{- if $.Param "adsense.showRight" -}}
-                    {{- partialCached "widget/adsense-responsive-right.html" . -}}
+                {{- if ne .Params.type "page" -}}
+                    <!-- Show Right Adsense -->
+                    {{- if $.Param "adsense.showRight" -}}
+                        {{- partialCached "widget/adsense-responsive-right.html" . -}}
+                    {{- end -}}
                 {{- end -}}
             </div>
         </div>
