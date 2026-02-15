@@ -1,4 +1,10 @@
 {{ define "main" }}
+
+<!-- Auto AdSense -->
+{{- if ne .Params.type "page" -}}
+    {{- partialCached "widget/adsense-auto.html" . -}}
+{{- end -}}
+
 <!-- Post Content -->
 <article class="h-entry">
     {{- if eq .Params.type "page" -}}
