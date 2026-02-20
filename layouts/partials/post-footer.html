@@ -55,22 +55,24 @@
     </div>
 </footer>
 
-<!-- Disqus comments click to comment -->
-{{- if .Site.Config.Services.Disqus.Shortname -}}
+<!-- Comment section -->
 <div class="container">
     <div class = "row">
         <div class="col-lg-2 col-md-1"></div>
         <div class="col-lg-8 col-md-10">
-            {{- if .Site.Params.DisqusOnDemand -}}
-            {{ partial "widget/disqus-ondemand.html" . }}
-            {{- else -}}
-            {{ partial "widget/disqus.html" . }}
+            {{- if .Site.Config.Services.Disqus.Shortname -}}
+                {{- if .Site.Params.DisqusOnDemand -}}
+                    {{ partial "widget/disqus-ondemand.html" . }}
+                {{- else -}}
+                    {{ partial "widget/disqus.html" . }}
+                {{- end -}}
+            {{- else if .Site.Params.Services.CommentBox.ProjectID -}}
+                {{ partial "widget/commentbox.html" . }}
             {{- end -}}
         </div>
         <div class="col-lg-2 col-md-1"></div>
     </div>
 </div>
-{{- end -}}
 
 <!-- Show related articles -->
 {{ if $.Param "relatedVisible" }}
