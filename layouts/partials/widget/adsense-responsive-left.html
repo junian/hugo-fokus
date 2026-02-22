@@ -7,7 +7,7 @@
     <ins class="adsbygoogle"
         style="display:block"
         data-ad-client="{{.Site.Params.Adsense.client}}"
-        data-ad-slot="{{.Site.Params.Adsense.displaySlot}}"
+        data-ad-slot="{{ if .Site.Params.Adsense.leftDisplaySlot }}{{.Site.Params.Adsense.leftDisplaySlot}}{{ else }}{{.Site.Params.Adsense.displaySlot}}{{ end }}"
         data-ad-format="auto"
         data-full-width-responsive="true"></ins>
     <script>
