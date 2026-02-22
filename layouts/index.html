@@ -9,7 +9,7 @@
             {{ range $index, $page := (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)).Pages }}
             <div class="post-preview">
                 <a href="{{ .RelPermalink }}">
-                    <h2 class="post-title">{{ if $page.Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ $page.Title }}</h2>
+                    <h2 class="post-title">{{ if $page.Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ with $page.PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}{{ $page.Title }}</h2>
                     {{ with $page.Description }}<h3 class="post-subtitle">{{ . }}</h3>{{ end }}
                 </a>
                 <p class="post-meta">{{ $page.Date.Format "Jan 2, 2006" }}{{ with $page.ReadingTime }}<span> &middot; </span>{{ . }} min read{{ end }}</p>

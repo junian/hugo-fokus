@@ -9,7 +9,7 @@
             {{ range .Paginator.Pages }}
             <div class="post-preview">
                 <a href="{{ .RelPermalink }}">
-                    <h2 class="post-title">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ .Title }}</h2>
+                    <h2 class="post-title">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ with .PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}{{ .Title }}</h2>
                     {{ with .Description }}<h3 class="post-subtitle">{{ . }}</h3>{{ end }}
                 </a>
                 {{- if ne .Kind "taxonomy" -}}

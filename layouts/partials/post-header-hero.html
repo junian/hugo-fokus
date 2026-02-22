@@ -7,7 +7,9 @@
             <div class="col-lg-2 col-md-1"></div>
             <div class="col-lg-8 col-md-10">
                 <div class="post-heading">
-                    <h1 class="p-name">{{ if .Draft }}<span style="color: darkorange">[Draft]</span><br />{{ end }}{{ .Title }}</h1>
+                    {{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}
+                    {{ with .PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}
+                    <h1 class="p-name">{{ .Title }}</h1>
                     {{ with .Description }}
                     <h2 class="p-summary subheading">{{ . }}</h2>
                     {{ end }}
