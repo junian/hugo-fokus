@@ -87,8 +87,31 @@
     <!-- Redirect to external domain -->
     <meta http-equiv="refresh" content="0; url={{ . }}" />
     <script type="text/javascript">
-        window.location.href = "{{ . }}";
+        window.location.href = {{ . }};
     </script>
+    {{ end }}
+
+    {{ if $.Site.Params.Services.Netlify.IsRedirectPreviewUrl }}
+    {{ with $.Site.Params.Services.Netlify.ProjectName }}
+    <script type="text/javascript">
+        (function () {
+            const netlifyProjectName = {{ . }};
+            const previewDomain = `--${netlifyProjectName}.netlify.app`;
+            if (window.location.hostname.endsWith(previewDomain)) {
+
+                const baseUrlStr = {{ $.Site.BaseURL }};
+                const baseUrl = new URL(baseUrlStr);
+                var targetUrl = new URL(window.location.href);
+
+                targetUrl.hostname = baseUrl.hostname;
+                targetUrl.protocol = baseUrl.protocol;
+
+                // location.replace(targetUrl.toString());
+                window.location.href = targetUrl.toString();
+            }
+        })();
+    </script>
+    {{ end }}
     {{ end }}
 
     {{ if .Param "math" }}
