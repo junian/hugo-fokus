@@ -101,7 +101,7 @@
 
                 const baseUrlStr = {{ $.Site.BaseURL }};
                 const baseUrl = new URL(baseUrlStr);
-                var targetUrl = new URL(window.location.href);
+                const targetUrl = new URL(window.location.href);
 
                 targetUrl.hostname = baseUrl.hostname;
                 targetUrl.protocol = baseUrl.protocol;
