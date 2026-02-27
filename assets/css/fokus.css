@@ -635,6 +635,11 @@ hr.section-divider:before, .e-content hr:before {
 .section-subscribe .form-inline {
   margin: 30px auto;
 }
+
+ins.adsbygoogle[data-ad-status=unfilled] {
+  display: none !important;
+}
+
 @media (min-width: 768px) {
   .pagenumber div {
     padding: 15px 25px;
@@ -710,6 +715,7 @@ hr.section-divider:before, .e-content hr:before {
     padding: 10px;
   }
 }
+
 @media (min-width: 992px) {
   .navbar-main {
     /*
