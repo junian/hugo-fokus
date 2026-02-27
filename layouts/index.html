@@ -1,4 +1,10 @@
 {{ define "main" }}
+
+<!-- Auto AdSense -->
+{{- if ne .Params.type "page" -}}
+    {{- partialCached "widget/adsense-auto.html" . -}}
+{{- end -}}
+
 {{- partial "header.html" . -}}
 <!-- Main Content -->
 <div class="container">
@@ -15,10 +21,6 @@
                 <p class="post-meta">{{ $page.Date.Format "Jan 2, 2006" }}{{ with $page.ReadingTime }}<span> &middot; </span>{{ . }} min read{{ end }}</p>
             </div>
             <hr />
-            <!-- Show In-Feed Adsense -->
-            {{- if (and (or (eq $index 2) (eq $index 2)) ($.Param "adsense.showInFeed")) -}}
-                {{- partialCached "widget/adsense-infeed.html" . -}}
-            {{- end -}}
             {{ end }}
             {{ partial "pager.html" . }}
         </div>
