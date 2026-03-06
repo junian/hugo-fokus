@@ -17,3 +17,7 @@
     Link: <{{ .Scratch.Get "appcss" | relURL }}>; rel=preload; as=style
     {{- partial "js-assets.html" . }}
     Link: <{{ .Scratch.Get "appjs" | relURL }}>; rel=preload; as=script
+
+{{- with .Site.Params.Services.Netlify.Headers }}
+{{ . }}
+{{- end }}
