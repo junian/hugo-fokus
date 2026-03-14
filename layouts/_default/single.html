@@ -1,8 +1,9 @@
 {{ define "main" }}
 
-<!-- Auto AdSense -->
+<!-- Google Auto AdSense / Journey Ads -->
 {{- if ne .Params.type "page" -}}
     {{- partialCached "widget/adsense-auto.html" . -}}
+    {{- partialCached "widget/journey-ads.html" . -}}
 {{- end -}}
 
 <!-- Post Content -->
