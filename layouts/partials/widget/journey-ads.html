@@ -1,6 +1,6 @@
 {{ if .Site.Params.Journey.IsEnabled }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-{{ with .Site.Params.Journey.Tag }}
+{{ with .Site.Params.Journey.SiteID }}
 <script type="text/javascript" async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/{{ . }}.js"></script>
 {{ end }}
 {{ else }}
