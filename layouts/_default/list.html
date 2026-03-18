@@ -1,10 +1,9 @@
 {{ define "main" }}
 
-<!-- Google Auto AdSense / Journey Ads -->
-{{- if ne .Params.type "page" -}}
-    {{- partialCached "widget/adsense-auto.html" . -}}
-{{- end -}}
+<!-- Google Auto AdSense -->
+{{- partialCached "widget/adsense-auto.html" . -}}
 
+<!-- Journey MV Ads -->
 {{- partialCached "widget/journey-ads.html" . -}}
 
 {{- partial "header.html" . -}}
