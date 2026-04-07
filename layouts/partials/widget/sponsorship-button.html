@@ -1,0 +1,7 @@
+{{ if .Site.Params.Sponsorship.isEnabled }}
+<div class="section bmc">
+    <a href="{{ .Site.Params.Sponsorship.url }}" class="imglink" target="_blank">
+        <img src="{{ .Site.Params.Sponsorship.imageUrl }}" alt="Sponsorship" style="height: auto !important;width: auto !important;" loading="lazy">
+    </a>
+</div>
+{{ end }}
