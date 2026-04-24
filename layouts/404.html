@@ -5,7 +5,63 @@
     <div class="row">
         <div class="col-lg-2 col-md-1"></div>
         <div class="col-lg-8 col-md-10">
+            <div id="search"></div>
             <div class="e-content">
+                <div id="suggestions" style="display: none;">
+                    <h3>Did you mean one of these?</h3>
+                    <ul id="suggestion-list"></ul>
+                </div>
+
+                <script>
+                    async function getSuggestions() {
+                        try {
+                            // 1. Explicitly import using a relative path or the Hugo helper
+                            // This is the most compatible way for Safari modules
+                            const pagefind = await import("/pagefind/pagefind.js");
+
+                            // 2. Initialize (Required for some Pagefind versions to prime the index)
+                            await pagefind.options({
+                                "ranking": {
+                                    "termSimilarity": 3.0, // Slight boost to fuzzy matching for typos
+                                }
+                            });
+                            pagefind.init();
+
+                            // 3. Robust path splitting
+                            // Decodes URI (e.g., %20 to space) and splits by / or -
+                            const path = decodeURIComponent(window.location.pathname);
+                            const segments = path.split(/[\/-]/).filter(part => part.length > 1);
+
+                            if (segments.length > 0) {
+                                const fullQuery = segments.join(' ');
+                                const search = await pagefind.search(fullQuery);
+
+                                if (search.results && search.results.length > 0) {
+                                const suggestionContainer = document.getElementById('suggestions');
+                                const list = document.getElementById('suggestion-list');
+                                
+                                // Take top 3
+                                const topResults = search.results;//.slice(0, 3);
+
+                                for (const result of topResults) {
+                                    const data = await result.data();
+                                    const li = document.createElement('li');
+                                    li.innerHTML = `<a href="${data.url}">${data.meta.title}</a>`;
+                                    list.appendChild(li);
+                                }
+
+                                suggestionContainer.style.display = 'block';
+                                }
+                            }
+                        } catch (e) {
+                            console.error("Pagefind failed to load:", e);
+                        }
+                    }
+
+                    // Run the function
+                    getSuggestions();
+                </script>
+
                 <figure>
                     <svg class="animated" id="freepik_stories-oops-404-error-with-a-broken-robot"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" version="1.1"
