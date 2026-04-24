@@ -13,52 +13,75 @@
                 </div>
 
                 <script>
+                    // --- Levenshtein Distance Algorithm ---
+                    function getEditDistance(a, b) {
+                        if (a.length === 0) return b.length;
+                        if (b.length === 0) return a.length;
+                        
+                        const matrix = [];
+                        
+                        for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+                        for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+
+                        for (let i = 1; i <= b.length; i++) {
+                            for (let j = 1; j <= a.length; j++) {
+                                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                                    matrix[i][j] = matrix[i - 1][j - 1];
+                                } else {
+                                    matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1));
+                                }
+                            }
+                        }
+
+                        return matrix[b.length][a.length];
+                    }
+
                     async function getSuggestions() {
                         try {
-                            // 1. Explicitly import using a relative path or the Hugo helper
-                            // This is the most compatible way for Safari modules
                             const pagefind = await import("/pagefind/pagefind.js");
-
-                            // 2. Initialize (Required for some Pagefind versions to prime the index)
-                            await pagefind.options({
-                                "ranking": {
-                                    "termSimilarity": 3.0, // Slight boost to fuzzy matching for typos
-                                }
+                            const currentPath = window.location.pathname.toLowerCase().replace(/\/$/, "");
+                            
+                            // 1. Fetch and Parse Sitemap
+                            const response = await fetch('/sitemap.xml');
+                            const text = await response.text();
+                            const parser = new DOMParser();
+                            const xmlDoc = parser.parseFromString(text, "text/xml");
+                            const locations = Array.from(xmlDoc.getElementsByTagName("loc")).map(el => {
+                                return new URL(el.textContent).pathname.toLowerCase().replace(/\/$/, "");
                             });
-                            pagefind.init();
 
-                            // 3. Robust path splitting
-                            // Decodes URI (e.g., %20 to space) and splits by / or -
-                            const path = decodeURIComponent(window.location.pathname);
-                            const segments = path.split(/[\/-]/).filter(part => part.length > 1);
+                            // 2. Find the #1 Closest Match in Sitemap
+                            const closestMatch = locations
+                                .map(loc => ({ url: loc, distance: getEditDistance(currentPath, loc) }))
+                                .sort((a, b) => a.distance - b.distance)[0];
 
-                            if (segments.length > 0) {
-                                const fullQuery = segments.join(' ');
-                                const search = await pagefind.search(fullQuery);
+                            // 3. Convert that path into a search query (e.g., "/dev/downloads" -> "dev downloads")
+                            // If sitemap is empty or fetch fails, fallback to current path
+                            const refinedQuery = closestMatch 
+                                ? closestMatch.url.split(/[\/-]/).filter(p => p.length > 1).join(' ')
+                                : currentPath.split(/[\/-]/).filter(p => p.length > 1).join(' ');
 
-                                if (search.results && search.results.length > 0) {
+                            // 4. Use Pagefind to search for that corrected query
+                            const search = await pagefind.search(refinedQuery);
+                            const results = search.results;//.slice(0, 3);
+
+                            if (results.length > 0) {
                                 const suggestionContainer = document.getElementById('suggestions');
                                 const list = document.getElementById('suggestion-list');
                                 
-                                // Take top 3
-                                const topResults = search.results;//.slice(0, 3);
-
-                                for (const result of topResults) {
+                                for (const result of results) {
                                     const data = await result.data();
                                     const li = document.createElement('li');
                                     li.innerHTML = `<a href="${data.url}">${data.meta.title}</a>`;
                                     list.appendChild(li);
                                 }
-
                                 suggestionContainer.style.display = 'block';
-                                }
                             }
                         } catch (e) {
-                            console.error("Pagefind failed to load:", e);
+                            console.error("Suggestion error:", e);
                         }
                     }
 
-                    // Run the function
                     getSuggestions();
                 </script>
 
