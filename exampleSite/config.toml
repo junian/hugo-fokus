@@ -189,18 +189,18 @@ url = "https://www.junian.net"
 
 # Social footer
 
-[[params.social]]
+[[params.socials]]
 title = "rss"
 url = "https://example.com/index.xml"
 
-[[params.social]]
+[[params.socials]]
 title = "twitter"
 url = "https://twitter.com/"
 
-[[params.social]]
+[[params.socials]]
 title = "facebook"
 url = "https://facebook.com/"
 
-[[params.social]]
+[[params.socials]]
 title = "github"
 url = "https://github.com/"

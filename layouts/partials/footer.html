@@ -9,7 +9,7 @@
                 <div class="section text-center">
                     <ul class="list-inline">
                         {{- if isset .Site.Params "social" -}} 
-                        {{- range .Site.Params.social -}}
+                        {{- range .Site.Params.socials -}}
                             <li>
                                 <a href="{{- .url -}}" title="Visit {{ .title | humanize }} page" target="_blank" rel="me nofollow noreferrer">
                                     <span class="fa-stack fa-lg">
