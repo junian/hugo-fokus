@@ -1,0 +1,14 @@
+{{- $actions := .Site.Params.postActions -}}
+{{- if $actions -}}
+<div class="section-post-actions text-center">
+        {{- range $actions -}}
+        <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer">
+            {{- if .image -}}
+            <img src="{{ .image }}" alt="{{ .title | default .url }}" title="{{ .title | default "" }}" loading="lazy" />
+            {{- else -}}
+            <span class="post-action-label">{{ .title | default .url }}</span>
+            {{- end -}}
+        </a>
+        {{- end -}}
+</div>
+{{- end -}}
