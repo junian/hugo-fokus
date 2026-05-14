@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ end }}">
+<html lang="{{ with .Site.Language.Locale }}{{ . }}{{ end }}">
     {{- partial "head.html" . -}}
     <body>
         {{- partialCached "navbar.html" . -}} 

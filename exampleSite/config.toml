@@ -3,7 +3,7 @@
 ####################################
 
 baseURL = "https://fokus.junian.dev/"
-languageCode = "en-us"
+locale = "en-us"
 title = "fokus theme"
 
 pygmentsCodeFences = true

@@ -13,7 +13,7 @@
     "headline" : {{ .Title }},
     "description" : {{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }},
     "image" : {{ with .Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ with .Site.Params.images }}{{ range first 1 . }}{{ . }}{{ end }}{{ else }}{{ "" }}{{ end }}{{ end }},
-    "inLanguage" : {{ .Site.LanguageCode | default "en-us" }},
+    "inLanguage" : {{ .Site.Language.Locale | default "en-us" }},
     "author" : {{ $.Site.Params.Author.name }},
     "creator" : {{ $.Site.Params.Author.name }},
     "publisher": {
