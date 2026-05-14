@@ -83,6 +83,7 @@
     
     <!-- Set canonical link -->
     <link rel="canonical" href="{{ $canonical | safeURL }}" />
+    <link rel="alternate" href="{{ $canonical | safeURL }}" hreflang="x-default" />
 
     {{ with $.Param "redirect" }} 
     <!-- Redirect to external domain -->
