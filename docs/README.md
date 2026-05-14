@@ -3,7 +3,7 @@
 <p align="center">Fokus is a free starter template built with Hugo and Bootstrap, providing everything you need to start your Hugo project.</p>
 
 <p align="center">
-  See it in action: 🚀 <a target="_blank" href="https://hugo-fokus.junian.dev/" rel="nofollow">Demo</a> | 👨🏻‍💻 <a target="_blank" href="https://www.junian.net/">Junian.Net</a>
+  See it in action: 🚀 <a target="_blank" href="https://hugo-fokus.junian.dev/" rel="nofollow">Demo</a> | 👨🏻‍💻 <a target="_blank" href="https://www.junian.dev/">Junian.Dev</a>
 </p>
 
 <p align="center">
