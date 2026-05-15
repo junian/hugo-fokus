@@ -2,19 +2,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Disabled because Error: A document must not include both a meta element with an http-equiv attribute whose value is content-type, and a meta element with a charset attribute. -->
+    <!--
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    -->
     <meta name="robots" content="all">
     <!-- Verification -->
     {{- if .IsHome -}}{{- partialCached "meta/verification.html" . -}}{{- end -}}
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
     <meta name="author" content="{{ with $.Site.Params.Author.name }}{{.}}{{end}}">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}">
+    <link rel="manifest" href="/site.webmanifest">
     <!-- Schema -->
     {{- template "_internal/schema.html" . -}}
     <!-- Opengraph -->
@@ -40,7 +43,7 @@
     <!-- RSS -->
     {{ with .OutputFormats.Get "RSS" }}
     <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
-    <link rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}" />
+    <link rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
     {{ end }}
     <!--preconnect-->
     {{ range .Site.Params.preconnects }}
@@ -83,12 +86,12 @@
     {{- end }}
     
     <!-- Set canonical link -->
-    <link rel="canonical" href="{{ $canonical | safeURL }}" />
-    <link rel="alternate" href="{{ $canonical | safeURL }}" hreflang="x-default" />
+    <link rel="canonical" href="{{ $canonical | safeURL }}">
+    <link rel="alternate" href="{{ $canonical | safeURL }}" hreflang="x-default">
 
     {{ with $.Param "redirect" }} 
     <!-- Redirect to external domain -->
-    <meta http-equiv="refresh" content="0; url={{ . }}" />
+    <meta http-equiv="refresh" content="0; url={{ . }}">
     <script type="text/javascript">
         window.location.href = {{ . }};
     </script>
