@@ -1,11 +1,11 @@
 <footer class="h-card hidden">
     <div class="author-profile">
         <figure class="author-image">
-            <img alt="{{ with $.Site.Params.Author.name }}{{.}}{{end}}" class="u-photo" src="/favicon-32x32.png" data-gravatar="https://www.gravatar.com/avatar/{{ $.Site.Params.Author.email | md5 }}?s=256"
+            <img alt="{{ with $.Site.Params.Author.name }}{{.}}{{end}}" class="u-photo" src="https://github.com/junian.png" data-gravatar="https://www.gravatar.com/avatar/{{ $.Site.Params.Author.email | md5 }}?s=256"
                 title="{{ with $.Site.Params.Author.name }}{{.}}{{end}}">
         </figure>
         <a class="p-name u-url" href="{{ with $.Site.Params.Author.url }}{{.}}{{end}}" rel="author" title="author profile">
-            <h4>{{ with $.Site.Params.Author.name }}{{.}}{{end}}</h4>
+            <p>{{ with $.Site.Params.Author.name }}{{.}}{{end}}</p>
         </a>
         {{/*
         <p><a class="u-email hidden" href="mailto:{{ with $.Site.Params.Author.email }}{{ . }}{{ end }}">{{ with $.Site.Params.Author.email }}{{ . }}{{ end }}</a></p>
