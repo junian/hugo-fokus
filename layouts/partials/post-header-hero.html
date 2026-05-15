@@ -19,10 +19,10 @@
                         <span class='post-timestamp'>
                             <i class="fa fa-calendar">{{- partialCached (print "svg/calendar.svg") . -}}</i>&nbsp;
                             <a class='u-url' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
-                                <time class='dt-published' title='{{- .Date.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='datePublished'>
+                                <time class='dt-published' title='{{- .Date.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='datePublished' datetime='{{- .Date.Format "2006-01-02T15:04:05Z07:00" -}}'>
                                     {{- .Date.Format "Jan 2, 2006" -}}
                                 </time>
-                                <time class='dt-updated  hidden' title='{{- .Lastmod.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='dateModified'>
+                                <time class='dt-updated  hidden' title='{{- .Lastmod.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='dateModified' datetime='{{- .Lastmod.Format "2006-01-02T15:04:05Z07:00" -}}'>
                                     {{- .Lastmod.Format "Jan 2, 2006" -}}
                                 </time>
                             </a>
