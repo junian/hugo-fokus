@@ -4,7 +4,7 @@
         {{- range $actions -}}
         <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer">
             {{- if .image -}}
-            <img src="{{ .image }}" alt="{{ .title | default .url }}" title="{{ .title | default "" }}" loading="lazy" />
+            <img src="{{ .image }}" alt="{{ .title | default .url }}" title="{{ .title | default "" }}" loading="lazy">
             {{- else -}}
             <span class="post-action-label">{{ .title | default .url }}</span>
             {{- end -}}
