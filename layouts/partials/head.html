@@ -18,8 +18,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}">
     <link rel="manifest" href="/site.webmanifest">
-    <!-- Schema -->
-    {{- template "_internal/schema.html" . -}}
     <!-- Opengraph -->
     {{- template "_internal/opengraph.html" . -}}
     {{ with .Site.Params.Verification.facebook_app_id }}<meta content='{{ . }}' property='fb:app_id'>{{ end }}

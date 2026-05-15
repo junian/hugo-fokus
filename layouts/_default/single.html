@@ -7,7 +7,9 @@
 {{- partialCached "widget/journey-ads.html" . -}}
 
 <!-- Post Content -->
-<article class="h-entry">
+<article itemscope itemtype="https://schema.org/{{ $.Site.Param (printf "SchemaOrg.Types.%s" .Section) | default "Article" }}" class="h-entry">
+    <!-- Schema -->
+    {{- template "_internal/schema.html" . -}}
     {{- if eq .Params.type "page" -}}
         {{- partial "header.html" . -}}
     {{- else -}}
@@ -78,7 +80,7 @@
             </div>
         {{- end -}}
     </div>
-    <!-- <hr class='section-divider' /> -->
+    <!-- <hr class='section-divider'> -->
     {{- if ne .Params.type "page" -}}
         {{- partial "post-footer.html" . -}}
     {{- end -}}

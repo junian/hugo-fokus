@@ -8,16 +8,18 @@
 
 {{- partial "header.html" . -}}
 <!-- Main Content -->
-<div class="container">
+<div itemscope itemtype="https://schema.org/ItemList" class="container">
+    <!-- Schema -->
+    {{- template "_internal/schema.html" . -}}
     <div class="row">
         <div class="col-lg-2 col-md-1"></div>
         <div class="col-lg-8 col-md-10">
             <div id="search"></div>
             {{ range $index, $page := (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)).Pages }}
-            <div class="post-preview">
-                <a href="{{ .RelPermalink }}">
-                    <h2 class="post-title">{{ if $page.Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ with $page.PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}{{ $page.Title }}</h2>
-                    {{ with $page.Description }}<h3 class="post-subtitle">{{ . }}</h3>{{ end }}
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="post-preview">
+                <a itemprop="url" href="{{ .RelPermalink }}">
+                    <h2 itemprop="name" class="post-title">{{ if $page.Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ with $page.PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}{{ $page.Title }}</h2>
+                    {{ with $page.Description }}<h3 itemprop="description" class="post-subtitle">{{ . }}</h3>{{ end }}
                 </a>
                 <p class="post-meta">{{ $page.Date.Format "Jan 2, 2006" }}{{ with $page.ReadingTime }}<span> &middot; </span>{{ . }} min read{{ end }}</p>
             </div>
