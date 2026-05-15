@@ -6,7 +6,7 @@
 {{- template "_internal/google_analytics.html" . -}}
 {{- partialCached "widget-scripts.html" . -}}
 {{ if eq .Site.Params.useServiceWorker true }}
-<script type="text/javascript">
+<script>
     if ('serviceWorker' in navigator) {
         {{ printf "navigator.serviceWorker.register('%s', {scope: '/'});" $swjs.RelPermalink | safeJS }}
         window.addEventListener('load', function() {

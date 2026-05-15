@@ -90,14 +90,14 @@
     {{ with $.Param "redirect" }} 
     <!-- Redirect to external domain -->
     <meta http-equiv="refresh" content="0; url={{ . }}">
-    <script type="text/javascript">
+    <script>
         window.location.href = {{ . }};
     </script>
     {{ end }}
 
     {{ if $.Site.Params.Services.Netlify.IsRedirectPreviewUrl }}
     {{ with $.Site.Params.Services.Netlify.ProjectName }}
-    <script type="text/javascript">
+    <script>
         (function () {
             const netlifyProjectName = {{ . }};
             const previewDomain = `--${netlifyProjectName}.netlify.app`;
