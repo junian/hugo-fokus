@@ -2,7 +2,7 @@
   <figure>
     <img src="{{ .Destination | safeURL }}"
       {{- with .Text }} alt="{{ . }}"{{ end -}}
-      {{- with .Title }} title="{{ . }}"{{ end -}}
+      {{- with .Title }} title="{{ . }}"{{ end }}
       loading="lazy"
     >
     {{- with .Title -}}
@@ -14,7 +14,7 @@
 {{- else -}}
   <img src="{{ .Destination | safeURL }}"
     {{- with .Text }} alt="{{ . }}"{{ end -}}
-    {{- with .Title }} title="{{ . }}"{{ end -}}
+    {{- with .Title }} title="{{ . }}"{{ end }}
     loading="lazy"
   >
 {{- end -}}
