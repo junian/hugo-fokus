@@ -1,4 +1,4 @@
-<hr />
+<hr>
 <div class="section go-social text-center">
     {{ if .Site.Params.Widget.socialshare.twitter }}<a class="btn btn-primary btn-tw-share" href="https://twitter.com/share?text={{ .Title }}&amp;url={{ .Permalink }}" target="_blank"><i class="fa fa-twitter">{{ partialCached (printf "svg/%s.svg" "twitter") . }}</i>&nbsp;Tweet</a>{{ end }}
     {{ if .Site.Params.Widget.socialshare.facebook }}<a class="btn btn-primary btn-fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank"><i class="fa fa-facebook">{{ partialCached (printf "svg/%s.svg" "facebook") . }}</i>&nbsp;Post</a>{{ end }}

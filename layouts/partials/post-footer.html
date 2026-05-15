@@ -4,7 +4,7 @@
             <div class="col-lg-2 col-md-1"></div>
             <div class="col-lg-8 col-md-10">
                 {{ partialCached "widget/actions.html" . }}
-                <hr />
+                <hr>
                 <!-- Blockadblock message -->
                 {{ if .Site.Params.Widget.blockAdBlock }}
                     {{ partialCached "widget/blockadblock.html" . }}
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <!-- Content and Code License -->
-                <hr />
+                <hr>
                 {{ if $.Param "license.visible" }}
                 <div class="section-license smaller">
                     <p>{{ partialCached "widget/license.html" . }}</p>
