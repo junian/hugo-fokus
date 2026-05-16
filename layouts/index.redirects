@@ -9,7 +9,7 @@
   {{- printf "%-75s %-75s 301!\n" $source $target -}}
 {{- end }}
 
-# Custom redirects
+# Custom redirects and proxies
 
 {{ range .Site.Params.Redirects }}
   {{- $source := index . 0 -}}
@@ -21,24 +21,30 @@
 
 # Regular pages redirects
 
+{{ if .Site.Params.IsPageRedirectEnabled }}
 {{- range $p := .Site.Pages -}}
 {{ range .Aliases }}
 {{ . | printf "%-75s" | relURL }} {{ $p.RelPermalink | printf "%-75s" }} {{ printf "301!" -}}
 {{ end -}}
 {{- end }}
+{{ end }}
 
 # External pages redirects
 
+{{ if .Site.Params.IsPageRedirectEnabled }}
 {{- range $p := .Site.Pages -}}
 {{ with .Param "redirect" }}
 {{ $p.RelPermalink | printf "%-75s" }} {{ . | printf "%-75s" | relURL }} {{ printf "301!" -}}
 {{ end -}}
 {{- end }}
+{{ end }}
 
 # External pages proxy
 
+{{ if .Site.Params.IsPageProxyEnabled }}
 {{- range $p := .Site.Pages -}}
 {{ with .Param "proxy" }}
 {{ printf "%-75s" (print $p.RelPermalink "*") }} {{ printf " %-75s" (. | printf "%s:splat" | relURL) }} {{ printf "200" -}}
 {{ end -}}
 {{- end }}
+{{ end }}
