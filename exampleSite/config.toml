@@ -185,13 +185,13 @@ url = "/about/"
 
 [[params.menu.footer]]
 title = "External Link"
-url = "https://www.junian.net"
+url = "https://www.junian.dev"
 
 # Social footer
 
 [[params.socials]]
 title = "rss"
-url = "https://example.com/index.xml"
+url = "https://hugo-fokus.netlify.app/index.xml"
 
 [[params.socials]]
 title = "twitter"
