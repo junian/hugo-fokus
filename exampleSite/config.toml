@@ -2,7 +2,7 @@
 #! Put Hugo built-in config here  !#
 ####################################
 
-baseURL = "https://fokus.junian.dev/"
+baseURL = "https://hugo-fokus.netlify.app/"
 locale = "en-us"
 title = "fokus theme"
 
