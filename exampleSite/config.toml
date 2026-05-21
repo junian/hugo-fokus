@@ -139,7 +139,7 @@ contentUrl = "http://creativecommons.org/licenses/by/4.0/"
 code = "MIT License"
 codeUrl = "https://opensource.org/licenses/MIT"
 
-[params.adsense]
+[params.services.googleAdsense]
 client = "ca-pub-12345"
 slot = "12345"
 inArticleSlot = "12345"

@@ -1,13 +1,13 @@
-{{ if .Site.Params.Adsense.isEnabled }}
+{{ if .Site.Params.Services.GoogleAdsense.isEnabled }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
 <div class='section-ad'>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.Site.Params.Adsense.client}}"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.Site.Params.Services.GoogleAdsense.client}}"
         crossorigin="anonymous"></script>
     <!-- right display ad responsive -->
     <ins class="adsbygoogle"
         style="display:block"
-        data-ad-client="{{.Site.Params.Adsense.client}}"
-        data-ad-slot="{{ if .Site.Params.Adsense.rightDisplaySlot }}{{.Site.Params.Adsense.rightDisplaySlot}}{{ else }}{{.Site.Params.Adsense.displaySlot}}{{ end }}"
+        data-ad-client="{{.Site.Params.Services.GoogleAdsense.client}}"
+        data-ad-slot="{{ if .Site.Params.Services.GoogleAdsense.rightDisplaySlot }}{{.Site.Params.Services.GoogleAdsense.rightDisplaySlot}}{{ else }}{{.Site.Params.Services.GoogleAdsense.displaySlot}}{{ end }}"
         data-ad-format="auto"
         data-full-width-responsive="true"></ins>
     <script>

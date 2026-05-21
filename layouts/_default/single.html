@@ -22,7 +22,7 @@
                 <div class="col-lg-8 col-md-10">
                     <div id="search"></div>
                     <!-- Show Top Adsense -->
-                    {{- if $.Param "adsense.showTop" -}}
+                    {{- if $.Param "Services.GoogleAdsense.showTop" -}}
                         {{- partialCached "widget/adsense-responsive-top.html" . -}}
                     {{- end -}}
                 </div>
@@ -33,7 +33,7 @@
             <div class="col-lg-2 col-md-1">
                 {{- if ne .Params.type "page" -}}
                     <!-- Show Left Adsense -->
-                    {{- if $.Param "adsense.showLeft" -}}
+                    {{- if $.Param "Services.GoogleAdsense.showLeft" -}}
                         {{- partialCached "widget/adsense-responsive-left.html" . -}}
                     {{- end -}}
                 {{- end -}}
@@ -51,7 +51,7 @@
 
                     {{ .Scratch.Set "finalContent" .Content }}
                     
-                    {{ if (and ($.Param "adsense.showMiddle") (ne .Params.type "page")) }}
+                    {{ if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) }}
                         {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/adsense-inarticle.html" .) | safeHTML }}
                     {{ else }}
                         {{ .Scratch.Get "finalContent" }}
@@ -61,7 +61,7 @@
             <div class="col-lg-2 col-md-1">
                 {{- if ne .Params.type "page" -}}
                     <!-- Show Right Adsense -->
-                    {{- if $.Param "adsense.showRight" -}}
+                    {{- if $.Param "Services.GoogleAdsense.showRight" -}}
                         {{- partialCached "widget/adsense-responsive-right.html" . -}}
                     {{- end -}}
                 {{- end -}}
@@ -72,7 +72,7 @@
                 <div class="col-lg-2 col-md-1"></div>
                 <div class="col-lg-8 col-md-10">
                 <!-- Show Bottom Adsense -->
-                {{ if $.Param "adsense.showBottom" }}
+                {{ if $.Param "Services.GoogleAdsense.showBottom" }}
                     {{ partialCached "widget/adsense-responsive-bottom.html" . }}
                 {{ end }}
                 </div>

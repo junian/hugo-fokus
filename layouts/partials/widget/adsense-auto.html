@@ -1,12 +1,8 @@
-{{ if .Site.Params.Adsense.isEnabled }}
+{{ if .Site.Params.Services.GoogleAdsense.isEnabled }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.Site.Params.Adsense.client}}"
+{{ with .Site.Params.Services.GoogleAdsense.client }}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
      crossorigin="anonymous"></script>
-{{ else }}
-<!--
-<blockquote role="alert">
-    <p><strong><span style="color: darkorange">[ad]</span> Attention! </strong>Google Auto Ads not available by default when the website is previewed locally.</p>
-</blockquote>
--->
+{{ end }}
 {{ end }}
 {{ end }}

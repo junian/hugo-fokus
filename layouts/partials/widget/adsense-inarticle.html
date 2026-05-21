@@ -1,14 +1,14 @@
-{{ if .Site.Params.Adsense.isEnabled }}
+{{ if .Site.Params.Services.GoogleAdsense.isEnabled }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
 <div class="section-ad">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.Site.Params.Adsense.client}}"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{.Site.Params.Services.GoogleAdsense.client}}"
         crossorigin="anonymous"></script>
     <ins class="adsbygoogle"
         style="display:block; text-align:center;"
         data-ad-layout="in-article"
         data-ad-format="fluid"
-        data-ad-client="{{.Site.Params.Adsense.client}}"
-        data-ad-slot="{{.Site.Params.Adsense.inArticleSlot}}"></ins>
+        data-ad-client="{{.Site.Params.Services.GoogleAdsense.client}}"
+        data-ad-slot="{{.Site.Params.Services.GoogleAdsense.inArticleSlot}}"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
