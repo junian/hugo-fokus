@@ -1,4 +1,5 @@
 {{ if site.Params.Services.MicrosoftClarity.IsEnabled }}
+{{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
 	{{- with site.Params.Services.MicrosoftClarity.ProjectID }}
 <script>
     (function(c,l,a,r,i,t,y){
@@ -8,4 +9,5 @@
     })(window, document, "clarity", "script", "{{ . }}");
 </script>
 	{{- end }}
+{{ end }}
 {{- end -}}

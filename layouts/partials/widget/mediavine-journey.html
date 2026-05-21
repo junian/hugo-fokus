@@ -1,6 +1,6 @@
-{{ if .Site.Params.Journey.IsEnabled }}
+{{ if .Site.Params.MediavineJourney.IsEnabled }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-{{ with .Site.Params.Journey.SiteID }}
+{{ with .Site.Params.MediavineJourney.SiteID }}
 <script async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/{{ . }}.js"></script>
 {{ end }}
 {{ else }}
