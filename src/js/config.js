@@ -16,7 +16,8 @@ var config = {
     // If true the cookie will be created with the secure flag. Secure cookies will only be transmitted via HTTPS.
     secure: false
   },
-  cookie_consent_url: "/privacy-policy#cookies-and-web-beacons"
+  cookie_consent_url: "{{.Site.Params.CookieConsent.Url}}",
+  is_cookie_consent_enabled: "{{.Site.Params.CookieConsent.IsEnabled}}"
 };
 
 export {config};

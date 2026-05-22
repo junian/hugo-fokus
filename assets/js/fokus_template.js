@@ -30,7 +30,7 @@
                       var e = u()(t);
                       return s("cut"), e
                     },
-                    f = function(t, e) {
+                    d = function(t, e) {
                       var n = function(t) {
                         var e = "rtl" === document.documentElement.getAttribute("dir"),
                           n = document.createElement("textarea");
@@ -42,12 +42,12 @@
                       var o = u()(n);
                       return s("copy"), n.remove(), o
                     },
-                    d = function(t) {
+                    f = function(t) {
                       var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {
                           container: document.body
                         },
                         n = "";
-                      return "string" == typeof t ? n = f(t, e) : t instanceof HTMLInputElement && !["text", "search", "url", "tel", "password"].includes(null == t ? void 0 : t.type) ? n = f(t.value, e) : (n = u()(t), s("copy")), n
+                      return "string" == typeof t ? n = d(t, e) : t instanceof HTMLInputElement && !["text", "search", "url", "tel", "password"].includes(null == t ? void 0 : t.type) ? n = d(t.value, e) : (n = u()(t), s("copy")), n
                     };
 
                   function p(t) {
@@ -159,9 +159,9 @@
                                 if ("copy" === n && r.hasAttribute("disabled")) throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
                                 if ("cut" === n && (r.hasAttribute("readonly") || r.hasAttribute("disabled"))) throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes')
                               }
-                              return i ? d(i, {
+                              return i ? f(i, {
                                 container: o
-                              }) : r ? "cut" === n ? l(r) : d(r, {
+                              }) : r ? "cut" === n ? l(r) : f(r, {
                                 container: o
                               }) : void 0
                             }({
@@ -206,7 +206,7 @@
                           var e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {
                             container: document.body
                           };
-                          return d(t, e)
+                          return f(t, e)
                         }
                       }, {
                         key: "cut",
@@ -419,35 +419,43 @@
       function o(t) {
         t && t.parentNode && t.parentNode.removeChild(t)
       }
-      var r = "cookieconsent_status",
-        i = "/",
-        c = "",
-        a = 365,
-        u = !1;
+      var r = {
+        disqus_shortname: "{{.Site.Config.Services.Disqus.Shortname}}",
+        cookie: {
+          name: "cookieconsent_status",
+          path: "/",
+          domain: "",
+          expiryDays: 365,
+          secure: !1
+        },
+        cookie_consent_url: "{{.Site.Params.CookieConsent.Url}}",
+        is_cookie_consent_enabled: "{{.Site.Params.CookieConsent.IsEnabled}}"
+      };
 
-      function s(t, e) {
+      function i(t, e) {
         t.style.opacity = e, t.style.filter = `alpha(opacity=${100*e|0}})`
       }
 
-      function l(t) {
+      function c(t) {
         let e = 1;
-        s(t, e);
+        i(t, e);
         let n = +new Date;
         const r = () => {
-          e -= (new Date - n) / 400, s(t, e), n = +new Date, e > 0 ? window.requestAnimationFrame && requestAnimationFrame(r) || setTimeout(r, 16) : e <= 0 && o(t)
+          e -= (new Date - n) / 400, i(t, e), n = +new Date, e > 0 ? window.requestAnimationFrame && requestAnimationFrame(r) || setTimeout(r, 16) : e <= 0 && o(t)
         };
         r()
       }
 
-      function f(t, e, n) {
+      function a(t, e, n) {
         t.addEventListener ? t.addEventListener(e, n, !1) : t.attachEvent ? t.attachEvent("on" + e, n) : t["on" + e] = n
       }
-      const d = document,
-        p = "{{.Site.Config.Services.Disqus.Shortname}}",
-        y = d.getElementById("disqus_thread");
-      const m = document;
-      var v;
-      v = () => {
+      const u = document,
+        s = r.disqus_shortname,
+        l = u.getElementById("disqus_thread");
+      const d = `<div class="navbar-fixed-bottom navbar-cookie">\n  <div class="container-fluid">\n    <div class="row">\n      <div class="col-sm-10 col-md-11">\n        <p class="navbar-text">This website uses cookies to ensure you get the best experience on our website.\n          <a href="${r.cookie_consent_url}" aria-label="learn more about cookies" role="button" tabindex="0" rel="noopener noreferrer nofollow" target="_blank" class="lined-link">Learn more</a>\n        </p>\n      </div>\n      <div class="col-sm-2 col-md-1">\n        <button id="btnAcceptCookie" type="button" class="btn btn-default btn-primary navbar-btn btn-block" aria-label="dismiss cookie message" role="button">\n          Got It!\n        </button>\n      </div>\n    </div>\n  </div>\n</div>`,
+        f = document;
+      var p;
+      p = () => {
         (function() {
           if (!e().isSupported()) {
             const t = document.querySelectorAll(".highlight > .btn-clipboard");
@@ -469,39 +477,39 @@
           })
         })(),
         function() {
-          const t = d.getElementById("btn_load_disqus_thread");
-          t && f(t, "click", () => {
-            p && y && (() => {
-              const t = d.createElement("script");
-              t.src = "https://" + p + ".disqus.com/embed.js", t.setAttribute("data-timestamp", +new Date), (d.head || d.body).appendChild(t)
-            })(), l(t)
+          const t = u.getElementById("btn_load_disqus_thread");
+          t && a(t, "click", () => {
+            s && l && (() => {
+              const t = u.createElement("script");
+              t.src = "https://" + s + ".disqus.com/embed.js", t.setAttribute("data-timestamp", +new Date), (u.head || u.body).appendChild(t)
+            })(), c(t)
           })
-        }(), p && y && (() => {
-          const t = d.createElement("script");
-          t.type = "text/javascript", t.async = !0, t.src = "https://" + p + ".disqus.com/count.js", t.id = "dsq-count-scr", (d.body || d.head).appendChild(t)
-        })(), m.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/) || function() {
-          const t = (e = '<div class="navbar-fixed-bottom navbar-cookie">\n  <div class="container-fluid">\n    <div class="row">\n      <div class="col-sm-10 col-md-11">\n        <p class="navbar-text">This website uses cookies to ensure you get the best experience on our website.\n          <a href="/privacy-policy#cookies-and-web-beacons" aria-label="learn more about cookies" role="button" tabindex="0" rel="noopener noreferrer nofollow" target="_blank" class="lined-link">Learn more</a>\n        </p>\n      </div>\n      <div class="col-sm-2 col-md-1">\n        <button id="btnAcceptCookie" type="button" class="btn btn-default btn-primary navbar-btn btn-block" aria-label="dismiss cookie message" role="button">\n          Got It!\n        </button>\n      </div>\n    </div>\n  </div>\n</div>', (n = document.createElement("div")).innerHTML = e.trim(), n.firstChild);
+        }(), s && l && (() => {
+          const t = u.createElement("script");
+          t.type = "text/javascript", t.async = !0, t.src = "https://" + s + ".disqus.com/count.js", t.id = "dsq-count-scr", (u.body || u.head).appendChild(t)
+        })(), "true" === r.is_cookie_consent_enabled.toString().trim().toLowerCase() && (f.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/) || function() {
+          const t = (e = d, (n = document.createElement("div")).innerHTML = e.trim(), n.firstChild);
           var e, n;
-          s(t, 0), m.body.appendChild(t),
+          i(t, 0), f.body.appendChild(t),
             function(t) {
               let e = 0;
-              s(t, e);
+              i(t, e);
               let n = +new Date;
               const o = () => {
-                e += (new Date - n) / 400, s(t, e), n = +new Date, e < 1 ? window.requestAnimationFrame && requestAnimationFrame(o) || setTimeout(o, 16) : e >= 1 && s(t, 1)
+                e += (new Date - n) / 400, i(t, e), n = +new Date, e < 1 ? window.requestAnimationFrame && requestAnimationFrame(o) || setTimeout(o, 16) : e >= 1 && i(t, 1)
               };
               o()
-            }(t), f(document.getElementById("btnAcceptCookie"), "click", () => {
+            }(t), a(document.getElementById("btnAcceptCookie"), "click", () => {
               ! function(t, e, n, o, r, i) {
                 var c = new Date;
                 c.setDate(c.getDate() + (n || 365));
                 var a = [t + "=dismiss", "expires=" + c.toUTCString(), "path=" + (r || "/")];
                 o && a.push("domain=" + o), i && a.push("secure"), document.cookie = a.join(";")
-              }(r, 0, a, c, i, u), l(t)
+              }(r.cookie.name, 0, r.cookie.expiryDays, r.cookie.domain, r.cookie.path, r.cookie.secure), c(t)
             })
-        }()
-      }, "loading" !== document.readyState ? v() : document.addEventListener ? document.addEventListener("DOMContentLoaded", v) : document.attachEvent("onreadystatechange", () => {
-        "loading" !== document.readyState && v()
+        }())
+      }, "loading" !== document.readyState ? p() : document.addEventListener ? document.addEventListener("DOMContentLoaded", p) : document.attachEvent("onreadystatechange", () => {
+        "loading" !== document.readyState && p()
       })
     }()
 }();

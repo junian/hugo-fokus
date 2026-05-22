@@ -38,8 +38,12 @@ function loadCookieConsent() {
 }
 
 function embedCookieConsent() {
+  if(config.is_cookie_consent_enabled.toString().trim().toLowerCase() !== "true")
+    return;
+
   if (d.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/))
     return;
+  
   loadCookieConsent();
 }
 
