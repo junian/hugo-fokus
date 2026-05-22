@@ -1,7 +1,7 @@
 {{ if .Site.Params.Services.MediavineJourney.IsEnabled }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
 {{ with .Site.Params.Services.MediavineJourney.SiteID }}
-<script async="async" data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/{{ . }}.js"></script>
+<script async="async" data-noptimize="1" data-cfasync="false" src="https://scripts.scriptwrapper.com/tags/{{ . }}.js"></script>
 {{ end }}
 {{ end }}
 {{ end }}
