@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <!-- Google Auto AdSense -->
-{{- partialCached "widget/adsense-auto.html" . -}}
+{{- partialCached "widget/google-adsense-auto.html" . -}}
 
 <!-- Journey MV Ads -->
 {{- partialCached "widget/mediavine-journey.html" . -}}
@@ -23,7 +23,7 @@
                     <div id="search"></div>
                     <!-- Show Top Adsense -->
                     {{- if $.Param "Services.GoogleAdsense.showTop" -}}
-                        {{- partialCached "widget/adsense-responsive-top.html" . -}}
+                        {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
                     {{- end -}}
                 </div>
                 <div class="col-lg-2 col-md-1"></div>
@@ -34,7 +34,7 @@
                 {{- if ne .Params.type "page" -}}
                     <!-- Show Left Adsense -->
                     {{- if $.Param "Services.GoogleAdsense.showLeft" -}}
-                        {{- partialCached "widget/adsense-responsive-left.html" . -}}
+                        {{- partialCached "widget/google-adsense-responsive-left.html" . -}}
                     {{- end -}}
                 {{- end -}}
             </div>
@@ -52,7 +52,7 @@
                     {{ .Scratch.Set "finalContent" .Content }}
                     
                     {{ if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) }}
-                        {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/adsense-inarticle.html" .) | safeHTML }}
+                        {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/google-adsense-inarticle.html" .) | safeHTML }}
                     {{ else }}
                         {{ .Scratch.Get "finalContent" }}
                     {{ end }}
@@ -62,7 +62,7 @@
                 {{- if ne .Params.type "page" -}}
                     <!-- Show Right Adsense -->
                     {{- if $.Param "Services.GoogleAdsense.showRight" -}}
-                        {{- partialCached "widget/adsense-responsive-right.html" . -}}
+                        {{- partialCached "widget/google-adsense-responsive-right.html" . -}}
                     {{- end -}}
                 {{- end -}}
             </div>
@@ -73,7 +73,7 @@
                 <div class="col-lg-8 col-md-10">
                 <!-- Show Bottom Adsense -->
                 {{ if $.Param "Services.GoogleAdsense.showBottom" }}
-                    {{ partialCached "widget/adsense-responsive-bottom.html" . }}
+                    {{ partialCached "widget/google-adsense-responsive-bottom.html" . }}
                 {{ end }}
                 </div>
                 <div class="col-lg-2 col-md-1"></div>
