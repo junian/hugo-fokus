@@ -70,10 +70,16 @@ $link-hover-decoration: none;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif:       "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+$old-font-family-sans-serif : "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif     : "Open Sans", -apple-system, BlinkMacSystemFont, Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+
+$old-font-family-serif:   "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-serif:       Charter, 'Bitstream Charter', 'Sitka Text', Cambria, "Times New Roman", Times, serif;
+
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$old-font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-monospace:       ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', 'Courier New', monospace !default;
+
 $font-family-base:        $font-family-sans-serif !default;
 
 $font-size-base:          14px !default;
