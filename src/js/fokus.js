@@ -3,9 +3,11 @@ import {ready} from "./vanilla/ready";
 import {embedClipboardJS} from "./embed-clipboard";
 import {loadDisqusCommentCount, onButtonLoadDisqusClicked} from "./disqus-ondemand";
 import {embedCookieConsent} from "./embed-native-cookie-consent";
+import { enforceCanonicalURL } from "./enforce-canonical";
 
 (() => {
   ready(() => {
+    enforceCanonicalURL();
     embedClipboardJS();
     onButtonLoadDisqusClicked();
     loadDisqusCommentCount();

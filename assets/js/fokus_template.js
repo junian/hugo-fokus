@@ -15,9 +15,9 @@
                   var o = n(279),
                     r = n.n(o),
                     i = n(370),
-                    c = n.n(i),
-                    a = n(817),
-                    u = n.n(a);
+                    a = n.n(i),
+                    c = n(817),
+                    u = n.n(c);
 
                   function s(t) {
                     try {
@@ -58,15 +58,15 @@
                     }, p(t)
                   }
 
-                  function y(t) {
-                    return y = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
+                  function m(t) {
+                    return m = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t) {
                       return typeof t
                     } : function(t) {
                       return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t
-                    }, y(t)
+                    }, m(t)
                   }
 
-                  function m(t, e) {
+                  function y(t, e) {
                     for (var n = 0; n < e.length; n++) {
                       var o = e[n];
                       o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o)
@@ -100,7 +100,7 @@
                           }
                         }), e && v(t, e)
                       }(u, t);
-                      var e, n, o, r, i, a = (r = u, i = function() {
+                      var e, n, o, r, i, c = (r = u, i = function() {
                         if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
                         if (Reflect.construct.sham) return !1;
                         if ("function" == typeof Proxy) return !0;
@@ -115,7 +115,7 @@
                           var o = b(this).constructor;
                           t = Reflect.construct(n, arguments, o)
                         } else t = n.apply(this, arguments);
-                        return !(e = t) || "object" !== y(e) && "function" != typeof e ? function(t) {
+                        return !(e = t) || "object" !== m(e) && "function" != typeof e ? function(t) {
                           if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
                           return t
                         }(this) : e
@@ -125,19 +125,19 @@
                         var n;
                         return function(t, e) {
                           if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
-                        }(this, u), (n = a.call(this)).resolveOptions(e), n.listenClick(t), n
+                        }(this, u), (n = c.call(this)).resolveOptions(e), n.listenClick(t), n
                       }
                       return e = u, n = [{
                         key: "resolveOptions",
                         value: function() {
                           var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-                          this.action = "function" == typeof t.action ? t.action : this.defaultAction, this.target = "function" == typeof t.target ? t.target : this.defaultTarget, this.text = "function" == typeof t.text ? t.text : this.defaultText, this.container = "object" === y(t.container) ? t.container : document.body
+                          this.action = "function" == typeof t.action ? t.action : this.defaultAction, this.target = "function" == typeof t.target ? t.target : this.defaultTarget, this.text = "function" == typeof t.text ? t.text : this.defaultText, this.container = "object" === m(t.container) ? t.container : document.body
                         }
                       }, {
                         key: "listenClick",
                         value: function(t) {
                           var e = this;
-                          this.listener = c()(t, "click", function(t) {
+                          this.listener = a()(t, "click", function(t) {
                             return e.onClick(t)
                           })
                         }
@@ -223,7 +223,7 @@
                             n = n && !!document.queryCommandSupported(t)
                           }), n
                         }
-                      }], n && m(e.prototype, n), o && m(e, o), u
+                      }], n && y(e.prototype, n), o && y(e, o), u
                     }(r()),
                     w = g
                 },
@@ -243,10 +243,10 @@
                   var o = n(828);
 
                   function r(t, e, n, o, r) {
-                    var c = i.apply(this, arguments);
-                    return t.addEventListener(n, c, r), {
+                    var a = i.apply(this, arguments);
+                    return t.addEventListener(n, a, r), {
                       destroy: function() {
-                        t.removeEventListener(n, c, r)
+                        t.removeEventListener(n, a, r)
                       }
                     }
                   }
@@ -348,7 +348,7 @@
                         o = n[t],
                         r = [];
                       if (o && e)
-                        for (var i = 0, c = o.length; i < c; i++) o[i].fn !== e && o[i].fn._ !== e && r.push(o[i]);
+                        for (var i = 0, a = o.length; i < a; i++) o[i].fn !== e && o[i].fn._ !== e && r.push(o[i]);
                       return r.length ? n[t] = r : delete n[t], this
                     }
                   }, t.exports = e, t.exports.TinyEmitter = e
@@ -421,6 +421,8 @@
       }
       var r = {
         disqus_shortname: "{{.Site.Config.Services.Disqus.Shortname}}",
+        base_url: "{{.Site.BaseURL}}",
+        is_redirect_to_canonical: "{{.Site.Params.IsRedirectToCanonical}}",
         cookie: {
           name: "cookieconsent_status",
           path: "/",
@@ -436,7 +438,7 @@
         t.style.opacity = e, t.style.filter = `alpha(opacity=${100*e|0}})`
       }
 
-      function c(t) {
+      function a(t) {
         let e = 1;
         i(t, e);
         let n = +new Date;
@@ -446,7 +448,7 @@
         r()
       }
 
-      function a(t, e, n) {
+      function c(t, e, n) {
         t.addEventListener ? t.addEventListener(e, n, !1) : t.attachEvent ? t.attachEvent("on" + e, n) : t["on" + e] = n
       }
       const u = document,
@@ -456,7 +458,16 @@
         f = document;
       var p;
       p = () => {
-        (function() {
+        ! function() {
+          if ("true" === r.is_redirect_to_canonical.toString().trim().toLowerCase()) {
+            var t = new URL(r.base_url),
+              e = t.hostname,
+              n = window.location.hostname,
+              o = "localhost" === n || "127.0.0.1" === n || -1 !== n.indexOf("192.168.");
+            n === e || o || window.location.replace(t.origin + window.location.pathname + window.location.search)
+          }
+        }(),
+        function() {
           if (!e().isSupported()) {
             const t = document.querySelectorAll(".highlight > .btn-clipboard");
             return void Array.prototype.forEach.call(t, (t, e) => {
@@ -475,14 +486,14 @@
               }(e, "msg-clipboard--active"), e.setAttribute("data-cbtimer", "")
             }, 2e3).toString()))
           })
-        })(),
+        }(),
         function() {
           const t = u.getElementById("btn_load_disqus_thread");
-          t && a(t, "click", () => {
+          t && c(t, "click", () => {
             s && l && (() => {
               const t = u.createElement("script");
               t.src = "https://" + s + ".disqus.com/embed.js", t.setAttribute("data-timestamp", +new Date), (u.head || u.body).appendChild(t)
-            })(), c(t)
+            })(), a(t)
           })
         }(), s && l && (() => {
           const t = u.createElement("script");
@@ -499,13 +510,13 @@
                 e += (new Date - n) / 400, i(t, e), n = +new Date, e < 1 ? window.requestAnimationFrame && requestAnimationFrame(o) || setTimeout(o, 16) : e >= 1 && i(t, 1)
               };
               o()
-            }(t), a(document.getElementById("btnAcceptCookie"), "click", () => {
+            }(t), c(document.getElementById("btnAcceptCookie"), "click", () => {
               ! function(t, e, n, o, r, i) {
-                var c = new Date;
-                c.setDate(c.getDate() + (n || 365));
-                var a = [t + "=dismiss", "expires=" + c.toUTCString(), "path=" + (r || "/")];
-                o && a.push("domain=" + o), i && a.push("secure"), document.cookie = a.join(";")
-              }(r.cookie.name, 0, r.cookie.expiryDays, r.cookie.domain, r.cookie.path, r.cookie.secure), c(t)
+                var a = new Date;
+                a.setDate(a.getDate() + (n || 365));
+                var c = [t + "=dismiss", "expires=" + a.toUTCString(), "path=" + (r || "/")];
+                o && c.push("domain=" + o), i && c.push("secure"), document.cookie = c.join(";")
+              }(r.cookie.name, 0, r.cookie.expiryDays, r.cookie.domain, r.cookie.path, r.cookie.secure), a(t)
             })
         }())
       }, "loading" !== document.readyState ? p() : document.addEventListener ? document.addEventListener("DOMContentLoaded", p) : document.attachEvent("onreadystatechange", () => {
