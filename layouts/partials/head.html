@@ -95,29 +95,6 @@
     </script>
     {{ end }}
 
-    {{ if $.Site.Params.Services.Netlify.IsRedirectPreviewUrl }}
-    {{ with $.Site.Params.Services.Netlify.ProjectName }}
-    <script>
-        (function () {
-            const netlifyProjectName = {{ . }};
-            const previewDomain = `--${netlifyProjectName}.netlify.app`;
-            if (window.location.hostname.endsWith(previewDomain)) {
-
-                const baseUrlStr = {{ $.Site.BaseURL }};
-                const baseUrl = new URL(baseUrlStr);
-                const targetUrl = new URL(window.location.href);
-
-                targetUrl.hostname = baseUrl.hostname;
-                targetUrl.protocol = baseUrl.protocol;
-
-                // location.replace(targetUrl.toString());
-                window.location.href = targetUrl.toString();
-            }
-        })();
-    </script>
-    {{ end }}
-    {{ end }}
-
     {{ if .Param "math" }}
         {{ partialCached "math.html" . }}
     {{ end }}
