@@ -32,6 +32,10 @@ hr {
     ul,
     ol {
         font-family: $font-family-serif;
+    }
+    > p,
+    > ul,
+    > ol {
         @extend .section;
     }
     p {

@@ -2554,9 +2554,9 @@ img::selection {
   padding: 10px 5px;
 }
 
-.section, .e-content p,
-.e-content ul,
-.e-content ol {
+.section, .e-content > p,
+.e-content > ul,
+.e-content > ol {
   margin: 30px 0;
 }
 
