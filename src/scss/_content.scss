@@ -151,6 +151,8 @@ hr {
     details {
         > summary:first-of-type {
             display: list-item;
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
     }
 }

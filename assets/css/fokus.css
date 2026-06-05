@@ -417,6 +417,8 @@ hr.section-divider:before, .e-content hr:before {
 }
 .e-content details > summary:first-of-type {
   display: list-item;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .highlight pre {
