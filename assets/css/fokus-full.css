@@ -2910,6 +2910,9 @@ hr.section-divider:before, .e-content hr:before {
   line-height: 1.4;
   white-space: nowrap;
 }
+.e-content details > summary:first-of-type {
+  display: list-item;
+}
 
 .highlight pre {
   padding: 15px;

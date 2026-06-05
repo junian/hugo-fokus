@@ -148,4 +148,9 @@ hr {
         line-height: 1.4;  
         white-space: nowrap;  
     }
+    details {
+        > summary:first-of-type {
+            display: list-item;
+        }
+    }
 }
