@@ -2915,6 +2915,7 @@ hr.section-divider:before, .e-content hr:before {
   margin-top: 15px;
   margin-bottom: 15px;
   cursor: pointer;
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Times New Roman", Times, serif;
 }
 
 .highlight pre {
