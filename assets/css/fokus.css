@@ -419,6 +419,7 @@ hr.section-divider:before, .e-content hr:before {
   display: list-item;
   margin-top: 15px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .highlight pre {
