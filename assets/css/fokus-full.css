@@ -2566,6 +2566,9 @@ img::selection {
 .section-related h2 {
   font-size: 36px;
 }
+.section-related h3 {
+  font-size: 28px;
+}
 
 .section-ad {
   margin: 15px 0px;
@@ -2866,6 +2869,7 @@ hr.section-divider:before, .e-content hr:before {
   margin: 60px 0 30px 0;
 }
 .e-content h3 {
+  font-size: 28px;
   margin: 50px 0 30px 0;
 }
 .e-content a img:hover, .e-content a img:focus {
