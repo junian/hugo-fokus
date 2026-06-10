@@ -1,10 +1,12 @@
 {{- if .IsBlock -}}
   <figure>
-    <img src="{{ .Destination | safeURL }}"
-      {{- with .Text }} alt="{{ . }}"{{ end -}}
-      {{- with .Title }} title="{{ . }}"{{ end }}
-      loading="lazy"
-    >
+    <a href="{{ .Destination | safeURL }}" data-lightbox>
+      <img src="{{ .Destination | safeURL }}"
+        {{- with .Text }} alt="{{ . }}"{{ end -}}
+        {{- with .Title }} title="{{ . }}"{{ end }}
+        loading="lazy"
+      >
+    </a>
     {{- with .Title -}}
     <figcaption>{{ . }}</figcaption>
     {{- else with .Text -}}
