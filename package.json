@@ -27,7 +27,8 @@
   ],
   "dependencies": {
     "clipboard": "^2.0.11",
-    "imagesloaded": "^5.0.0"
+    "imagesloaded": "^5.0.0",
+    "tabulator-tables": "^6.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",

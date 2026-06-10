@@ -4,6 +4,7 @@ import {embedClipboardJS} from "./embed-clipboard";
 import {loadDisqusCommentCount, onButtonLoadDisqusClicked} from "./disqus-ondemand";
 import {embedCookieConsent} from "./embed-native-cookie-consent";
 import { enforceCanonicalURL } from "./enforce-canonical";
+import {initTabulator} from "./tabulator";
 
 (() => {
   ready(() => {
@@ -12,5 +13,6 @@ import { enforceCanonicalURL } from "./enforce-canonical";
     onButtonLoadDisqusClicked();
     loadDisqusCommentCount();
     embedCookieConsent();
+    initTabulator();
   });
 })();
