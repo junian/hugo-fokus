@@ -84,6 +84,10 @@
     </div>
 </div>
 
+<div class="container">
+    {{ partial "nextprev.html" . }}
+</div>
+
 <!-- Show related articles -->
 {{ if $.Param "relatedVisible" }}
 <div class="container">
@@ -93,7 +97,3 @@
 
 <!-- Email Subscribe -->
 {{ partialCached "widget/email-subscribe.html" . }}
-
-<div class="container">
-    {{ partial "nextprev.html" . }}
-</div>
