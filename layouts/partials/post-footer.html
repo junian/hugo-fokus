@@ -1,7 +1,9 @@
 <footer class="post-footer">
     <div class="container">
         <div class = "row">
+            <!--
             <div class="col-lg-2 col-md-1"></div>
+            -->
             <div class="col-lg-8 col-md-10">
                 {{ partialCached "widget/actions.html" . }}
                 <hr>
@@ -51,7 +53,10 @@
                     {{ partial "widget/addthis.html" . }}
                 {{ end }}
             </div>
+            <!--
             <div class="col-lg-2 col-md-1"></div>
+            -->
+            <div class="col-lg-4 col-md-2"></div>
         </div>
     </div>
 </footer>
@@ -59,7 +64,9 @@
 <!-- Comment section -->
 <div class="container">
     <div class = "row">
+        <!--
         <div class="col-lg-2 col-md-1"></div>
+        -->
         <div class="col-lg-8 col-md-10">
             {{- if .Site.Config.Services.Disqus.Shortname -}}
                 {{- if .Site.Params.DisqusOnDemand -}}
@@ -71,7 +78,10 @@
                 {{ partial "widget/commentbox.html" . }}
             {{- end -}}
         </div>
+        <div class="col-lg-4 col-md-2"></div>
+        <!--
         <div class="col-lg-2 col-md-1"></div>
+        -->
     </div>
 </div>
 
