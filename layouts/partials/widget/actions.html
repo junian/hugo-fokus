@@ -2,6 +2,7 @@
 {{- if $actions -}}
 <div class="section-post-actions text-center">
         {{- range $actions -}}
+        <p>
         <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer">
             {{- if .image -}}
             <img src="{{ .image }}" alt="{{ .title | default .url }}" title="{{ .title | default "" }}" loading="lazy">
@@ -9,6 +10,7 @@
             <span class="post-action-label">{{ .title | default .url }}</span>
             {{- end -}}
         </a>
+        </p>
         {{- end -}}
 </div>
 {{- end -}}
