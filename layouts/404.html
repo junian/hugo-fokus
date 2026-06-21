@@ -8,7 +8,7 @@
             <div class="col-lg-2 col-md-1"></div>
             <div class="col-lg-8 col-md-10">
                 <div class="page-heading">
-                    <h1 class="p-name">
+                    <h1 class="p-name entry-title">
                         {{- if eq .Kind "404" -}}
                             {{- .Site.Title -}}
                         {{- else -}}
@@ -16,7 +16,7 @@
                         {{- end -}}
                     </h1>
                     <hr class="small">
-                    <span class="subheading">
+                    <span class="subheading entry-description">
                         {{- if eq .Kind "404" -}}
                             {{- .Title -}}
                         {{- else -}}
@@ -36,7 +36,7 @@
         <div class="col-lg-2 col-md-1"></div>
         <div class="col-lg-8 col-md-10">
             <div id="search"></div>
-            <div class="e-content">
+            <div class="e-content entry-content">
                 <div id="suggestions" style="display: none;">
                     <h3>Did you mean one of these?</h3>
                     <ul id="suggestion-list"></ul>

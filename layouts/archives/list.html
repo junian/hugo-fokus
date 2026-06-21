@@ -6,7 +6,7 @@
         <div class="col-lg-2 col-md-1"></div>
         <div class="col-lg-8 col-md-10">
             <div id="search"></div>
-            <div class="e-content archive">
+            <div class="e-content archive entry-content">
             {{ range (.Site.RegularPages).GroupByDate "2006" }}
                 <h2>{{ .Key }}</h2>
                 {{ range where .Pages "Type" "not in" (slice "page") }}

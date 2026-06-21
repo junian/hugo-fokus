@@ -9,7 +9,7 @@
             -->
             <div class="col-lg-12 col-md-12">
                 <div class="post-heading">
-                    <h1 class="p-name">
+                    <h1 class="p-name entry-title">
                         {{- if eq .Kind "404" -}}
                             {{- .Site.Title -}}
                         {{- else -}}
@@ -19,7 +19,7 @@
                     <!--
                     <hr class="small">
                     -->
-                    <span class="subheading">
+                    <span class="subheading entry-description">
                         {{- if eq .Kind "404" -}}
                             {{- .Title -}}
                         {{- else -}}
