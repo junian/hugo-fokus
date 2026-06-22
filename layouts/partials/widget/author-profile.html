@@ -1,4 +1,4 @@
-<footer class="h-card hidden">
+<div class="h-card hidden">
     <div class="author-profile">
         <figure class="author-image">
             <img alt="{{ with $.Site.Params.Author.name }}{{.}}{{end}}" class="u-photo" src="https://github.com/junian.png" data-gravatar="https://www.gravatar.com/avatar/{{ $.Site.Params.Author.email | md5 }}?s=256"
@@ -15,4 +15,4 @@
     <div class="post-footer-line">
         <p class="p-adr h-adr">{{ with $.Site.Params.Author.city }}<span class="p-locality">{{ . }}</span>, {{ end }}{{ with $.Site.Params.Author.country }}<span class="p-country-name">{{ . }}</span>{{ end }}</p>
     </div>
-</footer>
+</div>

@@ -1,39 +1,38 @@
-<!-- Author profile -->
-{{- partialCached "widget/author-profile.html" . -}}
 <!-- Footer -->
-<footer class="site-footer">
+<footer class="site-footer container-fluid">
     <hr>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="section text-center">
-                    <ul class="list-inline">
-                        {{- if isset .Site.Params "social" -}} 
-                        {{- range .Site.Params.socials -}}
-                            <li>
-                                <a href="{{- .url -}}" title="Visit {{ .title | humanize }} page" target="_blank" rel="me nofollow noreferrer">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-stack-2x fa-thin fa-circle-thin">{{- partialCached (printf "svg/circle.svg") . -}}</i>
-                                        <i class="fa fa-stack-1x fa-{{- .title -}}">{{- partialCached (printf "svg/%s.svg" .title) . -}}</i>
-                                    </span>
-                                </a>
-                            </li>
-                        {{- end -}} 
-                        {{- end -}}
-                    </ul>
-                </div>
-                <div class="section small text-center">
-                        <p>&nbsp;&middot;&nbsp;{{- range .Site.Params.Menu.footer -}}<a href="{{- .url -}}">{{- .title -}}</a>&nbsp;&middot;&nbsp;{{- end -}}</p>
-                        <p>{{- .Site.Copyright | safeHTML -}}</p>
-                        {{ if .Site.Params.showAttribution }}
-                        <p>Proudly powered with <a href="https://gohugo.io" rel="nofollow noreferrer" target="_blank">Hugo</a> and <a href="https://github.com/junian/fokus" rel="nofollow noreferrer" target="_blank">Fokus</a></p>
-                        {{ end }}
-                        {{ with .Site.Params.Services.MicrosoftClarity.PrivacyPolicyURL }}
-                        <hr>
-                        <p>We improve our products and advertising by using Microsoft Clarity to see how you use our website.</p>
-                        <p>By using our site, you agree that we and Microsoft can collect and use this data. Our <a href="{{ . }}" target="_blank">privacy statement</a> has more details.</p>
-                        {{ end }}
-                </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <!-- Author profile -->
+            {{- partialCached "widget/author-profile.html" . -}}
+
+            <div class="section text-center">
+                <ul class="list-inline">
+                    {{- if isset .Site.Params "social" -}} 
+                    {{- range .Site.Params.socials -}}
+                        <li>
+                            <a href="{{- .url -}}" title="Visit {{ .title | humanize }} page" target="_blank" rel="me nofollow noreferrer">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-stack-2x fa-thin fa-circle-thin">{{- partialCached (printf "svg/circle.svg") . -}}</i>
+                                    <i class="fa fa-stack-1x fa-{{- .title -}}">{{- partialCached (printf "svg/%s.svg" .title) . -}}</i>
+                                </span>
+                            </a>
+                        </li>
+                    {{- end -}} 
+                    {{- end -}}
+                </ul>
+            </div>
+            <div class="section small text-center">
+                    <p>&nbsp;&middot;&nbsp;{{- range .Site.Params.Menu.footer -}}<a href="{{- .url -}}">{{- .title -}}</a>&nbsp;&middot;&nbsp;{{- end -}}</p>
+                    <p>{{- .Site.Copyright | safeHTML -}}</p>
+                    {{ if .Site.Params.showAttribution }}
+                    <p>Proudly powered with <a href="https://gohugo.io" rel="nofollow noreferrer" target="_blank">Hugo</a> and <a href="https://github.com/junian/fokus" rel="nofollow noreferrer" target="_blank">Fokus</a></p>
+                    {{ end }}
+                    {{ with .Site.Params.Services.MicrosoftClarity.PrivacyPolicyURL }}
+                    <hr>
+                    <p>We improve our products and advertising by using Microsoft Clarity to see how you use our website.</p>
+                    <p>By using our site, you agree that we and Microsoft can collect and use this data. Our <a href="{{ . }}" target="_blank">privacy statement</a> has more details.</p>
+                    {{ end }}
             </div>
         </div>
     </div>
