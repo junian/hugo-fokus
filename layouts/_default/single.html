@@ -10,89 +10,66 @@
         {{- partial "post-header-hero.html" . -}}
     {{- end -}}
     <div class="container">
+        <!-- Show Top Adsense -->
         {{- if ne .Params.type "page" -}}
-            <div class = "row">
-                <!--
-                <div class="col-lg-2 col-md-1"></div>
-                -->
-                <div class="col-lg-8 col-md-8">
-                    <!-- Show Top Adsense -->
-                    {{- if $.Param "Services.GoogleAdsense.showTop" -}}
-                        {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
-                    {{- end -}}
-                </div>
-                <!--
-                <div class="col-lg-2 col-md-1"></div>
-                -->
-                <div class="col-lg-4 col-md-4"></div>
+        {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
+        {{- if $.Param "Services.GoogleAdsense.showTop" -}}
+        <div class = "row">
+            <div class="col-lg-8 col-md-8">
+                {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
             </div>
+        </div>
+        {{- end -}}
+        {{- end -}}
         {{- end -}}
         <div class="row">
-            <!-- Show Left Adsense -->
-            <!--
-            <div class="col-lg-2 col-md-1">
-                {{- if ne .Params.type "page" -}}
-                    {{- if $.Param "Services.GoogleAdsense.showLeft" -}}
-                        {{- partialCached "widget/google-adsense-responsive-left.html" . -}}
-                    {{- end -}}
-                {{- end -}}
-            </div>
-            -->
-            <div class="col-lg-8 col-md-8">
-                <div id="search"></div>
+            <div class="col-lg-8 col-md-8 e-content entry-content journey-content" id="content" role="main" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
                 <!-- Article Content -->
-                <div class="e-content entry-content" id="content" role="main" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
                     
-                    <!--Image for thumbnail-->
-                    {{- with $.Param "images" -}}
-                    {{- range last 1 . -}}
-                    <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}"></p>
-                    {{- end -}}
-                    {{- end -}}
+                <!--Image for thumbnail-->
+                {{- with $.Param "images" -}}
+                {{- range last 1 . -}}
+                <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}"></p>
+                {{- end -}}
+                {{- end -}}
 
-                    {{ .Scratch.Set "finalContent" .Content }}
-                    
-                    {{ if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) }}
-                        {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/google-adsense-inarticle.html" .) | safeHTML }}
-                    {{ else }}
-                        {{ .Scratch.Get "finalContent" }}
-                    {{ end }}
-                </div>
+                {{ .Scratch.Set "finalContent" .Content }}
+                
+                {{ if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) }}
+                    {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/google-adsense-inarticle.html" .) | safeHTML }}
+                {{ else }}
+                    {{ .Scratch.Get "finalContent" }}
+                {{ end }}
             </div>
-            <!-- Show Right Adsense -->
-            <!--
-            <div class="col-lg-2 col-md-1">
-            -->
             <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar" role="complementary">
+                <!-- Show Right Adsense -->
                 {{- if ne .Params.type "page" -}}
                     {{- if $.Param "Services.GoogleAdsense.showRight" -}}
                         {{- partialCached "widget/google-adsense-responsive-right.html" . -}}
                     {{- end -}}
                 {{- end -}}
+
                 {{- partial "sidebar.html" . -}}
             </aside>
         </div>
+        <!-- Show Bottom Adsense -->
         {{- if ne .Params.type "page" -}}
-            <div class = "row">
-                <!--
-                <div class="col-lg-2 col-md-1"></div>
-                -->
-                <div class="col-lg-8 col-md-8">
-                <!-- Show Bottom Adsense -->
-                {{ if $.Param "Services.GoogleAdsense.showBottom" }}
-                    {{ partialCached "widget/google-adsense-responsive-bottom.html" . }}
-                {{ end }}
-                </div>
-                <!--
-                <div class="col-lg-2 col-md-1"></div>
-                -->
-                <div class="col-lg-4 col-md-4"></div>
+        {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
+        {{- if $.Param "Services.GoogleAdsense.showBottom" -}}
+        <div class = "row">
+            <div class="col-lg-8 col-md-8">
+                {{ partialCached "widget/google-adsense-responsive-bottom.html" . }}
             </div>
+        </div>
+        {{- end -}}
+        {{- end -}}
         {{- end -}}
     </div>
     <!-- <hr class='section-divider'> -->
-    {{- if ne .Params.type "page" -}}
-        {{- partial "post-footer.html" . -}}
-    {{- end -}}
 </article>
+
+{{- if ne .Params.type "page" -}}
+    {{- partial "post-footer.html" . -}}
+{{- end -}}
+
 {{ end }}
