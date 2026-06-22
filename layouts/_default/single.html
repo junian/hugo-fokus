@@ -41,7 +41,7 @@
                     {{ .Scratch.Get "finalContent" }}
                 {{ end }}
             </div>
-            <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar" role="complementary">
+            <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar">
                 <!-- Show Right Adsense -->
                 {{- if ne .Params.type "page" -}}
                     {{- if $.Param "Services.GoogleAdsense.showRight" -}}
