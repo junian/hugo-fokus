@@ -100,5 +100,11 @@
         {{ partialCached "math.html" . }}
     {{ end }}
     
+    <!-- Google Auto AdSense -->
+    {{- partialCached "widget/google-adsense-auto.html" . -}}
+
+    <!-- Journey MV Ads -->
+    {{- partialCached "widget/mediavine-journey.html" . -}}
+    
     {{- partial "head-custom.html" . -}}
 </head>

@@ -1,11 +1,5 @@
 {{ define "main" }}
 
-<!-- Google Auto AdSense / Journey Ads -->
-{{- if ne .Params.type "page" -}}
-    {{- partialCached "widget/google-adsense-auto.html" . -}}
-    {{- partialCached "widget/mediavine-journey.html" . -}}
-{{- end -}}
-
 {{- partial "header.html" . -}}
 <!-- Main Content -->
 <div itemscope itemtype="https://schema.org/ItemList" class="container">
