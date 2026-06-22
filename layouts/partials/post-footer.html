@@ -35,7 +35,7 @@
             {{ end }}
             {{ if $.Param "disclaimer" }}
             <div class="section-disclaimer smaller">
-                <p>{{ $.Param "disclaimer" | markdownify }}</p>
+                {{ $.Param "disclaimer" | markdownify }}
             </div>
             {{ end }}
             {{ with .Lastmod }}
