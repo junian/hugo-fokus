@@ -15,7 +15,7 @@
         <!--
         <div class="col-lg-2 col-md-1"></div>
         -->
-        <div class="col-lg-8 col-md-10">
+        <div class="col-lg-8 col-md-8">
             <div id="search"></div>
             {{ range .Paginator.Pages }}
             <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="post-preview">
@@ -36,9 +36,9 @@
         <!--
         <div class="col-lg-2 col-md-1"></div>
         -->
-        <div class="col-lg-4 col-md-2">
+        <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar" role="complementary">
             {{- partial "sidebar.html" . -}}
-        </div>
+        </aside>
     </div>
 </div>
 {{ end }}

@@ -21,7 +21,7 @@
                 <!--
                 <div class="col-lg-2 col-md-1"></div>
                 -->
-                <div class="col-lg-8 col-md-10">
+                <div class="col-lg-8 col-md-8">
                     <!-- Show Top Adsense -->
                     {{- if $.Param "Services.GoogleAdsense.showTop" -}}
                         {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
@@ -30,7 +30,7 @@
                 <!--
                 <div class="col-lg-2 col-md-1"></div>
                 -->
-                <div class="col-lg-4 col-md-2"></div>
+                <div class="col-lg-4 col-md-4"></div>
             </div>
         {{- end -}}
         <div class="row">
@@ -44,7 +44,7 @@
                 {{- end -}}
             </div>
             -->
-            <div class="col-lg-8 col-md-10">
+            <div class="col-lg-8 col-md-8">
                 <div id="search"></div>
                 <!-- Article Content -->
                 <div class="e-content entry-content" id="main-content" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
@@ -69,21 +69,21 @@
             <!--
             <div class="col-lg-2 col-md-1">
             -->
-            <div class="col-lg-4 col-md-2">
+            <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar" role="complementary">
                 {{- if ne .Params.type "page" -}}
                     {{- if $.Param "Services.GoogleAdsense.showRight" -}}
                         {{- partialCached "widget/google-adsense-responsive-right.html" . -}}
                     {{- end -}}
                 {{- end -}}
                 {{- partial "sidebar.html" . -}}
-            </div>
+            </aside>
         </div>
         {{- if ne .Params.type "page" -}}
             <div class = "row">
                 <!--
                 <div class="col-lg-2 col-md-1"></div>
                 -->
-                <div class="col-lg-8 col-md-10">
+                <div class="col-lg-8 col-md-8">
                 <!-- Show Bottom Adsense -->
                 {{ if $.Param "Services.GoogleAdsense.showBottom" }}
                     {{ partialCached "widget/google-adsense-responsive-bottom.html" . }}
@@ -92,7 +92,7 @@
                 <!--
                 <div class="col-lg-2 col-md-1"></div>
                 -->
-                <div class="col-lg-4 col-md-2"></div>
+                <div class="col-lg-4 col-md-4"></div>
             </div>
         {{- end -}}
     </div>
