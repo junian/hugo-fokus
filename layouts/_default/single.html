@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <!-- Post Content -->
-<article itemscope itemtype="https://schema.org/{{ $.Site.Param (printf "SchemaOrg.Types.%s" .Section) | default "Article" }}" class="h-entry hentry" id="content" role="main">
+<article itemscope itemtype="https://schema.org/{{ $.Site.Param (printf "SchemaOrg.Types.%s" .Section) | default "Article" }}" class="h-entry hentry">
     <!-- Schema -->
     {{- template "_internal/schema.html" . -}}
     {{- if eq .Params.type "page" -}}
@@ -41,7 +41,7 @@
             <div class="col-lg-8 col-md-8">
                 <div id="search"></div>
                 <!-- Article Content -->
-                <div class="e-content entry-content" id="main-content" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
+                <div class="e-content entry-content" id="content" role="main" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
                     
                     <!--Image for thumbnail-->
                     {{- with $.Param "images" -}}
