@@ -1,110 +1,108 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Disabled because Error: A document must not include both a meta element with an http-equiv attribute whose value is content-type, and a meta element with a charset attribute. -->
-    <!--
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    -->
-    <meta name="robots" content="all">
-    <meta name="robots" content="max-image-preview:large">
-    <!-- Verification -->
-    {{- if .IsHome -}}{{- partialCached "meta/verification.html" . -}}{{- end -}}
-    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
-    <meta name="author" content="{{ with $.Site.Params.Author.name }}{{.}}{{end}}">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}">
-    <link rel="manifest" href="/site.webmanifest">
-    <!-- Opengraph -->
-    {{- template "_internal/opengraph.html" . -}}
-    {{ with .Site.Params.Verification.facebook_app_id }}<meta content='{{ . }}' property='fb:app_id'>{{ end }}
-    {{ with .Site.Params.Verification.facebook_pages }}<meta content='{{ . }}' property='fb:pages'>{{ end }}
-    <!-- Twitter Card -->
-    {{- template "_internal/twitter_cards.html" . -}}
-    <!-- Google News -->
-    {{/* - template "_internal/google_news.html" . - */}}
-    <!-- ld json structured data -->
-    {{- partial "meta/structured-data.html" . -}}
-    <!-- document title -->
-    <title>
-        {{- if eq .Kind "404" -}}
-            {{ .Title }}
-        {{- else if .IsHome -}}
-            {{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}
-        {{- else -}}
-            {{ .Title }}
-        {{- end -}}
-    </title>
-    <!-- RSS -->
-    {{ with .OutputFormats.Get "RSS" }}
-    <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
-    <link rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
-    {{ end }}
-    <!--preconnect-->
-    {{ range .Site.Params.preconnects }}
-    <link rel="preconnect" href="{{ . }}">
-    <link rel="dns-prefetch" href="{{ . }}">
-    {{ end }}
-    <!-- CSS from hugo pipes -->
-    {{ if .Site.Params.useSassPipes }}
-        {{- partial "css-pipes.html" . -}}
-    {{ else }}
-        {{- partial "css-assets.html" . -}}
-    {{ end }}
-    <link rel="stylesheet" href='{{ .Scratch.Get "appcss" }}' integrity='{{ cond (eq $.Site.Params.useSRI true) (.Scratch.Get "appcssintegrity") ("") }}'>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Disabled because Error: A document must not include both a meta element with an http-equiv attribute whose value is content-type, and a meta element with a charset attribute. -->
+<!--
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+-->
+<meta name="robots" content="all">
+<meta name="robots" content="max-image-preview:large">
+<!-- Verification -->
+{{- if .IsHome -}}{{- partialCached "meta/verification.html" . -}}{{- end -}}
+<meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
+<meta name="author" content="{{ with $.Site.Params.Author.name }}{{.}}{{end}}">
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}">
+<link rel="manifest" href="/site.webmanifest">
+<!-- Opengraph -->
+{{- template "_internal/opengraph.html" . -}}
+{{ with .Site.Params.Verification.facebook_app_id }}<meta content='{{ . }}' property='fb:app_id'>{{ end }}
+{{ with .Site.Params.Verification.facebook_pages }}<meta content='{{ . }}' property='fb:pages'>{{ end }}
+<!-- Twitter Card -->
+{{- template "_internal/twitter_cards.html" . -}}
+<!-- Google News -->
+{{/* - template "_internal/google_news.html" . - */}}
+<!-- ld json structured data -->
+{{- partial "meta/structured-data.html" . -}}
+<!-- document title -->
+<title>
+    {{- if eq .Kind "404" -}}
+        {{ .Title }}
+    {{- else if .IsHome -}}
+        {{ .Site.Title }}{{ with .Site.Params.description }} - {{ . }}{{ end }}
+    {{- else -}}
+        {{ .Title }}
+    {{- end -}}
+</title>
+<!-- RSS -->
+{{ with .OutputFormats.Get "RSS" }}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
+<link rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
+{{ end }}
+<!--preconnect-->
+{{ range .Site.Params.preconnects }}
+<link rel="preconnect" href="{{ . }}">
+<link rel="dns-prefetch" href="{{ . }}">
+{{ end }}
+<!-- CSS from hugo pipes -->
+{{ if .Site.Params.useSassPipes }}
+    {{- partial "css-pipes.html" . -}}
+{{ else }}
+    {{- partial "css-assets.html" . -}}
+{{ end }}
+<link rel="stylesheet" href='{{ .Scratch.Get "appcss" }}' integrity='{{ cond (eq $.Site.Params.useSRI true) (.Scratch.Get "appcssintegrity") ("") }}'>
 
-    <!-- Google Fonts -->
-    {{ if $.Param "useWebFont" }} 
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700%7COpen+Sans:400,700" rel="stylesheet">
-    {{ end }}
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    {{ "<!--[if lt IE 9]>" | safeHTML }}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<!-- Google Fonts -->
+{{ if $.Param "useWebFont" }} 
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700%7COpen+Sans:400,700" rel="stylesheet">
+{{ end }}
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+{{ "<!--[if lt IE 9]>" | safeHTML }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-        {{- $iecss := resources.Get "css/fokus.ie.css" | resources.Minify -}}
-        <link rel="stylesheet" href="{{ $iecss.RelPermalink }}">
-    {{ "<![endif]-->" | safeHTML }}
-    
-    {{- /* default canonical to the page permalink */ -}}
-    {{- $canonical := .Permalink -}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    {{- $iecss := resources.Get "css/fokus.ie.css" | resources.Minify -}}
+    <link rel="stylesheet" href="{{ $iecss.RelPermalink }}">
+{{ "<![endif]-->" | safeHTML }}
 
-    {{- with .Param "canonical_url" }}
-    {{- $canonical = . }}
-    {{- end }}
+{{- /* default canonical to the page permalink */ -}}
+{{- $canonical := .Permalink -}}
 
-    {{- with .Param "redirect" }}
-    {{- $canonical = . }}
-    {{- end }}
-    
-    <!-- Set canonical link -->
-    <link rel="canonical" href="{{ $canonical | safeURL }}">
-    <link rel="alternate" href="{{ $canonical | safeURL }}" hreflang="x-default">
+{{- with .Param "canonical_url" }}
+{{- $canonical = . }}
+{{- end }}
 
-    {{ with $.Param "redirect" }} 
-    <!-- Redirect to external domain -->
-    <meta http-equiv="refresh" content="0; url={{ . }}">
-    <script>
-        window.location.href = {{ . }};
-    </script>
-    {{ end }}
+{{- with .Param "redirect" }}
+{{- $canonical = . }}
+{{- end }}
 
-    {{ if .Param "math" }}
-        {{ partialCached "math.html" . }}
-    {{ end }}
-    
-    <!-- Google Auto AdSense -->
-    {{- partialCached "widget/google-adsense-auto.html" . -}}
+<!-- Set canonical link -->
+<link rel="canonical" href="{{ $canonical | safeURL }}">
+<link rel="alternate" href="{{ $canonical | safeURL }}" hreflang="x-default">
 
-    <!-- Journey MV Ads -->
-    {{- partialCached "widget/mediavine-journey.html" . -}}
-    
-    {{- partial "head-custom.html" . -}}
-</head>
+{{ with $.Param "redirect" }} 
+<!-- Redirect to external domain -->
+<meta http-equiv="refresh" content="0; url={{ . }}">
+<script>
+    window.location.href = {{ . }};
+</script>
+{{ end }}
+
+{{ if .Param "math" }}
+    {{ partialCached "math.html" . }}
+{{ end }}
+
+<!-- Google Auto AdSense -->
+{{- partialCached "widget/google-adsense-auto.html" . -}}
+
+<!-- Journey MV Ads -->
+{{- partialCached "widget/mediavine-journey.html" . -}}
+
+{{- partial "head-custom.html" . -}}
