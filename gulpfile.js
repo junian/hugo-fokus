@@ -15,7 +15,7 @@ function bootstrapCustomCss() {
     autoprefixer,
     mqpacker
   ];
-  return src("./src/scss/bootstrap-custom.scss")
+  return src("./src/scss/_bootstrap-custom.scss")
     .pipe(sass({
       outputStyle: "expanded"
     }).on("error", sass.logError))
