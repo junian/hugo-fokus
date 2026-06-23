@@ -32,4 +32,4 @@ Allow: /
 # Content-Signal: ai-train=no, search=yes, ai-input=no
 
 Sitemap: {{ .Site.BaseURL }}{{ .Site.Home.Sitemap.Filename }}
-License: {{ .Site.BaseURL }}license.xml
+# License: {{ .Site.BaseURL }}license.xml
