@@ -1,6 +1,6 @@
 <!-- Bootstrap Core CSS -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
-{{- $bootstrapcustomcss := resources.Get "src/scss/_bootstrap-custom.scss" | resources.ToCSS $options -}}
+{{- $bootstrapcustomcss := resources.Get "src/scss/bootstrap-custom.scss" | resources.ToCSS $options -}}
 <!-- Theme CSS -->
 {{- $options := (dict "outputStyle" "compressed" "enableSourceMap" false) -}}
 {{- $fokuscss := resources.Get "src/scss/fokus.scss" | resources.ToCSS $options -}}
