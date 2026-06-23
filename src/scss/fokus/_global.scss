@@ -50,7 +50,7 @@ img::selection {
     div {
         display: inline-block;
         padding: 10px 5px;
-        @media (min-width: 768px) {
+        @media (min-width: $screen-sm-min) {
             padding: 15px 25px;
         }
     }

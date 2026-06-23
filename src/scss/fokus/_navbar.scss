@@ -33,7 +33,7 @@
       }
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: $screen-sm-min) {
     border-bottom: 1px solid transparent;
     background: transparent;
     .navbar-brand {
@@ -57,7 +57,7 @@
       }
     }
   }
-  @media (min-width: 992px) {
+  @media (min-width: $screen-md-min) {
     /*
     transition: background-color 0.2s;
     Force Hardware Acceleration in WebKit

@@ -6,7 +6,7 @@
     overflow: auto;
     word-wrap: normal;
     white-space: pre;
-    @media (min-width: 768px) {
+    @media (min-width: $screen-sm-min) {
       padding: 10px;
     }
     code {

@@ -29,7 +29,7 @@
       line-height: 1.3;
     }
   }
-  @media (min-width: $screen-sm) {
+  @media (min-width: $screen-sm-min) {
     .next{
       text-align: right;
     }

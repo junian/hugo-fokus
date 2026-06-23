@@ -9,17 +9,17 @@
     .bmc,
     .go-social {
         text-align: center;
-        @media (min-width: 768px) {
+        @media (min-width: $screen-sm-min) {
             margin: 0px 0 10px 0;
         }
     }
     .bmc {
-        @media (min-width: 768px) {
+        @media (min-width: $screen-sm-min) {
             text-align: left;
         }
     }
     .go-social {
-        @media (min-width: 768px) {
+        @media (min-width: $screen-sm-min) {
             text-align: right;
         }
     }
@@ -30,7 +30,7 @@
         margin: 0 0 0 0;
         line-height: 1.75;
         color: $gray-700;
-        @media (min-width: 768px) {
+        @media (min-width: $screen-sm-min) {
             font-size: 12px;
         }
         a {
@@ -75,7 +75,7 @@
 //     font-style: italic;
 //     color: #9EABB3;
 //   }
-//   @media (min-width: 768px) {
+//   @media (min-width: $screen-sm-min) {
 //     text-align: left;
 //     .author-image {
 //       top: -40px;
