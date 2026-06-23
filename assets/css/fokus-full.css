@@ -4883,6 +4883,12 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
   .highlight pre {
     padding: 10px;
   }
+  .nextprev .next {
+    text-align: right;
+  }
+  .nextprev .previous {
+    text-align: left;
+  }
 }
 @media (min-width: 992px) {
   .container {
@@ -5136,12 +5142,6 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
       transform: translate3d(0, 100%, 0);
     }
     */
-  }
-  .nextprev .next {
-    text-align: right;
-  }
-  .nextprev .previous {
-    text-align: left;
   }
 }
 @media (min-width: 1200px) {

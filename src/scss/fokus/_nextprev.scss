@@ -3,7 +3,7 @@
     &.disabled {
       cursor: not-allowed;
       &:hover,
-      &:focus, {
+      &:focus {
         color: $gray-900;
       }  
     }
@@ -29,7 +29,7 @@
       line-height: 1.3;
     }
   }
-  @media (min-width: 992px) {
+  @media (min-width: $screen-sm) {
     .next{
       text-align: right;
     }
