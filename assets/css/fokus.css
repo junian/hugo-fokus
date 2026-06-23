@@ -111,13 +111,41 @@ img::selection {
 }
 
 .navbar-main {
+  /*
   position: absolute;
-  border-bottom: 1px solid #e9ecef;
-  background-color: #fcfbf7;
+  border-bottom: 1px solid $gray-200;
+  background-color: $white-warm;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 3;
+  */
+  /*
+  @media (min-width: $screen-sm-min) {
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    .navbar-brand {
+      padding: 10px 20px;
+      color: $white-warm;
+      &:focus,
+      &:hover {
+        color: fade-out($white-warm, .2);
+      }
+    }
+    .navbar-nav {
+      > .nav-item {
+        > a {
+          padding: 10px 20px;
+          color: $white-warm;
+          &:focus,
+          &:hover {
+            color: fade-out($white-warm, .2);
+          }
+        }
+      }
+    }
+  }
+  */
 }
 .navbar-main .navbar-brand {
   font-weight: 300;
@@ -152,6 +180,7 @@ img::selection {
 
 .masthead {
   margin-bottom: 20px;
+  margin-top: -20px;
   background-color: #004e92;
   background-image: -webkit-linear-gradient(330deg, #004e92, #337ab7);
   background-image: -o-linear-gradient(330deg, #004e92, #337ab7);
@@ -178,7 +207,7 @@ img::selection {
 .masthead .page-heading,
 .masthead .post-heading,
 .masthead .site-heading {
-  padding: 100px 0 50px;
+  padding: 20px 0 20px;
   color: #fcfbf7;
 }
 .masthead .page-heading,
@@ -1886,24 +1915,6 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
   .pagenumber div {
     padding: 15px 25px;
   }
-  .navbar-main {
-    border-bottom: 1px solid transparent;
-    background: transparent;
-  }
-  .navbar-main .navbar-brand {
-    padding: 10px 20px;
-    color: #fcfbf7;
-  }
-  .navbar-main .navbar-brand:focus, .navbar-main .navbar-brand:hover {
-    color: rgba(252, 251, 247, 0.8);
-  }
-  .navbar-main .navbar-nav > .nav-item > a {
-    padding: 10px 20px;
-    color: #fcfbf7;
-  }
-  .navbar-main .navbar-nav > .nav-item > a:focus, .navbar-main .navbar-nav > .nav-item > a:hover {
-    color: rgba(252, 251, 247, 0.8);
-  }
   .masthead .page-heading,
 .masthead .site-heading {
     padding: 100px 0px;
@@ -1917,7 +1928,7 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
     font-size: 30px;
   }
   .masthead .post-heading {
-    padding: 70px 0px 50px 0px;
+    padding: 40px 0px 40px 0px;
   }
   .masthead .post-heading h1 {
     font-size: 55px;
