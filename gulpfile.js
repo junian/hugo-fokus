@@ -15,8 +15,11 @@ function bootstrapCustomCss() {
     autoprefixer,
     mqpacker
   ];
-  return src("./src/scss/_bootstrap-custom.scss")
+  return src("./src/scss/bootstrap-custom.scss")
     .pipe(sass({
+      includePaths: [
+        './node_modules/bootstrap-sass/assets/stylesheets'
+      ],
       outputStyle: "expanded"
     }).on("error", sass.logError))
     .pipe(postcss(processors))
