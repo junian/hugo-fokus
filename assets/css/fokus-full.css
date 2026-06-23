@@ -5508,6 +5508,12 @@ input[type=month].input-lg,
     background-color: transparent;
   }
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  aside.sidebar {
+    padding-left: 10px;
+    padding-right: 0px;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .tabulator .tabulator-header .tabulator-col.tabulator-sortable.tabulator-col-sorter-element:hover {
     cursor: pointer;

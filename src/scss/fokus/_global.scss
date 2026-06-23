@@ -105,3 +105,10 @@ img::selection {
 .section-disclaimer {
     color: $gray-650;
 }
+
+aside.sidebar {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+}
