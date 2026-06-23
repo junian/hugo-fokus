@@ -630,7 +630,16 @@
           var n = this.container === document.body ? document.documentElement.scrollTop : this.container.scrollTop;
           (t + this.element.offsetWidth >= this.container.offsetWidth || this.reversedX) && (this.element.style.left = "", this.element.style.right = i ? this.container.offsetWidth - s.left + "px" : this.container.offsetWidth - t + "px", this.reversedX = !0);
           let r = Math.max(this.container.offsetHeight, n ? this.container.scrollHeight : 0);
-          e + this.element.offsetHeight > r && (i ? this.element.style.top = "bottom" === o ? parseInt(this.element.style.top) - this.element.offsetHeight - i.offsetHeight - 1 + "px" : parseInt(this.element.style.top) - this.element.offsetHeight + i.offsetHeight + 1 + "px" : this.element.style.height = r + "px")
+          if (e + this.element.offsetHeight > r)
+            if (i) this.element.style.top = "bottom" === o ? parseInt(this.element.style.top) - this.element.offsetHeight - i.offsetHeight - 1 + "px" : parseInt(this.element.style.top) - this.element.offsetHeight + i.offsetHeight + 1 + "px";
+            else {
+              let t = this.element.offsetHeight;
+              if (t > r) this.element.style.top = "0px", this.element.style.height = r + "px";
+              else {
+                let i = e - t;
+                i < 0 && (i = r - t), this.element.style.top = i + "px"
+              }
+            }
         }
         isVisible() {
           return this.visible
@@ -1609,7 +1618,7 @@
           h = r.alignEmptyValues,
           d = 0;
         if (void 0 !== l) {
-          if (l.isDateTime(t) || (t = "iso" === a ? l.fromISO(String(t)) : l.fromFormat(String(t), a)), l.isDateTime(e) || (e = "iso" === a ? l.fromISO(String(e)) : l.fromFormat(String(e), a)), t.isValid) {
+          if (l.isDateTime(t) || (t = "iso" === a ? l.fromISO(String(t)) : "x" === a ? l.fromMillis(t) : l.fromFormat(String(t), a)), l.isDateTime(e) || (e = "iso" === a ? l.fromISO(String(e)) : "x" === a ? l.fromMillis(e) : l.fromFormat(String(e), a)), t.isValid) {
             if (e.isValid) return t - e;
             d = 1
           } else d = e.isValid ? -1 : 0;
@@ -1722,7 +1731,7 @@
           return ("top" === g && "desc" === n || "bottom" === g && "asc" === n) && (f *= -1), f
         }
       };
-      class T extends f {
+      class H extends f {
         static moduleName = "sort";
         static sorters = D;
         constructor(t) {
@@ -1750,7 +1759,7 @@
           var e, i, s = !1;
           switch (typeof t.definition.sorter) {
             case "string":
-              T.sorters[t.definition.sorter] ? s = T.sorters[t.definition.sorter] : console.warn("Sort Error - No such sorter found: ", t.definition.sorter);
+              H.sorters[t.definition.sorter] ? s = H.sorters[t.definition.sorter] : console.warn("Sort Error - No such sorter found: ", t.definition.sorter);
               break;
             case "function":
               s = t.definition.sorter
@@ -1839,9 +1848,9 @@
               s = "boolean";
               break;
             default:
-              isNaN(e) || "" === e ? e.match(/((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+$/i) && (s = "alphanum") : s = "number"
+              isNaN(Number(e)) || "" === e ? e.match(/((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+$/i) && (s = "alphanum") : s = "number"
           }
-          return T.sorters[s]
+          return H.sorters[s]
         }
         sort(t, e) {
           var i = this,
@@ -1888,7 +1897,7 @@
           return t = void 0 !== (t = i.getFieldValue(l.getData())) ? t : "", e = void 0 !== (e = i.getFieldValue(a.getData())) ? e : "", n = l.getComponent(), r = a.getComponent(), i.modules.sort.sorter.call(this, t, e, n, r, i.getComponent(), s, o)
         }
       }
-      var H = {
+      var T = {
         debugEventsExternal: !1,
         debugEventsInternal: !1,
         debugInvalidOptions: !0,
@@ -2338,7 +2347,7 @@
               e = Array.isArray(t) ? "array" : "string";
               break;
             default:
-              e = isNaN(t) || "" === t ? t.match(/((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+$/i) ? "alphanum" : "string" : "number"
+              e = isNaN(Number(t)) || "" === t ? t.match(/((^[0-9]+[a-z]+)|(^[a-z]+[0-9]+))+$/i) ? "alphanum" : "string" : "number"
           }
           return e
         }
@@ -2652,11 +2661,11 @@
               });
               const t = [];
               b.forEach(e => {
-                e.heightInitialized || (e.calcHeight(!0), t.push(e))
+                e.heightInitialized && e.getHeight() || (e.calcHeight(!0), t.push(e))
               }), t.forEach(t => {
                 t.setCellHeight()
               }), b.forEach(t => {
-                h = t.getHeight(), v < l ? c += h : a += h, h > this.vDomWindowBuffer && (this.vDomWindowBuffer = 2 * h), v++
+                h = t.getHeight() || this.vDomRowHeight, v < l ? c += h : a += h, h > this.vDomWindowBuffer && (this.vDomWindowBuffer = 2 * h), v++
               }), x = this.table.rowManager.adjustTableSize(), C = this.elementVertical.clientHeight, x && (y || this.table.options.maxHeight) && (E = a / v, w = Math.max(this.vDomWindowMinTotalRows, Math.ceil(C / E + this.vDomWindowBuffer / E)))
             }
             t ? (this.vDomTopPad = e ? this.vDomRowHeight * this.vDomTop + i : this.scrollTop - c, this.vDomBottomPad = this.vDomBottom == g - 1 ? 0 : Math.max(this.vDomScrollHeight - this.vDomTopPad - a - c, 0)) : (this.vDomTopPad = 0, this.vDomRowHeight = Math.floor((a + c) / v), this.vDomBottomPad = this.vDomRowHeight * (g - this.vDomBottom - 1), this.vDomScrollHeight = c + a + this.vDomBottomPad - C), n.style.paddingTop = this.vDomTopPad + "px", n.style.paddingBottom = this.vDomBottomPad + "px", e && (this.scrollTop = this.vDomTopPad + c + i - (this.elementVertical.scrollWidth > this.elementVertical.clientWidth ? this.elementVertical.offsetHeight - C : 0)), this.scrollTop = Math.min(this.scrollTop, this.elementVertical.scrollHeight - C), this.elementVertical.scrollWidth > this.elementVertical.clientWidth && e && (this.scrollTop += this.elementVertical.offsetHeight - C), this.vDomScrollPosTop = this.scrollTop, this.vDomScrollPosBottom = this.scrollTop, r.scrollTop = this.scrollTop, this.dispatch("render-virtual-fill")
@@ -3796,7 +3805,7 @@
         }
       }
       class tt extends Q {
-        static defaultOptions = H;
+        static defaultOptions = T;
         static extendModule() {
           tt.initializeModuleBinder(), tt._extendModule(...arguments)
         }
@@ -4134,7 +4143,7 @@
               })
           }()),
           function() {
-            tt.registerModule([R, T]);
+            tt.registerModule([R, H]);
             const t = et.querySelectorAll(".e-content table");
             for (const e of t) new tt(e, {
               importTable: !0,

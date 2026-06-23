@@ -25,14 +25,10 @@
     "Opera >= 12",
     "Safari >= 6"
   ],
-  "dependencies": {
-    "bootstrap-sass": "^3.4.3",
-    "clipboard": "^2.0.11",
-    "imagesloaded": "^5.0.0",
-    "tabulator-tables": "^6.4.0"
-  },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "bootstrap-sass": "^3.4.3",
+    "clipboard": "^2.0.11",
     "css-mqpacker": "^7.0.0",
     "fancy-log": "^2.0.0",
     "gulp": "^5.0.0",
@@ -40,8 +36,10 @@
     "gulp-jsbeautifier": "^3.0.1",
     "gulp-postcss": "^10.0.0",
     "gulp-sass": "^5.1.0",
+    "imagesloaded": "^5.0.0",
     "plugin-error": "^2.0.1",
     "sass": "=1.33",
+    "tabulator-tables": "^6.5.1",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   }
