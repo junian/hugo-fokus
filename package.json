@@ -26,6 +26,7 @@
     "Safari >= 6"
   ],
   "dependencies": {
+    "bootstrap-sass": "^3.4.3",
     "clipboard": "^2.0.11",
     "imagesloaded": "^5.0.0",
     "tabulator-tables": "^6.4.0"
