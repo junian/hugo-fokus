@@ -2,8 +2,6 @@
 
 <!-- Post Content -->
 <article itemscope itemtype="https://schema.org/{{ $.Site.Param (printf "SchemaOrg.Types.%s" .Section) | default "Article" }}" class="h-entry hentry">
-    <!-- Schema -->
-    {{- template "_internal/schema.html" . -}}
     {{- if eq .Params.type "page" -}}
         {{- partial "header.html" . -}}
     {{- else -}}
