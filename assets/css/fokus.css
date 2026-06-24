@@ -292,6 +292,10 @@ hr.small {
   text-align: center;
 }
 
+.site-footer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 .site-footer p {
   font-size: 10px;
   margin: 0 0 0 0;
