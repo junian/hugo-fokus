@@ -1,5 +1,5 @@
 {{- if .IsBlock -}}
-  <figure class="img-placeholder img-size-lg">
+  <figure class="img-placeholder img-ratio-16x9">
     <a href="{{ .Destination | safeURL }}" data-lightbox>
       <img src="{{ .Destination | safeURL }}"
         {{- with .Text }} alt="{{ . }}"{{ end -}}

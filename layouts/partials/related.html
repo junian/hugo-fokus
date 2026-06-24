@@ -19,7 +19,7 @@
 		<a href="{{ $page.RelPermalink }}">
 			{{- with $page.Param "images" -}}
 			{{- range last 1 . -}}
-			<div class="img-placeholder img-size-md">
+			<div class="img-placeholder img-ratio-16x9">
 				<img src="{{ . }}" class="img-responsive" title="{{ $page.Title }}" alt="{{ $page.Description }}" loading="lazy">
 			</div>
 			{{- end -}}
