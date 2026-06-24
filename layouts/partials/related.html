@@ -2,40 +2,38 @@
 {{- $related := .Site.RegularPages.Related . | shuffle | first 4  -}}
 {{- with $related -}}
 {{- $postCount := len $related -}}
-<div class="section-related">
-	<div class = "row">
-		<div class="col-lg-8 col-md-8">
-			<div class="text-center">
-				<h2>More from {{ $.Site.Title }}</h2>
-			</div>
+<div class = "row section-related">
+	<div class="col-lg-8 col-md-8">
+		<div class="text-center">
+			<h2>More from {{ $.Site.Title }}</h2>
 		</div>
 	</div>
-	<div class = "row">
-		{{ range $index, $page := . }}
-		<div class=' 
-		{{- if eq $postCount 1 -}}
-			col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1
-		{{- else -}}
-			col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1
-		{{- end -}}
-		{{- print " similar-item post-preview" -}}'>
-			<hr>
-			<a href="{{ $page.RelPermalink }}">
-				{{- with $page.Param "images" -}}
-				{{- range last 1 . -}}
-				<img src="{{ . }}" class="img-responsive" title="{{ $page.Title }}" alt="{{ $page.Description }}" loading="lazy">
-				{{- end -}}
-				{{- end -}}
-				<h3>{{- $page.Title -}}</h3>
-				<p class="post-subtitle small">{{- $page.Description -}}</p>
-				<p class="post-meta small">{{ with $page.ReadingTime }}{{ . }} min read{{ end }}</p>
-			</a>
-		</div>
-		{{- if(and (gt $postCount 2) (eq $index 1)) -}}
-		<div class="clearfix"></div>
-		{{- end -}}
-		{{ end }}
+</div>
+<div class = "row section-related">
+	{{ range $index, $page := . }}
+	<div class=' 
+	{{- if eq $postCount 1 -}}
+		col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1
+	{{- else -}}
+		col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1
+	{{- end -}}
+	{{- print " similar-item post-preview" -}}'>
+		<hr>
+		<a href="{{ $page.RelPermalink }}">
+			{{- with $page.Param "images" -}}
+			{{- range last 1 . -}}
+			<img src="{{ . }}" class="img-responsive" title="{{ $page.Title }}" alt="{{ $page.Description }}" loading="lazy">
+			{{- end -}}
+			{{- end -}}
+			<h3>{{- $page.Title -}}</h3>
+			<p class="post-subtitle small">{{- $page.Description -}}</p>
+			<p class="post-meta small">{{ with $page.ReadingTime }}{{ . }} min read{{ end }}</p>
+		</a>
 	</div>
+	{{- if(and (gt $postCount 2) (eq $index 1)) -}}
+	<div class="clearfix"></div>
+	{{- end -}}
+	{{ end }}
 </div>
 {{- end -}}
 {{- end -}}

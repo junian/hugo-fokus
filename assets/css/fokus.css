@@ -2023,6 +2023,12 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
     */
   }
 }
+@media (max-width: 767px) {
+  .e-content ul figure,
+.e-content ol figure {
+    margin-left: -55px;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .tabulator .tabulator-header .tabulator-col.tabulator-sortable.tabulator-col-sorter-element:hover {
     cursor: pointer;

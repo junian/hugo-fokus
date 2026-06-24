@@ -36,6 +36,14 @@ hr {
     ol {
         font-family: $font-family-serif;
     }
+    ul,
+    ol {
+        figure {
+            @media (max-width: $screen-xs-max) {
+                margin-left: -55px;
+            }
+        }
+    }
     > p,
     > ul,
     > ol {

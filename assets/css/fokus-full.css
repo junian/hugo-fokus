@@ -5512,6 +5512,10 @@ input[type=month].input-lg,
     color: #444;
     background-color: transparent;
   }
+  .e-content ul figure,
+.e-content ol figure {
+    margin-left: -55px;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .tabulator .tabulator-header .tabulator-col.tabulator-sortable.tabulator-col-sorter-element:hover {
