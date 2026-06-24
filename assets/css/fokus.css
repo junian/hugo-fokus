@@ -207,7 +207,8 @@ img::selection {
 .masthead .page-heading,
 .masthead .post-heading,
 .masthead .site-heading {
-  padding: 20px 0 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   color: #fcfbf7;
 }
 .masthead .page-heading,
@@ -1972,12 +1973,6 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
   }
   .nextprev .previous {
     text-align: left;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  aside.sidebar {
-    padding-left: 10px;
-    padding-right: 0px;
   }
 }
 @media (min-width: 992px) {

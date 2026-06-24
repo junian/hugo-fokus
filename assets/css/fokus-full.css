@@ -2702,7 +2702,8 @@ img::selection {
 .masthead .page-heading,
 .masthead .post-heading,
 .masthead .site-heading {
-  padding: 20px 0 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   color: #fcfbf7;
 }
 .masthead .page-heading,
@@ -5506,12 +5507,6 @@ input[type=month].input-lg,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #444;
     background-color: transparent;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-  aside.sidebar {
-    padding-left: 10px;
-    padding-right: 0px;
   }
 }
 @media (hover: hover) and (pointer: fine) {
