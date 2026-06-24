@@ -3,13 +3,10 @@
 {{- with $related -}}
 {{- $postCount := len $related -}}
 <div class = "row section-related">
-	<div class="col-lg-8 col-md-8">
-		<div class="text-center">
-			<h2>More from {{ $.Site.Title }}</h2>
-		</div>
+	<div class="col-lg-8 col-md-8 text-center">
+		<h2>More from {{ $.Site.Title }}</h2>
 	</div>
-</div>
-<div class = "row section-related">
+	<div class="clearfix"></div>
 	{{ range $index, $page := . }}
 	<div class=' 
 	{{- if eq $postCount 1 -}}

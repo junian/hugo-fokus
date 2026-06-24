@@ -4089,12 +4089,14 @@
               s = "localhost" === i || "127.0.0.1" === i || -1 !== i.indexOf("192.168.");
             i === e || s || window.location.replace(t.origin + window.location.pathname + window.location.search)
           }
-        }(), document.querySelectorAll(".img-placeholder img").forEach(function(t) {
+        }(), "loading" in HTMLImageElement.prototype ? document.querySelectorAll(".img-placeholder img").forEach(function(t) {
             function e() {
               var e = t.closest(".img-placeholder");
               e && e.classList.add("img-loaded")
             }
             t.complete && t.naturalWidth > 0 ? e() : (t.addEventListener("load", e), t.addEventListener("error", e))
+          }) : document.querySelectorAll(".img-placeholder").forEach(function(t) {
+            t.classList.add("img-loaded")
           }),
           function() {
             if (!e().isSupported()) {

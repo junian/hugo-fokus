@@ -5,7 +5,7 @@ import {loadDisqusCommentCount, onButtonLoadDisqusClicked} from "./disqus-ondema
 import {embedCookieConsent} from "./embed-native-cookie-consent";
 import { enforceCanonicalURL } from "./enforce-canonical";
 import {initTabulator} from "./tabulator";
-import { lazyLoadImages } from "./img-layload";
+import { lazyLoadImages } from "./img-lazyload";
 
 (() => {
   ready(() => {

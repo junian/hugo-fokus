@@ -1,4 +1,13 @@
 function lazyLoadImages() {
+    // Browser has no native lazy loading
+    if (!('loading' in HTMLImageElement.prototype)) {
+        document.querySelectorAll('.img-placeholder').forEach(function(el) {
+            el.classList.add('img-loaded');
+        });
+
+        return;
+    }
+
     var images = document.querySelectorAll('.img-placeholder img');
 
     images.forEach(function (img) {
