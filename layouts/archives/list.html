@@ -1,28 +1,28 @@
 {{ define "main" }}
+
+<!--row/-->
 {{- partial "header.html" . -}}
+<!--/row-->
+
 <!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-2 col-md-1"></div>
-        <div class="col-lg-8 col-md-10">
-            <div id="search"></div>
-            <div class="e-content archive entry-content">
-            {{ range (.Site.RegularPages).GroupByDate "2006" }}
-                <h2>{{ .Key }}</h2>
-                {{ range where .Pages "Type" "not in" (slice "page") }}
-                <div class="row">
-                    <div class= "col-xs-3 text-right small">
-                        <p>{{ .Date.Format "Jan 2, 2006" }}</p>
-                    </div>
-                    <div class= "col-xs-9 text-left small">    
-                        <p><a href="{{ .RelPermalink }}">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ with .PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}{{ .Title }}</a></p>
-                    </div>  
+<div class="row">
+    <div class="col-lg-8 col-md-8 e-content archive entry-content journey-content" itemscope itemtype="https://schema.org/ItemList">
+        {{ range (.Site.RegularPages).GroupByDate "2006" }}
+            <h2>{{ .Key }}</h2>
+            {{ range where .Pages "Type" "not in" (slice "page") }}
+            <div class="row">
+                <div class= "col-xs-3 text-right small">
+                    <p>{{ .Date.Format "Jan 2, 2006" }}</p>
                 </div>
-                {{ end }}
-            {{ end }}
+                <div class= "col-xs-9 text-left small">    
+                    <p><a href="{{ .RelPermalink }}">{{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}{{ with .PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}{{ .Title }}</a></p>
+                </div>  
             </div>
-        </div>
-        <div class="col-lg-2 col-md-1"></div>
+            {{ end }}
+        {{ end }}
     </div>
+    <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar">
+        {{- partial "sidebar.html" . -}}
+    </aside>
 </div>
 {{ end }}

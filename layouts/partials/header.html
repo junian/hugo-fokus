@@ -1,26 +1,22 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="masthead" style='{{- partial "background-cover.html" . | print | safeCSS -}}'>
+<header class="row masthead" style='{{- partial "background-cover.html" . | print | safeCSS -}}'>
     <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 site-heading">
-                <h1 class="p-name entry-title">
-                    {{- if eq .Kind "404" -}}
-                        {{- .Site.Title -}}
-                    {{- else -}}
-                        {{- .Title | default .Site.Title -}}
-                    {{- end -}}
-                </h1>
-                <hr class="small">
-                <span class="subheading entry-description">
-                    {{- if eq .Kind "404" -}}
-                        {{- .Title -}}
-                    {{- else -}}
-                        {{- with $.Param "description" -}}{{- . -}}{{- end -}}
-                    {{- end -}}
-                </span>
-            </div>
-        </div>
+    <div class="col-lg-12 col-md-12 site-heading">
+        <h1 class="p-name entry-title">
+            {{- if eq .Kind "404" -}}
+                {{- .Site.Title -}}
+            {{- else -}}
+                {{- .Title | default .Site.Title -}}
+            {{- end -}}
+        </h1>
+        <hr class="small">
+        <span class="subheading entry-description">
+            {{- if eq .Kind "404" -}}
+                {{- .Title -}}
+            {{- else -}}
+                {{- with $.Param "description" -}}{{- . -}}{{- end -}}
+            {{- end -}}
+        </span>
     </div>
 </header>

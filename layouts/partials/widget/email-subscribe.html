@@ -1,26 +1,22 @@
 {{ if .Site.Params.feedburner }}
-<div class="section section-subscribe text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2 col-md-1"></div>
-            <div class="col-lg-8 col-md-10">
-                <h3>Subscribe to {{ .Site.Title }}</h3>
-                <p>Get the latest posts delivered right to your inbox.</p>
-                <form class="form-inline" action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ .Site.Params.feedburner }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
-                    target="popupwindow">
-                    <input name="uri" type="hidden" value="{{ .Site.Params.feedburner }}">
-                    <input name="loc" type="hidden" value="en_US">
-                    <div class="form-group">
-                        <input name="email" aria-label="email" class="form-control" placeholder="Your email address" type="text">
-                    </div>
-                    <button class="btn btn-default btn-primary form-control" type="submit">Subscribe</button>
-                </form>
-                {{ with .Site.Home.OutputFormats.Get "RSS" }}
-                <p>Delivered by <a href="https://feeds.feedburner.com/{{ $.Site.Params.feedburner }}" target="_blank" rel="nofollow noreferrer">FeedBurner</a> or subscribe via RSS with <a href="https://cloud.feedly.com/#subscription/feed/{{ .Permalink }}" target="_blank" rel="nofollow noreferrer"> Feedly!</a></p>
-                {{ end }}
+<div class="row section section-subscribe text-center">
+    <div class="col-lg-2 col-md-1"></div>
+    <div class="col-lg-8 col-md-10">
+        <h3>Subscribe to {{ .Site.Title }}</h3>
+        <p>Get the latest posts delivered right to your inbox.</p>
+        <form class="form-inline" action="https://feedburner.google.com/fb/a/mailverify" method="post" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri={{ .Site.Params.feedburner }}', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"
+            target="popupwindow">
+            <input name="uri" type="hidden" value="{{ .Site.Params.feedburner }}">
+            <input name="loc" type="hidden" value="en_US">
+            <div class="form-group">
+                <input name="email" aria-label="email" class="form-control" placeholder="Your email address" type="text">
             </div>
-            <div class="col-lg-2 col-md-1"></div>
-        </div>
+            <button class="btn btn-default btn-primary form-control" type="submit">Subscribe</button>
+        </form>
+        {{ with .Site.Home.OutputFormats.Get "RSS" }}
+        <p>Delivered by <a href="https://feeds.feedburner.com/{{ $.Site.Params.feedburner }}" target="_blank" rel="nofollow noreferrer">FeedBurner</a> or subscribe via RSS with <a href="https://cloud.feedly.com/#subscription/feed/{{ .Permalink }}" target="_blank" rel="nofollow noreferrer"> Feedly!</a></p>
+        {{ end }}
     </div>
+    <div class="col-lg-2 col-md-1"></div>
 </div>
 {{ end }}

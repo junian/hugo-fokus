@@ -5,7 +5,7 @@
     </head>
     <body>
         {{- partialCached "navbar.html" . -}}
-        <main id="main">
+        <main id="main" class="container main">
         {{- block "main" . -}}{{- end -}}
         </main>
         {{- partialCached "footer.html" . -}}

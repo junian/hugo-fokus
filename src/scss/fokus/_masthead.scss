@@ -3,28 +3,25 @@
   // TIP: Background images are set within the HTML using inline CSS!
   margin-bottom: 20px;
   margin-top: -20px;
-  background-color: $primary;
-  background-image: linear-gradient(120deg, $primary, $brand-primary);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
   position: relative;
-  @include background-cover;
   //text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
   .overlay {
     position: absolute;
     top: 0;
-    left: 0;
+    // left: 0;
     height: 100%;
-    width: 100%;
-    
-    // enable this for single color
-    background-color: #243B55;
+    // width: 100%;
+    width: 100vw; 
+    left: 50%; 
+    transform: translateX(-50%);
 
-    // enable this for gradient color
-    background-image: linear-gradient(120deg, #141E30, #243B55);
-
-    opacity: .85;
+    background-color: $primary;
+    background-image: linear-gradient(120deg, $primary, $brand-primary);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    @include background-cover;
+    // opacity: .85;
     
     // enable this to display image without overlay
     //background-color: transparent;
@@ -52,7 +49,8 @@
       margin: 10px 0 0;
     }
     @media (min-width: $screen-sm-min) {
-      padding: 100px 0px;
+      padding-top: 80px;
+      padding-bottom: 80px;
       h1 {
         font-size: 55px;
       }
@@ -92,7 +90,8 @@
       }
     }
     @media (min-width: $screen-sm-min) {
-      padding: 40px 0px 40px 0px;
+      padding-top: 40px;
+      padding-bottom: 40px;
       h1 {
         font-size: 55px;
       }

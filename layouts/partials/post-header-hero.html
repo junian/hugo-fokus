@@ -1,60 +1,53 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="masthead" style='{{- partial "background-cover.html" . | print | safeCSS -}}'>
+<header class="row masthead" style='{{- partial "background-cover.html" . | print | safeCSS -}}'>
     <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <!--
-            <div class="col-lg-2 col-md-1"></div>
-            -->
-            <div class="col-lg-12 col-md-12 post-heading">
-                {{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}
-                {{ with .PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}
-                <h1 class="p-name entry-title">{{ .Title }}</h1>
-                {{ with .Description }}
-                <h2 class="p-summary subheading entry-description">{{ . }}</h2>
-                {{ end }}
-                <div class='post-meta'>
-                    <!-- Published Date -->
-                    {{ if not .Date.IsZero }}
-                    <span class='post-timestamp'>
-                        <i class="fa fa-calendar">{{- partialCached (print "svg/calendar.svg") . -}}</i>&nbsp;
-                        <a class='u-url' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
-                            <time class='dt-published' title='{{- .Date.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='datePublished' datetime='{{- .Date.Format "2006-01-02T15:04:05Z07:00" -}}'>
-                                {{- .Date.Format "Jan 2, 2006" -}}
-                            </time>
-                            <time class='dt-updated  hidden' title='{{- .Lastmod.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='dateModified' datetime='{{- .Lastmod.Format "2006-01-02T15:04:05Z07:00" -}}'>
-                                {{- .Lastmod.Format "Jan 2, 2006" -}}
-                            </time>
-                        </a>
-                    </span>
-                    {{ end }} 
-                    <!-- Post tags -->
-                    {{- with .Params.tags -}}
-                    <span class='p-category'>
-                        <i class="fa fa-tag">{{- partialCached (print "svg/tag.svg") . -}}</i>&nbsp;
-                        {{- range first 1 . -}}
-                            <a href='{{ printf "/tags/%s/" (. | urlize) | relURL }}' rel="tag">{{- . -}}</a>
-                        {{- end -}} 
-                        {{- if gt (len .) 1 -}} 
-                        {{- range after 1 . -}}
-                            {{- print ", " -}}<a href='{{ printf "/tags/%s/" (. | urlize) | relURL }}' rel="tag">{{- . -}}</a>
-                        {{- end -}} 
-                        {{- end -}}
-                    </span>
-                    {{- end -}} 
-                    <!-- Reading ETA -->
-                    {{- with .ReadingTime -}}
-                    <span class='post-read-eta'>
-                        <i class="fa fa-clock-o">{{- partialCached (print "svg/clock.svg") . -}}</i>&nbsp;
-                        {{/*
-                        <a href='{{- "/durations/" | relURL -}}{{- cond (le . 3) "short" (cond (le . 5) "medium" "long") -}}'><span class='eta'>{{- . -}}</span> min read</a>
-                        */}}
-                        <span class='eta'>{{- . -}}</span> min read
-                    </span>
-                    {{- end -}}
-                </div>
-            </div>
+    <div class="col-lg-12 col-md-12 post-heading">
+        {{ if .Draft }}<span style="color: darkorange">[Draft]</span> {{ end }}
+        {{ with .PublishDate }}{{ if gt . now }}<span style="color: darkturquoise">[Future]</span> {{ end }}{{ end }}
+        <h1 class="p-name entry-title">{{ .Title }}</h1>
+        {{ with .Description }}
+        <h2 class="p-summary subheading entry-description">{{ . }}</h2>
+        {{ end }}
+        <div class='post-meta'>
+            <!-- Published Date -->
+            {{ if not .Date.IsZero }}
+            <span class='post-timestamp'>
+                <i class="fa fa-calendar">{{- partialCached (print "svg/calendar.svg") . -}}</i>&nbsp;
+                <a class='u-url' href='{{ .Permalink }}' rel='bookmark' title='permanent link'>
+                    <time class='dt-published' title='{{- .Date.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='datePublished' datetime='{{- .Date.Format "2006-01-02T15:04:05Z07:00" -}}'>
+                        {{- .Date.Format "Jan 2, 2006" -}}
+                    </time>
+                    <time class='dt-updated  hidden' title='{{- .Lastmod.Format "2006-01-02T15:04:05Z0700" -}}' itemprop='dateModified' datetime='{{- .Lastmod.Format "2006-01-02T15:04:05Z07:00" -}}'>
+                        {{- .Lastmod.Format "Jan 2, 2006" -}}
+                    </time>
+                </a>
+            </span>
+            {{ end }} 
+            <!-- Post tags -->
+            {{- with .Params.tags -}}
+            <span class='p-category'>
+                <i class="fa fa-tag">{{- partialCached (print "svg/tag.svg") . -}}</i>&nbsp;
+                {{- range first 1 . -}}
+                    <a href='{{ printf "/tags/%s/" (. | urlize) | relURL }}' rel="tag">{{- . -}}</a>
+                {{- end -}} 
+                {{- if gt (len .) 1 -}} 
+                {{- range after 1 . -}}
+                    {{- print ", " -}}<a href='{{ printf "/tags/%s/" (. | urlize) | relURL }}' rel="tag">{{- . -}}</a>
+                {{- end -}} 
+                {{- end -}}
+            </span>
+            {{- end -}} 
+            <!-- Reading ETA -->
+            {{- with .ReadingTime -}}
+            <span class='post-read-eta'>
+                <i class="fa fa-clock-o">{{- partialCached (print "svg/clock.svg") . -}}</i>&nbsp;
+                {{/*
+                <a href='{{- "/durations/" | relURL -}}{{- cond (le . 3) "short" (cond (le . 5) "medium" "long") -}}'><span class='eta'>{{- . -}}</span> min read</a>
+                */}}
+                <span class='eta'>{{- . -}}</span> min read
+            </span>
+            {{- end -}}
         </div>
     </div>
 </header>

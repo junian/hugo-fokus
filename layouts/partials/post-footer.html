@@ -1,4 +1,4 @@
-<footer class="container post-footer">
+<footer class="post-footer">
     <div class = "row">
         <div class="col-lg-8 col-md-8">
             <hr>
@@ -59,20 +59,20 @@
                 {{ partial "widget/commentbox.html" . }}
             {{- end -}}
         </div>
-        
         <div class="col-lg-4 col-md-4"></div>
     </div>
 
+    <!--row/-->
     {{ partial "nextprev.html" . }}
+    <!--/row-->
 
     <!-- Email Subscribe -->
+    <!--row/-->
     {{ partialCached "widget/email-subscribe.html" . }}
+    <!--/row-->
 
     <!-- Show related articles -->
-    {{ if $.Param "relatedVisible" }}
-        {{ partial "related.html" . }}
-    {{ end }}
+    <!--row/-->
+    {{ partial "related.html" . }}
+    <!--/row-->    
 </footer>
-
-
-

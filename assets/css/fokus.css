@@ -181,6 +181,18 @@ img::selection {
 .masthead {
   margin-bottom: 20px;
   margin-top: -20px;
+  position: relative;
+}
+.masthead .overlay {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
   background-color: #004e92;
   background-image: -webkit-linear-gradient(330deg, #004e92, #337ab7);
   background-image: -o-linear-gradient(330deg, #004e92, #337ab7);
@@ -188,21 +200,8 @@ img::selection {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  position: relative;
   -webkit-background-size: cover;
           background-size: cover;
-}
-.masthead .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #243B55;
-  background-image: -webkit-linear-gradient(330deg, #141E30, #243B55);
-  background-image: -o-linear-gradient(330deg, #141E30, #243B55);
-  background-image: linear-gradient(120deg, #141E30, #243B55);
-  opacity: 0.85;
 }
 .masthead .page-heading,
 .masthead .post-heading,
@@ -1918,7 +1917,8 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
   }
   .masthead .page-heading,
 .masthead .site-heading {
-    padding: 100px 0px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
   .masthead .page-heading h1,
 .masthead .site-heading h1 {
@@ -1929,7 +1929,8 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
     font-size: 30px;
   }
   .masthead .post-heading {
-    padding: 40px 0px 40px 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   .masthead .post-heading h1 {
     font-size: 55px;
