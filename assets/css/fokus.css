@@ -192,10 +192,10 @@ img::selection {
       -ms-transform: translateX(-50%);
        -o-transform: translateX(-50%);
           transform: translateX(-50%);
-  background-color: #004e92;
-  background-image: -webkit-linear-gradient(330deg, #004e92, #337ab7);
-  background-image: -o-linear-gradient(330deg, #004e92, #337ab7);
-  background-image: linear-gradient(120deg, #004e92, #337ab7);
+  background-color: #1A1B26;
+  background-image: -webkit-linear-gradient(330deg, #1A1B26, #24283B);
+  background-image: -o-linear-gradient(330deg, #1A1B26, #24283B);
+  background-image: linear-gradient(120deg, #1A1B26, #24283B);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: scroll;

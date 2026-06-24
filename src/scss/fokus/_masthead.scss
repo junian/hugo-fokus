@@ -15,8 +15,8 @@
     left: 50%; 
     transform: translateX(-50%);
 
-    background-color: $primary;
-    background-image: linear-gradient(120deg, $primary, $brand-primary);
+    background-color: $bg-primary;
+    background-image: linear-gradient(120deg, $bg-primary, $bg-secondary);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
