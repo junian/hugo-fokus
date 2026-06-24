@@ -15,7 +15,7 @@
     {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
     {{- if $.Param "Services.GoogleAdsense.showTop" -}}
     <div class = "row">
-        <div class="col-lg-8 col-md-8">
+        <div class="col-lg-12 col-md-12">
             {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
         </div>
     </div>
@@ -46,13 +46,6 @@
 
         <!-- Sidebar -->
         <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar">
-            <!-- Show Right Adsense -->
-            {{- if ne .Params.type "page" -}}
-                {{- if $.Param "Services.GoogleAdsense.showRight" -}}
-                    {{- partialCached "widget/google-adsense-responsive-right.html" . -}}
-                {{- end -}}
-            {{- end -}}
-
             {{- partial "sidebar.html" . -}}
         </aside>
     </div>
