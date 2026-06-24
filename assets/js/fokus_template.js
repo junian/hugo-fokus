@@ -1942,7 +1942,7 @@
         dataReceiveParams: {},
         dependencies: {}
       };
-      class _ {
+      class L {
         constructor(t, e, i = {}) {
           this.table = t, this.msgType = e, this.registeredDefaults = Object.assign({}, i)
         }
@@ -1958,7 +1958,7 @@
           return i
         }
       }
-      class L extends m {
+      class _ extends m {
         constructor(t) {
           super(t), this.elementVertical = t.rowManager.element, this.elementHorizontal = t.columnManager.element, this.tableElement = t.rowManager.tableElement, this.verticalFillMode = "fit"
         }
@@ -2021,7 +2021,7 @@
           })
         }
       }
-      class P extends L {
+      class P extends _ {
         constructor(t) {
           super(t)
         }
@@ -2039,7 +2039,7 @@
           })
         }
       }
-      class S extends L {
+      class S extends _ {
         constructor(t) {
           super(t), this.leftCol = 0, this.rightCol = 0, this.scrollLeft = 0, this.vDomScrollPosLeft = 0, this.vDomScrollPosRight = 0, this.vDomPadLeft = 0, this.vDomPadRight = 0, this.fitDataColAvg = 0, this.windowBuffer = 200, this.visibleRows = null, this.initialized = !1, this.isFitData = !1, this.columns = []
         }
@@ -2256,7 +2256,7 @@
       }
       class k extends m {
         constructor(t) {
-          super(t), this.blockHozScrollEvent = !1, this.headersElement = null, this.contentsElement = null, this.rowHeader = null, this.element = null, this.columns = [], this.columnsByIndex = [], this.columnsByField = {}, this.scrollLeft = 0, this.optionsList = new _(this.table, "column definition", y), this.redrawBlock = !1, this.redrawBlockUpdate = null, this.renderer = null
+          super(t), this.blockHozScrollEvent = !1, this.headersElement = null, this.contentsElement = null, this.rowHeader = null, this.element = null, this.columns = [], this.columnsByIndex = [], this.columnsByField = {}, this.scrollLeft = 0, this.optionsList = new L(this.table, "column definition", y), this.redrawBlock = !1, this.redrawBlockUpdate = null, this.renderer = null
         }
         initialize() {
           this.initializeRenderer(), this.headersElement = this.createHeadersElement(), this.contentsElement = this.createHeaderContentsElement(), this.element = this.createHeaderElement(), this.contentsElement.insertBefore(this.headersElement, this.contentsElement.firstChild), this.element.insertBefore(this.contentsElement, this.element.firstChild), this.initializeScrollWheelWatcher(), this.subscribe("scroll-horizontal", this.scrollHorizontal.bind(this)), this.subscribe("scrollbar-vertical", this.padVerticalScrollbar.bind(this))
@@ -2526,7 +2526,7 @@
           p.elVisible(this.element) && this.verticalAlignHeaders(), t && (this.table.rowManager.resetScroll(), this.table.rowManager.reinitialize()), this.confirm("table-redrawing", t) || this.layoutRefresh(t), this.dispatch("table-redraw", t), this.table.footerManager.redraw()
         }
       }
-      class z extends L {
+      class z extends _ {
         constructor(t) {
           super(t), this.verticalFillMode = "fill", this.scrollTop = 0, this.scrollLeft = 0, this.scrollTop = 0, this.scrollLeft = 0
         }
@@ -2562,7 +2562,7 @@
           return this.rows()
         }
       }
-      class B extends L {
+      class B extends _ {
         constructor(t) {
           super(t), this.verticalFillMode = "fill", this.scrollTop = 0, this.scrollLeft = 0, this.vDomRowHeight = 20, this.vDomTop = 0, this.vDomBottom = 0, this.vDomScrollPosTop = 0, this.vDomScrollPosBottom = 0, this.vDomTopPad = 0, this.vDomBottomPad = 0, this.vDomMaxRenderChain = 90, this.vDomWindowBuffer = 0, this.vDomWindowMinTotalRows = 20, this.vDomWindowMinMarginRows = 5, this.vDomTopNewRows = [], this.vDomBottomNewRows = []
         }
@@ -3813,7 +3813,7 @@
           tt.initializeModuleBinder(), tt._registerModule(...arguments)
         }
         constructor(t, e, i) {
-          super(), tt.initializeModuleBinder(i), this.options = {}, this.columnManager = null, this.rowManager = null, this.footerManager = null, this.alertManager = null, this.vdomHoz = null, this.externalEvents = null, this.eventBus = null, this.interactionMonitor = !1, this.browser = "", this.browserSlow = !1, this.browserMobile = !1, this.rtl = !1, this.originalElement = null, this.componentFunctionBinder = new O(this), this.dataLoader = !1, this.modules = {}, this.modulesCore = [], this.modulesRegular = [], this.deprecationAdvisor = new j(this), this.optionsList = new _(this, "table constructor"), this.dependencyRegistry = new G(this), this.initialized = !1, this.destroyed = !1, this.initializeElement(t) && (this.initializeCoreSystems(e), setTimeout(() => {
+          super(), tt.initializeModuleBinder(i), this.options = {}, this.columnManager = null, this.rowManager = null, this.footerManager = null, this.alertManager = null, this.vdomHoz = null, this.externalEvents = null, this.eventBus = null, this.interactionMonitor = !1, this.browser = "", this.browserSlow = !1, this.browserMobile = !1, this.rtl = !1, this.originalElement = null, this.componentFunctionBinder = new O(this), this.dataLoader = !1, this.modules = {}, this.modulesCore = [], this.modulesRegular = [], this.deprecationAdvisor = new j(this), this.optionsList = new L(this, "table constructor"), this.dependencyRegistry = new G(this), this.initialized = !1, this.destroyed = !1, this.initializeElement(t) && (this.initializeCoreSystems(e), setTimeout(() => {
             this._create()
           })), this.constructor.registry.register(this)
         }
@@ -4089,36 +4089,42 @@
               s = "localhost" === i || "127.0.0.1" === i || -1 !== i.indexOf("192.168.");
             i === e || s || window.location.replace(t.origin + window.location.pathname + window.location.search)
           }
-        }(),
-        function() {
-          if (!e().isSupported()) {
-            const t = document.querySelectorAll(".highlight > .btn-clipboard");
-            return void Array.prototype.forEach.call(t, (t, e) => {
-              s(t)
+        }(), document.querySelectorAll(".img-placeholder img").forEach(function(t) {
+            function e() {
+              var e = t.closest(".img-placeholder");
+              e && e.classList.add("img-loaded")
+            }
+            t.complete && t.naturalWidth > 0 ? e() : (t.addEventListener("load", e), t.addEventListener("error", e))
+          }),
+          function() {
+            if (!e().isSupported()) {
+              const t = document.querySelectorAll(".highlight > .btn-clipboard");
+              return void Array.prototype.forEach.call(t, (t, e) => {
+                s(t)
+              })
+            }
+            new(e())(".btn-clipboard", {
+              target: t => t.nextElementSibling
+            }).on("success", t => {
+              t.clearSelection();
+              const e = t.trigger.querySelector(".msg-clipboard");
+              var i, s;
+              e && (e.getAttribute("data-cbtimer") && clearTimeout(parseInt(e.getAttribute("data-cbtimer"), 10)), s = "msg-clipboard--active", (i = e).classList ? i.classList.add(s) : i.className += " " + s, e.innerHTML = "Copied", e.setAttribute("data-cbtimer", setTimeout(() => {
+                ! function(t, e) {
+                  t.classList ? t.classList.remove(e) : t.className = t.className.replace(new RegExp("(^|\\b)" + e.split(" ").join("|") + "(\\b|$)", "gi"), " ")
+                }(e, "msg-clipboard--active"), e.setAttribute("data-cbtimer", "")
+              }, 2e3).toString()))
             })
-          }
-          new(e())(".btn-clipboard", {
-            target: t => t.nextElementSibling
-          }).on("success", t => {
-            t.clearSelection();
-            const e = t.trigger.querySelector(".msg-clipboard");
-            var i, s;
-            e && (e.getAttribute("data-cbtimer") && clearTimeout(parseInt(e.getAttribute("data-cbtimer"), 10)), s = "msg-clipboard--active", (i = e).classList ? i.classList.add(s) : i.className += " " + s, e.innerHTML = "Copied", e.setAttribute("data-cbtimer", setTimeout(() => {
-              ! function(t, e) {
-                t.classList ? t.classList.remove(e) : t.className = t.className.replace(new RegExp("(^|\\b)" + e.split(" ").join("|") + "(\\b|$)", "gi"), " ")
-              }(e, "msg-clipboard--active"), e.setAttribute("data-cbtimer", "")
-            }, 2e3).toString()))
-          })
-        }(),
-        function() {
-          const t = a.getElementById("btn_load_disqus_thread");
-          t && l(t, "click", () => {
-            h && d && (() => {
-              const t = a.createElement("script");
-              t.src = "https://" + h + ".disqus.com/embed.js", t.setAttribute("data-timestamp", +new Date), (a.head || a.body).appendChild(t)
-            })(), r(t)
-          })
-        }(), h && d && (() => {
+          }(),
+          function() {
+            const t = a.getElementById("btn_load_disqus_thread");
+            t && l(t, "click", () => {
+              h && d && (() => {
+                const t = a.createElement("script");
+                t.src = "https://" + h + ".disqus.com/embed.js", t.setAttribute("data-timestamp", +new Date), (a.head || a.body).appendChild(t)
+              })(), r(t)
+            })
+          }(), h && d && (() => {
             const t = a.createElement("script");
             t.type = "text/javascript", t.async = !0, t.src = "https://" + h + ".disqus.com/count.js", t.id = "dsq-count-scr", (a.body || a.head).appendChild(t)
           })(), "true" === o.is_cookie_consent_enabled.toString().trim().toLowerCase() && (u.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/) || function() {

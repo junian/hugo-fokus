@@ -3177,6 +3177,115 @@ hr.section-divider:before, .e-content hr:before {
   margin: 30px auto;
 }
 
+/* =====================================================
+   Base Image Placeholder
+   ===================================================== */
+.img-placeholder {
+  position: relative;
+  /*
+  margin: 0 0 30px;
+  background: #eee;
+  */
+  overflow: hidden;
+}
+
+/* Skeleton animation */
+.img-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: -webkit-gradient(linear, left top, right top, color-stop(25%, #eeeeee), color-stop(50%, #dddddd), color-stop(75%, #eeeeee));
+  background: -webkit-linear-gradient(left, #eeeeee 25%, #dddddd 50%, #eeeeee 75%);
+  background: -o-linear-gradient(left, #eeeeee 25%, #dddddd 50%, #eeeeee 75%);
+  background: linear-gradient(90deg, #eeeeee 25%, #dddddd 50%, #eeeeee 75%);
+  -webkit-background-size: 400% 100%;
+          background-size: 400% 100%;
+  -webkit-animation: img-skeleton-loading 1.4s linear infinite;
+       -o-animation: img-skeleton-loading 1.4s linear infinite;
+          animation: img-skeleton-loading 1.4s linear infinite;
+}
+
+/* Remove skeleton after image loads */
+.img-placeholder.img-loaded::before {
+  display: none;
+}
+
+/* Image */
+.img-placeholder img {
+  display: block;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.img-placeholder.img-loaded {
+  min-height: 0;
+}
+.img-placeholder.img-loaded img {
+  opacity: 1;
+}
+
+/* =====================================================
+   Size Presets
+   ===================================================== */
+/* Small banner */
+.img-size-xs {
+  min-height: 90px;
+}
+
+/* Small image */
+.img-size-sm {
+  min-height: 150px;
+}
+
+/* Medium image */
+.img-size-md {
+  min-height: 250px;
+}
+
+/* Large image */
+.img-size-lg {
+  min-height: 350px;
+}
+
+/* Tall placement */
+.img-size-xl {
+  min-height: 600px;
+}
+
+@-webkit-keyframes img-skeleton-loading {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@-o-keyframes img-skeleton-loading {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes img-skeleton-loading {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
 .tabulator {
   position: relative;
   border: 1px solid #999;

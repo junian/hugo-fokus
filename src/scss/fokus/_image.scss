@@ -1,0 +1,92 @@
+/* =====================================================
+   Base Image Placeholder
+   ===================================================== */
+
+.img-placeholder {
+    position: relative;
+    /*
+    margin: 0 0 30px;
+    background: #eee;
+    */
+    overflow: hidden;
+}
+
+/* Skeleton animation */
+.img-placeholder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #dddddd 50%,
+        #eeeeee 75%
+    );
+
+    background-size: 400% 100%;
+    animation: img-skeleton-loading 1.4s linear infinite;
+}
+
+/* Remove skeleton after image loads */
+.img-placeholder.img-loaded::before {
+    display: none;
+}
+
+/* Image */
+.img-placeholder img {
+    display: block;
+    opacity: 0;
+    transition: opacity .3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.img-placeholder.img-loaded {
+    min-height: 0;
+    img {
+        opacity: 1;
+    }
+}
+
+/* =====================================================
+   Size Presets
+   ===================================================== */
+
+/* Small banner */
+.img-size-xs {
+    min-height: 90px;
+}
+
+/* Small image */
+.img-size-sm {
+    min-height: 150px;
+}
+
+/* Medium image */
+.img-size-md {
+    min-height: 250px;
+}
+
+/* Large image */
+.img-size-lg {
+    min-height: 350px;
+}
+
+/* Tall placement */
+.img-size-xl {
+    min-height: 600px;
+}
+
+@keyframes img-skeleton-loading {
+    from {
+        background-position: 100% 0;
+    }
+    to {
+        background-position: -100% 0;
+    }
+}
