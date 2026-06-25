@@ -89,17 +89,38 @@
 <link rel="canonical" href="{{ $canonical | safeURL }}">
 <link rel="alternate" href="{{ $canonical | safeURL }}" hreflang="x-default">
 
-{{ with $.Param "redirect" }} 
+{{- with $.Param "redirect" -}} 
 <!-- Redirect to external domain -->
 <meta http-equiv="refresh" content="0; url={{ . }}">
 <script>
     window.location.href = {{ . }};
 </script>
-{{ end }}
+{{- end -}}
 
-{{ if .Param "math" }}
-    {{ partialCached "math.html" . }}
-{{ end }}
+{{- if .Site.Params.isRedirectToCanonical -}}
+<script>
+(function () {
+    var baseURL = {{ .Site.BaseURL }};
+    var canonicalURL = new URL(baseURL);
+    var canonicalHostname = canonicalURL.hostname;
+    var currentHostname = window.location.hostname;
+
+    var isLocal = currentHostname === "localhost" ||
+        currentHostname === "127.0.0.1" ||
+        currentHostname.indexOf("192.168.") !== -1;
+
+    if (currentHostname !== canonicalHostname && !isLocal) {
+        window.location.replace(
+            canonicalURL.origin + window.location.pathname + window.location.search
+        );
+    }
+}());
+</script>
+{{- end -}}
+{{- partialCached "widget/noscript.html" . -}}
+{{- if .Param "math" -}}
+    {{- partialCached "math.html" . -}}
+{{- end -}}
 
 <!-- Google Auto AdSense -->
 {{- partialCached "widget/google-adsense-auto.html" . -}}

@@ -3462,17 +3462,17 @@
         }
       }
 
-      function U(t, e) {
+      function q(t, e) {
         t.forEach(function(t) {
           t.reinitializeWidth()
         }), this.table.options.responsiveLayout && this.table.modExists("responsiveLayout", !0) && this.table.modules.responsiveLayout.update()
       }
-      var q = {
+      var U = {
         fitData: function(t, e) {
           e && this.table.columnManager.renderer.reinitializeColumnWidths(t), this.table.options.responsiveLayout && this.table.modExists("responsiveLayout", !0) && this.table.modules.responsiveLayout.update()
         },
-        fitDataFill: U,
-        fitDataTable: U,
+        fitDataFill: q,
+        fitDataTable: q,
         fitDataStretch: function(t, e) {
           var i = 0,
             s = this.table.rowManager.element.clientWidth,
@@ -3542,7 +3542,7 @@
       };
       class X extends f {
         static moduleName = "layout";
-        static modes = q;
+        static modes = U;
         constructor(t) {
           super(t, "layout"), this.mode = null, this.registerTableOption("layout", "fitData"), this.registerTableOption("layoutColumnsOnNewData", !1), this.registerColumnOption("widthGrow"), this.registerColumnOption("widthShrink")
         }
@@ -4081,15 +4081,7 @@
       const et = document;
       var it;
       it = () => {
-        ! function() {
-          if ("true" === o.is_redirect_to_canonical.toString().trim().toLowerCase()) {
-            var t = new URL(o.base_url),
-              e = t.hostname,
-              i = window.location.hostname,
-              s = "localhost" === i || "127.0.0.1" === i || -1 !== i.indexOf("192.168.");
-            i === e || s || window.location.replace(t.origin + window.location.pathname + window.location.search)
-          }
-        }(), "loading" in HTMLImageElement.prototype ? document.querySelectorAll(".img-placeholder img").forEach(function(t) {
+        "loading" in HTMLImageElement.prototype ? document.querySelectorAll(".img-placeholder img").forEach(function(t) {
             function e() {
               var e = t.closest(".img-placeholder");
               e && e.classList.add("img-loaded")
