@@ -168,6 +168,10 @@ img::selection {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+.navbar-main .navbar-nav > li > pagefind-modal-trigger {
+  padding-top: 0px;
+  padding-left: 15px;
+}
 
 .navbar-cookie {
   font-size: 16px;
@@ -820,6 +824,7 @@ hr.section-divider:before, .e-content hr:before {
 ins.adsbygoogle[data-ad-status=unfilled] {
   display: none !important;
 }
+
 .tabulator {
   position: relative;
   border: 1px solid #999;
@@ -2055,6 +2060,10 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
 @media (min-width: 768px) {
   .pagenumber div {
     padding: 15px 25px;
+  }
+  .navbar-main .navbar-nav > li > pagefind-modal-trigger {
+    padding-top: 6px;
+    padding-left: 0px;
   }
   .masthead .page-heading,
 .masthead .site-heading {
