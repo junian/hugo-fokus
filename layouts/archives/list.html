@@ -6,6 +6,9 @@
 
 <!-- Main Content -->
 <div class="row">
+    {{- if not .Site.Params.sidebar.isEnabled -}}
+    <div class="col-lg-2 col-md-2"></div>
+    {{- end -}}
     <div class="col-lg-8 col-md-8 e-content archive entry-content journey-content" itemscope itemtype="https://schema.org/ItemList">
         {{ range (.Site.RegularPages).GroupByDate "2006" }}
             <h2>{{ .Key }}</h2>
@@ -21,8 +24,12 @@
             {{ end }}
         {{ end }}
     </div>
+    {{- if not .Site.Params.sidebar.isEnabled -}}
+    <div class="col-lg-2 col-md-2"></div>
+    {{- else -}}
     <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar">
         {{- partial "sidebar.html" . -}}
     </aside>
+    {{- end -}}
 </div>
 {{ end }}

@@ -1,5 +1,8 @@
 <footer class="post-footer">
     <div class = "row">
+        {{- if not .Site.Params.sidebar.isEnabled -}}
+        <div class="col-lg-2 col-md-2"></div>
+        {{- end -}}
         <div class="col-lg-8 col-md-8">
             <hr>
             <!-- Blockadblock message -->
@@ -59,7 +62,6 @@
                 {{ partial "widget/commentbox.html" . }}
             {{- end -}}
         </div>
-        <div class="col-lg-4 col-md-4"></div>
     </div>
 
     <!--row/-->

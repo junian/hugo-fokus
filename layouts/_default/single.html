@@ -25,6 +25,9 @@
 
     <!-- Content -->
     <div class="row">
+        {{- if not .Site.Params.sidebar.isEnabled -}}
+        <div class="col-lg-2 col-md-2"></div>
+        {{- end -}}
         <div class="col-lg-8 col-md-8 e-content entry-content journey-content" id="content" role="main" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
             <!-- Article Content -->
                 
@@ -45,9 +48,13 @@
         </div>
 
         <!-- Sidebar -->
+        {{- if not .Site.Params.sidebar.isEnabled -}}
+        <div class="col-lg-2 col-md-2"></div>
+        {{- else -}}
         <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar">
             {{- partial "sidebar.html" . -}}
         </aside>
+        {{- end -}}
     </div>
 
     <!-- Show Bottom Adsense -->
@@ -55,6 +62,9 @@
     {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
     {{- if $.Param "Services.GoogleAdsense.showBottom" -}}
     <div class = "row">
+        {{- if not .Site.Params.sidebar.isEnabled -}}
+        <div class="col-lg-2 col-md-2"></div>
+        {{- end -}}
         <div class="col-lg-8 col-md-8">
             {{ partialCached "widget/google-adsense-responsive-bottom.html" . }}
         </div>
