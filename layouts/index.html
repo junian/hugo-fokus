@@ -7,9 +7,16 @@
 <!-- Main Content -->
 <div class="row">
     {{- if not .Site.Params.sidebar.isEnabled -}}
-    <div class="col-lg-2 col-md-2"></div>
+    <div class="col-lg-2 col-md-1"></div>
     {{- end -}}
-    <div class="col-lg-8 col-md-8 entry-content journey-content" itemscope itemtype="https://schema.org/ItemList">
+    <div class="
+            {{- if .Site.Params.sidebar.isEnabled -}}
+            col-lg-8 col-md-8
+            {{- else -}}
+            col-lg-8 col-md-10 
+            {{- end -}}
+            {{- print " entry-content journey-content" -}}
+            " itemscope itemtype="https://schema.org/ItemList">
         {{ range $index, $page := (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)).Pages }}
         <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="post-preview">
             <a itemprop="url" href="{{ .RelPermalink }}">
