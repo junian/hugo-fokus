@@ -821,10 +821,6 @@ hr.section-divider:before, .e-content hr:before {
     background-position: -100% 0;
   }
 }
-ins.adsbygoogle[data-ad-status=unfilled] {
-  display: none !important;
-}
-
 .tabulator {
   position: relative;
   border: 1px solid #999;
