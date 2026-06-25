@@ -817,6 +817,9 @@ hr.section-divider:before, .e-content hr:before {
     background-position: -100% 0;
   }
 }
+ins.adsbygoogle[data-ad-status=unfilled] {
+  display: none !important;
+}
 .tabulator {
   position: relative;
   border: 1px solid #999;
@@ -2156,6 +2159,11 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
       transform: translate3d(0, 100%, 0);
     }
     */
+  }
+  aside.sidebar.sticky-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
 }
 @media (max-width: 767px) {

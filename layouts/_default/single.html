@@ -10,8 +10,9 @@
     {{- end -}}
     <!--row/-->
 
-    <!-- Show Top Adsense -->
+    <!-- Show Top Adsense (Sidebar disabled) -->
     {{- if ne .Params.type "page" -}}
+    {{- if not .Site.Params.sidebar.isEnabled -}}
     {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
     {{- if $.Param "Services.GoogleAdsense.showTop" -}}
     <div class = "row">
@@ -19,6 +20,7 @@
             {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
         </div>
     </div>
+    {{- end -}}
     {{- end -}}
     {{- end -}}
     {{- end -}}
@@ -34,31 +36,44 @@
             {{- else -}}
             col-lg-8 col-md-10 
             {{- end -}}
-            {{- print " e-content entry-content journey-content" -}}
-            " id="content" role="main" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
-            <!-- Article Content -->
-                
-            <!--Image for thumbnail-->
-            {{- with $.Param "images" -}}
-            {{- range last 1 . -}}
-            <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}"></p>
+            {{- print " " -}}
+            ">
+
+            <!-- Show Top Adsense (Sidebar enabled) -->
+            {{- if ne .Params.type "page" -}}
+            {{- if .Site.Params.sidebar.isEnabled -}}
+            {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
+            {{- if $.Param "Services.GoogleAdsense.showTop" -}}
+            {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
+            {{- end -}}
+            {{- end -}}
             {{- end -}}
             {{- end -}}
 
-            {{ .Scratch.Set "finalContent" .Content }}
-            
-            {{ if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) }}
-                {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/google-adsense-inarticle.html" .) | safeHTML }}
-            {{ else }}
-                {{ .Scratch.Get "finalContent" }}
-            {{ end }}
+            <!-- Article Content -->
+            <div class="e-content entry-content journey-content" id="content" role="main" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
+                <!--Image for thumbnail-->
+                {{- with $.Param "images" -}}
+                {{- range last 1 . -}}
+                <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}"></p>
+                {{- end -}}
+                {{- end -}}
+
+                {{ .Scratch.Set "finalContent" .Content }}
+                
+                {{ if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) }}
+                    {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/google-adsense-inarticle.html" .) | safeHTML }}
+                {{ else }}
+                    {{ .Scratch.Get "finalContent" }}
+                {{ end }}
+            </div>
         </div>
 
         <!-- Sidebar -->
         {{- if not .Site.Params.sidebar.isEnabled -}}
         <div class="col-lg-2 col-md-2"></div>
         {{- else -}}
-        <aside class="col-lg-4 col-md-4 page-sidebar sidebar" id="sidebar">
+        <aside class="col-lg-4 col-md-4 page-sidebar sidebar{{ if .Site.Params.sidebar.isSticky }} sticky-sidebar{{ end }}" id="sidebar">
             {{- partial "sidebar.html" . -}}
         </aside>
         {{- end -}}
