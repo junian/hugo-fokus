@@ -51,7 +51,7 @@
             {{- end -}}
 
             <!-- Article Content -->
-            <div class="e-content entry-content journey-content" id="content" role="main" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
+            <div class="e-content entry-content journey-content" id="content" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
                 <!-- Schema -->
                 {{- template "_internal/schema.html" . -}}
                 <!--Image for thumbnail-->
