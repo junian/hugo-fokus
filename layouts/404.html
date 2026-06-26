@@ -68,6 +68,8 @@
                     async function getSuggestions() {
                         try {
                             const pagefind = await import("/pagefind/pagefind.js");
+                            pagefind.init();
+                            
                             const currentPath = window.location.pathname.toLowerCase().replace(/\/$/, "");
                             
                             // 1. Fetch and Parse Sitemap
