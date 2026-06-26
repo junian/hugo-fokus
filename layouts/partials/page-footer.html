@@ -1,0 +1,42 @@
+<footer class="post-footer">
+    <div class = "row">
+        {{- if not .Site.Params.sidebar.isEnabled -}}
+        <div class="col-lg-2 col-md-1"></div>
+        {{- end -}}
+        <div class="
+            {{- if .Site.Params.sidebar.isEnabled -}}
+            col-lg-8 col-md-8 
+            {{- else -}}
+            col-lg-8 col-md-10 
+            {{- end -}}
+            ">
+            <!-- Blockadblock message -->
+            {{- if .Site.Params.Widget.blockAdBlock -}}
+                <hr>
+                {{ partialCached "widget/blockadblock.html" . }}
+            {{- end -}}
+            <!-- Content and Code License -->
+            {{- if $.Param "license.visible" -}}
+            <!--<hr>-->
+            <div class="section-license smaller">
+                <p>{{ partialCached "widget/license.html" . }}</p>
+            </div>
+            {{- end -}}
+            {{ if $.Param "disclaimer" }}
+            <div class="section-disclaimer smaller">
+                {{ $.Param "disclaimer" | markdownify }}
+            </div>
+            {{ end }}
+            {{ with .Lastmod }}
+            <div class="section-lastmod smaller">
+                <p>Last updated {{ .Format "January 2, 2006" }}.</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+
+    <!-- Email Subscribe -->
+    <!--row/-->
+    {{ partialCached "widget/email-subscribe.html" . }}
+    <!--/row-->
+</footer>

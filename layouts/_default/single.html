@@ -102,6 +102,8 @@
 
 {{- if ne .Params.type "page" -}}
     {{- partial "post-footer.html" . -}}
+{{- else -}}
+    {{- partial "page-footer.html" . -}}
 {{- end -}}
 
 {{ end }}

@@ -5,27 +5,6 @@
   margin-top: -20px;
   position: relative;
   //text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
-  .overlay {
-    position: absolute;
-    top: 0;
-    // left: 0;
-    height: 100%;
-    // width: 100%;
-    width: 100vw; 
-    left: 50%; 
-    transform: translateX(-50%);
-
-    background-color: $bg-primary;
-    background-image: linear-gradient(120deg, $bg-primary, $bg-secondary);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    @include background-cover;
-    // opacity: .85;
-    
-    // enable this to display image without overlay
-    //background-color: transparent;
-  }
   .page-heading,
   .post-heading,
   .site-heading {
@@ -112,4 +91,26 @@ hr.small {
   margin: 15px auto;
   border-width: 4px;
   border-color: $white-warm;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  // left: 0;
+  height: 100%;
+  // width: 100%;
+  width: 100vw; 
+  left: 50%; 
+  transform: translateX(-50%);
+
+  background-color: $bg-primary;
+  background-image: linear-gradient(120deg, $bg-primary, $bg-secondary);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  @include background-cover;
+  // opacity: .85;
+  
+  // enable this to display image without overlay
+  //background-color: transparent;
 }
