@@ -32,7 +32,7 @@
     {{- if not .Site.Params.sidebar.isEnabled -}}
     <div class="col-lg-2 col-md-2"></div>
     {{- else -}}
-    <aside class="col-lg-4 col-md-4 page-sidebar sidebar{{ if .Site.Params.sidebar.isSticky }} sticky-sidebar{{ end }}" id="sidebar">
+    <aside class="col-lg-4 col-md-4 section-sidebar sidebar{{ if .Site.Params.sidebar.isSticky }} sticky-sidebar{{ end }}" id="sidebar">
         {{- partial "sidebar.html" . -}}
     </aside>
     {{- end -}}

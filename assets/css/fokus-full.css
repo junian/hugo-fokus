@@ -3115,29 +3115,29 @@ hr.section-divider:before, .e-content hr:before {
   width: 72px;
 }
 
-.nextprev a.disabled {
+.section-nextprev a.disabled {
   cursor: not-allowed;
 }
-.nextprev a.disabled:hover, .nextprev a.disabled:focus {
+.section-nextprev a.disabled:hover, .section-nextprev a.disabled:focus {
   color: #212529;
 }
-.nextprev .next {
+.section-nextprev .next {
   text-align: left;
 }
-.nextprev .previous {
+.section-nextprev .previous {
   text-align: right;
 }
-.nextprev p {
+.section-nextprev p {
   line-height: 1.2;
   margin: 0 0 10px;
 }
-.nextprev .caption, .nextprev .e-content figure figcaption, .e-content figure .nextprev figcaption {
+.section-nextprev .caption, .section-nextprev .e-content figure figcaption, .e-content figure .section-nextprev figcaption {
   font-style: normal;
 }
-.nextprev .caption h2, .nextprev .e-content figure figcaption h2, .e-content figure .nextprev figcaption h2 {
+.section-nextprev .caption h2, .section-nextprev .e-content figure figcaption h2, .e-content figure .section-nextprev figcaption h2 {
   font-size: 24px;
 }
-.nextprev .caption h3, .nextprev .e-content figure figcaption h3, .e-content figure .nextprev figcaption h3 {
+.section-nextprev .caption h3, .section-nextprev .e-content figure figcaption h3, .e-content figure .section-nextprev figcaption h3 {
   margin-top: 10px;
   font-size: 18px;
   line-height: 1.3;
@@ -5042,10 +5042,10 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
   .highlight pre {
     padding: 10px;
   }
-  .nextprev .next {
+  .section-nextprev .next {
     text-align: right;
   }
-  .nextprev .previous {
+  .section-nextprev .previous {
     text-align: left;
   }
 }
@@ -5302,7 +5302,7 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
     }
     */
   }
-  aside.sidebar.sticky-sidebar {
+  aside.section-sidebar.sticky-sidebar {
     position: -webkit-sticky;
     position: sticky;
     top: 0;

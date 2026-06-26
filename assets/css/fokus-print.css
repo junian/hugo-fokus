@@ -96,8 +96,9 @@ h3 {
 .section-related,
 .p-comment,
 .section-subscribe,
-.nextprev,
+.section-nextprev,
 .section-ad,
+.section-sidebar,
 .btn-clipboard {
     display: none !important;
   }
