@@ -5,34 +5,101 @@
 <footer class="site-footer container">
     <div class="overlay"></div>
     <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-6 section-footer-item">
-            <h4>{{- .Site.Params.Menu.footer.leftTitle -}}</h4>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 section-footer-item">
+            {{- with .Site.Params.Menu.footer.title1 -}}
+            <h4>{{- . -}}</h4>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer.content1 -}}
+            <p>{{- . | safeHTML -}}</p>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer1 -}}
             <ul class="list-unstyled">
-                {{- range .Site.Params.Menu.footerLeft -}}
+                {{- range . -}}
                 <li><a href="{{- .url -}}">{{- .title -}}</a></li>
                 {{- end -}}
             </ul>
+            {{- end -}}
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-6 section-footer-item">
-            <h4>{{- .Site.Params.Menu.footer.middleTitle -}}</h4>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 section-footer-item">
+            {{- with .Site.Params.Menu.footer.title2 -}}
+            <h4>{{- . -}}</h4>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer.content2 -}}
+            <p>{{- . | safeHTML -}}</p>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer2 -}}
             <ul class="list-unstyled">
-                {{- range .Site.Params.Menu.footerMiddle -}}
+                {{- range . -}}
                 <li><a href="{{- .url -}}">{{- .title -}}</a></li>
                 {{- end -}}
             </ul>
+            {{- end -}}
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-6 section-footer-item">
-            <h4>{{- .Site.Params.Menu.footer.rightTitle -}}</h4>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 section-footer-item">
+            {{- with .Site.Params.Menu.footer.title3 -}}
+            <h4>{{- . -}}</h4>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer.content3 -}}
+            <p>{{- . | safeHTML -}}</p>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer3 -}}
             <ul class="list-unstyled">
-                {{- range .Site.Params.Menu.footerRight -}}
+                {{- range . -}}
                 <li><a href="{{- .url -}}">{{- .title -}}</a></li>
                 {{- end -}}
             </ul>
+            {{- end -}}
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-6 section-footer-item">
-            <h4>{{- .Site.Params.Menu.footer.infoTitle -}}</h4>
-            <p>{{- .Site.Params.Menu.footer.infoContent | safeHTML -}}</p>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 section-footer-item">
+            {{- with .Site.Params.Menu.footer.title4 -}}
+            <h4>{{- . -}}</h4>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer.content4 -}}
+            <p>{{- . | safeHTML -}}</p>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer4 -}}
+            <ul class="list-unstyled">
+                {{- range . -}}
+                <li><a href="{{- .url -}}">{{- .title -}}</a></li>
+                {{- end -}}
+            </ul>
+            {{- end -}}
         </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 section-footer-item">
+            {{- with .Site.Params.Menu.footer.title5 -}}
+            <h4>{{- . -}}</h4>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer.content5 -}}
+            <p>{{- . | safeHTML -}}</p>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer5 -}}
+            <ul class="list-unstyled">
+                {{- range . -}}
+                <li><a href="{{- .url -}}">{{- .title -}}</a></li>
+                {{- end -}}
+            </ul>
+            {{- end -}}
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 section-footer-item">
+            {{- with .Site.Params.Menu.footer.title6 -}}
+            <h4>{{- . -}}</h4>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer.content6 -}}
+            <p>{{- . | safeHTML -}}</p>
+            {{- end -}}
+            {{- with .Site.Params.Menu.footer6 -}}
+            <ul class="list-unstyled">
+                {{- range . -}}
+                <li><a href="{{- .url -}}">{{- .title -}}</a></li>
+                {{- end -}}
+            </ul>
+            {{- end -}}
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="clearfix visible-xs-block"></div>
     </div>
     <div class="row">
         <div class="col-lg-12 col-md-12">

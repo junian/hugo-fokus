@@ -2493,6 +2493,54 @@ tbody.collapse.in {
 .affix {
   position: fixed;
 }
+
+@-ms-viewport {
+  width: device-width;
+}
+.visible-xs {
+  display: none !important;
+}
+
+.visible-sm {
+  display: none !important;
+}
+
+.visible-md {
+  display: none !important;
+}
+
+.visible-lg {
+  display: none !important;
+}
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+.visible-print {
+  display: none !important;
+}
+.visible-print-block {
+  display: none !important;
+}
+
+.visible-print-inline {
+  display: none !important;
+}
+
+.visible-print-inline-block {
+  display: none !important;
+}
 /*!Fokus v3.0.0 | MIT License | github.com/junian/fokus*/
 body {
   font-size: 20px;
@@ -5556,6 +5604,34 @@ body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
   .col-lg-offset-12 {
     margin-left: 100%;
   }
+  .visible-lg {
+    display: block !important;
+  }
+
+  table.visible-lg {
+    display: table !important;
+  }
+
+  tr.visible-lg {
+    display: table-row !important;
+  }
+
+  th.visible-lg,
+td.visible-lg {
+    display: table-cell !important;
+  }
+  .visible-lg-block {
+    display: block !important;
+  }
+  .visible-lg-inline {
+    display: inline !important;
+  }
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-lg {
+    display: none !important;
+  }
 }
 @media screen and (max-width: 767px) {
   .table-responsive {
@@ -5697,9 +5773,127 @@ input[type=month].input-lg,
     color: #444;
     background-color: transparent;
   }
+  .visible-xs {
+    display: block !important;
+  }
+
+  table.visible-xs {
+    display: table !important;
+  }
+
+  tr.visible-xs {
+    display: table-row !important;
+  }
+
+  th.visible-xs,
+td.visible-xs {
+    display: table-cell !important;
+  }
+  .visible-xs-block {
+    display: block !important;
+  }
+  .visible-xs-inline {
+    display: inline !important;
+  }
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-xs {
+    display: none !important;
+  }
   .e-content ul figure,
 .e-content ol figure {
     margin-left: -55px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm {
+    display: block !important;
+  }
+
+  table.visible-sm {
+    display: table !important;
+  }
+
+  tr.visible-sm {
+    display: table-row !important;
+  }
+
+  th.visible-sm,
+td.visible-sm {
+    display: table-cell !important;
+  }
+  .visible-sm-block {
+    display: block !important;
+  }
+  .visible-sm-inline {
+    display: inline !important;
+  }
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md {
+    display: block !important;
+  }
+
+  table.visible-md {
+    display: table !important;
+  }
+
+  tr.visible-md {
+    display: table-row !important;
+  }
+
+  th.visible-md,
+td.visible-md {
+    display: table-cell !important;
+  }
+  .visible-md-block {
+    display: block !important;
+  }
+  .visible-md-inline {
+    display: inline !important;
+  }
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+
+  table.visible-print {
+    display: table !important;
+  }
+
+  tr.visible-print {
+    display: table-row !important;
+  }
+
+  th.visible-print,
+td.visible-print {
+    display: table-cell !important;
+  }
+  .visible-print-block {
+    display: block !important;
+  }
+  .visible-print-inline {
+    display: inline !important;
+  }
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+  .hidden-print {
+    display: none !important;
   }
 }
 @media (max-width: 991px) {
