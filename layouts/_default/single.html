@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <!-- Post Content -->
-<article itemscope itemtype="https://schema.org/{{ $.Site.Param (printf "SchemaOrg.Types.%s" .Section) | default "Article" }}" class="h-entry hentry">
+<article class="h-entry hentry" itemscope itemtype="https://schema.org/{{ $.Site.Param (printf "SchemaOrg.Types.%s" .Section) | default "Article" }}">
     <!--/row-->
     {{- if eq .Params.type "page" -}}
         {{- partial "header.html" . -}}
@@ -30,14 +30,16 @@
         {{- if not .Site.Params.sidebar.isEnabled -}}
         <div class="col-lg-2 col-md-1"></div>
         {{- end -}}
+        
+        <!-- Article Content -->
         <div class="
             {{- if .Site.Params.sidebar.isEnabled -}}
             col-lg-8 col-md-8 
             {{- else -}}
             col-lg-8 col-md-10 
             {{- end -}}
-            {{- print " " -}}
-            ">
+            {{- print " e-content entry-content journey-content" -}}
+            " id="content" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
 
             <!-- Show Top Adsense (Sidebar enabled) -->
             {{- if ne .Params.type "page" -}}
@@ -50,25 +52,22 @@
             {{- end -}}
             {{- end -}}
 
-            <!-- Article Content -->
-            <div class="e-content entry-content journey-content" id="content" {{ if eq .Params.type "page" }}data-pagefind-ignore{{ else }}data-pagefind-body{{ end }}>
-                <!-- Schema -->
-                {{- template "_internal/schema.html" . -}}
-                <!--Image for thumbnail-->
-                {{- with $.Param "images" -}}
-                {{- range last 1 . -}}
-                <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}"></p>
-                {{- end -}}
-                {{- end -}}
+            <!-- Schema -->
+            {{- template "_internal/schema.html" . -}}
+            <!--Image for thumbnail-->
+            {{- with $.Param "images" -}}
+            {{- range last 1 . -}}
+            <p class="hidden"><img src="{{- . -}}" title="{{- with $.Param "title" -}}{{- . -}}{{- end -}}" alt="{{- with $.Param "description" -}}{{- . -}}{{- end -}}"></p>
+            {{- end -}}
+            {{- end -}}
 
-                {{ .Scratch.Set "finalContent" .Content }}
-                
-                {{ if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) }}
-                    {{ replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/google-adsense-inarticle.html" .) | safeHTML }}
-                {{ else }}
-                    {{ .Scratch.Get "finalContent" }}
-                {{ end }}
-            </div>
+            {{- .Scratch.Set "finalContent" .Content -}}
+            
+            {{- if (and ($.Param "Services.GoogleAdsense.showMiddle") (ne .Params.type "page")) -}}
+                {{- replace (.Scratch.Get "finalContent") "<!--adsense-->" (partialCached "widget/google-adsense-inarticle.html" .) | safeHTML -}}
+            {{- else -}}
+                {{- .Scratch.Get "finalContent" -}}
+            {{- end -}}
         </div>
 
         <!-- Sidebar -->
