@@ -4,6 +4,7 @@
       <img src="{{ .Destination | safeURL }}"
         {{- with .Text }} alt="{{ . }}"{{ end -}}
         {{- with .Title }} title="{{ . }}"{{ end }}
+        class="img-responsive"
         loading="lazy"
       >
     </a>
@@ -17,6 +18,5 @@
   <img src="{{ .Destination | safeURL }}"
     {{- with .Text }} alt="{{ . }}"{{ end -}}
     {{- with .Title }} title="{{ . }}"{{ end }}
-    loading="lazy"
   >
 {{- end -}}

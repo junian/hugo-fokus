@@ -2950,6 +2950,15 @@ hr.section-divider:before, .e-content hr:before {
 .e-content {
   overflow-wrap: break-word;
   word-break: break-word;
+  /*
+  img {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 100%;
+      height: auto;
+  }
+  */
 }
 .e-content table {
   width: 100%;
@@ -2962,13 +2971,6 @@ hr.section-divider:before, .e-content hr:before {
 .e-content p {
   line-height: 1.5;
   word-wrap: break-word;
-}
-.e-content img {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%;
-  height: auto;
 }
 .e-content figure {
   font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, "Times New Roman", Times, serif;
