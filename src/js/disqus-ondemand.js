@@ -1,9 +1,12 @@
+// @ts-check
+
+import {isEnabled} from "./is-enabled";
 import {config} from "./config";
 import {fadeOut} from "./vanilla/fade-out";
 import {addEventListener} from "./vanilla/add-event-listener";
 
 const d = document,
-  n = config.disqus_shortname,
+  n = config.disqus.shortname,
   t = d.getElementById("disqus_thread");
 
 function loadDisqusComments() {
@@ -31,6 +34,12 @@ function onButtonLoadDisqusClicked() {
 }
 
 function loadDisqusCommentCount() {
+  if(!isEnabled(config.disqus.is_on_demand))
+    return;
+
+  if(!isEnabled(config.disqus.is_show_comment_count))
+    return;
+  
   if (!n || !t)
     return;
   (() => {

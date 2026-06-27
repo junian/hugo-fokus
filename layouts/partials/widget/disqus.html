@@ -1,14 +1,29 @@
 {{- $pc := .Page.Site.Config.Privacy.Disqus -}}
 {{- if not $pc.Disable -}}
-{{- if .Site.Config.Services.Disqus.Shortname -}}
+{{- $disqus := .Site.Params.services.disqus -}}
+{{- $shortname := $disqus.shortname -}}
+{{- if $shortname -}}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
 <div id="site_comment_thread" class="section p-comment">
-    {{ template "_internal/disqus.html" . }}
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = {{ .Permalink | jsonify }};
+            this.page.identifier = {{ .RelPermalink | jsonify }};
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://{{ $shortname }}.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 {{ else }}
 <blockquote role="alert">
     <p><strong>Attention! </strong>Disqus comments not available by default when the website is previewed locally.</p>
 </blockquote>
 {{ end }}
-{{ end }}
-{{ end }}
+{{- end -}}
+{{- end -}}

@@ -1,4 +1,7 @@
+//@ts-check
+
 import {config} from "./config";
+import { isEnabled } from "./is-enabled";
 import {addEventListener} from "./vanilla/add-event-listener";
 
 const d = document;
@@ -38,7 +41,7 @@ function loadCookieConsent() {
 }
 
 function embedCookieConsent() {
-  if(config.is_cookie_consent_enabled.toString().trim().toLowerCase() !== "true")
+  if(!isEnabled(config.is_cookie_consent_enabled))
     return;
 
   if (d.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/))

@@ -1,7 +1,10 @@
+//@ts-check
+
 import {config} from "./config";
+import { isEnabled } from "./is-enabled";
 
 function enforceCanonicalURL() {
-    if(config.is_redirect_to_canonical.toString().trim().toLowerCase() !== "true")
+    if(!isEnabled(config.is_redirect_to_canonical))
         return;
     
     var canonicalURL = new URL(config.base_url);

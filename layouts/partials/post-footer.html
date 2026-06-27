@@ -58,8 +58,9 @@
             {{ end }}
 
             <!-- Comment section -->
-            {{- if .Site.Config.Services.Disqus.Shortname -}}
-                {{- if .Site.Params.DisqusOnDemand -}}
+            {{- $disqus := .Site.Params.services.disqus -}}
+            {{- if and $disqus $disqus.isEnabled $disqus.shortname -}}
+                {{- if $disqus.isOnDemand -}}
                     {{ partial "widget/disqus-ondemand.html" . }}
                 {{- else -}}
                     {{ partial "widget/disqus.html" . }}

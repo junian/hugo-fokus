@@ -1,8 +1,11 @@
+// @ts-check
+
 import {config} from "./config";
 import {setOpacity} from "./vanilla/set-opacity";
 import {addEventListener} from "./vanilla/add-event-listener";
 import {fadeOut} from "./vanilla/fade-out";
 import { fadeIn } from "./vanilla/fade-in";
+import { isEnabled } from "./is-enabled";
 
 const defaultMessage = "This website uses cookies to ensure you get the best experience on our website.";
 const defaultLearnMore = "Learn more";
@@ -73,7 +76,7 @@ function loadCookieConsent() {
 }
 
 function embedCookieConsent() {
-  if(config.is_cookie_consent_enabled.toString().trim().toLowerCase() !== "true")
+  if(!isEnabled(config.is_cookie_consent_enabled))
     return;
 
   if (d.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/))
