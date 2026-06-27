@@ -3,7 +3,7 @@
 {{- $disqus := .Site.Params.services.disqus -}}
 {{- $shortname := $disqus.shortname -}}
 {{- if $shortname -}}
-{{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+{{- if not (in (printf "%#v" .Site.BaseURL) "localhost") -}}
 <div id="site_comment_thread" class="section p-comment">
     <div id="disqus_thread"></div>
     <script>
@@ -20,10 +20,10 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-{{ else }}
+{{- else -}}
 <blockquote role="alert">
     <p><strong>Attention! </strong>Disqus comments not available by default when the website is previewed locally.</p>
 </blockquote>
-{{ end }}
+{{- end -}}
 {{- end -}}
 {{- end -}}

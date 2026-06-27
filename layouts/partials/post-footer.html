@@ -58,14 +58,13 @@
             {{ end }}
 
             <!-- Comment section -->
-            {{- $disqus := .Site.Params.services.disqus -}}
-            {{- if and $disqus $disqus.isEnabled $disqus.shortname -}}
-                {{- if $disqus.isOnDemand -}}
+            {{- if (and .Site.Params.services.disqus.isEnabled .Site.Params.services.disqus.shortname) -}}
+                {{- if .Site.Params.services.disqus.isOnDemand -}}
                     {{ partial "widget/disqus-ondemand.html" . }}
                 {{- else -}}
                     {{ partial "widget/disqus.html" . }}
                 {{- end -}}
-            {{- else if .Site.Params.Services.CommentBox.ProjectID -}}
+            {{- else if (and .Site.Params.services.CommentBox.isEnabled .Site.Params.Services.CommentBox.ProjectID) -}}
                 {{ partial "widget/commentbox.html" . }}
             {{- end -}}
         </div>

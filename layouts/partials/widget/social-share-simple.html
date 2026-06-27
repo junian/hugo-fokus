@@ -1,7 +1,5 @@
 <div class="section go-social">
-    {{- $pc := .Page.Site.Config.Privacy.Disqus -}}
-    {{- $disqus := .Site.Params.services.disqus -}}
-    {{- if and (not $pc.Disable) $disqus $disqus.isEnabled $disqus.shortname -}}
+    {{- if (and .Site.Params.services.disqus.isEnabled .Site.Params.services.disqus.shortname) -}}
     <a href="#site_comment_thread" title="See Comments"><i class="fa fa-2x fa-thin fa-message-o">{{ partialCached (printf "svg/%s.svg" "message-circle") . }}</i></a>
     {{- end -}}        
     {{ if .Site.Params.Widget.socialshare.facebook }}<a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" title="Share to Facebook" rel="nofollow noreferrer"><i class="fa fa-2x fa-thin fa-facebook">{{ partialCached (printf "svg/%s.svg" "facebook") . }}</i></a>{{ end }}
