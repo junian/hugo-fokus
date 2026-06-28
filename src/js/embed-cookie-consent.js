@@ -8,9 +8,9 @@
  * @module embed-cookie-consent
  */
 
-import {config} from "./config";
+import { config } from "./config";
 import { isEnabled } from "./is-enabled";
-import {addEventListener} from "./vanilla/add-event-listener";
+import { addEventListener } from "./vanilla/add-event-listener";
 
 const d = document;
 
@@ -72,13 +72,13 @@ function loadCookieConsent() {
  * @returns {void}
  */
 function embedCookieConsent() {
-  if(!isEnabled(config.is_cookie_consent_enabled))
+  if (!isEnabled(config.is_cookie_consent_enabled))
     return;
 
   if (d.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/))
     return;
-  
+
   loadCookieConsent();
 }
 
-export {embedCookieConsent};
+export { embedCookieConsent };

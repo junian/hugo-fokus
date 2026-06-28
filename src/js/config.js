@@ -54,10 +54,10 @@
 var config = {
   disqus: {
     is_show_comment_count: "{{.Site.Params.services.disqus.isShowCommentCount}}",
-    is_on_demand:          "{{.Site.Params.services.disqus.isOnDemand}}",
-    shortname:             "{{.Site.Params.services.disqus.shortname}}",
+    is_on_demand: "{{.Site.Params.services.disqus.isOnDemand}}",
+    shortname: "{{.Site.Params.services.disqus.shortname}}",
   },
-  
+
   base_url: "{{.Site.BaseURL}}",
   is_redirect_to_canonical: "{{.Site.Params.IsRedirectToCanonical}}",
   // cookie_consent_css: "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css",
@@ -80,4 +80,4 @@ var config = {
   is_cookie_consent_enabled: "{{.Site.Params.CookieConsent.IsEnabled}}"
 };
 
-export {config};
+export { config };

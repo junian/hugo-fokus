@@ -7,10 +7,10 @@
  * @module disqus-ondemand
  */
 
-import {isEnabled} from "./is-enabled";
-import {config} from "./config";
-import {fadeOut} from "./vanilla/fade-out";
-import {addEventListener} from "./vanilla/add-event-listener";
+import { isEnabled } from "./is-enabled";
+import { config } from "./config";
+import { fadeOut } from "./vanilla/fade-out";
+import { addEventListener } from "./vanilla/add-event-listener";
 
 const d = document,
   n = config.disqus.shortname,
@@ -63,12 +63,12 @@ function onButtonLoadDisqusClicked() {
  * @returns {void}
  */
 function loadDisqusCommentCount() {
-  if(!isEnabled(config.disqus.is_on_demand))
+  if (!isEnabled(config.disqus.is_on_demand))
     return;
 
-  if(!isEnabled(config.disqus.is_show_comment_count))
+  if (!isEnabled(config.disqus.is_show_comment_count))
     return;
-  
+
   if (!n || !t)
     return;
   (() => {

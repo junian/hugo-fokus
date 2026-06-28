@@ -5,7 +5,7 @@
  * @module vanilla/fade-in
  */
 
-import {setOpacity} from "./set-opacity";
+import { setOpacity } from "./set-opacity";
 
 /**
  * Gradually increases an element's opacity from 0 to 1 over ~400 ms.

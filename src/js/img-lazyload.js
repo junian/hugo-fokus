@@ -22,7 +22,7 @@
  * @returns {void}
  */
 function handleLazyLoadImage(value) {
-    if(!(value instanceof HTMLImageElement))
+    if (!(value instanceof HTMLImageElement))
         return;
 
     const img = /** @type{HTMLImageElement} */ value;
@@ -58,7 +58,7 @@ function handleLazyLoadImage(value) {
 function lazyLoadImages() {
     // Browser has no native lazy loading
     if (!('loading' in HTMLImageElement.prototype)) {
-        document.querySelectorAll('.img-placeholder').forEach(function(el) {
+        document.querySelectorAll('.img-placeholder').forEach(function (el) {
             el.classList.add('img-loaded');
         });
 
@@ -70,4 +70,4 @@ function lazyLoadImages() {
     images.forEach(handleLazyLoadImage);
 }
 
-export {lazyLoadImages};
+export { lazyLoadImages };

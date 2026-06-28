@@ -7,7 +7,7 @@
  * @module enforce-canonical
  */
 
-import {config} from "./config";
+import { config } from "./config";
 import { isEnabled } from "./is-enabled";
 
 /**
@@ -23,9 +23,9 @@ import { isEnabled } from "./is-enabled";
  * @returns {void}
  */
 function enforceCanonicalURL() {
-    if(!isEnabled(config.is_redirect_to_canonical))
+    if (!isEnabled(config.is_redirect_to_canonical))
         return;
-    
+
     var canonicalURL = new URL(config.base_url);
     var canonicalHostname = canonicalURL.hostname;
     var currentHostname = window.location.hostname;
@@ -41,4 +41,4 @@ function enforceCanonicalURL() {
     }
 }
 
-export {enforceCanonicalURL};
+export { enforceCanonicalURL };

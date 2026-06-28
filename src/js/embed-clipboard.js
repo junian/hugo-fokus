@@ -8,9 +8,9 @@
  */
 
 import ClipboardJS from "clipboard";
-import {remove} from "./vanilla/remove";
-import {addClass} from "./vanilla/add-class";
-import {removeClass} from "./vanilla/remove-class";
+import { remove } from "./vanilla/remove";
+import { addClass } from "./vanilla/add-class";
+import { removeClass } from "./vanilla/remove-class";
 
 /**
  * Sets up ClipboardJS on all `.btn-clipboard` elements inside `.highlight` blocks.
@@ -74,4 +74,4 @@ function embedClipboardJS() {
   // });
 }
 
-export {embedClipboardJS};
+export { embedClipboardJS };

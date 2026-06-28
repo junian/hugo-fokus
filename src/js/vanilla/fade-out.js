@@ -5,8 +5,8 @@
  * @module vanilla/fade-out
  */
 
-import {remove} from "./remove";
-import {setOpacity} from "./set-opacity";
+import { remove } from "./remove";
+import { setOpacity } from "./set-opacity";
 
 /**
  * Gradually decreases an element's opacity from 1 to 0 over ~400 ms,

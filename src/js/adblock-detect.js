@@ -6,11 +6,11 @@
  * @module adblock-detect
  */
 
-import {before} from "./vanilla/before";
-import {text} from "./vanilla/text";
-import {removeClass} from "./vanilla/remove-class";
-import {remove} from "./vanilla/remove";
-import {imagesLoaded} from "imagesloaded";
+import { before } from "./vanilla/before";
+import { text } from "./vanilla/text";
+import { removeClass } from "./vanilla/remove-class";
+import { remove } from "./vanilla/remove";
+import { imagesLoaded } from "imagesloaded";
 
 /**
  * Called when an ad blocker is detected.
@@ -159,4 +159,4 @@ function detectAdBlockWithABCheck() {
   document.head.appendChild(importFAB);
 }
 
-export {detectAdBlockWithABCheck};
+export { detectAdBlockWithABCheck };

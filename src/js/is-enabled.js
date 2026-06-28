@@ -29,7 +29,7 @@
  * isEnabled("1");      // false
  */
 function isEnabled(configName) {
-    if(configName.toString().trim().toLowerCase() === "true")
+    if (configName.toString().trim().toLowerCase() === "true")
         return true;
     return false;
 }

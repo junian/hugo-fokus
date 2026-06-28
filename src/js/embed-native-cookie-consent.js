@@ -8,10 +8,10 @@
  * @module embed-native-cookie-consent
  */
 
-import {config} from "./config";
-import {setOpacity} from "./vanilla/set-opacity";
-import {addEventListener} from "./vanilla/add-event-listener";
-import {fadeOut} from "./vanilla/fade-out";
+import { config } from "./config";
+import { setOpacity } from "./vanilla/set-opacity";
+import { addEventListener } from "./vanilla/add-event-listener";
+import { fadeOut } from "./vanilla/fade-out";
 import { fadeIn } from "./vanilla/fade-in";
 import { isEnabled } from "./is-enabled";
 
@@ -31,7 +31,7 @@ const defaultAccept = "Got It!";
  * @type {string}
  */
 const ccElement =
-`<div class="navbar-fixed-bottom navbar-cookie">
+  `<div class="navbar-fixed-bottom navbar-cookie">
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-10 col-md-11">
@@ -128,7 +128,7 @@ function loadCookieConsent() {
  * @returns {void}
  */
 function embedCookieConsent() {
-  if(!isEnabled(config.is_cookie_consent_enabled))
+  if (!isEnabled(config.is_cookie_consent_enabled))
     return;
 
   if (d.cookie.match(/^(.*;)?\s*cookieconsent_status\s*=\s*[^;]+(.*)?$/))
@@ -137,4 +137,4 @@ function embedCookieConsent() {
   loadCookieConsent();
 }
 
-export {embedCookieConsent};
+export { embedCookieConsent };
