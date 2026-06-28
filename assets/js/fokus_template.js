@@ -4075,15 +4075,20 @@
         }
       }
       const lt = document;
-      var at;
-      at = () => {
-        "loading" in HTMLImageElement.prototype ? document.querySelectorAll(".img-placeholder img").forEach(function(t) {
-            function e() {
-              var e = t.closest(".img-placeholder");
-              e && e.classList.add("img-loaded")
-            }
-            t.complete && t.naturalWidth > 0 ? e() : (t.addEventListener("load", e), t.addEventListener("error", e))
-          }) : document.querySelectorAll(".img-placeholder").forEach(function(t) {
+
+      function at(t) {
+        if (!(t instanceof HTMLImageElement)) return;
+        const e = t;
+
+        function i() {
+          const t = e.closest(".img-placeholder");
+          t && t.classList.add("img-loaded")
+        }
+        e.complete && e.naturalWidth > 0 ? i() : (e.addEventListener("load", i), e.addEventListener("error", i))
+      }
+      var ht;
+      ht = () => {
+        "loading" in HTMLImageElement.prototype ? document.querySelectorAll(".img-placeholder img").forEach(at) : document.querySelectorAll(".img-placeholder").forEach(function(t) {
             t.classList.add("img-loaded")
           }),
           function() {
@@ -4149,8 +4154,8 @@
               }
             })
           }()
-      }, "loading" !== document.readyState ? at() : document.addEventListener ? document.addEventListener("DOMContentLoaded", at) : document.attachEvent("onreadystatechange", () => {
-        "loading" !== document.readyState && at()
+      }, "loading" !== document.readyState ? ht() : document.addEventListener ? document.addEventListener("DOMContentLoaded", ht) : document.attachEvent("onreadystatechange", () => {
+        "loading" !== document.readyState && ht()
       })
     }()
 }();
