@@ -6,11 +6,11 @@
 
 <!-- Main Content -->
 <div class="row">
-    {{- if not .Site.Params.sidebar.isEnabled -}}
+    {{- if not .Params.sidebar.isEnabled -}}
     <div class="col-lg-2 col-md-1"></div>
     {{- end -}}
     <div class="
-            {{- if .Site.Params.sidebar.isEnabled -}}
+            {{- if .Params.sidebar.isEnabled -}}
             col-lg-8 col-md-8
             {{- else -}}
             col-lg-8 col-md-10 
@@ -31,7 +31,7 @@
             {{ end }}
         {{ end }}
     </div>
-    {{- if not .Site.Params.sidebar.isEnabled -}}
+    {{- if not .Params.sidebar.isEnabled -}}
     <div class="col-lg-2 col-md-2"></div>
     {{- else -}}
     <aside class="col-lg-4 col-md-4 section-sidebar sidebar" id="sidebar">

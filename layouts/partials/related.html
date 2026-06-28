@@ -1,5 +1,5 @@
 {{- if $.Param "relatedVisible" -}}
-{{- $isSidebarEnabled := .Site.Params.sidebar.isEnabled  -}}
+{{- $isSidebarEnabled := .Params.sidebar.isEnabled  -}}
 {{- $related := .Site.RegularPages.Related . | shuffle | first 4  -}}
 {{- with $related -}}
 {{- $postCount := len $related -}}
