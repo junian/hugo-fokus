@@ -26,7 +26,7 @@ export function fadeOut(el) {
 
   let last = +new Date();
   const tick = () => {
-    opacity -= (new Date() - last) / 400;
+    opacity -= (+new Date() - last) / 400;
 
     setOpacity(el, opacity);
 

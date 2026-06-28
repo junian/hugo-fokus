@@ -440,7 +440,7 @@
         u(t, e);
         let i = +new Date;
         const o = () => {
-          e -= (new Date - i) / 400, u(t, e), i = +new Date, e > 0 ? window.requestAnimationFrame && requestAnimationFrame(o) || setTimeout(o, 16) : e <= 0 && s(t)
+          e -= (+new Date - i) / 400, u(t, e), i = +new Date, e > 0 ? window.requestAnimationFrame && requestAnimationFrame(o) || setTimeout(o, 16) : e <= 0 && s(t)
         };
         o()
       }
@@ -4116,7 +4116,7 @@
             t && p(t, "click", () => {
               f && b && (() => {
                 const t = g.createElement("script");
-                t.src = "https://" + f + ".disqus.com/embed.js", t.setAttribute("data-timestamp", +new Date), (g.head || g.body).appendChild(t)
+                t.src = "https://" + f + ".disqus.com/embed.js", t.setAttribute("data-timestamp", (+new Date).toString()), (g.head || g.body).appendChild(t)
               })(), m(t)
             })
           }(), o(r) && o(n) && f && b && (() => {
@@ -4131,7 +4131,7 @@
                 u(t, e);
                 let i = +new Date;
                 const s = () => {
-                  e += (new Date - i) / 400, u(t, e), i = +new Date, e < 1 ? window.requestAnimationFrame && requestAnimationFrame(s) || setTimeout(s, 16) : e >= 1 && u(t, 1)
+                  e += (+new Date - i) / 400, u(t, e), i = +new Date, e < 1 ? window.requestAnimationFrame && requestAnimationFrame(s) || setTimeout(s, 16) : e >= 1 && u(t, 1)
                 };
                 s()
               }(t), p(document.getElementById("btnAcceptCookie"), "click", () => {
