@@ -1,8 +1,24 @@
 // @ts-check
 
 /**
- * Handle the skeleton of each <img> element
- * @param {Element} value 
+ * @fileoverview Native lazy-loading helper for images wrapped in
+ * `.img-placeholder` containers.
+ * Adds an `img-loaded` class to the wrapper once the image has finished
+ * loading, enabling CSS skeleton/fade-in effects. Falls back gracefully
+ * when the browser does not support the `loading` attribute.
+ * @module img-lazyload
+ */
+
+/**
+ * Marks the `.img-placeholder` ancestor of an image as loaded by adding
+ * the `img-loaded` CSS class.
+ *
+ * If the image is already complete (cached or inline), the class is applied
+ * immediately. Otherwise, `load` and `error` event listeners are attached so
+ * the class is applied once the image settles.
+ *
+ * @param {Element} value - A DOM element expected to be an `<img>` inside an
+ *   `.img-placeholder` wrapper. Non-`HTMLImageElement` values are ignored.
  * @returns {void}
  */
 function handleLazyLoadImage(value) {
@@ -11,6 +27,7 @@ function handleLazyLoadImage(value) {
 
     const img = /** @type{HTMLImageElement} */ value;
 
+    /** @returns {void} */
     function markLoaded() {
         const placeholder = img.closest('.img-placeholder');
 
@@ -29,7 +46,13 @@ function handleLazyLoadImage(value) {
 }
 
 /**
- * Handle Lazy Load images
+ * Initialises lazy-load handling for all images inside `.img-placeholder`
+ * containers.
+ *
+ * When the browser does not support the native `loading` attribute, every
+ * `.img-placeholder` is immediately marked as loaded (i.e. the skeleton
+ * effect is skipped) to avoid permanently hidden images.
+ *
  * @returns {void}
  */
 function lazyLoadImages() {
