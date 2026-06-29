@@ -6,11 +6,11 @@
 
 <!-- Main Content -->
 <div class="row">
-    {{- if not .Params.sidebar.isEnabled -}}
+    {{- if not ($.Param "sidebar.isEnabled") -}}
     <div class="col-lg-2 col-md-1"></div>
     {{- end -}}
     <div class="
-            {{- if .Params.sidebar.isEnabled -}}
+            {{- if $.Param "sidebar.isEnabled" -}}
             col-lg-8 col-md-8
             {{- else -}}
             col-lg-8 col-md-10 
@@ -29,10 +29,10 @@
         {{ end }}
         {{ partial "pager.html" . }}
     </div>
-    {{- if not .Params.sidebar.isEnabled -}}
+    {{- if not ($.Param "sidebar.isEnabled") -}}
     <div class="col-lg-2 col-md-2"></div>
     {{- else -}}
-    <aside class="col-lg-4 col-md-4 section-sidebar sidebar{{ if .Params.sidebar.isSticky }} sticky-sidebar{{ end }}" id="sidebar">
+    <aside class="col-lg-4 col-md-4 section-sidebar sidebar{{ if $.Param "sidebar.isSticky" }} sticky-sidebar{{ end }}" id="sidebar">
         {{- partial "sidebar.html" . -}}
     </aside>
     {{- end -}}

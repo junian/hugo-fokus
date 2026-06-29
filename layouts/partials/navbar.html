@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top navbar-main" id="mainNav">
     <div class="
-        {{- if .Params.sidebar.isEnabled -}}
+        {{- if $.Param "sidebar.isEnabled" -}}
 		container
 	    {{- else -}}
 		container-fluid

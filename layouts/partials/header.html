@@ -6,7 +6,7 @@
 <header class="row masthead">
     <div class="overlay"></div>
     <div class="
-        {{- if .Params.sidebar.isEnabled -}}
+        {{- if $.Param "sidebar.isEnabled" -}}
 		col-lg-12 col-md-12 
 	    {{- else -}}
 		col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1
