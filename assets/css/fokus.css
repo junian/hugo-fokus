@@ -866,11 +866,15 @@ hr.section-divider:before, .e-content hr:before {
 a.btn-action, .post-footer p a.btn-action {
   background: #000;
   color: #fff;
-  border: 1px solid #444;
+  border: 1px solid #343a40;
   padding: 10px 16px;
   border-radius: 8px;
   min-width: 230px;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+}
+a.btn-action:hover, a.btn-action:focus {
+  color: #ced4da;
+  text-decoration: none;
 }
 a.btn-action svg {
   vertical-align: middle;
