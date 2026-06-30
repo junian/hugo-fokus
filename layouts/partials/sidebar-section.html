@@ -1,0 +1,10 @@
+<hr>
+{{ partialCached "widget/actions.html" . }}
+{{ partial "sidebar.html" . }}
+<hr>
+<!-- Show Right Adsense -->
+{{- if ne .Params.type "page" -}}
+{{- if $.Param "Services.GoogleAdsense.showRight" -}}
+    {{- partialCached "widget/google-adsense-responsive-right.html" . -}}
+{{- end -}}
+{{- end -}}
