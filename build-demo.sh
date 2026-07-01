@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+pnpm install --frozen-lockfile
+
+pnpm run build:demo

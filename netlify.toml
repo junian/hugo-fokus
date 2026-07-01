@@ -1,0 +1,12 @@
+[[headers]]
+  for = "index.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml"
+
+[build]
+  command = "./build-demo.sh"
+  base = ""
+  publish = "exampleSite/public"
+
+# [build.environment]
+#   HUGO_VERSION = "0.135.0"
