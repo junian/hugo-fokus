@@ -1,6 +1,6 @@
 /*! For license information please see fokus_template.js.LICENSE.txt */ ! function() {
   var t = {
-      576: function(t) {
+      122: function(t) {
         var e;
         e = function() {
           return function() {
@@ -404,16 +404,28 @@
         a: e
       }), e
     }, i.d = function(t, e) {
-      for (var s in e) i.o(e, s) && !i.o(t, s) && Object.defineProperty(t, s, {
-        enumerable: !0,
-        get: e[s]
-      })
+      if (Array.isArray(e))
+        for (var s = 0; s < e.length;) {
+          var o = e[s++],
+            n = e[s++];
+          i.o(t, o) ? 0 === n && s++ : 0 === n ? Object.defineProperty(t, o, {
+            enumerable: !0,
+            value: e[s++]
+          }) : Object.defineProperty(t, o, {
+            enumerable: !0,
+            get: n
+          })
+        } else
+          for (var o in e) i.o(e, o) && !i.o(t, o) && Object.defineProperty(t, o, {
+            enumerable: !0,
+            get: e[o]
+          })
     }, i.o = function(t, e) {
       return Object.prototype.hasOwnProperty.call(t, e)
     },
     function() {
       "use strict";
-      var t = i(576),
+      var t = i(122),
         e = i.n(t);
 
       function s(t) {
