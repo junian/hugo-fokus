@@ -13,7 +13,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "build": "gulp",
+    "build:demo": "hugo build --source exampleSite --minify --environment production",
+    "dev:demo": "hugo serve --source exampleSite"
   },
   "browserslist": [
     "Android 2.3",
@@ -36,6 +38,7 @@
     "gulp-jsbeautifier": "^3.0.1",
     "gulp-postcss": "^10.0.0",
     "gulp-sass": "^5.1.0",
+    "hugo-extended": "^0.163.3",
     "imagesloaded": "^5.0.0",
     "plugin-error": "^2.0.1",
     "sass": "=1.33",

@@ -21,7 +21,6 @@ canonifyURLs = false
 
 paginate = 5
 
-minify = false
 # disableKinds = []
 
 enableGitInfo = true
@@ -38,8 +37,8 @@ duration = "durations"
 noclasses = false
 
 [permalinks]
-posts = "/:filename/"
-pages = "/:filename/"
+posts = "/:contentbasename/"
+pages = "/:contentbasename/"
 
 [blackfriday]
 hrefTargetBlank = true
@@ -93,7 +92,7 @@ useSessionStorage = true
 simple = true
 [privacy.speakerDeck]
 disable = true
-[privacy.twitter]
+[privacy.x]
 enableDNT = true
 simple = true
 [privacy.vimeo]
@@ -179,11 +178,24 @@ url = "/archives/"
 
 # Menu for footer
 
-[[params.menu.footer]]
+[params.menu.footer]
+title1="Quick Links"
+# content1=""
+title2="Slash Pages"
+# content2=""
+title3="Download Archives"
+# content3=""
+title4="Featured Tags"
+# content4=""
+title5="Legal"
+# content5=""
+title6="About"
+
+[[params.menu.footer1]]
 title = "About"
 url = "/about/"
 
-[[params.menu.footer]]
+[[params.menu.footer2]]
 title = "External Link"
 url = "https://www.junian.dev"
 
