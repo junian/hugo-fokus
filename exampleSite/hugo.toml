@@ -11,7 +11,7 @@ pygmentsUseClasses = false
 pygmentsStyle = "dracula"
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClassic = false
-theme = "hugo-fokus"
+# theme = "hugo-fokus"
 themesDir = "../.." # remove this on production
 
 copyright = "Copyright &copy; 2018 - 2024 Fokus Author"
