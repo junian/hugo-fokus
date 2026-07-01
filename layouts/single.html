@@ -53,7 +53,7 @@
             {{- end -}}
 
             <!-- Schema -->
-            {{- template "_internal/schema.html" . -}}
+            {{- partial "schema.html" . -}}
             <!--Image for thumbnail-->
             {{- with $.Param "images" -}}
             {{- range last 1 . -}}
