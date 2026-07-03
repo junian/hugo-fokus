@@ -13,7 +13,7 @@
     <!-- Show Top Adsense (Sidebar disabled) -->
     {{- if ne .Params.type "page" -}}
     {{- if not ($.Param "sidebar.isEnabled") -}}
-    {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
+    {{- if $.Param "Services.GoogleAdsense.isEnabled" -}}
     {{- if $.Param "Services.GoogleAdsense.showTop" -}}
     <div class = "row">
         <div class="col-lg-12 col-md-12">
@@ -44,7 +44,7 @@
             <!-- Show Top Adsense (Sidebar enabled) -->
             {{- if ne .Params.type "page" -}}
             {{- if $.Param "sidebar.isEnabled" -}}
-            {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
+            {{- if $.Param "Services.GoogleAdsense.isEnabled" -}}
             {{- if $.Param "Services.GoogleAdsense.showTop" -}}
             {{- partialCached "widget/google-adsense-responsive-top.html" . -}}
             {{- end -}}
@@ -82,7 +82,7 @@
 
     <!-- Show Bottom Adsense -->
     {{- if ne .Params.type "page" -}}
-    {{- if .Site.Params.Services.GoogleAdsense.isEnabled -}}
+    {{- if $.Param "Services.GoogleAdsense.isEnabled" -}}
     {{- if $.Param "Services.GoogleAdsense.showBottom" -}}
     <div class = "row">
         {{- if not ($.Param "sidebar.isEnabled") -}}

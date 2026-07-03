@@ -1,6 +1,6 @@
-{{ if .Site.Params.Services.GoogleAdsense.isEnabled }}
+{{ if ($.Param "Services.GoogleAdsense.isEnabled") }}
 {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-{{ with .Site.Params.Services.GoogleAdsense.client }}
+{{ with ($.Param "Services.GoogleAdsense.client") }}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}"
      crossorigin="anonymous"></script>
 {{ end }}
