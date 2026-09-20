@@ -1,5 +1,5 @@
-onlyBuiltDependencies:
-  - hugo-extended
+allowBuilds:
+  hugo-extended: true
 
 overrides:
   postcss@<8.4.31: '>=8.4.31'
