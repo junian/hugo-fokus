@@ -49,6 +49,11 @@ Edit the files in `./src/`.
 
 - Use [`"sass": "=1.33"`](https://stackoverflow.com/a/67637646/2640559) because the newer version will cause [Breaking Change: Slash as Division](https://sass-lang.com/documentation/breaking-changes/slash-div/).
 
+## References
+
+- [GitHub - feathericons/feather: Simply beautiful open source icons](https://github.com/feathericons/feather)
+- [Bold or italic | Butterick’s Practical Typography](https://practicaltypography.com/bold-or-italic.html)
+
 ## License
 
 This project is licensed under [MIT](https://github.com/junian/fokus/blob/master/LICENSE).
